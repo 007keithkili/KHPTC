@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KHPTC | Experiences – Beyond the Track</title>
+  <!-- Font Awesome 6 (Free) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;700;800&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --primary: #0a4a7c;
+      --secondary: #18a3a7;
+      --accent: #f39c12;
+      --dark: #1a2a3a;
+      --light: #f8f9fa;
+      --text: #333;
+      --light-text: #f0f0f0;
+      --bg-body: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+      --bg-card: #ffffff;
+      --bg-footer: var(--dark);
+      --border-light: #eee;
+      --shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+      --shadow-hover: 0 25px 60px rgba(0, 0, 0, 0.15);
+      --text-muted: #666;
+      --footer-text: rgba(255, 255, 255, 0.7);
+    }
+
+    [data-theme="dark"] {
+      --primary: #4a9ed6;
+      --secondary: #3bc8cc;
+      --accent: #f1c40f;
+      --dark: #e8edf2;
+      --text: #e0e0e0;
+      --bg-body: #121212;
+      --bg-card: #1e1e1e;
+      --bg-footer: #0a0a0a;
+      --border-light: #333;
+      --shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+      --text-muted: #aaa;
+      --footer-text: rgba(255, 255, 255, 0.6);
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      color: var(--text);
+      background: var(--bg-body);
+      line-height: 1.6;
+      transition: background 0.3s, color 0.3s;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4, h5 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      color: var(--dark);
+      line-height: 1.3;
+    }
+
+    .btn {
+      padding: 12px 28px;
+      border-radius: 30px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+    .btn-primary { background: linear-gradient(135deg, var(--primary), var(--secondary)); color: white; }
+    .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(10,74,124,0.3); }
+    .btn-light { background: #fff; color: var(--primary); }
+    .btn-light:hover { background: #f0f0f0; transform: translateY(-3px); }
+
+    .section-title { text-align: center; margin-bottom: 60px; }
+    .section-title h2 { font-size: 3rem; margin-bottom: 15px; position: relative; display: inline-block; }
+    .section-title h2:after { content: ''; position: absolute; width: 80px; height: 5px; background: var(--accent); bottom: -10px; left: 50%; transform: translateX(-50%); border-radius: 5px; }
+    .section-title p { font-size: 1.2rem; color: var(--text-muted); max-width: 700px; margin: 25px auto 0; }
+
+    /* HEADER */
+    header { background: rgba(255, 255, 255, 0.95); box-shadow: 0 5px 20px rgba(0,0,0,0.08); width: 100%; top: 0; z-index: 1000; padding: 15px 0; transition: all 0.4s ease; }
+    .header-container { max-width: 1400px; margin: 0 auto; padding: 0 40px; display: flex; justify-content: space-between; align-items: center; }
+    .logo { display: flex; align-items: center; text-decoration: none; }
+    .logo-icon { width: 50px; height: 50px; background: linear-gradient(135deg, var(--primary), var(--secondary)); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 12px; box-shadow: 0 4px 12px rgba(10,74,124,0.2); overflow: hidden; }
+    .logo-icon img { width: 100%; height: 100%; object-fit: cover; }
+    .logo-text { display: flex; flex-direction: column; }
+    .logo-text span:first-child { font-family: 'Playfair Display', serif; font-weight: 800; font-size: 28px; color: var(--primary); letter-spacing: -0.5px; }
+    .logo-text span:last-child { font-size: 12px; color: var(--secondary); letter-spacing: 2px; text-transform: uppercase; margin-top: -5px; }
+    nav ul { display: flex; list-style: none; }
+    nav ul li { margin: 0 15px; }
+    nav ul li a { text-decoration: none; color: var(--dark); font-weight: 600; font-size: 16px; position: relative; padding: 8px 0; transition: all 0.3s ease; }
+    nav ul li a:after { content: ''; position: absolute; width: 0; height: 3px; bottom: 0; left: 0; background: var(--accent); border-radius: 3px; transition: width 0.3s ease; }
+    nav ul li a:hover:after { width: 100%; }
+    .header-actions { display: flex; align-items: center; gap: 20px; }
+    .theme-toggle { background: none; border: 2px solid var(--primary); color: var(--primary); border-radius: 50%; width: 44px; height: 44px; font-size: 1.2rem; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease; background: transparent; }
+    .theme-toggle:hover { background: var(--primary); color: white; transform: rotate(20deg); }
+    [data-theme="dark"] .theme-toggle { border-color: var(--accent); color: var(--accent); }
+
+    /* HERO */
+    .hero { min-height: 60vh; display: flex; align-items: center; padding: 140px 0 60px; position: relative; overflow: hidden; }
+    .hero::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(rgba(26,42,58,0.85), rgba(26,42,58,0.2)), url('https://i.pinimg.com/736x/19/e7/f5/19e7f5c011665682dcf302f98d525bfe.jpg') center/cover no-repeat; z-index: -1; }
+    .hero-content { max-width: 1400px; margin: 0 auto; padding: 0 40px; width: 100%; }
+    .hero-text { max-width: 800px; animation: fadeInUp 1s ease; }
+    .hero h1 { font-size: 3.8rem; margin-bottom: 20px; color: white; line-height: 1.2; }
+    .hero h1 span { color: var(--accent); }
+    .hero p { font-size: 1.3rem; margin-bottom: 30px; color: rgba(255,255,255,0.9); }
+
+    /* WELCOME SECTION */
+    .welcome-section { max-width: 1100px; margin: 70px auto; padding: 0 30px; text-align: center; }
+    .welcome-section h2 { font-size: 2.8rem; margin-bottom: 25px; }
+    .welcome-section p { font-size: 1.15rem; color: var(--text-muted); max-width: 800px; margin: 0 auto 30px; line-height: 1.8; }
+
+    /* DAY IN THE LIFE - IMAGE STORY */
+    .day-story { max-width: 1200px; margin: 80px auto; padding: 0 30px; }
+    .day-story h2 { text-align: center; font-size: 2.8rem; margin-bottom: 15px; }
+    .day-story .subtitle { text-align: center; color: var(--text-muted); font-size: 1.1rem; margin-bottom: 50px; }
+
+    .story-row { display: flex; align-items: center; gap: 40px; margin-bottom: 60px; }
+    .story-row:nth-child(even) { flex-direction: row-reverse; }
+
+    .story-image { flex: 1; position: relative; }
+    .story-image img { width: 100%; height: 350px; object-fit: cover; border-radius: 20px; box-shadow: var(--shadow); transition: all 0.5s; }
+    .story-image:hover img { transform: scale(1.02); box-shadow: var(--shadow-hover); }
+    .story-image .time-badge { position: absolute; top: 20px; left: 20px; background: var(--accent); color: white; padding: 8px 20px; border-radius: 30px; font-weight: 600; font-size: 0.9rem; box-shadow: 0 4px 15px rgba(243,156,18,0.4); }
+
+    .story-content { flex: 1; }
+    .story-content h3 { font-size: 2rem; margin-bottom: 15px; }
+    .story-content p { color: var(--text-muted); font-size: 1.05rem; line-height: 1.8; margin-bottom: 15px; }
+    .story-content .highlight { display: inline-flex; align-items: center; gap: 8px; background: rgba(10,74,124,0.08); color: var(--primary); padding: 8px 18px; border-radius: 30px; font-weight: 600; font-size: 0.9rem; }
+    [data-theme="dark"] .story-content .highlight { background: rgba(74,158,214,0.15); color: #4a9ed6; }
+
+    /* MEETUPS SECTION */
+    .meetups-section { background: linear-gradient(135deg, #1a3a29 0%, #0e6878 100%); padding: 80px 20px; color: white; margin: 60px 0; }
+    .meetups-container { max-width: 1200px; margin: 0 auto; }
+    .meetups-header { text-align: center; margin-bottom: 50px; }
+    .meetups-header h2 { color: white; font-size: 2.8rem; margin-bottom: 15px; }
+    .meetups-header p { color: rgba(255,255,255,0.85); font-size: 1.2rem; max-width: 600px; margin: 0 auto; }
+    .meetups-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+    .meetup-card { background: rgba(255,255,255,0.1); backdrop-filter: blur(8px); border-radius: 20px; padding: 30px; text-align: center; border: 1px solid rgba(255,255,255,0.2); transition: all 0.4s; }
+    .meetup-card:hover { transform: translateY(-8px); background: rgba(255,255,255,0.2); }
+    .meetup-icon { font-size: 2.5rem; color: #f1c40f; margin-bottom: 15px; }
+    .meetup-card h3 { color: white; font-size: 1.5rem; margin-bottom: 12px; }
+    .meetup-card p { color: rgba(255,255,255,0.8); font-size: 0.95rem; }
+
+    /* FREE TIME ACTIVITIES */
+    .activities-section { max-width: 1300px; margin: 70px auto; padding: 0 30px; }
+    .activities-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 30px; }
+    .activity-card { background: var(--bg-card); border-radius: 20px; overflow: hidden; box-shadow: var(--shadow); transition: all 0.4s; }
+    .activity-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-hover); }
+    .activity-card img { width: 100%; height: 200px; object-fit: cover; }
+    .activity-info { padding: 25px; text-align: center; }
+    .activity-info h3 { font-size: 1.5rem; margin-bottom: 10px; }
+    .activity-info p { color: var(--text-muted); font-size: 0.95rem; }
+
+    /* TESTIMONIALS */
+    .intl-testimonials { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; max-width: 1300px; margin: 60px auto; padding: 0 30px; }
+    .intl-card { background: var(--bg-card); border-radius: 20px; padding: 30px; box-shadow: var(--shadow); text-align: center; transition: all 0.3s; }
+    .intl-card:hover { transform: translateY(-5px); }
+    .intl-card img { width: 80px; height: 80px; border-radius: 50%; object-fit: cover; margin: 0 auto 15px; border: 3px solid var(--accent); }
+    .intl-card h4 { font-size: 1.4rem; margin-bottom: 5px; }
+    .intl-card .country { color: var(--secondary); font-weight: 600; margin-bottom: 10px; }
+    .intl-card p { font-size: 0.95rem; color: var(--text-muted); }
+
+    /* CTA */
+    .cta-section { background: linear-gradient(135deg, var(--primary), var(--secondary)); padding: 60px 20px; text-align: center; color: white; margin: 60px 0; }
+    .cta-section h2 { color: white; font-size: 2.8rem; margin-bottom: 15px; }
+    .cta-section p { font-size: 1.2rem; margin-bottom: 25px; }
+    .cta-section .btn { background: white; color: var(--primary); }
+
+    /* FOOTER */
+    footer { background: var(--bg-footer); color: var(--light-text); padding: 80px 0 40px; position: relative; }
+    .footer-container { max-width: 1400px; margin: 0 auto; padding: 0 40px; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 40px; }
+    .footer-col h4 { color: white; font-size: 1.4rem; margin-bottom: 25px; position: relative; padding-bottom: 12px; }
+    .footer-col h4:after { content: ''; position: absolute; width: 50px; height: 3px; background: var(--accent); bottom: 0; left: 0; }
+    .footer-links { list-style: none; }
+    .footer-links li { margin-bottom: 12px; }
+    .footer-links a { color: var(--footer-text); text-decoration: none; transition: all 0.3s; }
+    .footer-links a i { margin-right: 8px; color: var(--accent); }
+    .footer-links a:hover { color: white; padding-left: 5px; }
+    .social-links { display: flex; gap: 12px; margin-top: 15px; }
+    .social-links a { display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 50%; background: rgba(255,255,255,0.1); color: white; }
+    .social-links a:hover { background: var(--accent); }
+    .contact-info li { display: flex; margin-bottom: 15px; color: var(--footer-text); }
+    .contact-info li i { color: var(--accent); margin-right: 12px; }
+    .copyright { text-align: center; padding-top: 30px; margin-top: 50px; border-top: 1px solid rgba(255,255,255,0.1); color: var(--footer-text); font-size: 0.9rem; }
+
+    @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+    .animate { animation: fadeInUp 0.8s ease forwards; opacity: 0; }
+
+    @media (max-width: 900px) {
+      .header-container { flex-direction: column; padding: 15px 20px; }
+      .logo { margin-bottom: 15px; }
+      nav ul { margin: 15px 0; flex-wrap: wrap; justify-content: center; }
+      .hero h1 { font-size: 2.8rem; }
+      .story-row { flex-direction: column !important; gap: 20px; }
+      .story-image img { height: 250px; }
+    }
+    @media (max-width: 600px) {
+      .hero h1 { font-size: 2.4rem; }
+      .section-title h2, .day-story h2, .welcome-section h2 { font-size: 2.2rem; }
+    }
+  </style>
+</head>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="header-container">
+      <a href="#" class="logo">
+        <div class="logo-icon"><img src="https://i.pinimg.com/736x/d2/3d/d8/d23dd8ad0a03ce25635349483c6e7130.jpg" alt="KHPTC Logo"></div>
+        <div class="logo-text"><span>KHPTC</span><span>KipKeino High Performance Training Centre</span></div>
+      </a>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="training.html">Training</a></li>
+          <li><a href="programs.html">Programs</a></li>
+          <li><a href="experience.html">Experiences</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode"><i class="fas fa-moon" id="themeIcon"></i></button>
+        <a href="#" class="btn btn-primary">Join Program</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-content">
+      <div class="hero-text">
+        <h1>Beyond the Track: <span>Your Kenyan Adventure</span></h1>
+        <p>Discover the vibrant community, culture, and unforgettable moments that make KHPTC more than just a training camp.</p>
+        <div style="display:flex; gap:15px; flex-wrap:wrap;">
+          <a href="#day-story" class="btn btn-primary">A Day at KHPTC</a>
+          <a href="#meetups" class="btn btn-light">Community Meetups</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WELCOME -->
+  <div class="welcome-section animate">
+    <h2>Karibu Sana! (You Are Most Welcome)</h2>
+    <p>KHPTC welcomes athletes from over 25 countries each year. Whether you're chasing a marathon PB, recovering from injury, or simply seeking a unique travel experience, you'll find a home here among the red dirt roads of Eldoret.</p>
+  </div>
+
+  <!-- DAY IN THE LIFE - MEANINGFUL IMAGE STORY -->
+  <div class="day-story" id="day-story">
+    <h2>A Day in the Life at KHPTC</h2>
+    <p class="subtitle">Follow the rhythm of a typical day at the centre — from sunrise strides to evening stories around the fire.</p>
+
+    <!-- 6:00 AM - Morning Run -->
+    <div class="story-row animate">
+      <div class="story-image">
+        <span class="time-badge">6:00 AM</span>
+        <img src="https://i.pinimg.com/1200x/a5/15/e5/a515e5c1aa738e922643a5588e1c7079.jpg" alt="Sunrise track session at KHPTC">
+      </div>
+      <div class="story-content">
+        <h3>Sunrise Strides on the Track</h3>
+        <p>As the first light breaks over Kazi Mingi Farm, athletes gather on the red clay track. The cool morning air at 2,400m altitude is perfect for intervals — this is where champions are forged.</p>
+        <span class="highlight"><i class="fas fa-stopwatch"></i> 30–60 min session</span>
+      </div>
+    </div>
+
+    <!-- 7:30 AM - Breakfast -->
+    <div class="story-row animate">
+      <div class="story-image">
+        <span class="time-badge">7:30 AM</span>
+        <img src="https://i.pinimg.com/736x/4d/4f/79/4d4f79a3d71a3f8af7671c0164bf7468.jpg" alt="Farm-to-table breakfast at KHPTC">
+      </div>
+      <div class="story-content">
+        <h3>Farm-to-Table Breakfast</h3>
+        <p>After the morning session, enjoy a hearty breakfast prepared by our nutrition team. Fresh eggs, local fruits, and Kenyan chai — all sourced from the surrounding farmland.</p>
+        <span class="highlight"><i class="fas fa-utensils"></i> Performance nutrition</span>
+      </div>
+    </div>
+
+    <!-- 10:00 AM - Gym & Strength -->
+    <div class="story-row animate">
+      <div class="story-image">
+        <span class="time-badge">10:00 AM</span>
+        <img src="https://i.pinimg.com/736x/7e/00/70/7e0070141f926070a35cbbc147fcdba2.jpg" alt="Strength training in the gym">
+      </div>
+      <div class="story-content">
+        <h3>Strength & Conditioning</h3>
+        <p>Hit our fully equipped gym for a guided strength session. From Olympic lifts to core stability, our coaches tailor the workout to your running goals.</p>
+        <span class="highlight"><i class="fas fa-dumbbell"></i> All levels welcome</span>
+      </div>
+    </div>
+
+    <!-- 1:00 PM - Rest & Recovery -->
+    <div class="story-row animate">
+      <div class="story-image">
+        <span class="time-badge">1:00 PM</span>
+        <img src="https://i.pinimg.com/736x/53/b4/b2/53b4b269cd4dbccaa376cb3c7407eb3b.jpg" alt="Rest and recovery time at the lodge">
+      </div>
+      <div class="story-content">
+        <h3>Rest, Recovery & Connection</h3>
+        <p>Afternoons are for rest and connection. Take a nap in your hostel room, get a massage, or join fellow athletes in the common area for coffee and conversation.</p>
+        <span class="highlight"><i class="fas fa-mug-hot"></i> Community time</span>
+      </div>
+    </div>
+
+    <!-- 5:00 PM - Evening Run or Activity -->
+    <div class="story-row animate">
+      <div class="story-image">
+        <span class="time-badge">5:00 PM</span>
+        <img src="https://i.pinimg.com/736x/80/b5/07/80b50743a6d963bce65a4c9a186f0bc7.jpg" alt="Evening long run on Moiben Road">
+      </div>
+      <div class="story-content">
+        <h3>Evening Long Run on Moiben Road</h3>
+        <p>As the afternoon heat fades, it's time for the legendary long run. The matatu follows with water, gels, and even a photographer to capture the moment.</p>
+        <span class="highlight"><i class="fas fa-road"></i> Matatu support included</span>
+      </div>
+    </div>
+
+    <!-- 7:00 PM - Dinner & Stories -->
+    <div class="story-row animate">
+      <div class="story-image">
+        <span class="time-badge">7:00 PM</span>
+        <img src="https://i.pinimg.com/736x/61/83/64/618364b4b263463275a0733d273096d9.jpg" alt="Evening dinner and stories with athletes">
+      </div>
+      <div class="story-content">
+        <h3>Dinner & Stories by the Fire</h3>
+        <p>The day winds down with a communal dinner. Share stories with athletes from around the world, learn from local legends, and plan tomorrow's training together.</p>
+        <span class="highlight"><i class="fas fa-fire"></i> Bonfire nights</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- MEETUPS SECTION -->
+  <div class="meetups-section" id="meetups">
+    <div class="meetups-container">
+      <div class="meetups-header animate">
+        <h2>Community Meetups & Social Events</h2>
+        <p>Connect with fellow runners, coaches, and local legends through our weekly gatherings and special events.</p>
+      </div>
+      <div class="meetups-grid">
+        <div class="meetup-card animate">
+          <div class="meetup-icon"><i class="fas fa-users"></i></div>
+          <h3>Sunday Community Run</h3>
+          <p>Every Sunday at 7 AM, join runners from the centre and local clubs for a relaxed 10–15 km social run through the farm trails.</p>
+        </div>
+        <div class="meetup-card animate">
+          <div class="meetup-icon"><i class="fas fa-fire"></i></div>
+          <h3>Bonfire Story Nights</h3>
+          <p>Twice a week, gather around the fire to share stories with elite athletes, coaches, and fellow international visitors.</p>
+        </div>
+        <div class="meetup-card animate">
+          <div class="meetup-icon"><i class="fas fa-chalkboard-teacher"></i></div>
+          <h3>Coaches' Corner</h3>
+          <p>Weekly Q&A sessions with resident coaches — bring your questions about training, nutrition, or racing strategy.</p>
+        </div>
+        <div class="meetup-card animate">
+          <div class="meetup-icon"><i class="fas fa-flag"></i></div>
+          <h3>Cultural Exchange Dinners</h3>
+          <p>Monthly themed dinners where trainees share dishes and traditions from their home countries with the KHPTC family.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FREE TIME ACTIVITIES -->
+  <div class="activities-section" id="activities">
+    <div class="section-title animate">
+      <h2>Free Time & Local Adventures</h2>
+      <p>When you're not training, explore the beauty and culture of Uasin Gishu County and beyond.</p>
+    </div>
+    <div class="activities-grid">
+      <div class="activity-card animate">
+        <img src="https://i.pinimg.com/736x/a8/e4/ef/a8e4ef9a18cbbb947f4d27b488f7a2e1.jpg" alt="Visit Eldoret town">
+        <div class="activity-info">
+          <h3>Eldoret City Tour</h3>
+          <p>Explore the "City of Champions" — visit the Kipchoge Keino Sports Complex, local markets, and historic sites.</p>
+        </div>
+      </div>
+      <div class="activity-card animate">
+        <img src="https://i.pinimg.com/1200x/4e/39/47/4e39473a23da3ed103703780f4f95614.jpg" alt="Nature walk">
+        <div class="activity-info">
+          <h3>Farm & Nature Walks</h3>
+          <p>Stroll through Kazi Mingi Farm's lush fields, spot local birdlife, and enjoy the peaceful Rift Valley landscape.</p>
+        </div>
+      </div>
+      <div class="activity-card animate">
+        <img src="https://i.pinimg.com/736x/7e/00/70/7e0070141f926070a35cbbc147fcdba2.jpg" alt="Fitness hub ">
+        <div class="activity-info">
+          <h3>Fitness & Crossfit in Eldoret</h3>
+          <p>Take a 30-minute trip to Rupaz Fun n Fitness for a swim, boxing session, or full crossfit workout.</p>
+        </div>
+      </div>
+      <div class="activity-card animate">
+        <img src="https://i.pinimg.com/736x/df/f5/09/dff50993164424c51cec5b2912c5d75d.jpg" alt="Safari excursion">
+        <div class="activity-info">
+          <h3>Weekend Safari Options</h3>
+          <p>Ask our team about day trips to nearby attractions or a weekend safari to Lake Nakuru or Maasai Mara.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TESTIMONIALS -->
+  <div class="section-title animate">
+    <h2>Voices from Around the World</h2>
+    <p>Runners from every continent have found their rhythm at KHPTC.</p>
+  </div>
+  <div class="intl-testimonials">
+    <div class="intl-card animate">
+      <img src="https://i.pinimg.com/1200x/21/ad/75/21ad75d02dc89233549db980551021b7.jpg" alt="Mark from USA">
+      <h4>Mark Thompson</h4>
+      <div class="country">🇺🇸 United States</div>
+      <p>"The altitude, the food, the people – everything at KHPTC was perfect. I ran a personal best at the New York Marathon three months later."</p>
+    </div>
+    <div class="intl-card animate">
+      <img src="https://i.pinimg.com/736x/b1/15/53/b11553988186eafb0e301c5f753591a9.jpg" alt="phill from Germany">
+      <h4>Hannah Müller</h4>
+      <div class="country">🇩🇪 Germany</div>
+      <p>"As a female solo traveler, I felt completely safe and welcomed. The training group was supportive and I made lifelong friends."</p>
+    </div>
+    <div class="intl-card animate">
+      <img src="https://i.pinimg.com/1200x/6e/82/0e/6e820e344aa206f91bc0d8490c9609e5.jpg" alt="Takeshi from Japan">
+      <h4>Takeshi Yamamoto</h4>
+      <div class="country">🇯🇵 Japan</div>
+      <p>"I came for two weeks and stayed for a month. The coaches understand every level, and the Eldoret track sessions were world‑class."</p>
+    </div>
+    <div class="intl-card animate">
+      <img src="https://i.pinimg.com/736x/53/a5/65/53a565bdb49a1212118e037cc3dc3795.jpg" alt="Rodrigo from Brazil">
+      <h4>Isabella Costa</h4>
+      <div class="country">🇧🇷 Brazil</div>
+      <p>"Meeting Kipchoge and training on the same roads as the legends was a dream come true. The matatu long runs are unforgettable."</p>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-section">
+    <h2>Ready to Start Your Kenyan Adventure?</h2>
+    <p>Join us at KHPTC – no matter your level, you'll leave faster, stronger, and inspired.</p>
+    <a href="#" class="btn">Plan Your Experience</a>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-col">
+        <a href="#" class="logo">
+          <div class="logo-icon"><img src="https://i.pinimg.com/736x/d2/3d/d8/d23dd8ad0a03ce25635349483c6e7130.jpg" alt="KHPTC Logo"></div>
+          <div class="logo-text"><span>KHPTC</span><span>Home of Champions</span></div>
+        </a>
+        <p style="margin: 20px 0; color: var(--footer-text);">KipKeino High Performance Training Centre – where champions are made. Elite training near Eldoret, Kenya.</p>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+          <a href="#"><i class="fab fa-pinterest"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+          <li><a href="training.html">Training</a></li>
+          <li><a href="programs.html">Programs</a></li>
+          <li><a href="experience.html">Experiences</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <ul class="footer-links">
+          <li><a href="#"><i class="fas fa-chevron-right"></i> Terms and Conditions</a></li>
+          <li><a href="#"><i class="fas fa-chevron-right"></i> Privacy Policy</a></li>
+          <li><a href="#"><i class="fas fa-chevron-right"></i> Cancellation Policy</a></li>
+          <li><a href="#"><i class="fas fa-chevron-right"></i> Careers</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Training Programs</h4>
+        <ul class="footer-links">
+          <li><a href="#"><i class="fas fa-chevron-right"></i> Complete Package</a></li>
+          <li><a href="#"><i class="fas fa-chevron-right"></i> Elite Runner's</a></li>
+          <li><a href="#"><i class="fas fa-chevron-right"></i> Pro Athlete</a></li>
+          <li><a href="#"><i class="fas fa-chevron-right"></i> Group Camps</a></li>
+          <li><a href="#"><i class="fas fa-chevron-right"></i> Personal Training</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact Us</h4>
+        <ul class="contact-info">
+          <li><i class="fas fa-phone-alt"></i> +254 712 345 678</li>
+          <li><i class="fas fa-envelope"></i> info@khptc.co.ke</li>
+          <li><i class="fas fa-clock"></i> Mon-Fri: 6AM - 8PM, Sat: 7AM - 6PM</li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Training Promise</h4>
+        <div class="logo-icon"><i class="fas fa-running"></i></div>
+        <ul style="list-style: none; color: var(--footer-text);">Uncompromising commitment to excellence, integrity, and athlete development. We empower champions through world-class training and support.</ul>
+      </div>
+    </div>
+    <div class="copyright"><p>&copy; 2026 KHPTC. All rights reserved. | Designed by Keith Kili</p></div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const toggleBtn = document.getElementById('themeToggle');
+      const themeIcon = document.getElementById('themeIcon');
+      const html = document.documentElement;
+
+      const storedTheme = localStorage.getItem('theme');
+      if (storedTheme === 'dark') {
+        html.setAttribute('data-theme', 'dark');
+        themeIcon.className = 'fas fa-sun';
+      } else if (storedTheme === 'light') {
+        html.removeAttribute('data-theme');
+        themeIcon.className = 'fas fa-moon';
+      } else {
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        if (prefersDark) {
+          html.setAttribute('data-theme', 'dark');
+          themeIcon.className = 'fas fa-sun';
+        }
+      }
+
+      toggleBtn.addEventListener('click', function() {
+        if (html.getAttribute('data-theme') === 'dark') {
+          html.removeAttribute('data-theme');
+          themeIcon.className = 'fas fa-moon';
+          localStorage.setItem('theme', 'light');
+        } else {
+          html.setAttribute('data-theme', 'dark');
+          themeIcon.className = 'fas fa-sun';
+          localStorage.setItem('theme', 'dark');
+        }
+      });
+
+      const animateElements = document.querySelectorAll('.animate');
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.style.animationPlayState = 'running';
+            entry.target.style.opacity = '1';
+          }
+        });
+      }, { threshold: 0.1 });
+
+      animateElements.forEach(element => {
+        element.style.opacity = '0';
+        element.style.animationPlayState = 'paused';
+        observer.observe(element);
+      });
+
+      window.addEventListener('scroll', function() {
+        const header = document.querySelector('header');
+        if (window.scrollY > 50) {
+          header.style.padding = '10px 0';
+        } else {
+          header.style.padding = '15px 0';
+        }
+      });
+    });
+  </script>
+</body>
+</html>
