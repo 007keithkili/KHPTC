@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KHPTC | About – Legacy of Champions</title>
+  <!-- Font Awesome 6 (Free) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;700;800&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --primary: #0a4a7c;
+      --secondary: #18a3a7;
+      --accent: #f39c12;
+      --dark: #1a2a3a;
+      --light: #f8f9fa;
+      --text: #333;
+      --light-text: #f0f0f0;
+      --bg-body: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+      --bg-card: #ffffff;
+      --bg-footer: var(--dark);
+      --border-light: #eee;
+      --shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+      --shadow-hover: 0 25px 60px rgba(0, 0, 0, 0.15);
+      --text-muted: #666;
+      --footer-text: rgba(255, 255, 255, 0.7);
+    }
+
+    [data-theme="dark"] {
+      --primary: #4a9ed6;
+      --secondary: #3bc8cc;
+      --accent: #f1c40f;
+      --dark: #e8edf2;
+      --text: #e0e0e0;
+      --bg-body: #121212;
+      --bg-card: #1e1e1e;
+      --bg-footer: #0a0a0a;
+      --border-light: #333;
+      --shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+      --text-muted: #aaa;
+      --footer-text: rgba(255, 255, 255, 0.6);
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      color: var(--text);
+      background: var(--bg-body);
+      line-height: 1.6;
+      transition: background 0.3s, color 0.3s;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4, h5 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      color: var(--dark);
+      line-height: 1.3;
+    }
+
+    .btn {
+      padding: 12px 28px;
+      border-radius: 30px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+    .btn-primary { background: linear-gradient(135deg, var(--primary), var(--secondary)); color: white; }
+    .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(10,74,124,0.3); }
+    .btn-light { background: #fff; color: var(--primary); }
+    .btn-light:hover { background: #f0f0f0; transform: translateY(-3px); }
+
+    .section-title { text-align: center; margin-bottom: 60px; }
+    .section-title h2 { font-size: 3rem; margin-bottom: 15px; position: relative; display: inline-block; }
+    .section-title h2:after { content: ''; position: absolute; width: 80px; height: 5px; background: var(--accent); bottom: -10px; left: 50%; transform: translateX(-50%); border-radius: 5px; }
+    .section-title p { font-size: 1.2rem; color: var(--text-muted); max-width: 700px; margin: 25px auto 0; }
+
+    /* HEADER */
+    header { background: rgba(255, 255, 255, 0.95); box-shadow: 0 5px 20px rgba(0,0,0,0.08); width: 100%; top: 0; z-index: 1000; padding: 15px 0; transition: all 0.4s ease; }
+    .header-container { max-width: 1400px; margin: 0 auto; padding: 0 40px; display: flex; justify-content: space-between; align-items: center; }
+    .logo { display: flex; align-items: center; text-decoration: none; }
+    .logo-icon { width: 50px; height: 50px; background: linear-gradient(135deg, var(--primary), var(--secondary)); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 12px; box-shadow: 0 4px 12px rgba(10,74,124,0.2); overflow: hidden; }
+    .logo-icon img { width: 100%; height: 100%; object-fit: cover; }
+    .logo-text { display: flex; flex-direction: column; }
+    .logo-text span:first-child { font-family: 'Playfair Display', serif; font-weight: 800; font-size: 28px; color: var(--primary); letter-spacing: -0.5px; }
+    .logo-text span:last-child { font-size: 12px; color: var(--secondary); letter-spacing: 2px; text-transform: uppercase; margin-top: -5px; }
+    nav ul { display: flex; list-style: none; }
+    nav ul li { margin: 0 15px; }
+    nav ul li a { text-decoration: none; color: var(--dark); font-weight: 600; font-size: 16px; position: relative; padding: 8px 0; transition: all 0.3s ease; }
+    nav ul li a:after { content: ''; position: absolute; width: 0; height: 3px; bottom: 0; left: 0; background: var(--accent); border-radius: 3px; transition: width 0.3s ease; }
+    nav ul li a:hover:after { width: 100%; }
+    .header-actions { display: flex; align-items: center; gap: 20px; }
+    .theme-toggle { background: none; border: 2px solid var(--primary); color: var(--primary); border-radius: 50%; width: 44px; height: 44px; font-size: 1.2rem; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease; background: transparent; }
+    .theme-toggle:hover { background: var(--primary); color: white; transform: rotate(20deg); }
+    [data-theme="dark"] .theme-toggle { border-color: var(--accent); color: var(--accent); }
+
+    /* HERO */
+    .hero { min-height: 60vh; display: flex; align-items: center; padding: 140px 0 60px; position: relative; overflow: hidden; }
+    .hero::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(rgba(26,42,58,0.85), rgba(26,42,58,0.2)), url('https://i.pinimg.com/736x/84/2b/1d/842b1daf68ff85f038692de2ed743fee.jpg') center/cover no-repeat; z-index: -1; }
+    .hero-content { max-width: 1400px; margin: 0 auto; padding: 0 40px; width: 100%; }
+    .hero-text { max-width: 800px; animation: fadeInUp 1s ease; }
+    .hero h1 { font-size: 3.8rem; margin-bottom: 20px; color: white; line-height: 1.2; }
+    .hero h1 span { color: var(--accent); }
+    .hero p { font-size: 1.3rem; margin-bottom: 30px; color: rgba(255,255,255,0.9); }
+
+    /* KIPCHOGE KEINO PROFILE */
+    .profile-section { max-width: 1200px; margin: 70px auto; padding: 0 30px; display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
+    .profile-image { position: relative; }
+    .profile-image img { width: 100%; height: 450px; object-fit: cover; border-radius: 20px; box-shadow: var(--shadow); }
+    .profile-image .badge { position: absolute; bottom: -20px; right: -20px; background: var(--accent); color: white; padding: 15px 25px; border-radius: 15px; text-align: center; box-shadow: 0 10px 30px rgba(243,156,18,0.4); }
+    .profile-image .badge strong { display: block; font-size: 1.5rem; }
+    .profile-content h2 { font-size: 2.5rem; margin-bottom: 20px; }
+    .profile-content h3 { font-size: 1.3rem; color: var(--secondary); margin-bottom: 20px; }
+    .profile-content p { color: var(--text-muted); margin-bottom: 20px; line-height: 1.8; }
+
+    /* STATS / MILESTONES */
+    .stats-section { background: linear-gradient(135deg, #1a3a29 0%, #0e6878 100%); padding: 70px 20px; color: white; margin: 60px 0; }
+    .stats-container { max-width: 1200px; margin: 0 auto; }
+    .stats-header { text-align: center; margin-bottom: 50px; }
+    .stats-header h2 { color: white; font-size: 2.8rem; margin-bottom: 15px; }
+    .stats-header p { color: rgba(255,255,255,0.85); font-size: 1.2rem; }
+    .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; }
+    .stat-item { text-align: center; padding: 20px; }
+    .stat-number { font-size: 3.5rem; font-weight: 800; color: #f1c40f; font-family: 'Playfair Display', serif; }
+    .stat-label { font-size: 1.1rem; color: rgba(255,255,255,0.9); margin-top: 10px; }
+
+    /* MISSION & VALUES */
+    .mission-section { max-width: 1200px; margin: 70px auto; padding: 0 30px; }
+    .mission-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+    .mission-card { background: var(--bg-card); border-radius: 20px; padding: 40px; text-align: center; box-shadow: var(--shadow); transition: all 0.4s; }
+    .mission-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-hover); }
+    .mission-icon { font-size: 3rem; color: var(--accent); margin-bottom: 20px; }
+    .mission-card h3 { font-size: 1.8rem; margin-bottom: 15px; }
+    .mission-card p { color: var(--text-muted); }
+
+    /* TIMELINE */
+    .timeline-section { max-width: 900px; margin: 70px auto; padding: 0 30px; }
+    .timeline { position: relative; padding-left: 40px; }
+    .timeline:before { content: ''; position: absolute; left: 15px; top: 0; bottom: 0; width: 3px; background: var(--accent); border-radius: 3px; }
+    .timeline-item { position: relative; margin-bottom: 40px; }
+    .timeline-item:before { content: ''; position: absolute; left: -33px; top: 8px; width: 15px; height: 15px; border-radius: 50%; background: var(--accent); border: 3px solid var(--bg-card); }
+    .timeline-year { font-weight: 800; font-size: 1.3rem; color: var(--primary); margin-bottom: 8px; }
+    .timeline-item h3 { font-size: 1.5rem; margin-bottom: 10px; }
+    .timeline-item p { color: var(--text-muted); }
+
+    /* AFFILIATIONS */
+    .affiliations { max-width: 1200px; margin: 70px auto; padding: 0 30px; }
+    .affiliations-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px; }
+    .affiliation-card { background: var(--bg-card); border-radius: 20px; padding: 30px; text-align: center; box-shadow: var(--shadow); transition: all 0.3s; }
+    .affiliation-card:hover { transform: translateY(-5px); }
+    .affiliation-card i { font-size: 2.5rem; color: var(--primary); margin-bottom: 15px; }
+    .affiliation-card h4 { font-size: 1.3rem; margin-bottom: 10px; }
+    .affiliation-card p { font-size: 0.9rem; color: var(--text-muted); }
+
+    /* FOOTER */
+    footer { background: var(--bg-footer); color: var(--light-text); padding: 80px 0 40px; position: relative; }
+    .footer-container { max-width: 1400px; margin: 0 auto; padding: 0 40px; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 40px; }
+    .footer-col h4 { color: white; font-size: 1.4rem; margin-bottom: 25px; position: relative; padding-bottom: 12px; }
+    .footer-col h4:after { content: ''; position: absolute; width: 50px; height: 3px; background: var(--accent); bottom: 0; left: 0; }
+    .footer-links { list-style: none; }
+    .footer-links li { margin-bottom: 12px; }
+    .footer-links a { color: var(--footer-text); text-decoration: none; transition: all 0.3s; }
+    .footer-links a i { margin-right: 8px; color: var(--accent); }
+    .footer-links a:hover { color: white; padding-left: 5px; }
+    .social-links { display: flex; gap: 12px; margin-top: 15px; }
+    .social-links a { display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 50%; background: rgba(255,255,255,0.1); color: white; }
+    .social-links a:hover { background: var(--accent); }
+    .contact-info li { display: flex; margin-bottom: 15px; color: var(--footer-text); }
+    .contact-info li i { color: var(--accent); margin-right: 12px; }
+    .copyright { text-align: center; padding-top: 30px; margin-top: 50px; border-top: 1px solid rgba(255,255,255,0.1); color: var(--footer-text); font-size: 0.9rem; }
+
+    @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+    .animate { animation: fadeInUp 0.8s ease forwards; opacity: 0; }
+
+    @media (max-width: 900px) {
+      .header-container { flex-direction: column; padding: 15px 20px; }
+      .logo { margin-bottom: 15px; }
+      nav ul { margin: 15px 0; flex-wrap: wrap; justify-content: center; }
+      .hero h1 { font-size: 2.8rem; }
+      .profile-section { grid-template-columns: 1fr; }
+      .profile-image img { height: 300px; }
+    }
+    @media (max-width: 600px) {
+      .hero h1 { font-size: 2.4rem; }
+      .section-title h2, .stats-header h2 { font-size: 2.2rem; }
+      .stat-number { font-size: 2.5rem; }
+    }
+  </style>
+</head>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="header-container">
+      <a href="#" class="logo">
+        <div class="logo-icon"><img src="https://i.pinimg.com/736x/d2/3d/d8/d23dd8ad0a03ce25635349483c6e7130.jpg" alt="KHPTC Logo"></div>
+        <div class="logo-text"><span>KHPTC</span><span>KipKeino High Performance Training Centre</span></div>
+      </a>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="training.html">Training</a></li>
+          <li><a href="programs.html">Programs</a></li>
+          <li><a href="experience.html">Experiences</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode"><i class="fas fa-moon" id="themeIcon"></i></button>
+        <a href="#" class="btn btn-primary">Join Program</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-content">
+      <div class="hero-text">
+        <h1>The Legacy of <span>Kipchoge Keino</span></h1>
+        <p>Discover the story behind Africa's premier high-performance training centre – where Olympic dreams are nurtured on the red soil of Eldoret.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- KIPCHOGE KEINO PROFILE -->
+  <div class="profile-section animate">
+    <div class="profile-image">
+      <img src="https://i.pinimg.com/736x/93/f4/56/93f456ba03536d3747b6dd1c67905405.jpg" alt="Kipchoge Keino - Olympic Legend">
+      <div class="badge">
+        <strong>2× Olympic Gold</strong>
+        <span>1968 & 1972</span>
+      </div>
+    </div>
+    <div class="profile-content">
+      <h2>Kipchoge Keino</h2>
+      <h3>Olympic Champion | Founder & Visionary</h3>
+      <p>Kipchoge Keino is one of the greatest distance runners in history. He won Olympic gold in the 1500m at Mexico City 1968 and the 3000m steeplechase at Munich 1972, inspiring generations of Kenyan athletes.</p>
+      <p>After retiring, Keino dedicated his life to nurturing young talent. In 2002, he established the Kip Keino High Performance Training Centre on his family farm — Kazi Mingi — to provide world-class training facilities for promising athletes from Kenya and beyond.</p>
+      <p>The centre has since become an IOC-recognized High Performance Training Centre, listed by the IAAF, and a home for middle and long-distance champions, refugee athlete scholarship holders, and national teams from around the world.</p>
+    </div>
+  </div>
+
+  <!-- STATS / MILESTONES -->
+  <div class="stats-section">
+    <div class="stats-container">
+      <div class="stats-header animate">
+        <h2>Our Impact Since 2002</h2>
+        <p>Two decades of developing champions and changing lives through sport.</p>
+      </div>
+      <div class="stats-grid">
+        <div class="stat-item animate">
+          <div class="stat-number">200+</div>
+          <div class="stat-label">Athletes Trained Annually</div>
+        </div>
+        <div class="stat-item animate">
+          <div class="stat-number">40+</div>
+          <div class="stat-label">Countries Represented</div>
+        </div>
+        <div class="stat-item animate">
+          <div class="stat-number">15+</div>
+          <div class="stat-label">Olympic & World Medalists</div>
+        </div>
+        <div class="stat-item animate">
+          <div class="stat-number">350</div>
+          <div class="stat-label">Acres of Training Grounds</div>
+        </div>
+        <div class="stat-item animate">
+          <div class="stat-number">2,400m</div>
+          <div class="stat-label">Altitude (High-Performance)</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MISSION & VALUES -->
+  <div class="mission-section">
+    <div class="section-title animate">
+      <h2>Our Mission & Values</h2>
+      <p>What drives us every day at KHPTC</p>
+    </div>
+    <div class="mission-grid">
+      <div class="mission-card animate">
+        <div class="mission-icon"><i class="fas fa-medal"></i></div>
+        <h3>Excellence</h3>
+        <p>We strive for the highest standards in everything we do — from training quality to athlete welfare — believing that champions are made through discipline and dedication.</p>
+      </div>
+      <div class="mission-card animate">
+        <div class="mission-icon"><i class="fas fa-hands-helping"></i></div>
+        <h3>Inclusivity</h3>
+        <p>We welcome athletes of all levels and backgrounds, including refugee scholarship holders and national teams, fostering a diverse and supportive community.</p>
+      </div>
+      <div class="mission-card animate">
+        <div class="mission-icon"><i class="fas fa-leaf"></i></div>
+        <h3>Integrity</h3>
+        <p>We are committed to clean sport, ethical coaching, and creating a positive legacy for future generations of Kenyan runners.</p>
+      </div>
+      <div class="mission-card animate">
+        <div class="mission-icon"><i class="fas fa-globe-africa"></i></div>
+        <h3>Community</h3>
+        <p>KHPTC is more than a training centre — it's a family that supports local communities, empowers youth, and celebrates the rich running culture of the Rift Valley.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- TIMELINE -->
+  <div class="timeline-section">
+    <div class="section-title animate">
+      <h2>Our Journey</h2>
+      <p>Key milestones in the KHPTC story</p>
+    </div>
+    <div class="timeline">
+      <div class="timeline-item animate">
+        <div class="timeline-year">2002</div>
+        <h3>The Centre Opens</h3>
+        <p>Kipchoge Keino establishes the High Performance Training Centre on Kazi Mingi Farm, just outside Eldoret, to provide elite training facilities for Kenyan athletes.</p>
+      </div>
+      <div class="timeline-item animate">
+        <div class="timeline-year">2008</div>
+        <h3>IAAF Recognition</h3>
+        <p>The centre is officially listed as a High Performance Training Centre by the International Association of Athletics Federations (IAAF).</p>
+      </div>
+      <div class="timeline-item animate">
+        <div class="timeline-year">2012</div>
+        <h3>Olympic Success</h3>
+        <p>Athletes trained at KHPTC represent Kenya at the London Olympics, winning multiple medals in middle and long-distance events.</p>
+      </div>
+      <div class="timeline-item animate">
+        <div class="timeline-year">2016</div>
+        <h3>IOC Recognition</h3>
+        <p>KHPTC receives formal recognition from the International Olympic Committee (IOC) as an elite training facility, expanding its international reach.</p>
+      </div>
+      <div class="timeline-item animate">
+        <div class="timeline-year">2019</div>
+        <h3>Refugee Athlete Program</h3>
+        <p>The centre partners with World Athletics and UNHCR to host refugee athlete scholarship holders, providing training and education opportunities.</p>
+      </div>
+      <div class="timeline-item animate">
+        <div class="timeline-year">2023</div>
+        <h3>Continued Growth</h3>
+        <p>KHPTC expands its facilities with upgraded residential hostels, a modern gym, and enhanced links to the Kipchoge Keino Sports Complex in Eldoret.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- AFFILIATIONS -->
+  <div class="affiliations">
+    <div class="section-title animate">
+      <h2>Our Partners & Affiliations</h2>
+      <p>Recognized by the world's leading sports organizations</p>
+    </div>
+    <div class="affiliations-grid">
+      <div class="affiliation-card animate">
+        <i class="fas fa-olympic-rings"></i>
+        <h4>International Olympic Committee</h4>
+        <p>Recognized High Performance Training Centre</p>
+      </div>
+      <div class="affiliation-card animate">
+        <i class="fas fa-running"></i>
+        <h4>World Athletics (IAAF)</h4>
+        <p>Listed High Performance Training Centre</p>
+      </div>
+      <div class="affiliation-card animate">
+        <i class="fas fa-flag"></i>
+        <h4>Athletics Kenya</h4>
+        <p>National federation partnership</p>
+      </div>
+      <div class="affiliation-card animate">
+        <i class="fas fa-globe"></i>
+        <h4>UNHCR</h4>
+        <p>Refugee athlete scholarship program</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div style="text-align: center; margin: 60px 0; padding: 0 20px;">
+    <h2 style="font-size: 2.5rem; margin-bottom: 20px;">Be Part of the Legacy</h2>
+    <p style="color: var(--text-muted); margin-bottom: 30px; font-size: 1.2rem;">Train where champions are made. Join us at KHPTC.</p>
+    <a href="#" class="btn btn-primary" style="padding: 15px 40px; font-size: 1.1rem;">Contact Us Today</a>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-col">
+        <a href="#" class="logo">
+          <div class="logo-icon"><img src="https://i.pinimg.com/736x/d2/3d/d8/d23dd8ad0a03ce25635349483c6e7130.jpg" alt="KHPTC Logo"></div>
+          <div class="logo-text"><span>KHPTC</span><span>Home of Champions</span></div>
+        </a>
+        <p style="margin: 20px 0; color: var(--footer-text);">KipKeino High Performance Training Centre – where champions are made. Elite training near Eldoret, Kenya.</p>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+          <a href="#"><i class="fab fa-pinterest"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="training.html">Training</a></li>
+          <li><a href="programs.html">Programs</a></li>
+          <li><a href="experience.html">Experiences</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <ul class="footer-links">
+          <li><a href="#"><i class="fas fa-chevron-right"></i> Terms and Conditions</a></li>
+          <li><a href="#"><i class="fas fa-chevron-right"></i> Privacy Policy</a></li>
+          <li><a href="#"><i class="fas fa-chevron-right"></i> Cancellation Policy</a></li>
+          <li><a href="#"><i class="fas fa-chevron-right"></i> Careers</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Training Programs</h4>
+        <ul class="footer-links">
+          <li><a href="#"><i class="fas fa-chevron-right"></i> Complete Package</a></li>
+          <li><a href="#"><i class="fas fa-chevron-right"></i> Elite Runner's</a></li>
+          <li><a href="#"><i class="fas fa-chevron-right"></i> Pro Athlete</a></li>
+          <li><a href="#"><i class="fas fa-chevron-right"></i> Group Camps</a></li>
+          <li><a href="#"><i class="fas fa-chevron-right"></i> Personal Training</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact Us</h4>
+        <ul class="contact-info">
+          <li><i class="fas fa-phone-alt"></i> +254 712 345 678</li>
+          <li><i class="fas fa-envelope"></i> info@khptc.co.ke</li>
+          <li><i class="fas fa-clock"></i> Mon-Fri: 6AM - 8PM, Sat: 7AM - 6PM</li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Training Promise</h4>
+        <div class="logo-icon"><i class="fas fa-running"></i></div>
+        <ul style="list-style: none; color: var(--footer-text);">Uncompromising commitment to excellence, integrity, and athlete development. We empower champions through world-class training and support.</ul>
+      </div>
+    </div>
+    <div class="copyright"><p>&copy; 2026 KHPTC. All rights reserved. | Designed by Keith Kili</p></div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const toggleBtn = document.getElementById('themeToggle');
+      const themeIcon = document.getElementById('themeIcon');
+      const html = document.documentElement;
+
+      const storedTheme = localStorage.getItem('theme');
+      if (storedTheme === 'dark') {
+        html.setAttribute('data-theme', 'dark');
+        themeIcon.className = 'fas fa-sun';
+      } else if (storedTheme === 'light') {
+        html.removeAttribute('data-theme');
+        themeIcon.className = 'fas fa-moon';
+      } else {
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        if (prefersDark) {
+          html.setAttribute('data-theme', 'dark');
+          themeIcon.className = 'fas fa-sun';
+        }
+      }
+
+      toggleBtn.addEventListener('click', function() {
+        if (html.getAttribute('data-theme') === 'dark') {
+          html.removeAttribute('data-theme');
+          themeIcon.className = 'fas fa-moon';
+          localStorage.setItem('theme', 'light');
+        } else {
+          html.setAttribute('data-theme', 'dark');
+          themeIcon.className = 'fas fa-sun';
+          localStorage.setItem('theme', 'dark');
+        }
+      });
+
+      const animateElements = document.querySelectorAll('.animate');
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.style.animationPlayState = 'running';
+            entry.target.style.opacity = '1';
+          }
+        });
+      }, { threshold: 0.1 });
+
+      animateElements.forEach(element => {
+        element.style.opacity = '0';
+        element.style.animationPlayState = 'paused';
+        observer.observe(element);
+      });
+
+      window.addEventListener('scroll', function() {
+        const header = document.querySelector('header');
+        if (window.scrollY > 50) {
+          header.style.padding = '10px 0';
+        } else {
+          header.style.padding = '15px 0';
+        }
+      });
+    });
+  </script>
+</body>
+</html>
