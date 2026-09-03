@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KHPTC | Contact Us – Reach Out to Champions</title>
+  <!-- Font Awesome 6 (Free) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;700;800&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --primary: #0a4a7c;
+      --secondary: #18a3a7;
+      --accent: #f39c12;
+      --dark: #1a2a3a;
+      --light: #f8f9fa;
+      --text: #333;
+      --light-text: #f0f0f0;
+      --bg-body: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+      --bg-card: #ffffff;
+      --bg-footer: var(--dark);
+      --border-light: #eee;
+      --shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+      --shadow-hover: 0 25px 60px rgba(0, 0, 0, 0.15);
+      --text-muted: #666;
+      --footer-text: rgba(255, 255, 255, 0.7);
+    }
+
+    [data-theme="dark"] {
+      --primary: #4a9ed6;
+      --secondary: #3bc8cc;
+      --accent: #f1c40f;
+      --dark: #e8edf2;
+      --text: #e0e0e0;
+      --bg-body: #121212;
+      --bg-card: #1e1e1e;
+      --bg-footer: #0a0a0a;
+      --border-light: #333;
+      --shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+      --text-muted: #aaa;
+      --footer-text: rgba(255, 255, 255, 0.6);
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      color: var(--text);
+      background: var(--bg-body);
+      line-height: 1.6;
+      transition: background 0.3s, color 0.3s;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4, h5 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      color: var(--dark);
+      line-height: 1.3;
+    }
+
+    .btn {
+      padding: 12px 28px;
+      border-radius: 30px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+    .btn-primary { background: linear-gradient(135deg, var(--primary), var(--secondary)); color: white; }
+    .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(10,74,124,0.3); }
+
+    .section-title { text-align: center; margin-bottom: 60px; }
+    .section-title h2 { font-size: 3rem; margin-bottom: 15px; position: relative; display: inline-block; }
+    .section-title h2:after { content: ''; position: absolute; width: 80px; height: 5px; background: var(--accent); bottom: -10px; left: 50%; transform: translateX(-50%); border-radius: 5px; }
+    .section-title p { font-size: 1.2rem; color: var(--text-muted); max-width: 700px; margin: 25px auto 0; }
+
+    /* HEADER */
+    header { background: rgba(255, 255, 255, 0.95); box-shadow: 0 5px 20px rgba(0,0,0,0.08); width: 100%; top: 0; z-index: 1000; padding: 15px 0; transition: all 0.4s ease; }
+    .header-container { max-width: 1400px; margin: 0 auto; padding: 0 40px; display: flex; justify-content: space-between; align-items: center; }
+    .logo { display: flex; align-items: center; text-decoration: none; }
+    .logo-icon { width: 50px; height: 50px; background: linear-gradient(135deg, var(--primary), var(--secondary)); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 12px; box-shadow: 0 4px 12px rgba(10,74,124,0.2); overflow: hidden; }
+    .logo-icon img { width: 100%; height: 100%; object-fit: cover; }
+    .logo-text { display: flex; flex-direction: column; }
+    .logo-text span:first-child { font-family: 'Playfair Display', serif; font-weight: 800; font-size: 28px; color: var(--primary); letter-spacing: -0.5px; }
+    .logo-text span:last-child { font-size: 12px; color: var(--secondary); letter-spacing: 2px; text-transform: uppercase; margin-top: -5px; }
+    nav ul { display: flex; list-style: none; }
+    nav ul li { margin: 0 15px; }
+    nav ul li a { text-decoration: none; color: var(--dark); font-weight: 600; font-size: 16px; position: relative; padding: 8px 0; transition: all 0.3s ease; }
+    nav ul li a:after { content: ''; position: absolute; width: 0; height: 3px; bottom: 0; left: 0; background: var(--accent); border-radius: 3px; transition: width 0.3s ease; }
+    nav ul li a:hover:after { width: 100%; }
+    .header-actions { display: flex; align-items: center; gap: 20px; }
+    .theme-toggle { background: none; border: 2px solid var(--primary); color: var(--primary); border-radius: 50%; width: 44px; height: 44px; font-size: 1.2rem; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease; background: transparent; }
+    .theme-toggle:hover { background: var(--primary); color: white; transform: rotate(20deg); }
+    [data-theme="dark"] .theme-toggle { border-color: var(--accent); color: var(--accent); }
+
+    /* HERO */
+    .hero { min-height: 50vh; display: flex; align-items: center; padding: 140px 0 60px; position: relative; overflow: hidden; }
+    .hero::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(rgba(26,42,58,0.85), rgba(26,42,58,0.9)), url('https://i.pinimg.com/736x/02/83/78/02837855bc30a32526be488cdef4d621.jpg') center/cover no-repeat; z-index: -1; }
+    .hero-content { max-width: 1400px; margin: 0 auto; padding: 0 40px; width: 100%; }
+    .hero-text { max-width: 800px; animation: fadeInUp 1s ease; }
+    .hero h1 { font-size: 3.8rem; margin-bottom: 20px; color: white; line-height: 1.2; }
+    .hero h1 span { color: var(--accent); }
+    .hero p { font-size: 1.3rem; margin-bottom: 30px; color: rgba(255,255,255,0.9); }
+
+    /* CONTACT INFO CARDS */
+    .contact-info-section { max-width: 1300px; margin: 70px auto; padding: 0 30px; }
+    .info-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+    .info-card { background: var(--bg-card); border-radius: 20px; padding: 40px; text-align: center; box-shadow: var(--shadow); transition: all 0.4s; }
+    .info-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-hover); }
+    .info-card i { font-size: 3rem; color: var(--accent); margin-bottom: 20px; }
+    .info-card h3 { font-size: 1.6rem; margin-bottom: 15px; }
+    .info-card p { color: var(--text-muted); margin-bottom: 10px; }
+    .info-card a { color: var(--primary); text-decoration: none; font-weight: 600; }
+    .info-card a:hover { text-decoration: underline; }
+
+    /* CONTACT FORM + MAP */
+    .contact-main { max-width: 1300px; margin: 70px auto; padding: 0 30px; display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: start; }
+    .contact-form { background: var(--bg-card); border-radius: 25px; padding: 50px; box-shadow: var(--shadow); }
+    .contact-form h3 { font-size: 2rem; margin-bottom: 30px; text-align: center; }
+    .form-group { margin-bottom: 25px; }
+    .form-group label { display: block; font-weight: 600; margin-bottom: 8px; color: var(--text); }
+    .form-group input, .form-group select, .form-group textarea {
+      width: 100%; padding: 14px 20px; border: 2px solid var(--border-light);
+      border-radius: 10px; font-size: 1rem; font-family: 'Montserrat', sans-serif;
+      background: var(--bg-card); color: var(--text); transition: all 0.3s;
+    }
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+      outline: none; border-color: var(--secondary); box-shadow: 0 0 0 3px rgba(24,163,167,0.1);
+    }
+    .form-group textarea { resize: vertical; min-height: 120px; }
+    .submit-btn { width: 100%; padding: 16px; font-size: 1.1rem; font-weight: 700; }
+    .map-container { border-radius: 25px; overflow: hidden; box-shadow: var(--shadow); height: 100%; min-height: 400px; }
+    .map-container iframe { width: 100%; height: 100%; min-height: 400px; border: none; }
+
+    /* FAQ SECTION */
+    .faq-section { max-width: 900px; margin: 70px auto; padding: 0 30px; }
+    .faq-item { background: var(--bg-card); border-radius: 15px; margin-bottom: 15px; box-shadow: var(--shadow); overflow: hidden; }
+    .faq-question { padding: 20px 30px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-weight: 600; font-size: 1.1rem; }
+    .faq-question i { transition: transform 0.3s; color: var(--accent); }
+    .faq-answer { padding: 0 30px; max-height: 0; overflow: hidden; transition: all 0.4s ease; color: var(--text-muted); }
+    .faq-item.active .faq-answer { padding: 0 30px 20px; max-height: 200px; }
+    .faq-item.active .faq-question i { transform: rotate(180deg); }
+
+    /* SOCIAL LINKS */
+    .social-connect { text-align: center; margin: 70px 0; padding: 0 30px; }
+    .social-connect h3 { font-size: 2rem; margin-bottom: 30px; }
+    .social-buttons { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; }
+    .social-btn { display: flex; align-items: center; gap: 10px; padding: 15px 25px; border-radius: 50px; text-decoration: none; font-weight: 600; transition: all 0.3s; color: white; }
+    .social-btn:hover { transform: translateY(-3px); }
+    .social-btn.facebook { background: #1877f2; }
+    .social-btn.instagram { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
+    .social-btn.twitter { background: #1da1f2; }
+    .social-btn.youtube { background: #ff0000; }
+    .social-btn.whatsapp { background: #25d366; }
+
+    /* FOOTER */
+    footer { background: var(--bg-footer); color: var(--light-text); padding: 80px 0 40px; position: relative; }
+    .footer-container { max-width: 1400px; margin: 0 auto; padding: 0 40px; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 40px; }
+    .footer-col h4 { color: white; font-size: 1.4rem; margin-bottom: 25px; position: relative; padding-bottom: 12px; }
+    .footer-col h4:after { content: ''; position: absolute; width: 50px; height: 3px; background: var(--accent); bottom: 0; left: 0; }
+    .footer-links { list-style: none; }
+    .footer-links li { margin-bottom: 12px; }
+    .footer-links a { color: var(--footer-text); text-decoration: none; transition: all 0.3s; }
+    .footer-links a i { margin-right: 8px; color: var(--accent); }
+    .footer-links a:hover { color: white; padding-left: 5px; }
+    .social-links { display: flex; gap: 12px; margin-top: 15px; }
+    .social-links a { display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 50%; background: rgba(255,255,255,0.1); color: white; }
+    .social-links a:hover { background: var(--accent); }
+    .contact-info li { display: flex; margin-bottom: 15px; color: var(--footer-text); }
+    .contact-info li i { color: var(--accent); margin-right: 12px; }
+    .copyright { text-align: center; padding-top: 30px; margin-top: 50px; border-top: 1px solid rgba(255,255,255,0.1); color: var(--footer-text); font-size: 0.9rem; }
+
+    @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+    .animate { animation: fadeInUp 0.8s ease forwards; opacity: 0; }
+
+    @media (max-width: 900px) {
+      .header-container { flex-direction: column; padding: 15px 20px; }
+      .logo { margin-bottom: 15px; }
+      nav ul { margin: 15px 0; flex-wrap: wrap; justify-content: center; }
+      .hero h1 { font-size: 2.8rem; }
+      .contact-main { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 600px) {
+      .hero h1 { font-size: 2.4rem; }
+      .section-title h2 { font-size: 2.2rem; }
+      .social-buttons { flex-direction: column; align-items: center; }
+    }
+  </style>
+</head>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="header-container">
+      <a href="#" class="logo">
+        <div class="logo-icon"><img src="https://i.pinimg.com/736x/d2/3d/d8/d23dd8ad0a03ce25635349483c6e7130.jpg" alt="KHPTC Logo"></div>
+        <div class="logo-text"><span>KHPTC</span><span>KipKeino High Performance Training Centre</span></div>
+      </a>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="traning.html">Training</a></li>
+          <li><a href="programs.html">Programs</a></li>
+          <li><a href="experience.html">Experiences</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode"><i class="fas fa-moon" id="themeIcon"></i></button>
+        <a href="#" class="btn btn-primary">Join Program</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-content">
+      <div class="hero-text">
+        <h1>Get in <span>Touch</span></h1>
+        <p>Have questions about training at KHPTC? We're here to help you plan your journey to the Home of Champions.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT INFO CARDS -->
+  <div class="contact-info-section">
+    <div class="info-grid">
+      <div class="info-card animate">
+        <i class="fas fa-phone-alt"></i>
+        <h3>Call Us</h3>
+        <p>Speak directly with our team</p>
+        <a href="tel:+254713555717">+254 713 555717</a>
+      </div>
+      <div class="info-card animate">
+        <i class="fas fa-envelope"></i>
+        <h3>Email Us</h3>
+        <p>We respond within 24 hours</p>
+        <a href="mailto:info@khptc.co.ke">info@khptc.co.ke</a>
+      </div>
+      <div class="info-card animate">
+        <i class="fas fa-map-marker-alt"></i>
+        <h3>Visit Us</h3>
+        <p>Kazi Mingi Farm, Eldoret</p>
+        <a href="#">Uasin Gishu County, Kenya</a>
+      </div>
+      <div class="info-card animate">
+        <i class="fas fa-clock"></i>
+        <h3>Office Hours</h3>
+        <p>Monday – Friday: 6AM – 8PM</p>
+        <p>Saturday: 7AM – 6PM</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONTACT FORM + MAP -->
+  <div class="contact-main">
+    <div class="contact-form animate">
+      <h3>Send Us a Message</h3>
+      <form>
+        <div class="form-group">
+          <label for="name">Full Name *</label>
+          <input type="text" id="name" placeholder="Your full name" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email Address *</label>
+          <input type="email" id="email" placeholder="Your email" required>
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" placeholder="Your phone number (optional)">
+        </div>
+        <div class="form-group">
+          <label for="interest">I'm Interested In *</label>
+          <select id="interest" required>
+            <option value="">Select an option</option>
+            <option value="complete-package">Complete Training Package</option>
+            <option value="elite-runner">Elite Runner's Package</option>
+            <option value="pro-athlete">Pro Athlete Package</option>
+            <option value="group-camp">Group Training Camp</option>
+            <option value="refugee-program">Refugee Athlete Program</option>
+            <option value="personal-training">Personal Training</option>
+            <option value="general-inquiry">General Inquiry</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="message">Your Message *</label>
+          <textarea id="message" placeholder="Tell us about your training goals, preferred dates, and any questions..." required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary submit-btn">Send Message</button>
+      </form>
+    </div>
+    <div class="map-container animate">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.7!2d35.3!3d0.5!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMMKwMzAnMDAuMCJOIDM1wrAxOCcwMC4wIkU!5e0!3m2!1sen!2ske!4v1700000000000!5m2!1sen!2ske" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+  </div>
+
+  <!-- FAQ SECTION -->
+  <div class="faq-section">
+    <div class="section-title animate">
+      <h2>Frequently Asked Questions</h2>
+      <p>Quick answers to common inquiries</p>
+    </div>
+    <div class="faq-item animate">
+      <div class="faq-question">Where exactly is KHPTC located? <i class="fas fa-chevron-down"></i></div>
+      <div class="faq-answer">KHPTC is located on Kazi Mingi Farm, just outside Eldoret town in Uasin Gishu County, approximately 350 km west of Nairobi, Kenya.</div>
+    </div>
+    <div class="faq-item animate">
+      <div class="faq-question">Do I need to be a professional athlete to train there? <i class="fas fa-chevron-down"></i></div>
+      <div class="faq-answer">No! About 90% of our visitors are leisure runners. We welcome athletes of all levels, from beginners to elite competitors.</div>
+    </div>
+    <div class="faq-item animate">
+      <div class="faq-question">What is the best time of year to visit? <i class="fas fa-chevron-down"></i></div>
+      <div class="faq-answer">The centre is open year-round. September to April generally offers the mildest weather, but training is excellent in all seasons.</div>
+    </div>
+    <div class="faq-item animate">
+      <div class="faq-question">Can I arrange airport transfers? <i class="fas fa-chevron-down"></i></div>
+      <div class="faq-answer">Yes, we offer transfers from Eldoret International Airport and Nairobi. Just let us know your flight details when booking.</div>
+    </div>
+    <div class="faq-item animate">
+      <div class="faq-question">Is the centre suitable for non-runners? <i class="fas fa-chevron-down"></i></div>
+      <div class="faq-answer">Absolutely! Family members and non-running companions are welcome. There are plenty of activities and excursions available.</div>
+    </div>
+  </div>
+
+  <!-- SOCIAL CONNECT -->
+  <div class="social-connect">
+    <h3>Connect With Us on Social Media</h3>
+    <div class="social-buttons">
+      <a href="#" class="social-btn facebook"><i class="fab fa-facebook-f"></i> Facebook</a>
+      <a href="#" class="social-btn instagram"><i class="fab fa-instagram"></i> Instagram</a>
+      <a href="#" class="social-btn twitter"><i class="fab fa-twitter"></i> Twitter</a>
+      <a href="#" class="social-btn youtube"><i class="fab fa-youtube"></i> YouTube</a>
+      <a href="https://wa.me/254713555717" class="social-btn whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-col">
+        <a href="#" class="logo">
+          <div class="logo-icon"><img src="https://i.pinimg.com/736x/d2/3d/d8/d23dd8ad0a03ce25635349483c6e7130.jpg" alt="KHPTC Logo"></div>
+          <div class="logo-text"><span>KHPTC</span><span>Home of Champions</span></div>
+        </a>
+        <p style="margin: 20px 0; color: var(--footer-text);">KipKeino High Performance Training Centre – where champions are made. Elite training near Eldoret, Kenya.</p>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+          <a href="#"><i class="fab fa-pinterest"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="traning.html">Training</a></li>
+          <li><a href="programs.html">Programs</a></li>
+          <li><a href="experience.html">Experiences</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <ul class="footer-links">
+          <li><a href="#"><i class="fas fa-chevron-right"></i> Terms and Conditions</a></li>
+          <li><a href="#"><i class="fas fa-chevron-right"></i> Privacy Policy</a></li>
+          <li><a href="#"><i class="fas fa-chevron-right"></i> Cancellation Policy</a></li>
+          <li><a href="#"><i class="fas fa-chevron-right"></i> Careers</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Training Programs</h4>
+        <ul class="footer-links">
+          <li><a href="#"><i class="fas fa-chevron-right"></i> Complete Package</a></li>
+          <li><a href="#"><i class="fas fa-chevron-right"></i> Elite Runner's</a></li>
+          <li><a href="#"><i class="fas fa-chevron-right"></i> Pro Athlete</a></li>
+          <li><a href="#"><i class="fas fa-chevron-right"></i> Group Camps</a></li>
+          <li><a href="#"><i class="fas fa-chevron-right"></i> Personal Training</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact Us</h4>
+        <ul class="contact-info">
+          <li><i class="fas fa-phone-alt"></i> +254 713 555717</li>
+          <li><i class="fas fa-envelope"></i> info@khptc.co.ke</li>
+          <li><i class="fas fa-clock"></i> Mon-Fri: 6AM - 8PM, Sat: 7AM - 6PM</li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Training Promise</h4>
+        <div class="logo-icon"><i class="fas fa-running"></i></div>
+        <ul style="list-style: none; color: var(--footer-text);">Uncompromising commitment to excellence, integrity, and athlete development. We empower champions through world-class training and support.</ul>
+      </div>
+    </div>
+    <div class="copyright"><p>&copy; 2026 KHPTC. All rights reserved. | Designed by Keith Kili</p></div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const toggleBtn = document.getElementById('themeToggle');
+      const themeIcon = document.getElementById('themeIcon');
+      const html = document.documentElement;
+
+      const storedTheme = localStorage.getItem('theme');
+      if (storedTheme === 'dark') {
+        html.setAttribute('data-theme', 'dark');
+        themeIcon.className = 'fas fa-sun';
+      } else if (storedTheme === 'light') {
+        html.removeAttribute('data-theme');
+        themeIcon.className = 'fas fa-moon';
+      } else {
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        if (prefersDark) {
+          html.setAttribute('data-theme', 'dark');
+          themeIcon.className = 'fas fa-sun';
+        }
+      }
+
+      toggleBtn.addEventListener('click', function() {
+        if (html.getAttribute('data-theme') === 'dark') {
+          html.removeAttribute('data-theme');
+          themeIcon.className = 'fas fa-moon';
+          localStorage.setItem('theme', 'light');
+        } else {
+          html.setAttribute('data-theme', 'dark');
+          themeIcon.className = 'fas fa-sun';
+          localStorage.setItem('theme', 'dark');
+        }
+      });
+
+      // FAQ accordion
+      const faqItems = document.querySelectorAll('.faq-item');
+      faqItems.forEach(item => {
+        item.querySelector('.faq-question').addEventListener('click', () => {
+          item.classList.toggle('active');
+        });
+      });
+
+      const animateElements = document.querySelectorAll('.animate');
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.style.animationPlayState = 'running';
+            entry.target.style.opacity = '1';
+          }
+        });
+      }, { threshold: 0.1 });
+
+      animateElements.forEach(element => {
+        element.style.opacity = '0';
+        element.style.animationPlayState = 'paused';
+        observer.observe(element);
+      });
+
+      window.addEventListener('scroll', function() {
+        const header = document.querySelector('header');
+        if (window.scrollY > 50) {
+          header.style.padding = '10px 0';
+        } else {
+          header.style.padding = '15px 0';
+        }
+      });
+    });
+  </script>
+</body>
+</html>
