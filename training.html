@@ -33,23 +33,62 @@
       --os-card-bg: #b38218;
     }
 
+    /* ============ DARK MODE - EXACTLY MATCHING INDEX.HTML ============ */
     [data-theme="dark"] {
       --primary: #4a9ed6;
       --secondary: #3bc8cc;
       --accent: #f1c40f;
       --dark: #e8edf2;
       --text: #e0e0e0;
+      --light-text: #f0f0f0;
       --bg-body: #121212;
       --bg-card: #1e1e1e;
       --bg-footer: #0a0a0a;
       --border-light: #333;
       --shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+      --shadow-hover: 0 25px 60px rgba(0, 0, 0, 0.7);
       --text-muted: #aaa;
       --footer-text: rgba(255, 255, 255, 0.6);
       --wildlife-header-bg: linear-gradient(135deg, #0f2a1e 0%, #1a4a5a 100%);
       --wildlife-card-bg: #1e1e1e;
       --os-bg: #1a3a4a;
       --os-card-bg: #2a4a5a;
+
+      /* Additional overrides to match index.html exactly */
+      .header-container, header { background: #1a1a1a !important; }
+      .logo-text span:first-child { color: #4a9ed6; }
+      .location-banner { background: linear-gradient(135deg, #0a1a2a, #1a3a4a) !important; }
+      .location-item strong, .location-item span { color: #fff; }
+      .location-item i { color: #f1c40f !important; }
+      .week-day { background: #2a2a2a !important; }
+      .week-day strong { color: #4a9ed6; }
+      .place-card { background: var(--bg-card) !important; }
+      .place-info h4 { color: #e0e0e0; }
+      .place-info p { color: #aaa; }
+      .place-tag { background: rgba(74,158,214,0.15) !important; color: #4a9ed6 !important; }
+      .gym-section { background: linear-gradient(135deg, #0f2a1e 0%, #1a4a5a 100%) !important; }
+      .gym-card { background: rgba(255,255,255,0.05) !important; border-color: rgba(255,255,255,0.1) !important; }
+      .gym-card:hover { background: rgba(255,255,255,0.1) !important; }
+      .gym-info h4 { color: #e0e0e0 !important; }
+      .gym-info p { color: rgba(255,255,255,0.8) !important; }
+      .gym-icon { color: #f1c40f !important; }
+      .coach-tip { background: linear-gradient(135deg, #0f2a1e 0%, #1a4a5a 100%) !important; }
+      .coach-tip h3 { color: #e0e0e0 !important; }
+      .coach-tip p { color: rgba(255,255,255,0.85) !important; }
+      .coach-tip .btn { background: #fff; color: #1a1a1a; }
+      .gallery-strip img { box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5); }
+      .gallery-strip img:hover { box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7); }
+      .footer-col h4 { color: #e0e0e0; }
+      .footer-links a { color: var(--footer-text); }
+      .contact-info li { color: var(--footer-text); }
+      .copyright { color: var(--footer-text); }
+      .section-title p { color: var(--text-muted); }
+      .btn-outline { border-color: var(--primary); color: var(--primary); }
+      .btn-outline:hover { background: var(--primary); color: #fff; }
+      .btn-light { background: #fff; color: #1a1a1a; }
+      .btn-light:hover { background: #f0f0f0; }
+      .footer-col .logo-text span:first-child { color: #4a9ed6; }
+      .footer-col .logo-text span:last-child { color: #3bc8cc; }
     }
 
     body {
@@ -266,7 +305,7 @@
   <section class="hero">
     <div class="hero-content">
       <div class="hero-text">
-        <h1>Train at <span>KIPKEINO span> – Home of Champions</h1>
+        <h1>Train at <span>KIPKEINO</span> – Home of Champions</h1>
         <p>The KipKeino IOC High Performance Training Centre is an elite hub for middle and long‑distance excellence, located just outside Eldoret – 350 km west of Nairobi.</p>
         <div class="hero-btns">
           <a href="#" class="btn btn-primary">Explore Training</a>
