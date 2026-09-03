@@ -29,19 +29,61 @@
       --footer-text: rgba(255, 255, 255, 0.7);
     }
 
+    /* ============ DARK MODE - EXACTLY MATCHING INDEX.HTML ============ */
     [data-theme="dark"] {
       --primary: #4a9ed6;
       --secondary: #3bc8cc;
       --accent: #f1c40f;
       --dark: #e8edf2;
       --text: #e0e0e0;
+      --light-text: #f0f0f0;
       --bg-body: #121212;
       --bg-card: #1e1e1e;
       --bg-footer: #0a0a0a;
       --border-light: #333;
       --shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+      --shadow-hover: 0 25px 60px rgba(0, 0, 0, 0.7);
       --text-muted: #aaa;
       --footer-text: rgba(255, 255, 255, 0.6);
+
+      /* Additional overrides to match index.html exactly */
+      .header-container, header { background: #1a1a1a !important; }
+      .logo-text span:first-child { color: #4a9ed6; }
+      .welcome-section h2 { color: #e0e0e0; }
+      .welcome-section p { color: #aaa; }
+      .day-story h2 { color: #e0e0e0; }
+      .day-story .subtitle { color: #aaa; }
+      .story-content h3 { color: #e0e0e0; }
+      .story-content p { color: #aaa; }
+      .story-content .highlight { background: rgba(74,158,214,0.15); color: #4a9ed6; }
+      .story-image .time-badge { background: #f1c40f; color: #1a1a1a; }
+      .meetups-section { background: linear-gradient(135deg, #0f2a1e 0%, #1a4a5a 100%) !important; }
+      .meetup-card { background: rgba(255,255,255,0.05) !important; border-color: rgba(255,255,255,0.1) !important; }
+      .meetup-card:hover { background: rgba(255,255,255,0.1) !important; }
+      .meetup-card h3 { color: #e0e0e0 !important; }
+      .meetup-card p { color: rgba(255,255,255,0.8) !important; }
+      .meetup-icon { color: #f1c40f !important; }
+      .activity-card { background: var(--bg-card) !important; }
+      .activity-info h3 { color: #e0e0e0; }
+      .activity-info p { color: #aaa; }
+      .intl-card { background: var(--bg-card) !important; }
+      .intl-card h4 { color: #e0e0e0; }
+      .intl-card p { color: #aaa; }
+      .intl-card .country { color: #3bc8cc; }
+      .intl-card img { border-color: #f1c40f; }
+      .cta-section { background: linear-gradient(135deg, #0a3a5a, #1a7a7e) !important; }
+      .cta-section h2 { color: #e0e0e0 !important; }
+      .cta-section p { color: rgba(255,255,255,0.85) !important; }
+      .cta-section .btn { background: #fff; color: #1a1a1a; }
+      .footer-col h4 { color: #e0e0e0; }
+      .footer-links a { color: var(--footer-text); }
+      .contact-info li { color: var(--footer-text); }
+      .copyright { color: var(--footer-text); }
+      .section-title p { color: var(--text-muted); }
+      .btn-light { background: #fff; color: #1a1a1a; }
+      .btn-light:hover { background: #f0f0f0; }
+      .footer-col .logo-text span:first-child { color: #4a9ed6; }
+      .footer-col .logo-text span:last-child { color: #3bc8cc; }
     }
 
     body {
@@ -100,6 +142,7 @@
     .theme-toggle { background: none; border: 2px solid var(--primary); color: var(--primary); border-radius: 50%; width: 44px; height: 44px; font-size: 1.2rem; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease; background: transparent; }
     .theme-toggle:hover { background: var(--primary); color: white; transform: rotate(20deg); }
     [data-theme="dark"] .theme-toggle { border-color: var(--accent); color: var(--accent); }
+    [data-theme="dark"] .theme-toggle:hover { background: var(--accent); color: #1a1a1a; }
 
     /* HERO */
     .hero { min-height: 60vh; display: flex; align-items: center; padding: 140px 0 60px; position: relative; overflow: hidden; }
@@ -132,7 +175,6 @@
     .story-content h3 { font-size: 2rem; margin-bottom: 15px; }
     .story-content p { color: var(--text-muted); font-size: 1.05rem; line-height: 1.8; margin-bottom: 15px; }
     .story-content .highlight { display: inline-flex; align-items: center; gap: 8px; background: rgba(10,74,124,0.08); color: var(--primary); padding: 8px 18px; border-radius: 30px; font-weight: 600; font-size: 0.9rem; }
-    [data-theme="dark"] .story-content .highlight { background: rgba(74,158,214,0.15); color: #4a9ed6; }
 
     /* MEETUPS SECTION */
     .meetups-section { background: linear-gradient(135deg, #1a3a29 0%, #0e6878 100%); padding: 80px 20px; color: white; margin: 60px 0; }
