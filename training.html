@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KHPTC | Training & Gym – Eldoret, Kenya</title>
+  <!-- Font Awesome 6 (Free) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;700;800&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --primary: #0a4a7c;
+      --secondary: #18a3a7;
+      --accent: #f39c12;
+      --dark: #1a2a3a;
+      --light: #f8f9fa;
+      --text: #333;
+      --light-text: #f0f0f0;
+      --bg-body: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+      --bg-card: #ffffff;
+      --bg-footer: var(--dark);
+      --border-light: #eee;
+      --shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+      --shadow-hover: 0 25px 60px rgba(0, 0, 0, 0.15);
+      --text-muted: #666;
+      --footer-text: rgba(255, 255, 255, 0.7);
+      --wildlife-header-bg: linear-gradient(135deg, #1a3a29 0%, #2785ae 100%);
+      --wildlife-card-bg: #ffffff;
+      --os-bg: #0e6878;
+      --os-card-bg: #b38218;
+    }
+
+    [data-theme="dark"] {
+      --primary: #4a9ed6;
+      --secondary: #3bc8cc;
+      --accent: #f1c40f;
+      --dark: #e8edf2;
+      --text: #e0e0e0;
+      --bg-body: #121212;
+      --bg-card: #1e1e1e;
+      --bg-footer: #0a0a0a;
+      --border-light: #333;
+      --shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+      --text-muted: #aaa;
+      --footer-text: rgba(255, 255, 255, 0.6);
+      --wildlife-header-bg: linear-gradient(135deg, #0f2a1e 0%, #1a4a5a 100%);
+      --wildlife-card-bg: #1e1e1e;
+      --os-bg: #1a3a4a;
+      --os-card-bg: #2a4a5a;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      color: var(--text);
+      background: var(--bg-body);
+      line-height: 1.6;
+      transition: background 0.3s, color 0.3s;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4, h5 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      color: var(--dark);
+      line-height: 1.3;
+    }
+
+    .btn {
+      padding: 12px 28px;
+      border-radius: 30px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+    .btn-primary { background: linear-gradient(135deg, var(--primary), var(--secondary)); color: white; }
+    .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(10,74,124,0.3); background: linear-gradient(135deg, #083e68, #14878a); }
+    .btn-outline { background: transparent; border: 2px solid var(--primary); color: var(--primary); }
+    .btn-outline:hover { background: var(--primary); color: white; transform: translateY(-3px); }
+    .btn-light { background: #fff; color: var(--primary); }
+    .btn-light:hover { background: #f0f0f0; transform: translateY(-3px); }
+
+    .section-title { text-align: center; margin-bottom: 60px; }
+    .section-title h2 { font-size: 3rem; margin-bottom: 15px; position: relative; display: inline-block; }
+    .section-title h2:after { content: ''; position: absolute; width: 80px; height: 5px; background: var(--accent); bottom: -10px; left: 50%; transform: translateX(-50%); border-radius: 5px; }
+    .section-title p { font-size: 1.2rem; color: var(--text-muted); max-width: 700px; margin: 25px auto 0; }
+
+    /* HEADER */
+    header { background: rgba(255, 255, 255, 0.95); box-shadow: 0 5px 20px rgba(0,0,0,0.08); width: 100%; top: 0; z-index: 1000; padding: 15px 0; transition: all 0.4s ease; }
+    .header-container { max-width: 1400px; margin: 0 auto; padding: 0 40px; display: flex; justify-content: space-between; align-items: center; }
+    .logo { display: flex; align-items: center; text-decoration: none; }
+    .logo-icon { width: 50px; height: 50px; background: linear-gradient(135deg, var(--primary), var(--secondary)); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 12px; box-shadow: 0 4px 12px rgba(10,74,124,0.2); overflow: hidden; }
+    .logo-icon img { width: 100%; height: 100%; object-fit: cover; }
+    .logo-icon i { color: white; font-size: 24px; }
+    .logo-text { display: flex; flex-direction: column; }
+    .logo-text span:first-child { font-family: 'Playfair Display', serif; font-weight: 800; font-size: 28px; color: var(--primary); letter-spacing: -0.5px; }
+    .logo-text span:last-child { font-size: 12px; color: var(--secondary); letter-spacing: 2px; text-transform: uppercase; margin-top: -5px; }
+    nav ul { display: flex; list-style: none; }
+    nav ul li { margin: 0 15px; }
+    nav ul li a { text-decoration: none; color: var(--dark); font-weight: 600; font-size: 16px; position: relative; padding: 8px 0; transition: all 0.3s ease; }
+    nav ul li a:after { content: ''; position: absolute; width: 0; height: 3px; bottom: 0; left: 0; background: var(--accent); border-radius: 3px; transition: width 0.3s ease; }
+    nav ul li a:hover:after { width: 100%; }
+    .header-actions { display: flex; align-items: center; gap: 20px; }
+    .theme-toggle { background: none; border: 2px solid var(--primary); color: var(--primary); border-radius: 50%; width: 44px; height: 44px; font-size: 1.2rem; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease; background: transparent; }
+    .theme-toggle:hover { background: var(--primary); color: white; transform: rotate(20deg); }
+    [data-theme="dark"] .theme-toggle { border-color: var(--accent); color: var(--accent); }
+    [data-theme="dark"] .theme-toggle:hover { background: var(--accent); color: #1a1a1a; }
+
+    /* HERO */
+    .hero { min-height: 80vh; display: flex; align-items: center; padding: 140px 0 60px; position: relative; overflow: hidden; }
+    .hero::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(rgba(26,42,58,0.82), rgba(26,42,58,0.88)), url('https://i.pinimg.com/736x/02/83/78/02837855bc30a32526be488cdef4d621.jpg') center/cover no-repeat; z-index: -1; }
+    .hero-content { max-width: 1400px; margin: 0 auto; padding: 0 40px; width: 100%; }
+    .hero-text { max-width: 800px; animation: fadeInUp 1s ease; }
+    .hero h1 { font-size: 4rem; margin-bottom: 20px; color: white; line-height: 1.2; }
+    .hero h1 span { color: var(--accent); }
+    .hero p { font-size: 1.4rem; margin-bottom: 30px; color: rgba(255,255,255,0.9); }
+    .hero-btns { display: flex; gap: 20px; flex-wrap: wrap; }
+
+    /* LOCATION HIGHLIGHT */
+    .location-banner {
+      background: linear-gradient(135deg, #0a2a3a, #1a4a5a);
+      color: white;
+      padding: 25px 30px;
+      border-radius: 20px;
+      max-width: 1100px;
+      margin: -20px auto 50px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+      position: relative;
+      z-index: 5;
+    }
+    .location-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 500;
+    }
+    .location-item i {
+      font-size: 1.8rem;
+      color: #f1c40f;
+    }
+
+    /* TRAINING INTRO */
+    .training-intro { max-width: 1300px; margin: 70px auto; padding: 0 30px; display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
+    .training-intro img { width: 100%; border-radius: 20px; box-shadow: var(--shadow); }
+    .training-text h3 { font-size: 2.2rem; margin-bottom: 20px; }
+    .training-text p { margin-bottom: 20px; color: var(--text-muted); }
+
+    /* WEEKLY STRUCTURE */
+    .weekly-structure { background: var(--bg-card); border-radius: 25px; padding: 50px; max-width: 1300px; margin: 70px auto; box-shadow: var(--shadow); }
+    .weekly-structure h3 { text-align: center; font-size: 2.2rem; margin-bottom: 30px; }
+    .week-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px; }
+    .week-day { background: #f4f7fb; padding: 20px; border-radius: 15px; text-align: center; border: 1px solid var(--border-light); transition: all 0.3s; }
+    [data-theme="dark"] .week-day { background: #2a2a2a; }
+    .week-day strong { display: block; font-size: 1.2rem; margin-bottom: 8px; color: var(--primary); }
+    .week-day span { font-size: 0.85rem; color: var(--text-muted); }
+
+    /* MYTHICAL PLACES */
+    .mythical-places { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; max-width: 1300px; margin: 60px auto; padding: 0 30px; }
+    .place-card { background: var(--bg-card); border-radius: 20px; overflow: hidden; box-shadow: var(--shadow); transition: all 0.4s; }
+    .place-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-hover); }
+    .place-card img { width: 100%; height: 220px; object-fit: cover; }
+    .place-info { padding: 25px; }
+    .place-info h4 { font-size: 1.6rem; margin-bottom: 10px; }
+    .place-info p { color: var(--text-muted); margin-bottom: 10px; }
+    .place-tag { display: inline-block; background: rgba(10,74,124,0.1); color: var(--primary); padding: 5px 15px; border-radius: 30px; font-weight: 600; font-size: 0.8rem; }
+
+    /* GYM FACILITIES SECTION */
+    .gym-section { background: linear-gradient(135deg, #1a3a29 0%, #0a4a5a 100%); padding: 80px 30px; color: white; margin: 70px 0; }
+    .gym-container { max-width: 1300px; margin: 0 auto; }
+    .gym-header { text-align: center; margin-bottom: 50px; }
+    .gym-header h2 { font-size: 3rem; color: white; margin-bottom: 15px; }
+    .gym-header p { color: rgba(255,255,255,0.85); font-size: 1.2rem; }
+    .gym-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 30px; }
+    .gym-card { background: rgba(255,255,255,0.08); backdrop-filter: blur(8px); border-radius: 20px; overflow: hidden; transition: all 0.4s; border: 1px solid rgba(255,255,255,0.15); }
+    .gym-card:hover { transform: translateY(-10px); background: rgba(255,255,255,0.15); }
+    .gym-card img { width: 100%; height: 200px; object-fit: cover; }
+    .gym-info { padding: 25px; }
+    .gym-info h4 { font-size: 1.5rem; color: white; margin-bottom: 10px; }
+    .gym-info p { color: rgba(255,255,255,0.8); font-size: 0.95rem; }
+    .gym-icon { font-size: 2rem; color: #f1c40f; margin-bottom: 10px; }
+
+    /* COACH TIP & KIPCHOGE */
+    .coach-tip { background: linear-gradient(135deg, #1a3a29, #2785ae); color: white; padding: 60px 30px; text-align: center; border-radius: 25px; max-width: 1000px; margin: 60px auto; }
+    .coach-tip h3 { color: white; font-size: 2.5rem; margin-bottom: 20px; }
+    .coach-tip p { font-size: 1.2rem; max-width: 700px; margin: 0 auto 30px; }
+    .coach-tip .btn { background: white; color: var(--primary); }
+
+    /* EXTRA GALLERY */
+    .gallery-strip { display: flex; flex-wrap: wrap; gap: 15px; justify-content: center; margin: 60px auto; max-width: 1400px; padding: 0 20px; }
+    .gallery-strip img { width: 280px; height: 200px; object-fit: cover; border-radius: 15px; box-shadow: var(--shadow); transition: all 0.4s; }
+    .gallery-strip img:hover { transform: scale(1.05); box-shadow: var(--shadow-hover); }
+
+    /* FOOTER */
+    footer { background: var(--bg-footer); color: var(--light-text); padding: 80px 0 40px; position: relative; }
+    .footer-container { max-width: 1400px; margin: 0 auto; padding: 0 40px; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 40px; }
+    .footer-col h4 { color: white; font-size: 1.4rem; margin-bottom: 25px; position: relative; padding-bottom: 12px; }
+    .footer-col h4:after { content: ''; position: absolute; width: 50px; height: 3px; background: var(--accent); bottom: 0; left: 0; }
+    .footer-links { list-style: none; }
+    .footer-links li { margin-bottom: 12px; }
+    .footer-links a { color: var(--footer-text); text-decoration: none; transition: all 0.3s; }
+    .footer-links a i { margin-right: 8px; color: var(--accent); }
+    .footer-links a:hover { color: white; padding-left: 5px; }
+    .social-links { display: flex; gap: 12px; margin-top: 15px; }
+    .social-links a { display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 50%; background: rgba(255,255,255,0.1); color: white; }
+    .social-links a:hover { background: var(--accent); }
+    .contact-info li { display: flex; margin-bottom: 15px; color: var(--footer-text); }
+    .contact-info li i { color: var(--accent); margin-right: 12px; }
+    .copyright { text-align: center; padding-top: 30px; margin-top: 50px; border-top: 1px solid rgba(255,255,255,0.1); color: var(--footer-text); font-size: 0.9rem; }
+
+    @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+    .animate { animation: fadeInUp 0.8s ease forwards; opacity: 0; }
+
+    @media (max-width: 900px) {
+      .header-container { flex-direction: column; padding: 15px 20px; }
+      .logo { margin-bottom: 15px; }
+      nav ul { margin: 15px 0; flex-wrap: wrap; justify-content: center; }
+      .hero h1 { font-size: 2.8rem; }
+      .training-intro { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 600px) {
+      .hero h1 { font-size: 2.4rem; }
+      .section-title h2 { font-size: 2.2rem; }
+      .week-grid { grid-template-columns: 1fr 1fr; }
+      .gym-grid { grid-template-columns: 1fr; }
+      .gallery-strip img { width: 100%; max-width: 400px; }
+    }
+  </style>
+</head>
+<body>
+  <!-- HEADER (same as home) -->
+  <header>
+    <div class="header-container">
+      <a href="#" class="logo">
+        <div class="logo-icon"><img src="https://i.pinimg.com/736x/d2/3d/d8/d23dd8ad0a03ce25635349483c6e7130.jpg" alt="KHPTC Logo"></div>
+        <div class="logo-text"><span>KHPTC</span><span>KipKeino High Performance Training Centre</span></div>
+      </a>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="training.html">Training</a></li>
+          <li><a href="programs.html">Programs</a></li>
+          <li><a href="#experiences.html">Experiences</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode"><i class="fas fa-moon" id="themeIcon"></i></button>
+        <a href="#" class="btn btn-primary">Join Program</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-content">
+      <div class="hero-text">
+        <h1>Train at <span>KIPKEINO span> – Home of Champions</h1>
+        <p>The KipKeino IOC High Performance Training Centre is an elite hub for middle and long‑distance excellence, located just outside Eldoret – 350 km west of Nairobi.</p>
+        <div class="hero-btns">
+          <a href="#" class="btn btn-primary">Explore Training</a>
+          <a href="#" class="btn btn-light">Book a Call</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOCATION BANNER (updated info) -->
+  <div class="location-banner">
+    <div class="location-item"><i class="fas fa-map-marker-alt"></i> Kazi Mingi Farm, Eldoret, Uasin Gishu County</div>
+    <div class="location-item"><i class="fas fa-globe"></i> IOC Recognized High Performance Centre</div>
+    <div class="location-item"><i class="fas fa-flag"></i> 350 km west of Nairobi</div>
+    <div class="location-item"><i class="fas fa-mountain"></i> High‑altitude training conditions</div>
+  </div>
+
+  <!-- INTRO: HOW AND WHERE TO TRAIN (updated for Eldoret, not Iten) -->
+  <div class="training-intro animate">
+    <img src="https://i.pinimg.com/736x/e5/3e/d6/e53ed65532d80ca209403528db27965b.jpg" alt="Athletes training at KHPTC near Eldoret">
+    <div class="training-text">
+      <h3>How and where to train at KHPTC</h3>
+      <p><strong>An elite centre for learning and sports excellence</strong> – Opened in 2002 and located on several hundred acres of farmland owned by Kipchoge Keino, the centre is listed as a High Performance Training Center by the IAAF and focuses on developing middle and long distance track champions.</p>
+      <p>Our team, along with local coordinators, are on hand to guide you. They'll take you on a tour of the training roads and act as your guides throughout your stay. Trainees have complete freedom; sessions (track, fartlek, long runs) are often done together using matatu transport, but you can also run alone or with local athletes.</p>
+      <p>The centre also hosts refugee athlete scholarship holders and national teams, creating a unique, supportive environment. <strong>No Human is Limited.</strong></p>
+    </div>
+  </div>
+
+  <!-- WEEKLY STRUCTURE -->
+  <div class="weekly-structure animate">
+    <h3>Typical Weekly Training Structure</h3>
+    <p style="text-align: center; margin-bottom: 35px; color: var(--text-muted);">Most athletes follow this rhythm: intense Tuesdays & Thursdays, long run on the weekend, easy jogging in between.</p>
+    <div class="week-grid">
+      <div class="week-day"><strong>Monday</strong><span>Easy jogging / recovery</span></div>
+      <div class="week-day"><strong>Tuesday</strong><span>Short VMA: 15×400m or 1min fast/1min slow</span></div>
+      <div class="week-day"><strong>Wednesday</strong><span>Easy jogging</span></div>
+      <div class="week-day"><strong>Thursday</strong><span>Long VMA: 6‑8×1000m or 3min fast/1min slow</span></div>
+      <div class="week-day"><strong>Friday</strong><span>Easy jogging / rest</span></div>
+      <div class="week-day"><strong>Saturday</strong><span>Long outing – Moiben Road (matatu support)</span></div>
+      <div class="week-day"><strong>Sunday</strong><span>Rest, sightseeing or easy jog</span></div>
+    </div>
+    <p style="margin-top: 30px; text-align: center; font-style: italic;">"Join the local fartleks on Tuesdays and Thursdays, or use the track at Kipchoge Keino Sports Complex in Eldoret."</p>
+  </div>
+
+  <!-- MYTHICAL PLACES (updated with Eldoret specifics) -->
+  <div class="section-title animate">
+    <h2>Legendary Training Routes Around Eldoret</h2>
+    <p>From the upgraded Kipchoge Keino Sports Complex to the endless Moiben road, every path has a story.</p>
+  </div>
+  <div class="mythical-places">
+    <div class="place-card animate">
+      <img src="https://i.pinimg.com/736x/54/94/a0/5494a01b6b1de16349bd52c11c7fc2b5.jpg" alt="Kipchoge Keino Sports Complex track">
+      <div class="place-info">
+        <h4>Kipchoge Keino Sports Complex</h4>
+        <p>Recently upgraded stadium in Eldoret with a world‑class tartan track, available for speed sessions.</p>
+        <span class="place-tag">Stadium track</span>
+      </div>
+    </div>
+    <div class="place-card animate">
+      <img src="https://i.pinimg.com/736x/c4/9c/79/c49c79b2de3602c644adb2dc7557f4b5.jpg" alt="Moiben Road near Eldoret">
+      <div class="place-info">
+        <h4>Moiben Road</h4>
+        <p>20 min from the centre. The "flattest" road for long outings. Matatu support for gels and drinks.</p>
+        <span class="place-tag">Long run paradise</span>
+      </div>
+    </div>
+    <div class="place-card animate">
+      <img src="https://i.pinimg.com/736x/7e/00/70/7e0070141f926070a35cbbc147fcdba2.jpg" alt="Eldoret gym and pool">
+      <div class="place-info">
+        <h4>Eldoret Pool & Fitness</h4>
+        <p>Rupaz Fun n Fitness Centre: 25m pool, weight room, crossfit zone – 30‑min drive from KHPTC.</p>
+        <span class="place-tag">Strength & recovery</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- GYM FACILITIES SECTION (added) -->
+  <div class="gym-section">
+    <div class="gym-container">
+      <div class="gym-header">
+        <h2><i class="fas fa-dumbbell" style="color:#f1c40f; margin-right:15px;"></i>On‑Site Gym & Strength Facilities</h2>
+        <p>At KHPTC we combine altitude running with a fully equipped performance gym – everything you need to build power, prevent injuries and recover.</p>
+      </div>
+      <div class="gym-grid">
+        <div class="gym-card">
+          <img src="https://i.pinimg.com/736x/7e/00/70/7e0070141f926070a35cbbc147fcdba2.jpg" alt="Strength floor">
+          <div class="gym-info">
+            <div class="gym-icon"><i class="fas fa-dumbbell"></i></div>
+            <h4>Olympic Lifting Zone</h4>
+            <p>3 platforms, 8 power racks, bumper plates up to 25kg, and dedicated coaching area.</p>
+          </div>
+        </div>
+        <div class="gym-card">
+          <img src="https://i.pinimg.com/736x/9b/99/31/9b9931e9beba6f07772509b976a4b187.jpg" alt="Cardio zone">
+          <div class="gym-info">
+            <div class="gym-icon"><i class="fas fa-heartbeat"></i></div>
+            <h4>Altitude Cardio Deck</h4>
+            <p>Treadmills, assault bikes, rowers, and ski ergs – all calibrated for 2,400m elevation.</p>
+          </div>
+        </div>
+        <div class="gym-card">
+          <img src="https://i.pinimg.com/736x/53/b4/b2/53b4b269cd4dbccaa376cb3c7407eb3b.jpg" alt="Recovery and mobility">
+          <div class="gym-info">
+            <div class="gym-icon"><i class="fas fa-spa"></i></div>
+            <h4>Mobility & Recovery Studio</h4>
+            <p>Foam rollers, massage guns, stretching cages, and physio‑led mobility sessions.</p>
+          </div>
+        </div>
+        <div class="gym-card">
+          <img src="https://i.pinimg.com/736x/45/96/ed/4596ed20c7fdab9499baf813a782d238.jpg" alt="Functional training">
+          <div class="gym-info">
+            <div class="gym-icon"><i class="fas fa-running"></i></div>
+            <h4>Functional & Core Area</h4>
+            <p>Kettlebells, battle ropes, plyo boxes, and TRX – designed for runners and triathletes.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- COACH TIP & KIPCHOGE MEETING -->
+  <div class="coach-tip animate">
+    <h3>Meeting with Eliud Kipchoge</h3>
+    <p>Is Eliud Kipchoge one of your idols? It's possible to share a moment with him and watch the world marathon record‑holder train. Our team will guide you on site – you may even exchange a few words and take a photo (at the end of the session).</p>
+    <a href="#" class="btn">Read Coach Maxime's Tips</a>
+  </div>
+
+  <!-- EXTRA ALIVE GALLERY -->
+  <div class="section-title animate">
+    <h2>Life at KHPTC</h2>
+    <p>Moments from our training community — join us.</p>
+  </div>
+  <div class="gallery-strip">
+    <img src="https://i.pinimg.com/236x/15/90/01/159001c0d672b14ce84d06ca0db80ab9.jpg" alt="Track morning">
+    <img src="https://i.pinimg.com/736x/80/b5/07/80b50743a6d963bce65a4c9a186f0bc7.jpg" alt="Accommodation view">
+    <img src="https://i.pinimg.com/736x/7e/00/70/7e0070141f926070a35cbbc147fcdba2.jpg" alt="Gym floor">
+    <img src="https://i.pinimg.com/1200x/62/95/0f/62950f2ff73930bf18ade733d59a7989.jpg" alt="Nutrition">
+    <img src="https://i.pinimg.com/736x/53/b4/b2/53b4b269cd4dbccaa376cb3c7407eb3b.jpg" alt="Recovery">
+    <img src="https://i.pinimg.com/736x/e5/3e/d6/e53ed65532d80ca209403528db27965b.jpg" alt="Group training">
+    <img src="https://i.pinimg.com/1200x/d0/ec/dd/d0ecdd59e27df7f400b360640ef6bb2d.jpg" alt="Coach  training">
+     <img src="https://i.pinimg.com/736x/96/3b/8a/963b8a1ad0a67b38ff4e3b701fb598a8.jpg" alt="gym session">
+     <img src="https://i.pinimg.com/736x/3f/e9/29/3fe929d420479e736efcd7944b7fa51a.jpg" alt="warm up session">
+  </div>
+
+  <!-- ENVIRONMENT & ALTITUDE (Eldoret specifics) -->
+  <div style="max-width: 1000px; margin: 60px auto; padding: 0 30px; text-align: center;">
+    <h3 style="font-size: 2.2rem; margin-bottom: 30px;">Environment & Altitude</h3>
+    <p style="color: var(--text-muted); margin-bottom: 20px;">The centre is located on Kazi Mingi Farm at an altitude of approximately 2,400m, providing ideal high‑altitude training conditions. The climate is warm and moderate, with average temperatures around 17–18°C, and rain possible throughout the year, usually in the late afternoon.</p>
+    <p style="font-style: italic;">"The Kip Keino HPTC is open all year round and welcomes everyone – from Olympic hopefuls to leisure runners, refugee scholarship holders, and national teams. There are no fixed dates: you choose the dates that suit you."</p>
+  </div>
+
+  <!-- CALL TO ACTION -->
+  <div style="text-align: center; margin: 60px 0;">
+    <a href="#" class="btn btn-primary" style="padding: 15px 40px; font-size: 1.2rem;">Schedule an introductory call</a>
+    <p style="margin-top: 20px; color: var(--text-muted);">📞 Have a question before booking? Let’s talk.</p>
+  </div>
+
+  <!-- FOOTER (same as home) -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-col">
+        <a href="#" class="logo">
+          <div class="logo-icon"><img src="https://i.pinimg.com/736x/d2/3d/d8/d23dd8ad0a03ce25635349483c6e7130.jpg" alt="KHPTC Logo"></div>
+          <div class="logo-text"><span>KHPTC</span><span>Home of Champions</span></div>
+        </a>
+        <p style="margin: 20px 0; color: var(--footer-text);">KipKeino High Performance Training Centre – where champions are made. Elite training near Eldoret, Kenya.</p>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+          <a href="#"><i class="fab fa-pinterest"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="training.html">Training</a></li>
+          <li><a href="programs.html">Programs</a></li>
+          <li><a href="#experiences.html">Experiences</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <ul class="footer-links">
+          <li><a href="#"><i class="fas fa-chevron-right"></i> Terms and Conditions</a></li>
+          <li><a href="#"><i class="fas fa-chevron-right"></i> Privacy Policy</a></li>
+          <li><a href="#"><i class="fas fa-chevron-right"></i> Cancellation Policy</a></li>
+          <li><a href="#"><i class="fas fa-chevron-right"></i> Careers</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Training Programs</h4>
+        <ul class="footer-links">
+          <li><a href="#"><i class="fas fa-chevron-right"></i> Complete Package</a></li>
+          <li><a href="#"><i class="fas fa-chevron-right"></i> Elite Runner's</a></li>
+          <li><a href="#"><i class="fas fa-chevron-right"></i> Pro Athlete</a></li>
+          <li><a href="#"><i class="fas fa-chevron-right"></i> Group Camps</a></li>
+          <li><a href="#"><i class="fas fa-chevron-right"></i> Personal Training</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact Us</h4>
+        <ul class="contact-info">
+          <li><i class="fas fa-phone-alt"></i> +254 712 345 678</li>
+          <li><i class="fas fa-envelope"></i> info@khptc.co.ke</li>
+          <li><i class="fas fa-clock"></i> Mon-Fri: 6AM - 8PM, Sat: 7AM - 6PM</li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Training Promise</h4>
+        <div class="logo-icon"><i class="fas fa-running"></i></div>
+        <ul style="list-style: none; color: var(--footer-text);">Uncompromising commitment to excellence, integrity, and athlete development. We empower champions through world-class training and support.</ul>
+      </div>
+    </div>
+    <div class="copyright"><p>&copy; 2026 KHPTC. All rights reserved. | Designed by Keith Kili</p></div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const toggleBtn = document.getElementById('themeToggle');
+      const themeIcon = document.getElementById('themeIcon');
+      const html = document.documentElement;
+
+      const storedTheme = localStorage.getItem('theme');
+      if (storedTheme === 'dark') {
+        html.setAttribute('data-theme', 'dark');
+        themeIcon.className = 'fas fa-sun';
+      } else if (storedTheme === 'light') {
+        html.removeAttribute('data-theme');
+        themeIcon.className = 'fas fa-moon';
+      } else {
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        if (prefersDark) {
+          html.setAttribute('data-theme', 'dark');
+          themeIcon.className = 'fas fa-sun';
+        }
+      }
+
+      toggleBtn.addEventListener('click', function() {
+        if (html.getAttribute('data-theme') === 'dark') {
+          html.removeAttribute('data-theme');
+          themeIcon.className = 'fas fa-moon';
+          localStorage.setItem('theme', 'light');
+        } else {
+          html.setAttribute('data-theme', 'dark');
+          themeIcon.className = 'fas fa-sun';
+          localStorage.setItem('theme', 'dark');
+        }
+      });
+
+      const animateElements = document.querySelectorAll('.animate');
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.style.animationPlayState = 'running';
+            entry.target.style.opacity = '1';
+          }
+        });
+      }, { threshold: 0.1 });
+
+      animateElements.forEach(element => {
+        element.style.opacity = '0';
+        element.style.animationPlayState = 'paused';
+        observer.observe(element);
+      });
+
+      window.addEventListener('scroll', function() {
+        const header = document.querySelector('header');
+        if (window.scrollY > 50) {
+          header.style.padding = '10px 0';
+        } else {
+          header.style.padding = '15px 0';
+        }
+      });
+    });
+  </script>
+</body>
+</html>
