@@ -18,115 +18,115 @@
 
     :root {
       /* Light mode (default) */
-      --primary: #0a4a7c;
-      --secondary: #18a3a7;
-      --accent: #f39c12;
-      --dark: #1a2a3a;
+      --primary: #337418;
+      --secondary: #337418;
+      --accent: #337418;
+      --dark: #337418;
       --light: #f8f9fa;
       --safari: #8B4513;
       --desert: #D2691E;
       --urban: #1E90FF;
-      --text: #333;
+      --text: #337418;
       --light-text: #f0f0f0;
 
-      --bg-body: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+      --bg-body: #FFFFFF;
       --bg-card: #ffffff;
       --bg-package: #ffffff;
       --bg-testimonial: rgba(255, 255, 255, 0.08);
       --bg-newsletter: #ffffff;
-      --bg-footer: var(--dark);
+      --bg-footer: #ffffff;
       --border-light: #eee;
       --shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
       --shadow-hover: 0 25px 60px rgba(0, 0, 0, 0.15);
-      --text-muted: #666;
+      --text-muted: #337418;
       --hero-overlay: rgba(26, 42, 58, 0.85);
       --hero-overlay2: rgba(26, 42, 58, 0.9);
       --testimonial-border: rgba(255, 255, 255, 0.1);
-      --os-bg: #0e6878;
-      --os-card-bg: #b38218;
-      --wildlife-header-bg: linear-gradient(135deg, #1a3a29 0%, #2785ae 100%);
+      --os-bg: #ffffff;
+      --os-card-bg: #ffffff;
+      --wildlife-header-bg: #ffffff;
       --wildlife-card-bg: #ffffff;
-      --wildlife-footer-bg: #f9f5e8;
-      --footer-text: rgba(255, 255, 255, 0.7);
+      --wildlife-footer-bg: #ffffff;
+      --footer-text: #337418;
     }
 
     /* Dark mode (preserved) */
     [data-theme="dark"] {
-      --primary: #4a9ed6;
-      --secondary: #3bc8cc;
-      --accent: #f1c40f;
-      --dark: #e8edf2;
-      --text: #e0e0e0;
+      --primary: #337418;
+      --secondary: #337418;
+      --accent: #337418;
+      --dark: #337418;
+      --text: #337418;
       --light-text: #f0f0f0;
 
-      --bg-body: #121212;
-      --bg-card: #1e1e1e;
-      --bg-package: #1e1e1e;
+      --bg-body: #FFFFFF;
+      --bg-card: #FFFFFF;
+      --bg-package: #FFFFFF;
       --bg-testimonial: rgba(255, 255, 255, 0.05);
-      --bg-newsletter: #1e1e1e;
-      --bg-footer: #0a0a0a;
+      --bg-newsletter: #FFFFFF;
+      --bg-footer: #FFFFFF;
       --border-light: #333;
       --shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
       --shadow-hover: 0 25px 60px rgba(0, 0, 0, 0.7);
-      --text-muted: #aaa;
+      --text-muted: #337418;
       --hero-overlay: rgba(0, 0, 0, 0.8);
       --hero-overlay2: rgba(0, 0, 0, 0.85);
       --testimonial-border: rgba(255, 255, 255, 0.05);
-      --os-bg: #1a3a4a;
-      --os-card-bg: #2a4a5a;
-      --wildlife-header-bg: linear-gradient(135deg, #0f2a1e 0%, #1a4a5a 100%);
-      --wildlife-card-bg: #1e1e1e;
-      --wildlife-footer-bg: #1a1a1a;
-      --footer-text: rgba(255, 255, 255, 0.6);
+      --os-bg: #FFFFFF;
+      --os-card-bg: #FFFFFF;
+      --wildlife-header-bg: #FFFFFF;
+      --wildlife-card-bg: #FFFFFF;
+      --wildlife-footer-bg: #FFFFFF;
+      --footer-text: #337418;
 
-      .header-container, header { background: #1a1a1a !important; }
-      .logo-text span:first-child { color: #4a9ed6; }
+      .header-container, header { background: #FFFFFF !important; }
+      .logo-text span:first-child { color: #337418; }
       .destination-card, .package-card, .testimonial-card, .newsletter-container, .wildlife-section { background: var(--bg-card) !important; }
       .wildlife-section .wildlife-card { background: var(--wildlife-card-bg) !important; }
       .wildlife-section .section-footer { background: var(--wildlife-footer-bg) !important; }
-      .wildlife-section .wildlife-content h3 { color: #e0e0e0 !important; }
-      .wildlife-section .wildlife-content p { color: #bbb !important; }
+      .wildlife-section .wildlife-content h3 { color: #337418 !important; }
+      .wildlife-section .wildlife-content p { color: #337418 !important; }
       .packages::before, .packages::after { opacity: 0.3; }
       .other-services-section { background: var(--os-bg) !important; }
       .other-services-section .os-card { background: var(--os-card-bg) !important; }
-      .footer-col h4 { color: #e0e0e0; }
+      .footer-col h4 { color: #337418; }
       .footer-links a { color: var(--footer-text); }
       .contact-info li { color: var(--footer-text); }
       .copyright { color: var(--footer-text); }
-      .subscribe-form input { background: #2a2a2a; color: #e0e0e0; }
-      .subscribe-form input::placeholder { color: #888; }
+      .subscribe-form input { background: #f0f0f0; color: #337418; }
+      .subscribe-form input::placeholder { color: #337418; }
       .section-title p { color: var(--text-muted); }
       .destination-content p, .package-features ul li, .wildlife-content p { color: var(--text-muted); }
       .hero::before { background: linear-gradient(var(--hero-overlay), var(--hero-overlay2)), url('https://images.unsplash.com/photo-1530124566582-a618bc2615dc?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover no-repeat; }
       .testimonials::before { opacity: 0.05; }
-      .newsletter { background: #1a1a1a; }
-      .section.packages { background: #181818; }
-      .package-header { background: linear-gradient(135deg, #0a3a5a, #1a7a7e) !important; }
+      .newsletter { background: #FFFFFF; }
+      .section.packages { background: #FFFFFF; }
+      .package-header { background: #337418 !important; }
       .btn-outline { border-color: var(--primary); color: var(--primary); }
       .btn-outline:hover { background: var(--primary); color: #fff; }
-      .destination-tag { background: var(--accent); color: #1a1a1a; }
+      .destination-tag { background: var(--accent); color: #FFFFFF; }
       .price { color: var(--primary); }
-      .animal-tag { background: linear-gradient(135deg, #1a7a7e, #3a9a9e); }
-      .testimonial-text { color: #ddd; }
+      .animal-tag { background: #337418; }
+      .testimonial-text { color: #337418; }
       .testimonial-card { background: var(--bg-testimonial) !important; border-color: var(--testimonial-border); }
       .testimonial-card:hover { background: rgba(255, 255, 255, 0.1) !important; }
-      .logo-icon { background: linear-gradient(135deg, var(--primary), var(--secondary)); }
+      .logo-icon { background: #337418; }
       .destination-card:hover .destination-img img { transform: scale(1.05); }
       .destination-card:hover { transform: translateY(-10px); box-shadow: var(--shadow-hover); }
       .wildlife-section .section-header { background: var(--wildlife-header-bg) !important; }
-      .wildlife-section .section-header h2 { color: white; }
-      .wildlife-section .section-header p { color: rgba(255, 255, 255, 0.85); }
-      .wildlife-section .section-footer .btn { background: linear-gradient(135deg, #f1c40f, #e67e22); color: #1a1a1a; }
-      .wildlife-section .section-footer .btn:hover { box-shadow: 0 10px 30px rgba(230, 126, 34, 0.6); }
-      .os-card-text, .os-card-title, .os-small‑header, .os-title { color: #fff !important; }
-      .os-icon { color: #f1c40f !important; }
-      .footer-col .logo-text span:first-child { color: #4a9ed6; }
+      .wildlife-section .section-header h2 { color: #337418; }
+      .wildlife-section .section-header p { color: #337418; }
+      .wildlife-section .section-footer .btn { background: #337418; color: #FFFFFF; }
+      .wildlife-section .section-footer .btn:hover { box-shadow: 0 10px 30px rgba(51,116,24,0.6); }
+      .os-card-text, .os-card-title, .os-small‑header, .os-title { color: #337418 !important; }
+      .os-icon { color: #337418 !important; }
+      .footer-col .logo-text span:first-child { color: #337418; }
     }
 
     body {
       font-family: 'Montserrat', sans-serif;
       color: var(--text);
-      background: var(--bg-body);
+      background: #FFFFFF;
       line-height: 1.6;
       transition: background 0.3s, color 0.3s;
       overflow-x: hidden;
@@ -154,13 +154,13 @@
     }
 
     .btn-primary {
-      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      background: #337418;
       color: white;
     }
     .btn-primary:hover {
       transform: translateY(-3px);
-      box-shadow: 0 6px 20px rgba(10, 74, 124, 0.3);
-      background: linear-gradient(135deg, #083e68, #14878a);
+      box-shadow: 0 6px 20px rgba(51,116,24,0.3);
+      background: #2a5f13;
     }
 
     .btn-outline {
@@ -172,7 +172,7 @@
       background: var(--primary);
       color: white;
       transform: translateY(-3px);
-      box-shadow: 0 6px 20px rgba(10, 74, 124, 0.25);
+      box-shadow: 0 6px 20px rgba(51,116,24,0.25);
     }
 
     .section-title {
@@ -185,13 +185,14 @@
       margin-bottom: 20px;
       position: relative;
       display: inline-block;
+      color: #337418;
     }
     .section-title h2:after {
       content: '';
       position: absolute;
       width: 80px;
       height: 5px;
-      background: var(--accent);
+      background: #337418;
       bottom: -15px;
       left: 50%;
       transform: translateX(-50%);
@@ -199,14 +200,14 @@
     }
     .section-title p {
       font-size: 1.2rem;
-      color: var(--text-muted);
+      color: #337418;
       max-width: 700px;
       margin: 30px auto 0;
     }
 
     /* ----- HEADER (original) ----- */
     header {
-      background: rgba(255, 255, 255, 0.95);
+      background: #FFFFFF;
       box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
       width: 100%;
       top: 0;
@@ -230,13 +231,13 @@
     .logo-icon {
       width: 50px;
       height: 50px;
-      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      background: #337418;
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
       margin-right: 12px;
-      box-shadow: 0 4px 12px rgba(10, 74, 124, 0.2);
+      box-shadow: 0 4px 12px rgba(51,116,24,0.2);
       overflow: hidden;
     }
     .logo-icon img {
@@ -257,12 +258,12 @@
       font-family: 'Playfair Display', serif;
       font-weight: 800;
       font-size: 28px;
-      color: var(--primary);
+      color: #337418;
       letter-spacing: -0.5px;
     }
     .logo-text span:last-child {
       font-size: 12px;
-      color: var(--secondary);
+      color: #337418;
       letter-spacing: 2px;
       text-transform: uppercase;
       margin-top: -5px;
@@ -276,7 +277,7 @@
     }
     nav ul li a {
       text-decoration: none;
-      color: var(--dark);
+      color: #337418;
       font-weight: 600;
       font-size: 16px;
       position: relative;
@@ -290,7 +291,7 @@
       height: 3px;
       bottom: 0;
       left: 0;
-      background: var(--accent);
+      background: #337418;
       border-radius: 3px;
       transition: width 0.3s ease;
     }
@@ -304,8 +305,8 @@
     }
     .theme-toggle {
       background: none;
-      border: 2px solid var(--primary);
-      color: var(--primary);
+      border: 2px solid #337418;
+      color: #337418;
       border-radius: 50%;
       width: 44px;
       height: 44px;
@@ -318,17 +319,17 @@
       background: transparent;
     }
     .theme-toggle:hover {
-      background: var(--primary);
+      background: #337418;
       color: white;
       transform: rotate(20deg);
     }
     [data-theme="dark"] .theme-toggle {
-      border-color: var(--accent);
-      color: var(--accent);
+      border-color: #337418;
+      color: #337418;
     }
     [data-theme="dark"] .theme-toggle:hover {
-      background: var(--accent);
-      color: #1a1a1a;
+      background: #337418;
+      color: #FFFFFF;
     }
 
     /* ----- HERO (original) ----- */
@@ -368,7 +369,7 @@
       line-height: 1.2;
     }
     .hero h1 span {
-      color: var(--accent);
+      color: #337418;
       position: relative;
     }
     .hero h1 span:after {
@@ -376,7 +377,7 @@
       position: absolute;
       width: 100%;
       height: 5px;
-      background: var(--accent);
+      background: #337418;
       bottom: 10px;
       left: 0;
       z-index: -1;
@@ -397,7 +398,7 @@
     }
     .hero-btns .btn-outline:hover {
       background: white;
-      color: var(--primary);
+      color: #337418;
     }
 
     /* ----- DESTINATIONS / FACILITIES (original) ----- */
@@ -442,13 +443,13 @@
       position: absolute;
       top: 20px;
       right: 20px;
-      background: var(--accent);
+      background: #337418;
       color: white;
       padding: 8px 20px;
       border-radius: 30px;
       font-weight: 600;
       font-size: 14px;
-      box-shadow: 0 4px 15px rgba(243, 156, 18, 0.3);
+      box-shadow: 0 4px 15px rgba(51,116,24,0.3);
     }
     .destination-content {
       padding: 30px;
@@ -456,6 +457,7 @@
     .destination-content h3 {
       font-size: 1.8rem;
       margin-bottom: 15px;
+      color: #337418;
     }
     .destination-meta {
       display: flex;
@@ -468,17 +470,17 @@
     .price {
       font-weight: 700;
       font-size: 1.6rem;
-      color: var(--primary);
+      color: #337418;
     }
     .price span {
       font-size: 1rem;
-      color: #777;
+      color: #337418;
       font-weight: 500;
     }
 
     /* ----- PACKAGES (original) ----- */
     .packages {
-      background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+      background: #FFFFFF;
       position: relative;
       overflow: hidden;
       transition: background 0.3s;
@@ -507,7 +509,7 @@
     }
     .package-header {
       padding: 30px;
-      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      background: #337418;
       color: white;
       text-align: center;
     }
@@ -538,10 +540,10 @@
       display: flex;
       align-items: center;
       font-size: 16px;
-      color: var(--text);
+      color: #337418;
     }
     .package-features ul li i {
-      color: var(--accent);
+      color: #337418;
       margin-right: 12px;
       font-size: 18px;
       width: 25px;
@@ -553,7 +555,7 @@
 
     /* ----- TESTIMONIALS (original) ----- */
     .testimonials {
-      background: linear-gradient(135deg, var(--dark), #1a2a3a);
+      background: #FFFFFF;
       color: var(--light-text);
       padding: 100px 0;
       position: relative;
@@ -589,7 +591,7 @@
       margin-bottom: 25px;
       position: relative;
       font-style: italic;
-      color: #e0e0e0;
+      color: #337418;
     }
     .testimonial-text:before {
       content: '\201C';
@@ -611,7 +613,7 @@
       border-radius: 50%;
       overflow: hidden;
       margin-right: 20px;
-      border: 3px solid var(--accent);
+      border: 3px solid #337418;
     }
     .author-img img {
       width: 100%;
@@ -620,17 +622,17 @@
     }
     .author-info h4 {
       margin-bottom: 5px;
-      color: white;
+      color: #337418;
     }
     .author-info p {
-      color: rgba(255, 255, 255, 0.7);
+      color: #337418;
       font-size: 0.95rem;
     }
 
     /* ----- NEWSLETTER (original) ----- */
     .newsletter {
       padding: 100px 0;
-      background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+      background: #FFFFFF;
       position: relative;
       overflow: hidden;
       transition: background 0.3s;
@@ -649,10 +651,11 @@
     .newsletter h2 {
       font-size: 2.8rem;
       margin-bottom: 20px;
+      color: #337418;
     }
     .newsletter p {
       font-size: 1.2rem;
-      color: var(--text-muted);
+      color: #337418;
       max-width: 600px;
       margin: 0 auto 40px;
     }
@@ -671,12 +674,12 @@
       font-size: 1rem;
       outline: none;
       background: #f0f0f0;
-      color: var(--text);
+      color: #337418;
     }
     .subscribe-form button {
       padding: 0 40px;
       border: none;
-      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      background: #337418;
       color: white;
       font-weight: 600;
       cursor: pointer;
@@ -684,7 +687,7 @@
       font-size: 1rem;
     }
     .subscribe-form button:hover {
-      background: linear-gradient(135deg, #083e68, #14878a);
+      background: #2a5f13;
     }
 
     /* ----- WILDLIFE / TRAINING ENVIRONMENT (original) ----- */
@@ -701,7 +704,7 @@
     .wildlife-section .section-header {
       text-align: center;
       padding: 60px 40px 40px;
-      background: var(--wildlife-header-bg);
+      background: #FFFFFF;
       color: white;
       position: relative;
     }
@@ -712,14 +715,14 @@
       margin-bottom: 20px;
       position: relative;
       display: inline-block;
-      color: white;
+      color: #337418;
     }
     .wildlife-section .section-header h2::after {
       content: '';
       position: absolute;
       width: 120px;
       height: 5px;
-      background: #f1c40f;
+      background: #337418;
       bottom: -15px;
       left: 50%;
       transform: translateX(-50%);
@@ -731,7 +734,7 @@
       margin: 40px auto 0;
       opacity: 0.9;
       line-height: 1.7;
-      color: rgba(255, 255, 255, 0.9);
+      color: #337418;
     }
     .wildlife-section .wildlife-grid {
       display: grid;
@@ -773,10 +776,10 @@
       font-family: 'Playfair Display', serif;
       font-size: 2.2rem;
       margin-bottom: 15px;
-      color: #1a3a29;
+      color: #337418;
     }
     .wildlife-section .wildlife-content p {
-      color: #555;
+      color: #337418;
       font-size: 1.05rem;
       line-height: 1.7;
       margin-bottom: 25px;
@@ -784,7 +787,7 @@
     .wildlife-section .animal-tag {
       display: inline-block;
       padding: 8px 25px;
-      background: linear-gradient(135deg, #13717e, #2c8e97);
+      background: #337418;
       color: white;
       border-radius: 50px;
       font-weight: 600;
@@ -809,14 +812,14 @@
     }
     .os-small‑header {
       display: block;
-      color: #fff;
+      color: #337418;
       font-size: 0.9rem;
       letter-spacing: 2px;
       text-transform: uppercase;
       margin-bottom: 10px;
     }
     .os-title {
-      color: #fff;
+      color: #337418;
       font-size: 2.5rem;
       line-height: 1.2;
       margin: 0;
@@ -832,7 +835,7 @@
       padding: 30px;
       box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
       text-align: center;
-      color: #fff;
+      color: #337418;
       transition: transform 0.3s, box-shadow 0.3s;
     }
     .os-card:hover {
@@ -841,26 +844,27 @@
     }
     .os-icon {
       font-size: 2.5rem;
-      color: #f1c40f;
+      color: #337418;
       margin-bottom: 15px;
     }
     .os-card-title {
       font-size: 1.5rem;
       margin-bottom: 15px;
-      color: #fff;
+      color: #337418;
     }
     .os-card-text {
       font-size: 1rem;
       line-height: 1.6;
-      color: #fff;
+      color: #337418;
     }
 
     /* ----- FOOTER (original) ----- */
     footer {
-      background: var(--bg-footer);
-      color: var(--light-text);
+      background: #FFFFFF;
+      color: #337418;
       padding: 100px 0 40px;
       position: relative;
+      border-top: 1px solid #e0e0e0;
     }
     .footer-container {
       max-width: 1400px;
@@ -871,7 +875,7 @@
       gap: 50px;
     }
     .footer-col h4 {
-      color: white;
+      color: #337418;
       font-size: 1.5rem;
       margin-bottom: 30px;
       position: relative;
@@ -882,7 +886,7 @@
       position: absolute;
       width: 50px;
       height: 3px;
-      background: var(--accent);
+      background: #337418;
       bottom: 0;
       left: 0;
       border-radius: 3px;
@@ -894,7 +898,7 @@
       margin-bottom: 15px;
     }
     .footer-links a {
-      color: var(--footer-text);
+      color: #337418;
       text-decoration: none;
       transition: all 0.3s ease;
       display: inline-flex;
@@ -902,11 +906,11 @@
     }
     .footer-links a i {
       margin-right: 10px;
-      color: var(--accent);
+      color: #337418;
       transition: transform 0.3s ease;
     }
     .footer-links a:hover {
-      color: white;
+      color: #337418;
       padding-left: 5px;
     }
     .footer-links a:hover i {
@@ -924,23 +928,24 @@
       width: 45px;
       height: 45px;
       border-radius: 50%;
-      background: rgba(255, 255, 255, 0.1);
-      color: white;
+      background: rgba(51,116,24,0.1);
+      color: #337418;
       transition: all 0.3s ease;
       font-size: 18px;
     }
     .social-links a:hover {
-      background: var(--accent);
+      background: #337418;
+      color: #FFFFFF;
       transform: translateY(-5px);
     }
     .contact-info li {
       display: flex;
       margin-bottom: 20px;
       align-items: flex-start;
-      color: var(--footer-text);
+      color: #337418;
     }
     .contact-info li i {
-      color: var(--accent);
+      color: #337418;
       margin-right: 15px;
       font-size: 18px;
       margin-top: 5px;
@@ -949,8 +954,8 @@
       text-align: center;
       padding-top: 40px;
       margin-top: 60px;
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
-      color: var(--footer-text);
+      border-top: 1px solid #e0e0e0;
+      color: #337418;
       font-size: 0.9rem;
     }
 
@@ -1004,10 +1009,10 @@
       height: 50px;
     }
     .footer-col .logo-text span:first-child {
-      color: var(--primary);
+      color: #337418;
     }
     .footer-col .logo-text span:last-child {
-      color: var(--secondary);
+      color: #337418;
     }
 
     /* ---- NEW: IOC badge & recognition style ---- */
@@ -1015,12 +1020,12 @@
       display: inline-flex;
       align-items: center;
       gap: 12px;
-      background: rgba(255, 215, 0, 0.15);
-      border: 1px solid #f1c40f;
+      background: rgba(51,116,24,0.15);
+      border: 1px solid #337418;
       border-radius: 50px;
       padding: 8px 24px 8px 20px;
       font-weight: 600;
-      color: #f1c40f;
+      color: #337418;
       letter-spacing: 1px;
       font-size: 0.95rem;
       backdrop-filter: blur(4px);
@@ -1028,14 +1033,14 @@
     }
     .ioc-badge i {
       font-size: 1.4rem;
-      color: #f1c40f;
+      color: #337418;
     }
     .hero-highlight {
       background: rgba(255, 255, 255, 0.08);
       backdrop-filter: blur(6px);
       border-radius: 16px;
       padding: 20px 28px;
-      border-left: 5px solid var(--accent);
+      border-left: 5px solid #337418;
       margin-bottom: 30px;
       max-width: 650px;
     }
@@ -1045,7 +1050,7 @@
       margin: 0;
     }
     .hero-highlight strong {
-      color: #f1c40f;
+      color: #337418;
       font-weight: 700;
     }
     .farm-tag {
@@ -1061,11 +1066,11 @@
     }
     .farm-tag i {
       margin-right: 8px;
-      color: var(--accent);
+      color: #337418;
     }
     /* recognition section */
     .recognition-strip {
-      background: linear-gradient(135deg, #0a2a3a, #1a4a5a);
+      background: #FFFFFF;
       padding: 30px 20px;
       border-radius: 20px;
       margin: 40px auto 0;
@@ -1075,27 +1080,81 @@
       align-items: center;
       justify-content: center;
       gap: 30px 60px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      border: 1px solid #e0e0e0;
     }
     .recognition-strip .item {
       display: flex;
       align-items: center;
       gap: 12px;
-      color: #fff;
+      color: #337418;
       font-weight: 500;
     }
     .recognition-strip .item i {
       font-size: 2rem;
-      color: var(--accent);
+      color: #337418;
     }
     .recognition-strip .item span {
       font-size: 1rem;
       opacity: 0.9;
     }
     .recognition-strip .item strong {
-      color: white;
+      color: #337418;
       font-weight: 700;
       display: block;
+    }
+
+    /* ===== FLOATING WHATSAPP BUTTON ===== */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      z-index: 9999;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 10px;
+    }
+    .whatsapp-float a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #25D366;
+      color: #FFFFFF;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      text-decoration: none;
+      box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+      transition: all 0.3s ease;
+      font-size: 2rem;
+    }
+    .whatsapp-float a:hover {
+      transform: scale(1.1);
+      box-shadow: 0 10px 30px rgba(37, 211, 102, 0.6);
+    }
+    .whatsapp-tooltip {
+      background: #FFFFFF;
+      color: #337418;
+      padding: 8px 16px;
+      border-radius: 30px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      border: 1px solid #e0e0e0;
+      white-space: nowrap;
+      pointer-events: none;
+      opacity: 0;
+      transform: translateX(10px);
+      transition: all 0.3s ease;
+    }
+    .whatsapp-float:hover .whatsapp-tooltip {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    @media (max-width: 600px) {
+      .whatsapp-float { bottom: 20px; right: 20px; }
+      .whatsapp-float a { width: 55px; height: 55px; font-size: 1.8rem; }
     }
   </style>
 </head>
@@ -1379,8 +1438,8 @@
   <!-- TESTIMONIALS (original) -->
   <section class="testimonials">
     <div class="section-title">
-      <h2 style="color: white;">Athlete Experiences</h2>
-      <p style="color: rgba(255, 255, 255, 0.8);">What our trainees say about their journey</p>
+      <h2 style="color: #337418;">Athlete Experiences</h2>
+      <p style="color: #337418;">What our trainees say about their journey</p>
     </div>
     <div class="testimonials-grid">
       <div class="testimonial-card animate">
@@ -1418,7 +1477,7 @@
           <div class="logo-icon"><img src="https://i.pinimg.com/736x/d2/3d/d8/d23dd8ad0a03ce25635349483c6e7130.jpg" alt="KHPTC Logo"></div>
           <div class="logo-text"><span>KHPTC</span><span>Home of Champions</span></div>
         </a>
-        <p style="margin: 20px 0; color: var(--footer-text);">kipkeino High Performance Training  – where champions are made. Elite training in Eldoret, Kenya.</p>
+        <p style="margin: 20px 0; color: #337418;">kipkeino High Performance Training  – where champions are made. Elite training in Eldoret, Kenya.</p>
         <div class="social-links">
           <a href="#"><i class="fab fa-facebook-f"></i></a>
           <a href="#"><i class="fab fa-twitter"></i></a>
@@ -1460,19 +1519,27 @@
       <div class="footer-col">
         <h4>Contact Us</h4>
         <ul class="contact-info">
-          <li><i class="fas fa-phone-alt"></i> +254 712 345 678</li>
-          <li><i class="fas fa-envelope"></i> info@khptc.co.ke</li>
+          <li><i class="fas fa-phone-alt"></i> 0713555717</li>
+          <li><i class="fas fa-envelope"></i> <a href="https://mail.google.com/mail/?view=cm&fs=1&to=kipkeinohptc@gmail.com" target="_blank" style="color:#337418; text-decoration:none;">kipkeinohptc@gmail.com</a></li>
           <li><i class="fas fa-clock"></i> Mon-Fri: 6AM - 8PM, Sat: 7AM - 6PM</li>
         </ul>
       </div>
       <div class="footer-col">
         <h4>Training Promise</h4>
         <div class="logo-icon"><i class="fas fa-running"></i></div>
-        <ul style="list-style: none; color: var(--footer-text);">Uncompromising commitment to excellence, integrity, and athlete development. We empower champions through world-class training and support.</ul>
+        <ul style="list-style: none; color: #337418;">Uncompromising commitment to excellence, integrity, and athlete development. We empower champions through world-class training and support.</ul>
       </div>
     </div>
     <div class="copyright"><p>&copy; 2026 KHPTC. All rights reserved. | Designed by Keith Kili</p></div>
   </footer>
+
+  <!-- FLOATING WHATSAPP BUTTON -->
+  <div class="whatsapp-float">
+    <div class="whatsapp-tooltip">Chat with us</div>
+    <a href="https://wa.me/254713555717" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
+      <i class="fab fa-whatsapp"></i>
+    </a>
+  </div>
 
   <!-- SCRIPT (original theme toggle + animations) -->
   <script>
