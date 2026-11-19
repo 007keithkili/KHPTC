@@ -380,6 +380,72 @@
     [data-theme="dark"] .intl-card .country { color: var(--accent-green); }
     .intl-card p { font-size: .95rem; color: var(--text-muted); line-height: 1.7; font-style: italic; }
 
+    /* ===== LIFE AT KHPTC GALLERY ===== */
+    .life-gallery {
+      max-width: 1300px; margin: 80px auto 100px; padding: 0 30px;
+      position: relative;
+    }
+    .life-gallery .section-title { margin-bottom: 50px; }
+    .life-gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 18px;
+      grid-auto-rows: 200px;
+    }
+    .life-tile {
+      position: relative; border-radius: 18px; overflow: hidden;
+      box-shadow: var(--shadow); cursor: pointer;
+      transition: transform .45s cubic-bezier(.2,.7,.2,1), box-shadow .45s;
+      background: var(--bg-card);
+    }
+    .life-tile:hover {
+      transform: translateY(-6px) scale(1.015);
+      box-shadow: var(--shadow-hover);
+    }
+    .life-tile img {
+      width: 100%; height: 100%; object-fit: cover; display: block;
+      transition: transform .9s cubic-bezier(.2,.7,.2,1);
+    }
+    .life-tile:hover img { transform: scale(1.08); }
+    .life-tile::after {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(5,26,15,.85) 0%, rgba(5,26,15,.15) 45%, transparent 70%);
+      opacity: 0; transition: opacity .4s ease;
+    }
+    .life-tile:hover::after { opacity: 1; }
+    .life-tile .life-caption {
+      position: absolute; left: 0; right: 0; bottom: 0;
+      padding: 18px 20px; color: #fff; z-index: 2;
+      transform: translateY(12px); opacity: 0;
+      transition: all .4s ease;
+      font-weight: 600; font-size: .92rem; line-height: 1.4;
+      text-shadow: 0 2px 10px rgba(0,0,0,.5);
+    }
+    .life-tile .life-caption i {
+      color: var(--accent-green); margin-right: 6px;
+    }
+    .life-tile:hover .life-caption { transform: none; opacity: 1; }
+
+    /* Feature larger tiles for a masonry feel */
+    .life-tile.tall { grid-row: span 2; }
+    .life-tile.wide { grid-column: span 2; }
+
+    @media (max-width: 900px) {
+      .life-gallery { padding: 0 24px; margin: 60px auto 80px; }
+      .life-gallery-grid {
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+        grid-auto-rows: 160px; gap: 14px;
+      }
+      .life-tile.wide { grid-column: span 2; }
+      .life-tile.tall { grid-row: span 2; }
+    }
+    @media (max-width: 600px) {
+      .life-gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: 140px;
+      }
+    }
+
     /* ===== CTA ===== */
     .cta-section {
       position: relative; padding: 90px 20px; text-align: center;
@@ -749,6 +815,77 @@
     </div>
   </div>
 
+  <!-- ===== LIFE AT KHPTC GALLERY ===== -->
+  <section class="life-gallery" id="life-at-khptc">
+    <div class="section-title reveal r-up">
+      <h2>Life at KHPTC</h2>
+      <p>Snapshots of training, community, food, and friendship — the moments beyond the track.</p>
+    </div>
+    <div class="life-gallery-grid">
+
+      <!-- 1 — Tall (span 2 rows) -->
+      <div class="life-tile tall reveal r-zoom">
+        <img src="https://picsum.photos/seed/khptc-1/600/800" alt="Sunrise training session">
+        <span class="life-caption"><i class="fas fa-sun"></i> Sunrise training on the red clay</span>
+      </div>
+
+      <!-- 2 -->
+      <div class="life-tile reveal r-zoom">
+        <img src="https://picsum.photos/seed/khptc-2/600/450" alt="Athletes on the track">
+        <span class="life-caption"><i class="fas fa-running"></i> Intervals on the farm track</span>
+      </div>
+
+      <!-- 3 -->
+      <div class="life-tile reveal r-zoom">
+        <img src="https://picsum.photos/seed/khptc-3/600/450" alt="Farm-to-table breakfast">
+        <span class="life-caption"><i class="fas fa-utensils"></i> Farm-to-table breakfast</span>
+      </div>
+
+      <!-- 4 — Wide (span 2 cols) -->
+      <div class="life-tile wide reveal r-zoom">
+        <img src="https://picsum.photos/seed/khptc-4/900/450" alt="Strength training session">
+        <span class="life-caption"><i class="fas fa-dumbbell"></i> Strength &amp; conditioning in the gym</span>
+      </div>
+
+      <!-- 5 -->
+      <div class="life-tile reveal r-zoom">
+        <img src="https://picsum.photos/seed/khptc-5/600/450" alt="Athletes laughing together">
+        <span class="life-caption"><i class="fas fa-smile"></i> Friendships forged at the centre</span>
+      </div>
+
+      <!-- 6 -->
+      <div class="life-tile reveal r-zoom">
+        <img src="https://picsum.photos/seed/khptc-6/600/450" alt="Long run on Moiben Road">
+        <span class="life-caption"><i class="fas fa-road"></i> Long runs on Moiben Road</span>
+      </div>
+
+      <!-- 7 — Tall -->
+      <div class="life-tile tall reveal r-zoom">
+        <img src="https://picsum.photos/seed/khptc-7/600/800" alt="Evening recovery">
+        <span class="life-caption"><i class="fas fa-mug-hot"></i> Evening recovery &amp; stories</span>
+      </div>
+
+      <!-- 8 -->
+      <div class="life-tile reveal r-zoom">
+        <img src="https://picsum.photos/seed/khptc-8/600/450" alt="Coaches and athletes talking">
+        <span class="life-caption"><i class="fas fa-chalkboard-teacher"></i> Coaches' corner</span>
+      </div>
+
+      <!-- 9 -->
+      <div class="life-tile reveal r-zoom">
+        <img src="https://picsum.photos/seed/khptc-9/600/450" alt="Bonfire night">
+        <span class="life-caption"><i class="fas fa-fire"></i> Bonfire night under the stars</span>
+      </div>
+
+      <!-- 10 -->
+      <div class="life-tile reveal r-zoom">
+        <img src="https://picsum.photos/seed/khptc-10/600/450" alt="Eldoret countryside views">
+        <span class="life-caption"><i class="fas fa-mountain"></i> The view from Kazi Mingi Farm</span>
+      </div>
+
+    </div>
+  </section>
+
   <!-- CTA -->
   <div class="cta-section">
     <h2>Ready to Start Your Kenyan Adventure?</h2>
@@ -778,7 +915,7 @@
         <ul class="footer-links">
           <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
           <li><a href="training.html"><i class="fas fa-chevron-right"></i> Training</a></li>
-          <li><a href="programs.html"><i class="fas fa-chevron-right"></i> Programs</a></li>
+          
           <li><a href="experience.html"><i class="fas fa-chevron-right"></i> Experiences</a></li>
           <li><a href="about.html"><i class="fas fa-chevron-right"></i> About</a></li>
           <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
