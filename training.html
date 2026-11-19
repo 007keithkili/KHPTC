@@ -3,650 +3,1445 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>KHPTC | Training & Gym – Eldoret, Kenya</title>
-  <!-- Font Awesome 6 (Free) -->
+  <title>Training & Gym | KipKeino High Performance Training Centre</title>
+  <meta name="description" content="Inside KHPTC training — altitude science, daily training rhythm, coach roles, gym equipment, and weekly schedules at Kenya's IOC-recognized high performance centre in Eldoret.">
+  <link rel="canonical" href="https://www.kipkeinohptc.com/training.html">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;700;800&display=swap" rel="stylesheet">
+
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
     :root {
-      --primary: #337418;
-      --secondary: #337418;
-      --accent: #337418;
-      --dark: #337418;
-      --light: #f8f9fa;
-      --text: #337418;
-      --light-text: #f0f0f0;
-      --bg-body: #FFFFFF;
+      --primary: #054A29;
+      --primary-dark: #03341C;
+      --primary-light: #0a6b3c;
+      --accent-green: #8fd47a;
+      --text-dark: #054A29;
+      --text-muted: #4a6b5a;
+      --bg-body: #ffffff;
+      --bg-header: rgba(255,255,255,.96);
       --bg-card: #ffffff;
-      --bg-footer: #ffffff;
-      --border-light: #eee;
-      --shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
-      --shadow-hover: 0 25px 60px rgba(0, 0, 0, 0.15);
-      --text-muted: #337418;
-      --footer-text: #337418;
-      --wildlife-header-bg: #FFFFFF;
-      --wildlife-card-bg: #ffffff;
-      --os-bg: #FFFFFF;
-      --os-card-bg: #FFFFFF;
+      --glass: rgba(255,255,255,.72);
+      --glass-hover: rgba(255,255,255,.94);
+      --glass-border: rgba(255,255,255,.8);
+      --border-light: #e0e8e3;
+      --shadow: 0 15px 40px rgba(5,74,41,.08);
+      --shadow-hover: 0 25px 60px rgba(5,74,41,.16);
+      --g-glow: rgba(5,74,41,.35);
+      --hero-overlay-1: rgba(5,26,15,.72);
+      --hero-overlay-2: rgba(5,26,15,.35);
+
+      --img-hero-track: url('https://i.pinimg.com/1200x/d0/ec/dd/d0ecdd59e27df7f400b360640ef6bb2d.jpg');
+      --img-band-altitude: url('https://i.pinimg.com/1200x/db/85/9e/db859ec19aa3e2b54292711230042625.jpg');
+      --img-band-morning: url('https://i.pinimg.com/736x/9a/9f/c8/9a9fc879a799e4f074c6595f67d5129e.jpg');
+      --img-band-coach: url('https://i.pinimg.com/1200x/52/2a/4a/522a4a1c24afa1dab7c2eedf3518dc3a.jpg');
+      --img-gym: url('https://i.pinimg.com/736x/7e/00/70/7e0070141f926070a35cbbc147fcdba2.jpg');
+      --img-altitude-1: url('https://i.pinimg.com/736x/b4/59/cc/b459cce1736bb17eb3b6b52e6367a671.jpg');
+      --img-altitude-2: url('https://i.pinimg.com/736x/53/b4/b2/53b4b269cd4dbccaa376cb3c7407eb3b.jpg');
+      --img-coach-1: url('https://i.pinimg.com/736x/84/2b/1d/842b1daf68ff85f038692de2ed743fee.jpg');
+      --img-coach-2: url('https://i.pinimg.com/736x/19/e7/f5/19e7f5c011665682dcf302f98d525bfe.jpg');
     }
 
-    /* ============ DARK MODE - EXACTLY MATCHING INDEX.HTML ============ */
     [data-theme="dark"] {
-      --primary: #337418;
-      --secondary: #337418;
-      --accent: #337418;
-      --dark: #337418;
-      --text: #337418;
-      --light-text: #f0f0f0;
-      --bg-body: #FFFFFF;
-      --bg-card: #FFFFFF;
-      --bg-footer: #FFFFFF;
-      --border-light: #333;
-      --shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
-      --shadow-hover: 0 25px 60px rgba(0, 0, 0, 0.7);
-      --text-muted: #337418;
-      --footer-text: #337418;
-      --wildlife-header-bg: #FFFFFF;
-      --wildlife-card-bg: #FFFFFF;
-      --os-bg: #FFFFFF;
-      --os-card-bg: #FFFFFF;
-
-      /* Additional overrides to match index.html exactly */
-      .header-container, header { background: #FFFFFF !important; }
-      .logo-text span:first-child { color: #337418; }
-      .location-banner { background: #FFFFFF !important; border: 1px solid #e0e0e0; }
-      .location-item strong, .location-item span { color: #337418; }
-      .location-item i { color: #337418 !important; }
-      .week-day { background: #FFFFFF !important; }
-      .week-day strong { color: #337418; }
-      .place-card { background: var(--bg-card) !important; }
-      .place-info h4 { color: #337418; }
-      .place-info p { color: #337418; }
-      .place-tag { background: rgba(51,116,24,0.15) !important; color: #337418 !important; }
-      .gym-section { background: #FFFFFF !important; }
-      .gym-card { background: rgba(51,116,24,0.05) !important; border-color: rgba(51,116,24,0.1) !important; }
-      .gym-card:hover { background: rgba(51,116,24,0.1) !important; }
-      .gym-info h4 { color: #337418 !important; }
-      .gym-info p { color: #337418 !important; }
-      .gym-icon { color: #337418 !important; }
-      .coach-tip { background: #337418 !important; }
-      .coach-tip h3 { color: #FFFFFF !important; }
-      .coach-tip p { color: #FFFFFF !important; }
-      .coach-tip .btn { background: #fff; color: #337418; }
-      .gallery-strip img { box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5); }
-      .gallery-strip img:hover { box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7); }
-      .footer-col h4 { color: #337418; }
-      .footer-links a { color: var(--footer-text); }
-      .contact-info li { color: var(--footer-text); }
-      .copyright { color: var(--footer-text); }
-      .section-title p { color: var(--text-muted); }
-      .btn-outline { border-color: var(--primary); color: var(--primary); }
-      .btn-outline:hover { background: var(--primary); color: #fff; }
-      .btn-light { background: #fff; color: #337418; }
-      .btn-light:hover { background: #f0f0f0; }
-      .footer-col .logo-text span:first-child { color: #337418; }
-      .footer-col .logo-text span:last-child { color: #337418; }
+      --text-dark: #e8eef4;
+      --text-muted: #9aa9b8;
+      --bg-body: #0a140d;
+      --bg-header: rgba(10,20,13,.96);
+      --bg-card: #112016;
+      --glass: rgba(17,32,22,.65);
+      --glass-hover: rgba(25,45,32,.9);
+      --glass-border: rgba(255,255,255,.1);
+      --border-light: #1e3527;
+      --shadow: 0 15px 40px rgba(0,0,0,.5);
+      --shadow-hover: 0 25px 60px rgba(0,0,0,.7);
+      --g-glow: rgba(143,212,122,.25);
+      --hero-overlay-1: rgba(0,0,0,.75);
+      --hero-overlay-2: rgba(0,0,0,.4);
     }
+    [data-theme="dark"] body { background: var(--bg-body); color: var(--text-dark); }
+    [data-theme="dark"] header { background: var(--bg-header); box-shadow: 0 2px 12px rgba(0,0,0,.4); }
+    [data-theme="dark"] .logo-text span:first-child { color: var(--accent-green); }
+    [data-theme="dark"] .logo-text span:last-child { color: var(--text-muted); }
+    [data-theme="dark"] nav a { color: var(--text-dark); }
+    [data-theme="dark"] nav a:hover { color: var(--accent-green); }
+    [data-theme="dark"] .section-title h2 { color: var(--text-dark); }
+    [data-theme="dark"] .section-title p { color: var(--text-muted); }
+    [data-theme="dark"] .footer-col h4,
+    [data-theme="dark"] .footer-col p,
+    [data-theme="dark"] .footer-links a,
+    [data-theme="dark"] .contact-info li,
+    [data-theme="dark"] .copyright { color: rgba(255,255,255,.72); }
+    [data-theme="dark"] .timeline-content h3 { color: var(--text-dark); }
+    [data-theme="dark"] .timeline-content p { color: var(--text-muted); }
+    [data-theme="dark"] .science-card { background: var(--glass); border-color: var(--glass-border); }
+    [data-theme="dark"] .science-card h3 { color: var(--text-dark); }
+    [data-theme="dark"] .science-card p { color: var(--text-muted); }
+    [data-theme="dark"] .role-card { background: var(--glass); border-color: var(--glass-border); }
+    [data-theme="dark"] .role-card h3 { color: var(--text-dark); }
+    [data-theme="dark"] .role-card p { color: var(--text-muted); }
+    [data-theme="dark"] .contrast-item { background: var(--glass); border-color: var(--glass-border); }
+    [data-theme="dark"] .contrast-item h4 { color: var(--text-dark); }
+    [data-theme="dark"] .contrast-item p { color: var(--text-muted); }
+    [data-theme="dark"] .schedule-table tbody tr { background: var(--glass); }
+    [data-theme="dark"] .schedule-table td { color: var(--text-dark); border-color: var(--border-light); }
+    [data-theme="dark"] .schedule-table td:first-child { color: var(--accent-green); }
+    [data-theme="dark"] .gym-equip-card { background: var(--glass); border-color: var(--glass-border); }
+    [data-theme="dark"] .gym-equip-card h3 { color: var(--text-dark); }
+    [data-theme="dark"] .gym-equip-card p { color: var(--text-muted); }
+    [data-theme="dark"] .modal-content { background: #112016; color: var(--text-dark); }
+    [data-theme="dark"] .booking-form input,
+    [data-theme="dark"] .booking-form select,
+    [data-theme="dark"] .booking-form textarea { background: rgba(0,0,0,.25); color: var(--text-dark); border-color: #1e3527; }
+    [data-theme="dark"] .booking-form label { color: var(--text-dark); }
+    [data-theme="dark"] .whatsapp-tooltip { background: #112016; color: var(--text-dark); border-color: #1e3527; }
 
+    html { scroll-behavior: smooth; }
     body {
       font-family: 'Montserrat', sans-serif;
-      color: var(--text);
-      background: #FFFFFF;
-      line-height: 1.6;
-      transition: background 0.3s, color 0.3s;
+      color: var(--text-dark);
+      background: var(--bg-body);
+      line-height: 1.7;
       overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      transition: background .4s, color .4s;
     }
-
     h1, h2, h3, h4, h5 {
       font-family: 'Playfair Display', serif;
       font-weight: 700;
-      color: var(--dark);
-      line-height: 1.3;
+      color: var(--text-dark);
+      line-height: 1.25;
+      letter-spacing: -.01em;
     }
 
+    /* ===== SCROLL PROGRESS + RUNNER ===== */
+    #bar {
+      position: fixed; top: 0; left: 0; height: 5px; width: 0;
+      background: linear-gradient(90deg, var(--accent-green), var(--primary), var(--primary-dark));
+      z-index: 2000; border-radius: 0 4px 4px 0; transition: width .06s linear;
+      box-shadow: 0 0 16px var(--g-glow);
+    }
+    #runner-wrap {
+      position: fixed; top: -14px; left: 0; z-index: 2001;
+      transition: left .06s linear; pointer-events: none;
+      display: flex; align-items: center; justify-content: center;
+      width: 34px; height: 34px;
+    }
+    #runner-wrap .pulse-ring {
+      position: absolute; inset: 0; border-radius: 50%;
+      background: radial-gradient(circle, rgba(143,212,122,.35), transparent 70%);
+      animation: runnerPulse 1.4s ease-out infinite;
+    }
+    #runner-wrap .runner-icon {
+      position: relative; width: 26px; height: 26px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent-green), var(--primary));
+      color: #fff; display: flex; align-items: center; justify-content: center;
+      font-size: 12px;
+      box-shadow: 0 3px 12px rgba(5,74,41,.5), 0 0 0 2px rgba(255,255,255,.9);
+      animation: runnerBob 0.55s ease-in-out infinite;
+    }
+    [data-theme="dark"] #runner-wrap .runner-icon { box-shadow: 0 3px 12px rgba(143,212,122,.4), 0 0 0 2px rgba(10,20,13,.9); }
+    @keyframes runnerBob { 0%,100%{transform:translateY(0) rotate(-6deg)} 50%{transform:translateY(-3px) rotate(6deg)} }
+    @keyframes runnerPulse { 0%{transform:scale(.8);opacity:.8} 100%{transform:scale(2);opacity:0} }
+
+    /* ===== BUTTONS ===== */
     .btn {
-      padding: 12px 28px;
-      border-radius: 30px;
-      font-weight: 600;
-      transition: all 0.3s ease;
-      text-decoration: none;
-      display: inline-block;
-      font-size: 16px;
-      border: none;
-      cursor: pointer;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      padding: 13px 30px; border-radius: 30px; font-weight: 600;
+      transition: all .35s cubic-bezier(.2,.7,.2,1); text-decoration: none;
+      display: inline-block; font-size: 15px; border: none; cursor: pointer;
+      box-shadow: 0 6px 18px rgba(0,0,0,.12); position: relative; overflow: hidden;
+      letter-spacing: .3px;
     }
-    .btn-primary { background: #337418; color: white; }
-    .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(51,116,24,0.3); background: #2a5f13; }
-    .btn-outline { background: transparent; border: 2px solid var(--primary); color: #337418; }
-    .btn-outline:hover { background: var(--primary); color: white; transform: translateY(-3px); }
-    .btn-light { background: #fff; color: #337418; }
-    .btn-light:hover { background: #f0f0f0; transform: translateY(-3px); }
+    .btn-primary { background: linear-gradient(135deg, var(--primary), var(--primary-dark)); color: #fff; }
+    .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 10px 28px var(--g-glow); }
+    .btn-outline { background: rgba(255,255,255,.08); color: #fff; border: 2px solid rgba(255,255,255,.85); backdrop-filter: blur(6px); }
+    .btn-outline:hover { background: #fff; color: var(--primary); transform: translateY(-3px); }
+    .btn:after {
+      content: ''; position: absolute; top: 0; left: -75%; width: 50%; height: 100%;
+      background: linear-gradient(120deg, transparent, rgba(255,255,255,.6), transparent);
+      transform: skewX(-20deg);
+    }
+    .btn:hover:after { animation: shine .9s; }
+    @keyframes shine { to { left: 130%; } }
 
-    .section-title { text-align: center; margin-bottom: 60px; }
-    .section-title h2 { font-size: 3rem; margin-bottom: 15px; position: relative; display: inline-block; color: #337418; }
-    .section-title h2:after { content: ''; position: absolute; width: 80px; height: 5px; background: #337418; bottom: -10px; left: 50%; transform: translateX(-50%); border-radius: 5px; }
-    .section-title p { font-size: 1.2rem; color: #337418; max-width: 700px; margin: 25px auto 0; }
+    /* ===== SECTION TITLE ===== */
+    .section-title { text-align: center; margin-bottom: 60px; position: relative; z-index: 2; }
+    .section-title h2 {
+      font-size: clamp(2rem, 4vw, 3.2rem); margin-bottom: 16px;
+      position: relative; display: inline-block; color: var(--text-dark);
+    }
+    .section-title h2:after {
+      content: ''; position: absolute; width: 90px; height: 4px;
+      background: linear-gradient(90deg, var(--primary), var(--primary-dark));
+      bottom: -14px; left: 50%; transform: translateX(-50%);
+      border-radius: 4px; box-shadow: 0 4px 12px var(--g-glow);
+    }
+    .section-title p {
+      font-size: 1.15rem; max-width: 680px; margin: 28px auto 0;
+      color: var(--text-muted); font-weight: 400;
+    }
 
-    /* HEADER */
-    header { background: #FFFFFF; box-shadow: 0 5px 20px rgba(0,0,0,0.08); width: 100%; top: 0; z-index: 1000; padding: 15px 0; transition: all 0.4s ease; }
-    .header-container { max-width: 1400px; margin: 0 auto; padding: 0 40px; display: flex; justify-content: space-between; align-items: center; }
-    .logo { display: flex; align-items: center; text-decoration: none; }
-    .logo-icon { width: 50px; height: 50px; background: #337418; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 12px; box-shadow: 0 4px 12px rgba(51,116,24,0.2); overflow: hidden; }
+    /* ===== HEADER ===== */
+    header {
+      background: var(--bg-header);
+      backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+      box-shadow: 0 2px 12px rgba(0,0,0,.07);
+      position: static; width: 100%; z-index: 1000;
+      padding: 6px 0; border-bottom: 1px solid var(--border-light);
+      transition: background .4s;
+    }
+    [data-theme="dark"] header { border-bottom-color: rgba(255,255,255,.06); }
+    .header-container {
+      max-width: 1280px; margin: 0 auto; padding: 0 24px;
+      display: flex; justify-content: space-between; align-items: center; gap: 12px;
+    }
+    .logo { display: flex; align-items: center; text-decoration: none; flex-shrink: 0; gap: 12px; }
+    .logo-icon {
+      width: 45px; height: 45px; flex-shrink: 0;
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      border-radius: 50%; display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 4px 12px var(--g-glow); overflow: hidden; color: #fff;
+    }
     .logo-icon img { width: 100%; height: 100%; object-fit: cover; }
-    .logo-icon i { color: white; font-size: 24px; }
-    .logo-text { display: flex; flex-direction: column; }
-    .logo-text span:first-child { font-family: 'Playfair Display', serif; font-weight: 800; font-size: 28px; color: #337418; letter-spacing: -0.5px; }
-    .logo-text span:last-child { font-size: 12px; color: #337418; letter-spacing: 2px; text-transform: uppercase; margin-top: -5px; }
-    nav ul { display: flex; list-style: none; }
-    nav ul li { margin: 0 15px; }
-    nav ul li a { text-decoration: none; color: #337418; font-weight: 600; font-size: 16px; position: relative; padding: 8px 0; transition: all 0.3s ease; }
-    nav ul li a:after { content: ''; position: absolute; width: 0; height: 3px; bottom: 0; left: 0; background: #337418; border-radius: 3px; transition: width 0.3s ease; }
-    nav ul li a:hover:after { width: 100%; }
-    .header-actions { display: flex; align-items: center; gap: 20px; }
-    .theme-toggle { background: none; border: 2px solid #337418; color: #337418; border-radius: 50%; width: 44px; height: 44px; font-size: 1.2rem; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease; background: transparent; }
-    .theme-toggle:hover { background: #337418; color: white; transform: rotate(20deg); }
-    [data-theme="dark"] .theme-toggle { border-color: #337418; color: #337418; }
-    [data-theme="dark"] .theme-toggle:hover { background: #337418; color: #FFFFFF; }
-
-    /* HERO */
-    .hero { min-height: 80vh; display: flex; align-items: center; padding: 140px 0 60px; position: relative; overflow: hidden; }
-    .hero::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(rgba(26,42,58,0.82), rgba(26,42,58,0.88)), url('https://i.pinimg.com/736x/02/83/78/02837855bc30a32526be488cdef4d621.jpg') center/cover no-repeat; z-index: -1; }
-    .hero-content { max-width: 1400px; margin: 0 auto; padding: 0 40px; width: 100%; }
-    .hero-text { max-width: 800px; animation: fadeInUp 1s ease; }
-    .hero h1 { font-size: 4rem; margin-bottom: 20px; color: white; line-height: 1.2; }
-    .hero h1 span { color: #337418; }
-    .hero p { font-size: 1.4rem; margin-bottom: 30px; color: rgba(255,255,255,0.9); }
-    .hero-btns { display: flex; gap: 20px; flex-wrap: wrap; }
-
-    /* LOCATION HIGHLIGHT */
-    .location-banner {
-      background: #FFFFFF;
-      color: #337418;
-      padding: 25px 30px;
-      border-radius: 20px;
-      max-width: 1100px;
-      margin: -20px auto 50px;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 30px;
-      box-shadow: 0 15px 30px rgba(0,0,0,0.1);
-      border: 1px solid #e0e0e0;
-      position: relative;
-      z-index: 5;
+    .logo-text { display: flex; flex-direction: column; min-width: 0; }
+    .logo-text span:first-child {
+      font-family: 'Playfair Display', serif; font-weight: 900; font-size: 25px;
+      letter-spacing: -.5px; color: var(--primary); line-height: 1;
     }
-    .location-item {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      font-weight: 500;
+    .logo-text span:last-child {
+      font-size: 13px; letter-spacing: .9px; text-transform: uppercase;
+      margin-top: 2px; color: var(--text-muted); line-height: 1.15; white-space: nowrap;
     }
-    .location-item i {
-      font-size: 1.8rem;
-      color: #337418;
+    nav ul { display: flex; list-style: none; gap: 4px; }
+    nav li { margin: 0; }
+    nav a {
+      text-decoration: none; color: var(--text-dark); font-weight: 650;
+      font-size: 16px; position: relative; padding: 7px 10px;
+      transition: color .3s; border-radius: 6px; display: inline-block;
     }
-
-    /* TRAINING INTRO */
-    .training-intro { max-width: 1300px; margin: 70px auto; padding: 0 30px; display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
-    .training-intro img { width: 100%; border-radius: 20px; box-shadow: var(--shadow); }
-    .training-text h3 { font-size: 2.2rem; margin-bottom: 20px; color: #337418; }
-    .training-text p { margin-bottom: 20px; color: #337418; }
-
-    /* WEEKLY STRUCTURE */
-    .weekly-structure { background: var(--bg-card); border-radius: 25px; padding: 50px; max-width: 1300px; margin: 70px auto; box-shadow: var(--shadow); }
-    .weekly-structure h3 { text-align: center; font-size: 2.2rem; margin-bottom: 30px; color: #337418; }
-    .week-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px; }
-    .week-day { background: #f4f7fb; padding: 20px; border-radius: 15px; text-align: center; border: 1px solid var(--border-light); transition: all 0.3s; }
-    [data-theme="dark"] .week-day { background: #FFFFFF; }
-    .week-day strong { display: block; font-size: 1.2rem; margin-bottom: 8px; color: #337418; }
-    .week-day span { font-size: 0.85rem; color: #337418; }
-
-    /* MYTHICAL PLACES */
-    .mythical-places { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; max-width: 1300px; margin: 60px auto; padding: 0 30px; }
-    .place-card { background: var(--bg-card); border-radius: 20px; overflow: hidden; box-shadow: var(--shadow); transition: all 0.4s; }
-    .place-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-hover); }
-    .place-card img { width: 100%; height: 220px; object-fit: cover; }
-    .place-info { padding: 25px; }
-    .place-info h4 { font-size: 1.6rem; margin-bottom: 10px; color: #337418; }
-    .place-info p { color: #337418; margin-bottom: 10px; }
-    .place-tag { display: inline-block; background: rgba(51,116,24,0.1); color: #337418; padding: 5px 15px; border-radius: 30px; font-weight: 600; font-size: 0.8rem; }
-
-    /* GYM FACILITIES SECTION */
-    .gym-section { background: #FFFFFF; padding: 80px 30px; color: #337418; margin: 70px 0; }
-    .gym-container { max-width: 1300px; margin: 0 auto; }
-    .gym-header { text-align: center; margin-bottom: 50px; }
-    .gym-header h2 { font-size: 3rem; color: #337418; margin-bottom: 15px; }
-    .gym-header p { color: #337418; font-size: 1.2rem; }
-    .gym-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 30px; }
-    .gym-card { background: rgba(51,116,24,0.08); backdrop-filter: blur(8px); border-radius: 20px; overflow: hidden; transition: all 0.4s; border: 1px solid rgba(51,116,24,0.15); }
-    .gym-card:hover { transform: translateY(-10px); background: rgba(51,116,24,0.15); }
-    .gym-card img { width: 100%; height: 200px; object-fit: cover; }
-    .gym-info { padding: 25px; }
-    .gym-info h4 { font-size: 1.5rem; color: #337418; margin-bottom: 10px; }
-    .gym-info p { color: #337418; font-size: 0.95rem; }
-    .gym-icon { font-size: 2rem; color: #337418; margin-bottom: 10px; }
-
-    /* COACH TIP & KIPCHOGE */
-    .coach-tip { background: #337418; color: white; padding: 60px 30px; text-align: center; border-radius: 25px; max-width: 1000px; margin: 60px auto; }
-    .coach-tip h3 { color: white; font-size: 2.5rem; margin-bottom: 20px; }
-    .coach-tip p { font-size: 1.2rem; max-width: 700px; margin: 0 auto 30px; }
-    .coach-tip .btn { background: white; color: #337418; }
-
-    /* EXTRA GALLERY */
-    .gallery-strip { display: flex; flex-wrap: wrap; gap: 15px; justify-content: center; margin: 60px auto; max-width: 1400px; padding: 0 20px; }
-    .gallery-strip img { width: 280px; height: 200px; object-fit: cover; border-radius: 15px; box-shadow: var(--shadow); transition: all 0.4s; }
-    .gallery-strip img:hover { transform: scale(1.05); box-shadow: var(--shadow-hover); }
-
-    /* FOOTER */
-    footer { background: #FFFFFF; color: #337418; padding: 80px 0 40px; position: relative; border-top: 1px solid #e0e0e0; }
-    .footer-container { max-width: 1400px; margin: 0 auto; padding: 0 40px; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 40px; }
-    .footer-col h4 { color: #337418; font-size: 1.4rem; margin-bottom: 25px; position: relative; padding-bottom: 12px; }
-    .footer-col h4:after { content: ''; position: absolute; width: 50px; height: 3px; background: #337418; bottom: 0; left: 0; }
-    .footer-links { list-style: none; }
-    .footer-links li { margin-bottom: 12px; }
-    .footer-links a { color: #337418; text-decoration: none; transition: all 0.3s; }
-    .footer-links a i { margin-right: 8px; color: #337418; }
-    .footer-links a:hover { color: #337418; padding-left: 5px; }
-    .social-links { display: flex; gap: 12px; margin-top: 15px; }
-    .social-links a { display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 50%; background: rgba(51,116,24,0.1); color: #337418; }
-    .social-links a:hover { background: #337418; color: #FFFFFF; }
-    .contact-info li { display: flex; margin-bottom: 15px; color: #337418; }
-    .contact-info li i { color: #337418; margin-right: 12px; }
-    .copyright { text-align: center; padding-top: 30px; margin-top: 50px; border-top: 1px solid #e0e0e0; color: #337418; font-size: 0.9rem; }
-
-    @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
-    .animate { animation: fadeInUp 0.8s ease forwards; opacity: 0; }
+    nav a:hover { color: var(--primary); background: rgba(5,74,41,.05); }
+    [data-theme="dark"] nav a:hover { background: rgba(143,212,122,.08); }
+    nav a:after {
+      content: ''; position: absolute; width: 0; height: 3px; bottom: 4px; left: 50%;
+      transform: translateX(-50%); background: var(--primary);
+      border-radius: 3px; transition: width .3s ease;
+    }
+    [data-theme="dark"] nav a:after { background: var(--accent-green); }
+    nav a:hover:after { width: 60%; }
+    nav a.active { color: var(--primary); }
+    nav a.active:after { width: 60%; }
+    .header-actions { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
+    .btn-book { padding: 8px 16px; font-size: 15px; white-space: nowrap; }
 
     @media (max-width: 900px) {
-      .header-container { flex-direction: column; padding: 15px 20px; }
-      .logo { margin-bottom: 15px; }
-      nav ul { margin: 15px 0; flex-wrap: wrap; justify-content: center; }
-      .hero h1 { font-size: 2.8rem; }
-      .training-intro { grid-template-columns: 1fr; }
+      .header-container { flex-wrap: wrap; padding: 0 12px; gap: 8px; }
+      .logo { margin-right: auto; gap: 10px; }
+      .logo-icon { width: 50px; height: 50px; }
+      .logo-text span:first-child { font-size: 26px; }
+      .logo-text span:last-child { font-size: 12px; letter-spacing: .6px; white-space: normal; }
+      nav { order: 3; width: 100%; }
+      nav ul { justify-content: center; flex-wrap: wrap; margin-top: 4px; gap: 2px; }
+      nav a { font-size: 14px; padding: 6px 9px; }
+      .header-actions { gap: 8px; }
+      .btn-book { padding: 7px 13px; font-size: 13.5px; }
     }
-    @media (max-width: 600px) {
-      .hero h1 { font-size: 2.4rem; }
-      .section-title h2 { font-size: 2.2rem; }
-      .week-grid { grid-template-columns: 1fr 1fr; }
-      .gym-grid { grid-template-columns: 1fr; }
-      .gallery-strip img { width: 100%; max-width: 400px; }
+    @media (max-width: 480px) {
+      .logo-icon { width: 46px; height: 46px; }
+      .logo-text span:first-child { font-size: 24px; }
+      .logo-text span:last-child { font-size: 11px; letter-spacing: .5px; }
+      .btn-book { padding: 6px 11px; font-size: 12.5px; }
+      nav a { font-size: 13px; padding: 5px 7px; }
     }
 
-    /* ===== FLOATING WHATSAPP BUTTON ===== */
-    .whatsapp-float {
-      position: fixed;
-      bottom: 30px;
-      right: 30px;
-      z-index: 9999;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-end;
-      gap: 10px;
+    /* ===== THEME TOGGLE ===== */
+    .theme-toggle {
+      position: relative; width: 46px; height: 26px; border-radius: 28px;
+      background: linear-gradient(135deg, #e8eef4, #d0dae4);
+      border: 1px solid rgba(0,0,0,.08); cursor: pointer;
+      transition: all .4s cubic-bezier(.2,.7,.2,1); padding: 0;
+      box-shadow: inset 0 2px 4px rgba(0,0,0,.06); overflow: hidden;
     }
-    .whatsapp-float a {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: #25D366;
-      color: #FFFFFF;
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      text-decoration: none;
-      box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
-      transition: all 0.3s ease;
-      font-size: 2rem;
+    .theme-toggle:before {
+      content: ''; position: absolute; top: 2px; left: 2px; width: 18px; height: 18px;
+      border-radius: 50%; background: linear-gradient(135deg, #ffd86b, #fcb131);
+      box-shadow: 0 2px 6px rgba(252,177,49,.5);
+      transition: all .4s cubic-bezier(.34,1.56,.64,1); z-index: 2;
     }
-    .whatsapp-float a:hover {
-      transform: scale(1.1);
-      box-shadow: 0 10px 30px rgba(37, 211, 102, 0.6);
+    .theme-toggle:after {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(135deg, #0a140d, #112016);
+      opacity: 0; transition: opacity .4s; z-index: 1;
     }
+    .theme-toggle .t-icon { position: absolute; top: 50%; transform: translateY(-50%); font-size: 9px; z-index: 3; transition: all .4s; }
+    .theme-toggle .t-sun { left: 6px; color: #fff; opacity: 1; }
+    .theme-toggle .t-moon { right: 6px; color: #8fa4b8; opacity: .6; }
+    [data-theme="dark"] .theme-toggle:before { left: 24px; background: linear-gradient(135deg, #8fa4b8, #c8d6e2); box-shadow: 0 2px 6px rgba(200,214,226,.5); }
+    [data-theme="dark"] .theme-toggle:after { opacity: 1; }
+    [data-theme="dark"] .theme-toggle .t-sun { opacity: .5; color: #8fa4b8; }
+    [data-theme="dark"] .theme-toggle .t-moon { opacity: 1; color: #fff; }
+    .theme-toggle:hover { box-shadow: inset 0 2px 4px rgba(0,0,0,.06), 0 0 0 3px var(--g-glow); }
+
+    /* ===== PAGE HERO ===== */
+    .page-hero {
+      min-height: 60vh; display: flex; align-items: center;
+      padding: 130px 0 100px; position: relative; overflow: hidden; isolation: isolate;
+      background: linear-gradient(115deg, var(--hero-overlay-1) 0%, var(--hero-overlay-2) 65%, transparent 100%),
+                  var(--img-hero-track) center/cover no-repeat fixed;
+    }
+    .page-hero-content { max-width: 1400px; margin: 0 auto; padding: 0 40px; width: 100%; }
+    .page-hero-text { max-width: 820px; }
+    .page-hero h1 {
+      font-size: clamp(2.4rem, 5vw, 4rem); margin-bottom: 22px;
+      color: #fff; line-height: 1.1; letter-spacing: -.02em;
+      text-shadow: 0 4px 30px rgba(0,0,0,.3);
+    }
+    .page-hero h1 span { color: var(--accent-green); text-shadow: 0 0 40px rgba(143,212,122,.35); }
+    .page-hero p {
+      font-size: clamp(1rem, 1.6vw, 1.2rem); color: rgba(255,255,255,.92);
+      max-width: 640px; line-height: 1.7; margin-bottom: 28px;
+    }
+    .breadcrumb {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(255,255,255,.1); backdrop-filter: blur(8px);
+      padding: 8px 18px; border-radius: 30px; margin-bottom: 24px;
+      font-size: .85rem; color: rgba(255,255,255,.92);
+      border: 1px solid rgba(255,255,255,.25);
+    }
+    .breadcrumb a { color: var(--accent-green); text-decoration: none; }
+    .breadcrumb a:hover { text-decoration: underline; }
+    .breadcrumb i { font-size: .65rem; opacity: .6; }
+    .hero-btns { display: flex; gap: 16px; flex-wrap: wrap; }
+
+    /* ===== PARALLAX BAND ===== */
+    .band {
+      min-height: 50vh; display: flex; align-items: center; justify-content: center;
+      text-align: center; position: relative; isolation: isolate; padding: 90px 30px;
+      background-position: center; background-size: cover; background-attachment: fixed;
+    }
+    .band::before { content: ''; position: absolute; inset: 0; background: linear-gradient(rgba(5,26,15,.55), rgba(5,26,15,.45)); z-index: -1; }
+    .band > div { max-width: 860px; position: relative; z-index: 2; }
+    .band h2 { color: #fff; font-size: clamp(2rem, 4vw, 3.2rem); margin-bottom: 16px; text-shadow: 0 6px 30px rgba(0,0,0,.5); }
+    .band h2:after { content: ''; display: block; width: 70px; height: 4px; background: var(--accent-green); margin: 20px auto 0; border-radius: 4px; box-shadow: 0 0 20px rgba(143,212,122,.5); }
+    .band p { font-size: 1.2rem; color: rgba(255,255,255,.95); line-height: 1.7; text-shadow: 0 2px 12px rgba(0,0,0,.5); }
+    .b-altitude { background-image: var(--img-band-altitude); }
+    .b-morning { background-image: var(--img-band-morning); }
+    .b-coach { background-image: var(--img-band-coach); }
+
+    /* ===== DAY IN THE LIFE TIMELINE ===== */
+    .timeline-section {
+      padding: 100px 0; position: relative; isolation: isolate;
+      background: linear-gradient(rgba(255,255,255,.45), rgba(255,255,255,.45)),
+                  var(--img-band-morning) center/cover no-repeat fixed;
+    }
+    [data-theme="dark"] .timeline-section {
+      background: linear-gradient(rgba(10,20,13,.6), rgba(10,20,13,.6)),
+                  var(--img-band-morning) center/cover no-repeat fixed;
+    }
+    .timeline-container {
+      max-width: 1000px; margin: 0 auto; padding: 0 40px;
+      position: relative; z-index: 2;
+    }
+    .timeline {
+      position: relative;
+      padding: 20px 0;
+    }
+    .timeline:before {
+      content: ''; position: absolute; left: 50%; top: 0; bottom: 0;
+      width: 3px; margin-left: -1.5px;
+      background: linear-gradient(to bottom, transparent, var(--primary) 10%, var(--primary) 90%, transparent);
+      border-radius: 3px;
+    }
+    .timeline-item {
+      position: relative; width: 50%; padding: 20px 40px;
+      box-sizing: border-box;
+    }
+    .timeline-item:nth-child(odd) { left: 0; text-align: right; }
+    .timeline-item:nth-child(even) { left: 50%; text-align: left; }
+    .timeline-item:after {
+      content: ''; position: absolute; top: 32px; width: 18px; height: 18px;
+      background: var(--primary); border: 4px solid var(--bg-body);
+      border-radius: 50%; box-shadow: 0 0 0 4px var(--g-glow);
+      z-index: 3;
+    }
+    .timeline-item:nth-child(odd):after { right: -9px; }
+    .timeline-item:nth-child(even):after { left: -9px; }
+    [data-theme="dark"] .timeline-item:after { border-color: var(--bg-body); }
+    .timeline-time {
+      display: inline-block; font-weight: 800; font-size: .85rem;
+      letter-spacing: 1.5px; text-transform: uppercase;
+      color: var(--primary); margin-bottom: 8px;
+      font-family: 'Montserrat', sans-serif;
+    }
+    [data-theme="dark"] .timeline-time { color: var(--accent-green); }
+    .timeline-content {
+      background: var(--glass); backdrop-filter: blur(14px);
+      border-radius: 16px; padding: 22px 26px;
+      box-shadow: var(--shadow); border: 1px solid var(--glass-border);
+      transition: transform .35s ease, box-shadow .35s ease;
+    }
+    .timeline-content:hover { transform: translateY(-4px); box-shadow: var(--shadow-hover); }
+    .timeline-content h3 { font-size: 1.2rem; margin-bottom: 8px; color: var(--text-dark); }
+    .timeline-content p { font-size: .93rem; color: var(--text-muted); line-height: 1.6; margin: 0; }
+    .timeline-icon {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 36px; height: 36px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      color: var(--accent-green); font-size: 1rem; margin-bottom: 10px;
+      box-shadow: 0 4px 12px var(--g-glow);
+    }
+
+    /* ===== ALTITUDE SCIENCE ===== */
+    .altitude-section {
+      padding: 100px 0; position: relative; isolation: isolate;
+      background: linear-gradient(rgba(255,255,255,.4), rgba(255,255,255,.4)),
+                  var(--img-band-altitude) center/cover no-repeat fixed;
+    }
+    [data-theme="dark"] .altitude-section {
+      background: linear-gradient(rgba(10,20,13,.65), rgba(10,20,13,.65)),
+                  var(--img-band-altitude) center/cover no-repeat fixed;
+    }
+    .altitude-container {
+      max-width: 1200px; margin: 0 auto; padding: 0 40px;
+      position: relative; z-index: 2;
+      display: grid; grid-template-columns: 1.1fr 1fr; gap: 50px; align-items: center;
+    }
+    .altitude-image {
+      border-radius: 24px; overflow: hidden;
+      box-shadow: 0 24px 60px rgba(0,0,0,.25);
+      border: 4px solid #fff;
+      position: relative;
+    }
+    .altitude-image img { width: 100%; height: 480px; object-fit: cover; display: block; }
+    .altitude-image .altitude-badge {
+      position: absolute; bottom: 20px; left: 20px;
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      color: #fff; padding: 12px 22px; border-radius: 30px;
+      font-weight: 700; font-size: 1rem; letter-spacing: .5px;
+      box-shadow: 0 8px 24px rgba(0,0,0,.3);
+      display: flex; align-items: center; gap: 10px;
+    }
+    .altitude-badge i { color: var(--accent-green); }
+    .altitude-content h2 {
+      font-size: clamp(1.8rem, 3vw, 2.6rem); margin-bottom: 20px; color: var(--text-dark);
+    }
+    .altitude-content > p {
+      color: var(--text-muted); font-size: 1.02rem; line-height: 1.85; margin-bottom: 28px;
+    }
+    .science-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 18px;
+    }
+    .science-card {
+      background: var(--glass); backdrop-filter: blur(14px);
+      border-radius: 16px; padding: 22px 20px;
+      border: 1px solid var(--glass-border); box-shadow: var(--shadow);
+      transition: transform .35s ease;
+    }
+    .science-card:hover { transform: translateY(-4px); }
+    .science-card .science-icon {
+      width: 42px; height: 42px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      color: var(--accent-green); display: flex; align-items: center;
+      justify-content: center; font-size: 1.1rem; margin-bottom: 14px;
+      box-shadow: 0 4px 12px var(--g-glow);
+    }
+    .science-card h3 {
+      font-size: 1.05rem; margin-bottom: 8px; color: var(--text-dark);
+      font-family: 'Montserrat', sans-serif; font-weight: 700;
+    }
+    .science-card p { font-size: .88rem; color: var(--text-muted); line-height: 1.55; margin: 0; }
+
+    /* ===== COACH ROLES ===== */
+    .coach-roles-section {
+      padding: 100px 0; position: relative; isolation: isolate;
+      background: linear-gradient(rgba(255,255,255,.45), rgba(255,255,255,.45)),
+                  var(--img-band-coach) center/cover no-repeat fixed;
+    }
+    [data-theme="dark"] .coach-roles-section {
+      background: linear-gradient(rgba(10,20,13,.65), rgba(10,20,13,.65)),
+                  var(--img-band-coach) center/cover no-repeat fixed;
+    }
+    .coach-roles-container {
+      max-width: 1200px; margin: 0 auto; padding: 0 40px;
+      position: relative; z-index: 2;
+      display: grid; grid-template-columns: 1fr 1.1fr; gap: 50px; align-items: center;
+    }
+    .coach-roles-content h2 {
+      font-size: clamp(1.8rem, 3vw, 2.6rem); margin-bottom: 20px; color: var(--text-dark);
+    }
+    .coach-roles-content > p {
+      color: var(--text-muted); font-size: 1.02rem; line-height: 1.85; margin-bottom: 28px;
+    }
+    .coach-roles-image {
+      border-radius: 24px; overflow: hidden;
+      box-shadow: 0 24px 60px rgba(0,0,0,.25);
+      border: 4px solid #fff;
+    }
+    .coach-roles-image img { width: 100%; height: 480px; object-fit: cover; display: block; }
+    .role-card {
+      background: var(--glass); backdrop-filter: blur(14px);
+      border-radius: 16px; padding: 18px 22px; margin-bottom: 14px;
+      border: 1px solid var(--glass-border); box-shadow: var(--shadow);
+      display: flex; align-items: flex-start; gap: 16px;
+      transition: transform .35s ease;
+    }
+    .role-card:last-child { margin-bottom: 0; }
+    .role-card:hover { transform: translateX(6px); }
+    .role-icon {
+      flex-shrink: 0; width: 44px; height: 44px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      color: var(--accent-green); display: flex; align-items: center;
+      justify-content: center; font-size: 1.1rem;
+      box-shadow: 0 4px 12px var(--g-glow);
+    }
+    .role-card h3 {
+      font-size: 1.05rem; margin-bottom: 4px; color: var(--text-dark);
+      font-family: 'Montserrat', sans-serif; font-weight: 700;
+    }
+    .role-card p { font-size: .88rem; color: var(--text-muted); line-height: 1.5; margin: 0; }
+
+    /* ===== CONTRAST STRIP ===== */
+    .contrast-section {
+      padding: 90px 20px; background: var(--primary-dark); position: relative; overflow: hidden;
+    }
+    .contrast-section:before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(circle at 20% 30%, rgba(143,212,122,.12), transparent 50%),
+                  radial-gradient(circle at 80% 70%, rgba(143,212,122,.08), transparent 50%);
+    }
+    .contrast-container {
+      max-width: 1200px; margin: 0 auto; position: relative; z-index: 2;
+    }
+    .contrast-header { text-align: center; margin-bottom: 50px; }
+    .contrast-header h2 { color: #fff; font-size: clamp(1.8rem, 3.5vw, 2.6rem); margin-bottom: 14px; }
+    .contrast-header p { color: rgba(255,255,255,.75); font-size: 1.05rem; max-width: 640px; margin: 0 auto; }
+    .contrast-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px;
+    }
+    .contrast-item {
+      background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.12);
+      border-radius: 18px; padding: 28px 24px; text-align: center;
+      backdrop-filter: blur(10px); transition: all .35s ease;
+    }
+    .contrast-item:hover { background: rgba(255,255,255,.1); transform: translateY(-6px); }
+    .contrast-item .contrast-icon {
+      font-size: 2rem; color: var(--accent-green); margin-bottom: 14px;
+      display: block;
+    }
+    .contrast-item h4 { color: #fff; font-size: 1.15rem; margin-bottom: 8px; }
+    .contrast-item p { color: rgba(255,255,255,.7); font-size: .9rem; line-height: 1.6; margin: 0; }
+
+    /* ===== GYM EQUIPMENT ===== */
+    .gym-equip-section {
+      padding: 100px 0; background: var(--bg-body); position: relative;
+    }
+    .gym-equip-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 26px; max-width: 1200px; margin: 0 auto; padding: 0 40px;
+    }
+    .gym-equip-card {
+      background: var(--glass); backdrop-filter: blur(14px);
+      border-radius: 20px; padding: 30px;
+      border: 1px solid var(--glass-border); box-shadow: var(--shadow);
+      text-align: center; transition: all .4s ease;
+    }
+    .gym-equip-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-hover); }
+    .gym-equip-card .gym-equip-icon {
+      width: 64px; height: 64px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      color: var(--accent-green); display: flex; align-items: center;
+      justify-content: center; font-size: 1.5rem; margin: 0 auto 18px;
+      box-shadow: 0 8px 24px var(--g-glow);
+    }
+    .gym-equip-card h3 { font-size: 1.2rem; margin-bottom: 10px; color: var(--text-dark); }
+    .gym-equip-card p { font-size: .93rem; color: var(--text-muted); line-height: 1.6; margin: 0; }
+
+    /* ===== SCHEDULE TABLE ===== */
+    .schedule-section { padding: 100px 0; background: var(--bg-body); }
+    .schedule-wrapper {
+      max-width: 1000px; margin: 0 auto; padding: 0 40px;
+      position: relative; z-index: 2;
+    }
+    .schedule-table {
+      width: 100%; border-collapse: separate; border-spacing: 0 12px;
+      background: transparent;
+    }
+    .schedule-table thead th {
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      color: #fff; padding: 18px 20px; text-align: left;
+      font-size: .9rem; letter-spacing: .8px; text-transform: uppercase;
+      font-weight: 700;
+    }
+    .schedule-table thead th:first-child { border-radius: 12px 0 0 12px; }
+    .schedule-table thead th:last-child { border-radius: 0 12px 12px 0; }
+    .schedule-table tbody tr {
+      background: var(--glass); backdrop-filter: blur(10px);
+      box-shadow: var(--shadow); transition: all .3s ease;
+    }
+    .schedule-table tbody tr:hover { transform: translateX(6px); background: var(--glass-hover); }
+    .schedule-table td {
+      padding: 18px 20px; font-size: .95rem; color: var(--text-dark);
+      border-top: 1px solid var(--border-light); border-bottom: 1px solid var(--border-light);
+    }
+    .schedule-table td:first-child { border-left: 1px solid var(--border-light); border-radius: 12px 0 0 12px; font-weight: 700; color: var(--primary); }
+    .schedule-table td:last-child { border-right: 1px solid var(--border-light); border-radius: 0 12px 12px 0; }
+    .session-tag {
+      display: inline-block; padding: 4px 12px; border-radius: 20px;
+      font-size: .78rem; font-weight: 700; letter-spacing: .5px; text-transform: uppercase;
+    }
+    .tag-track { background: rgba(5,74,41,.12); color: var(--primary); }
+    .tag-gym { background: rgba(59,130,246,.12); color: #2563eb; }
+    .tag-recovery { background: rgba(234,179,8,.15); color: #a16207; }
+    .tag-coaching { background: rgba(168,85,247,.12); color: #7c3aed; }
+    [data-theme="dark"] .tag-track { background: rgba(143,212,122,.15); color: var(--accent-green); }
+    [data-theme="dark"] .tag-gym { background: rgba(147,197,253,.15); color: #93c5fd; }
+    [data-theme="dark"] .tag-recovery { background: rgba(250,204,21,.15); color: #facc15; }
+    [data-theme="dark"] .tag-coaching { background: rgba(196,181,253,.15); color: #c4b5fd; }
+
+    /* ===== CTA SECTION ===== */
+    .cta-section {
+      padding: 100px 40px; text-align: center;
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      position: relative; overflow: hidden; isolation: isolate;
+    }
+    .cta-section:before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(circle at 20% 30%, rgba(143,212,122,.15), transparent 50%),
+                  radial-gradient(circle at 80% 70%, rgba(143,212,122,.1), transparent 50%);
+      z-index: -1;
+    }
+    .cta-section h2 { color: #fff; font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 16px; }
+    .cta-section p { color: rgba(255,255,255,.9); font-size: 1.15rem; max-width: 640px; margin: 0 auto 32px; }
+    .cta-btns { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+
+    /* ===== FOOTER ===== */
+    footer { background: #051a0f; color: #fff; padding: 90px 0 40px; position: relative; }
+    footer:before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+      background: linear-gradient(90deg, transparent, var(--primary), transparent);
+    }
+    .footer-container {
+      max-width: 1400px; margin: 0 auto; padding: 0 40px;
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 44px;
+    }
+    .footer-col h4 { color: #fff; font-size: 1.25rem; margin-bottom: 26px; position: relative; padding-bottom: 14px; }
+    .footer-col h4:after {
+      content: ''; position: absolute; width: 44px; height: 3px;
+      background: linear-gradient(90deg, var(--primary), var(--accent-green));
+      bottom: 0; left: 0; border-radius: 3px;
+    }
+    .footer-links { list-style: none; }
+    .footer-links li { margin-bottom: 13px; }
+    .footer-links a {
+      color: rgba(255,255,255,.72); text-decoration: none;
+      transition: all .3s; font-size: .93rem; display: inline-flex; align-items: center;
+    }
+    .footer-links a i { margin-right: 8px; color: var(--accent-green); font-size: .78rem; }
+    .footer-links a:hover { color: #fff; padding-left: 5px; }
+    .social-links { display: flex; gap: 12px; margin-top: 18px; }
+    .social-links a {
+      display: flex; align-items: center; justify-content: center;
+      width: 42px; height: 42px; border-radius: 50%;
+      background: rgba(255,255,255,.08); color: #fff; transition: all .35s;
+    }
+    .social-links a:hover {
+      background: linear-gradient(135deg, var(--primary), var(--accent-green));
+      transform: translateY(-4px); box-shadow: 0 8px 24px var(--g-glow);
+    }
+    .contact-info { list-style: none; }
+    .contact-info li { display: flex; margin-bottom: 15px; color: rgba(255,255,255,.72); font-size: .93rem; }
+    .contact-info li i { margin-right: 12px; color: var(--accent-green); margin-top: 3px; }
+    .footer-col p { color: rgba(255,255,255,.72); font-size: .93rem; line-height: 1.7; }
+    footer .logo-text span:first-child { color: #fff; }
+    footer .logo-text span:last-child { color: rgba(255,255,255,.55); }
+    footer .logo-icon { background: linear-gradient(135deg, var(--primary), var(--primary-dark)); }
+    .copyright {
+      text-align: center; padding-top: 34px; margin-top: 56px;
+      border-top: 1px solid rgba(255,255,255,.1);
+      font-size: .86rem; color: rgba(255,255,255,.55);
+    }
+
+    /* ===== WHATSAPP ===== */
+    .whatsapp-float { position: fixed; bottom: 30px; right: 30px; z-index: 9999; display: flex; flex-direction: column; align-items: flex-end; gap: 10px; }
+    .whatsapp-float > a {
+      display: flex; align-items: center; justify-content: center;
+      background: linear-gradient(135deg, #25D366, #1ea952); color: #fff;
+      width: 60px; height: 60px; border-radius: 50%; text-decoration: none;
+      box-shadow: 0 8px 24px rgba(37,211,102,.45); transition: all .35s;
+      font-size: 2rem; animation: pulse 2.5s infinite;
+    }
+    .whatsapp-float > a:hover { transform: scale(1.1); box-shadow: 0 12px 34px rgba(37,211,102,.65); }
     .whatsapp-tooltip {
-      background: #FFFFFF;
-      color: #337418;
-      padding: 8px 16px;
-      border-radius: 30px;
-      font-size: 0.85rem;
-      font-weight: 600;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-      border: 1px solid #e0e0e0;
-      white-space: nowrap;
-      pointer-events: none;
-      opacity: 0;
-      transform: translateX(10px);
-      transition: all 0.3s ease;
+      background: #fff; color: var(--text-dark); padding: 9px 18px; border-radius: 30px;
+      font-size: .85rem; font-weight: 600; box-shadow: 0 6px 20px rgba(0,0,0,.12);
+      border: 1px solid #eee; white-space: nowrap; pointer-events: none;
+      opacity: 0; transform: translateX(10px); transition: all .3s;
     }
-    .whatsapp-float:hover .whatsapp-tooltip {
-      opacity: 1;
-      transform: translateX(0);
+    .whatsapp-float:hover .whatsapp-tooltip { opacity: 1; transform: none; }
+    @keyframes pulse { 0%{box-shadow:0 0 0 0 rgba(37,211,102,.5)} 70%,100%{box-shadow:0 0 0 20px rgba(37,211,102,0)} }
+
+    /* ===== SCROLL REVEAL ===== */
+    .reveal { opacity: 0; transition: opacity .9s ease, transform .9s cubic-bezier(.2,.7,.2,1); }
+    .r-up { transform: translateY(60px); }
+    .r-left { transform: translateX(-90px); }
+    .r-right { transform: translateX(90px); }
+    .r-zoom { transform: scale(.85); }
+    .reveal.in { opacity: 1; transform: none; }
+    .reveal.done { transition: transform .35s ease, box-shadow .35s ease; }
+
+    /* ===== BOOKING MODAL ===== */
+    .modal-overlay {
+      position: fixed; inset: 0; background: rgba(5,26,15,.75);
+      backdrop-filter: blur(6px); z-index: 5000;
+      display: none; align-items: center; justify-content: center; padding: 20px;
+      opacity: 0; transition: opacity .3s ease;
+    }
+    .modal-overlay.open { display: flex; opacity: 1; }
+    .modal-content {
+      background: #fff; border-radius: 24px; max-width: 560px; width: 100%;
+      max-height: 92vh; overflow-y: auto; padding: 40px 36px;
+      position: relative; box-shadow: 0 30px 80px rgba(0,0,0,.35);
+      transform: translateY(20px); transition: transform .3s ease;
+    }
+    .modal-overlay.open .modal-content { transform: translateY(0); }
+    .modal-close {
+      position: absolute; top: 18px; right: 18px;
+      width: 38px; height: 38px; border-radius: 50%;
+      background: rgba(5,74,41,.08); border: none; cursor: pointer;
+      color: var(--primary); font-size: 1.1rem; display: flex;
+      align-items: center; justify-content: center; transition: all .3s;
+    }
+    .modal-close:hover { background: var(--primary); color: #fff; transform: rotate(90deg); }
+    .modal-content h3 { font-size: 1.8rem; margin-bottom: 8px; color: var(--primary); font-family: 'Playfair Display', serif; }
+    .modal-content .modal-sub { color: var(--text-muted); font-size: .95rem; margin-bottom: 24px; }
+    .booking-form { display: flex; flex-direction: column; gap: 16px; }
+    .booking-form .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .booking-form .form-group { display: flex; flex-direction: column; }
+    .booking-form label { font-size: .82rem; font-weight: 600; color: var(--text-dark); margin-bottom: 6px; letter-spacing: .3px; }
+    .booking-form input, .booking-form select, .booking-form textarea {
+      padding: 12px 14px; border: 1.5px solid var(--border-light);
+      border-radius: 10px; font-family: inherit; font-size: .92rem;
+      color: var(--text-dark); background: #fafcfb; outline: none;
+      transition: border-color .3s, box-shadow .3s;
+    }
+    .booking-form input:focus, .booking-form select:focus, .booking-form textarea:focus {
+      border-color: var(--primary); box-shadow: 0 0 0 3px rgba(5,74,41,.12);
+    }
+    .booking-form textarea { resize: vertical; min-height: 70px; }
+    .booking-actions { display: flex; flex-direction: column; gap: 12px; margin-top: 6px; }
+    .booking-actions .btn { width: 100%; padding: 14px; font-size: 15px; text-align: center; }
+    .btn-whatsapp { background: linear-gradient(135deg, #25D366, #1ea952); color: #fff; }
+    .btn-whatsapp:hover { transform: translateY(-3px); box-shadow: 0 10px 28px rgba(37,211,102,.4); }
+    .btn-email { background: linear-gradient(135deg, var(--primary), var(--primary-dark)); color: #fff; }
+    .booking-note { font-size: .78rem; color: var(--text-muted); text-align: center; margin-top: 8px; line-height: 1.5; }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 1000px) {
+      .altitude-container, .coach-roles-container {
+        grid-template-columns: 1fr; gap: 40px;
+      }
+      .altitude-image img, .coach-roles-image img { height: 360px; }
+    }
+    @media (max-width: 900px), (hover: none) {
+      .page-hero, .band, .timeline-section, .altitude-section, .coach-roles-section { background-attachment: scroll; }
+    }
+    @media (max-width: 900px) {
+      .page-hero { padding: 100px 0 80px; }
+      .page-hero h1 { font-size: 2.4rem; }
+      .band h2 { font-size: 2rem; }
+      .gym-equip-grid { padding: 0 24px; }
+      .timeline-section, .altitude-section, .coach-roles-section, .gym-equip-section, .schedule-section { padding: 70px 0; }
+      .timeline:before { left: 24px; }
+      .timeline-item { width: 100%; left: 0 !important; text-align: left !important; padding: 16px 0 16px 60px; }
+      .timeline-item:after { left: 16px !important; right: auto !important; }
+      .timeline-container, .schedule-wrapper { padding: 0 24px; }
+      .altitude-container, .coach-roles-container { padding: 0 24px; }
+      .schedule-table thead { display: none; }
+      .schedule-table, .schedule-table tbody, .schedule-table tr, .schedule-table td { display: block; width: 100%; }
+      .schedule-table tr { margin-bottom: 16px; border-radius: 12px; overflow: hidden; }
+      .schedule-table td { border: none !important; border-bottom: 1px dashed var(--border-light) !important; }
+      .schedule-table td:last-child { border-bottom: none !important; }
+      .schedule-table td:before {
+        content: attr(data-label); font-weight: 700; color: var(--primary);
+        display: block; font-size: .78rem; text-transform: uppercase;
+        letter-spacing: .8px; margin-bottom: 4px;
+      }
+      .cta-section { padding: 70px 24px; }
     }
     @media (max-width: 600px) {
+      .page-hero h1 { font-size: 2rem; }
+      .section-title h2 { font-size: 1.9rem; }
       .whatsapp-float { bottom: 20px; right: 20px; }
-      .whatsapp-float a { width: 55px; height: 55px; font-size: 1.8rem; }
+      .whatsapp-float > a { width: 55px; height: 55px; font-size: 1.8rem; }
+      .modal-content { padding: 32px 22px; }
+      .booking-form .form-row { grid-template-columns: 1fr; }
+      .science-grid { grid-template-columns: 1fr; }
+      .altitude-image img, .coach-roles-image img { height: 280px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      * { animation: none !important; transition: none !important; }
+      .reveal { opacity: 1; transform: none; }
+    }
+
+    /* ===== TEXT LEGIBILITY OVER PHOTO BACKGROUNDS ===== */
+
+    /* A. Text sitting directly on the parallax photo (light mode) */
+    html:not([data-theme="dark"]) .timeline-section .section-title h2,
+    html:not([data-theme="dark"]) .altitude-content h2,
+    html:not([data-theme="dark"]) .coach-roles-content h2 {
+      color: #03341C;
+      text-shadow: 0 1px 2px rgba(255,255,255,.95), 0 0 12px rgba(255,255,255,.85);
+    }
+
+    html:not([data-theme="dark"]) .timeline-section .section-title p,
+    html:not([data-theme="dark"]) .altitude-content > p,
+    html:not([data-theme="dark"]) .coach-roles-content > p {
+      color: #1a3327;
+      font-weight: 500;
+      text-shadow: 0 1px 2px rgba(255,255,255,.95), 0 0 10px rgba(255,255,255,.8);
+    }
+
+    /* B. Text inside the translucent glass cards on those photos */
+    html:not([data-theme="dark"]) .timeline-content h3,
+    html:not([data-theme="dark"]) .science-card h3,
+    html:not([data-theme="dark"]) .role-card h3 {
+      color: #03341C;
+    }
+
+    html:not([data-theme="dark"]) .timeline-content p,
+    html:not([data-theme="dark"]) .science-card p,
+    html:not([data-theme="dark"]) .role-card p {
+      color: #1a3327;
+      font-weight: 500;
+    }
+
+    /* C. Timeline timestamps */
+    html:not([data-theme="dark"]) .timeline-time {
+      color: #03341C;
+      text-shadow: 0 1px 1px rgba(255,255,255,.9);
+    }
+
+    /* D. White copy on the dark parallax bands — stronger contrast shadow */
+    .band h2,
+    .band p {
+      color: #ffffff;
+      text-shadow: 0 2px 6px rgba(0,0,0,.92), 0 4px 26px rgba(0,0,0,.8);
+    }
+
+    /* E. Page hero copy */
+    .page-hero h1,
+    .page-hero p {
+      color: #ffffff;
+      text-shadow: 0 3px 10px rgba(0,0,0,.8), 0 6px 32px rgba(0,0,0,.6);
     }
   </style>
 </head>
 <body>
-  <!-- HEADER (same as home) -->
-  <header>
-    <div class="header-container">
-      <a href="#" class="logo">
-        <div class="logo-icon"><img src="https://i.pinimg.com/736x/d2/3d/d8/d23dd8ad0a03ce25635349483c6e7130.jpg" alt="KHPTC Logo"></div>
-        <div class="logo-text"><span>KHPTC</span><span>KipKeino High Performance Training Centre</span></div>
-      </a>
-      <nav>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="training.html">Training</a></li>
-          <li><a href="programs.html">Programs</a></li>
-          <li><a href="#experiences.html">Experiences</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </nav>
-      <div class="header-actions">
-        <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode"><i class="fas fa-moon" id="themeIcon"></i></button>
-        <a href="#" class="btn btn-primary">Join Program</a>
-      </div>
-    </div>
-  </header>
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="hero-content">
-      <div class="hero-text">
-        <h1>Train at <span>KIPKEINO</span> – Home of Champions</h1>
-        <p>The KipKeino IOC High Performance Training Centre is an elite hub for middle and long‑distance excellence, located just outside Eldoret – 350 km west of Nairobi.</p>
-        <div class="hero-btns">
-          <a href="#" class="btn btn-primary">Explore Training</a>
-          <a href="#" class="btn btn-light">Book a Call</a>
-        </div>
-      </div>
-    </div>
-  </section>
+<!-- SCROLL PROGRESS BAR + RUNNER -->
+<div id="bar"></div>
+<div id="runner-wrap"><span class="pulse-ring"></span><span class="runner-icon"><i class="fas fa-running"></i></span></div>
 
-  <!-- LOCATION BANNER (updated info) -->
-  <div class="location-banner">
-    <div class="location-item"><i class="fas fa-map-marker-alt"></i> Kazi Mingi Farm, Eldoret, Uasin Gishu County</div>
-    <div class="location-item"><i class="fas fa-globe"></i> IOC Recognized High Performance Centre</div>
-    <div class="location-item"><i class="fas fa-flag"></i> 350 km west of Nairobi</div>
-    <div class="location-item"><i class="fas fa-mountain"></i> High‑altitude training conditions</div>
-  </div>
-
-  <!-- INTRO: HOW AND WHERE TO TRAIN (updated for Eldoret, not Iten) -->
-  <div class="training-intro animate">
-    <img src="https://i.pinimg.com/736x/e5/3e/d6/e53ed65532d80ca209403528db27965b.jpg" alt="Athletes training at KHPTC near Eldoret">
-    <div class="training-text">
-      <h3>How and where to train at KHPTC</h3>
-      <p><strong>An elite centre for learning and sports excellence</strong> – Opened in 2002 and located on several hundred acres of farmland owned by Kipchoge Keino, the centre is listed as a High Performance Training Center by the IAAF and focuses on developing middle and long distance track champions.</p>
-      <p>Our team, along with local coordinators, are on hand to guide you. They'll take you on a tour of the training roads and act as your guides throughout your stay. Trainees have complete freedom; sessions (track, fartlek, long runs) are often done together using matatu transport, but you can also run alone or with local athletes.</p>
-      <p>The centre also hosts refugee athlete scholarship holders and national teams, creating a unique, supportive environment. <strong>No Human is Limited.</strong></p>
-    </div>
-  </div>
-
-  <!-- WEEKLY STRUCTURE -->
-  <div class="weekly-structure animate">
-    <h3>Typical Weekly Training Structure</h3>
-    <p style="text-align: center; margin-bottom: 35px; color: #337418;">Most athletes follow this rhythm: intense Tuesdays & Thursdays, long run on the weekend, easy jogging in between.</p>
-    <div class="week-grid">
-      <div class="week-day"><strong>Monday</strong><span>Easy jogging / recovery</span></div>
-      <div class="week-day"><strong>Tuesday</strong><span>Short VMA: 15×400m or 1min fast/1min slow</span></div>
-      <div class="week-day"><strong>Wednesday</strong><span>Easy jogging</span></div>
-      <div class="week-day"><strong>Thursday</strong><span>Long VMA: 6‑8×1000m or 3min fast/1min slow</span></div>
-      <div class="week-day"><strong>Friday</strong><span>Easy jogging / rest</span></div>
-      <div class="week-day"><strong>Saturday</strong><span>Long outing – Moiben Road (matatu support)</span></div>
-      <div class="week-day"><strong>Sunday</strong><span>Rest, sightseeing or easy jog</span></div>
-    </div>
-    <p style="margin-top: 30px; text-align: center; font-style: italic; color: #337418;">"Join the local fartleks on Tuesdays and Thursdays, or use the track at Kipchoge Keino Sports Complex in Eldoret."</p>
-  </div>
-
-  <!-- MYTHICAL PLACES (updated with Eldoret specifics) -->
-  <div class="section-title animate">
-    <h2>Legendary Training Routes Around Eldoret</h2>
-    <p>From the upgraded Kipchoge Keino Sports Complex to the endless Moiben road, every path has a story.</p>
-  </div>
-  <div class="mythical-places">
-    <div class="place-card animate">
-      <img src="https://i.pinimg.com/736x/54/94/a0/5494a01b6b1de16349bd52c11c7fc2b5.jpg" alt="Kipchoge Keino Sports Complex track">
-      <div class="place-info">
-        <h4>Kipchoge Keino Sports Complex</h4>
-        <p>Recently upgraded stadium in Eldoret with a world‑class tartan track, available for speed sessions.</p>
-        <span class="place-tag">Stadium track</span>
-      </div>
-    </div>
-    <div class="place-card animate">
-      <img src="https://i.pinimg.com/736x/c4/9c/79/c49c79b2de3602c644adb2dc7557f4b5.jpg" alt="Moiben Road near Eldoret">
-      <div class="place-info">
-        <h4>Moiben Road</h4>
-        <p>20 min from the centre. The "flattest" road for long outings. Matatu support for gels and drinks.</p>
-        <span class="place-tag">Long run paradise</span>
-      </div>
-    </div>
-    <div class="place-card animate">
-      <img src="https://i.pinimg.com/736x/7e/00/70/7e0070141f926070a35cbbc147fcdba2.jpg" alt="Eldoret gym and pool">
-      <div class="place-info">
-        <h4>Eldoret Pool & Fitness</h4>
-        <p>Rupaz Fun n Fitness Centre: 25m pool, weight room, crossfit zone – 30‑min drive from KHPTC.</p>
-        <span class="place-tag">Strength & recovery</span>
-      </div>
-    </div>
-  </div>
-
-  <!-- GYM FACILITIES SECTION (added) -->
-  <div class="gym-section">
-    <div class="gym-container">
-      <div class="gym-header">
-        <h2><i class="fas fa-dumbbell" style="color:#337418; margin-right:15px;"></i>On‑Site Gym & Strength Facilities</h2>
-        <p>At KHPTC we combine altitude running with a fully equipped performance gym – everything you need to build power, prevent injuries and recover.</p>
-      </div>
-      <div class="gym-grid">
-        <div class="gym-card">
-          <img src="https://i.pinimg.com/736x/7e/00/70/7e0070141f926070a35cbbc147fcdba2.jpg" alt="Strength floor">
-          <div class="gym-info">
-            <div class="gym-icon"><i class="fas fa-dumbbell"></i></div>
-            <h4>Olympic Lifting Zone</h4>
-            <p>3 platforms, 8 power racks, bumper plates up to 25kg, and dedicated coaching area.</p>
-          </div>
-        </div>
-        <div class="gym-card">
-          <img src="https://i.pinimg.com/736x/09/25/f8/0925f891b49b3b1a575e5362342dfa96.jpg" alt="Cardio zone">
-          <div class="gym-info">
-            <div class="gym-icon"><i class="fas fa-heartbeat"></i></div>
-            <h4>Altitude Cardio Deck</h4>
-            <p>Treadmills, assault bikes, rowers, and ski ergs – all calibrated for 2,400m elevation.</p>
-          </div>
-        </div>
-        <div class="gym-card">
-          <img src="https://i.pinimg.com/736x/53/b4/b2/53b4b269cd4dbccaa376cb3c7407eb3b.jpg" alt="Recovery and mobility">
-          <div class="gym-info">
-            <div class="gym-icon"><i class="fas fa-spa"></i></div>
-            <h4>Mobility & Recovery Studio</h4>
-            <p>Foam rollers, massage guns, stretching cages, and physio‑led mobility sessions.</p>
-          </div>
-        </div>
-        <div class="gym-card">
-          <img src="https://i.pinimg.com/1200x/f8/40/40/f84040928e9725bc7f25a17dbfeb3ddc.jpg" alt="Functional training">
-          <div class="gym-info">
-            <div class="gym-icon"><i class="fas fa-running"></i></div>
-            <h4>Functional & Core Area</h4>
-            <p>Kettlebells, battle ropes, plyo boxes, and TRX – designed for runners and triathletes.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- COACH TIP & KIPCHOGE MEETING -->
-  <div class="coach-tip animate">
-    <h3>Meeting with Eliud Kipchoge</h3>
-    <p>Is Eliud Kipchoge one of your idols? It's possible to share a moment with him and watch the world marathon record‑holder train. Our team will guide you on site – you may even exchange a few words and take a photo (at the end of the session).</p>
-    <a href="#" class="btn">Read Coach Maxime's Tips</a>
-  </div>
-
-  <!-- EXTRA ALIVE GALLERY -->
-  <div class="section-title animate">
-    <h2>Life at KHPTC</h2>
-    <p>Moments from our training community — join us.</p>
-  </div>
-  <div class="gallery-strip">
-    <img src="https://i.pinimg.com/236x/15/90/01/159001c0d672b14ce84d06ca0db80ab9.jpg" alt="Track morning">
-    <img src="https://i.pinimg.com/736x/80/b5/07/80b50743a6d963bce65a4c9a186f0bc7.jpg" alt="Accommodation view">
-    <img src="https://i.pinimg.com/736x/7e/00/70/7e0070141f926070a35cbbc147fcdba2.jpg" alt="Gym floor">
-    <img src="https://i.pinimg.com/1200x/62/95/0f/62950f2ff73930bf18ade733d59a7989.jpg" alt="Nutrition">
-    <img src="https://i.pinimg.com/736x/53/b4/b2/53b4b269cd4dbccaa376cb3c7407eb3b.jpg" alt="Recovery">
-    <img src="https://i.pinimg.com/736x/e5/3e/d6/e53ed65532d80ca209403528db27965b.jpg" alt="Group training">
-    <img src="https://i.pinimg.com/1200x/d0/ec/dd/d0ecdd59e27df7f400b360640ef6bb2d.jpg" alt="Coach  training">
-     <img src="https://i.pinimg.com/736x/96/3b/8a/963b8a1ad0a67b38ff4e3b701fb598a8.jpg" alt="gym session">
-     <img src="https://i.pinimg.com/736x/3f/e9/29/3fe929d420479e736efcd7944b7fa51a.jpg" alt="warm up session">
-  </div>
-
-  <!-- ENVIRONMENT & ALTITUDE (Eldoret specifics) -->
-  <div style="max-width: 1000px; margin: 60px auto; padding: 0 30px; text-align: center;">
-    <h3 style="font-size: 2.2rem; margin-bottom: 30px; color: #337418;">Environment & Altitude</h3>
-    <p style="color: #337418; margin-bottom: 20px;">The centre is located on Kazi Mingi Farm at an altitude of approximately 2,400m, providing ideal high‑altitude training conditions. The climate is warm and moderate, with average temperatures around 17–18°C, and rain possible throughout the year, usually in the late afternoon.</p>
-    <p style="font-style: italic; color: #337418;">"The Kip Keino HPTC is open all year round and welcomes everyone – from Olympic hopefuls to leisure runners, refugee scholarship holders, and national teams. There are no fixed dates: you choose the dates that suit you."</p>
-  </div>
-
-  <!-- CALL TO ACTION -->
-  <div style="text-align: center; margin: 60px 0;">
-    <a href="#" class="btn btn-primary" style="padding: 15px 40px; font-size: 1.2rem;">Schedule an introductory call</a>
-    <p style="margin-top: 20px; color: #337418;">📞 Have a question before booking? Let’s talk.</p>
-  </div>
-
-  <!-- FOOTER (same as home) -->
-  <footer>
-    <div class="footer-container">
-      <div class="footer-col">
-        <a href="#" class="logo">
-          <div class="logo-icon"><img src="https://i.pinimg.com/736x/d2/3d/d8/d23dd8ad0a03ce25635349483c6e7130.jpg" alt="KHPTC Logo"></div>
-          <div class="logo-text"><span>KHPTC</span><span>Home of Champions</span></div>
-        </a>
-        <p style="margin: 20px 0; color: #337418;">KipKeino High Performance Training Centre – where champions are made. Elite training near Eldoret, Kenya.</p>
-        <div class="social-links">
-          <a href="#"><i class="fab fa-facebook-f"></i></a>
-          <a href="#"><i class="fab fa-twitter"></i></a>
-          <a href="#"><i class="fab fa-instagram"></i></a>
-          <a href="#"><i class="fab fa-youtube"></i></a>
-          <a href="#"><i class="fab fa-pinterest"></i></a>
-        </div>
-      </div>
-      <div class="footer-col">
-        <h4>Quick Links</h4>
-        <ul class="footer-links">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="training.html">Training</a></li>
-          <li><a href="programs.html">Programs</a></li>
-          <li><a href="#experiences.html">Experiences</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Legal</h4>
-        <ul class="footer-links">
-          <li><a href="#"><i class="fas fa-chevron-right"></i> Terms and Conditions</a></li>
-          <li><a href="#"><i class="fas fa-chevron-right"></i> Privacy Policy</a></li>
-          <li><a href="#"><i class="fas fa-chevron-right"></i> Cancellation Policy</a></li>
-          <li><a href="#"><i class="fas fa-chevron-right"></i> Careers</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Training Programs</h4>
-        <ul class="footer-links">
-          <li><a href="#"><i class="fas fa-chevron-right"></i> Complete Package</a></li>
-          <li><a href="#"><i class="fas fa-chevron-right"></i> Elite Runner's</a></li>
-          <li><a href="#"><i class="fas fa-chevron-right"></i> Pro Athlete</a></li>
-          <li><a href="#"><i class="fas fa-chevron-right"></i> Group Camps</a></li>
-          <li><a href="#"><i class="fas fa-chevron-right"></i> Personal Training</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Contact Us</h4>
-        <ul class="contact-info">
-          <li><i class="fas fa-phone-alt"></i> 0713555717</li>
-          <li><i class="fas fa-envelope"></i> <a href="https://mail.google.com/mail/?view=cm&fs=1&to=kipkeinohptc@gmail.com" target="_blank" style="color:#337418; text-decoration:none;">kipkeinohptc@gmail.com</a></li>
-          <li><i class="fas fa-clock"></i> Mon-Fri: 6AM - 8PM, Sat: 7AM - 6PM</li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Training Promise</h4>
-        <div class="logo-icon"><i class="fas fa-running"></i></div>
-        <ul style="list-style: none; color: #337418;">Uncompromising commitment to excellence, integrity, and athlete development. We empower champions through world-class training and support.</ul>
-      </div>
-    </div>
-    <div class="copyright"><p>&copy; 2026 KHPTC. All rights reserved. | Designed by Quantum Solutions</p></div>
-  </footer>
-
-  <!-- FLOATING WHATSAPP BUTTON -->
-  <div class="whatsapp-float">
-    <div class="whatsapp-tooltip">Chat with us</div>
-    <a href="https://wa.me/254713555717" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
-      <i class="fab fa-whatsapp"></i>
+<!-- HEADER -->
+<header id="mainHeader">
+  <div class="header-container">
+    <a href="index.html" class="logo">
+      <div class="logo-icon"><img src="https://i.pinimg.com/736x/d2/3d/d8/d23dd8ad0a03ce25635349483c6e7130.jpg" alt="KHPTC Logo"></div>
+      <div class="logo-text"><span>KHPTC</span><span>KipKeino High Performance Training Centre</span></div>
     </a>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="training.html" class="active">Training</a></li>
+        <li><a href="programs.html">Programs</a></li>
+        <li><a href="experience.html">Experiences</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="header-actions">
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+        <i class="fas fa-sun t-icon t-sun"></i>
+        <i class="fas fa-moon t-icon t-moon"></i>
+      </button>
+      <button class="btn btn-primary btn-book" id="openBooking">Book Your Stay</button>
+    </div>
   </div>
+</header>
 
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const toggleBtn = document.getElementById('themeToggle');
-      const themeIcon = document.getElementById('themeIcon');
-      const html = document.documentElement;
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="page-hero-content">
+    <div class="page-hero-text">
+      <div class="breadcrumb">
+        <a href="index.html">Home</a>
+        <i class="fas fa-chevron-right"></i>
+        <span>Training & Gym</span>
+      </div>
+      <h1>Inside a <span>Champion's</span> Training Week</h1>
+      <p>Not the facilities themselves — but how they're used. The rhythm, the science, and the people who shape every session at KHPTC.</p>
+      <div class="hero-btns">
+        <a href="#day-in-life" class="btn btn-primary">See a Training Day</a>
+        <button class="btn btn-outline" onclick="document.getElementById('openBooking').click()">Book Your Stay</button>
+      </div>
+    </div>
+  </div>
+</section>
 
-      const storedTheme = localStorage.getItem('theme');
-      if (storedTheme === 'dark') {
-        html.setAttribute('data-theme', 'dark');
-        themeIcon.className = 'fas fa-sun';
-      } else if (storedTheme === 'light') {
-        html.removeAttribute('data-theme');
-        themeIcon.className = 'fas fa-moon';
-      } else {
-        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        if (prefersDark) {
-          html.setAttribute('data-theme', 'dark');
-          themeIcon.className = 'fas fa-sun';
-        }
-      }
+<!-- PARALLAX BAND 1 -->
+<section class="band b-morning">
+  <div>
+    <h2>The Day Starts Before Sunrise</h2>
+    <p>At 2,176m, the air is thin, the roads are quiet, and the work begins.</p>
+  </div>
+</section>
 
-      toggleBtn.addEventListener('click', function() {
-        if (html.getAttribute('data-theme') === 'dark') {
-          html.removeAttribute('data-theme');
-          themeIcon.className = 'fas fa-moon';
-          localStorage.setItem('theme', 'light');
-        } else {
-          html.setAttribute('data-theme', 'dark');
-          themeIcon.className = 'fas fa-sun';
-          localStorage.setItem('theme', 'dark');
-        }
-      });
+<!-- DAY IN THE LIFE TIMELINE -->
+<section class="timeline-section" id="day-in-life">
+  <div class="section-title reveal r-up">
+    <h2>A Day in the Life</h2>
+    <p>How a typical training day unfolds at KHPTC — from first light to final recovery</p>
+  </div>
+  <div class="timeline-container">
+    <div class="timeline">
 
-      const animateElements = document.querySelectorAll('.animate');
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.style.animationPlayState = 'running';
-            entry.target.style.opacity = '1';
-          }
-        });
-      }, { threshold: 0.1 });
+      <div class="timeline-item reveal r-left">
+        <div class="timeline-content">
+          <div class="timeline-icon"><i class="fas fa-sun"></i></div>
+          <div class="timeline-time">5:45 AM</div>
+          <h3>Wake &amp; Hydrate</h3>
+          <p>Athletes rise before dawn, hydrate, and check the day's session plan posted in the dining hall.</p>
+        </div>
+      </div>
 
-      animateElements.forEach(element => {
-        element.style.opacity = '0';
-        element.style.animationPlayState = 'paused';
-        observer.observe(element);
-      });
+      <div class="timeline-item reveal r-right">
+        <div class="timeline-content">
+          <div class="timeline-icon"><i class="fas fa-running"></i></div>
+          <div class="timeline-time">6:30 AM</div>
+          <h3>Morning Track Session</h3>
+          <p>Intervals, tempo runs, or hill repeats on the track and red-dirt trails surrounding Kazi Mingi Farm.</p>
+        </div>
+      </div>
 
-      window.addEventListener('scroll', function() {
-        const header = document.querySelector('header');
-        if (window.scrollY > 50) {
-          header.style.padding = '10px 0';
-        } else {
-          header.style.padding = '15px 0';
-        }
-      });
+      <div class="timeline-item reveal r-left">
+        <div class="timeline-content">
+          <div class="timeline-icon"><i class="fas fa-apple-alt"></i></div>
+          <div class="timeline-time">8:30 AM</div>
+          <h3>Breakfast &amp; Recovery Fuel</h3>
+          <p>A balanced meal prepared with fresh local ingredients — designed to replenish glycogen and support recovery.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item reveal r-right">
+        <div class="timeline-content">
+          <div class="timeline-icon"><i class="fas fa-bed"></i></div>
+          <div class="timeline-time">10:00 AM</div>
+          <h3>Rest &amp; Nap Window</h3>
+          <p>Structured rest — one of the most overlooked parts of elite training. Athletes nap, stretch, or read.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item reveal r-left">
+        <div class="timeline-content">
+          <div class="timeline-icon"><i class="fas fa-dumbbell"></i></div>
+          <div class="timeline-time">4:00 PM</div>
+          <h3>Gym &amp; Strength Work</h3>
+          <p>Afternoon sessions in the gym: strength, mobility, core, or functional work depending on the training block.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item reveal r-right">
+        <div class="timeline-content">
+          <div class="timeline-icon"><i class="fas fa-spa"></i></div>
+          <div class="timeline-time">6:00 PM</div>
+          <h3>Recovery &amp; Physio</h3>
+          <p>Sauna, ice bath, physiotherapy, or foam rolling — all under the guidance of the recovery team.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item reveal r-left">
+        <div class="timeline-content">
+          <div class="timeline-icon"><i class="fas fa-comments"></i></div>
+          <div class="timeline-time">7:30 PM</div>
+          <h3>Dinner &amp; Debrief</h3>
+          <p>Evening meal with coaches and teammates — reviewing the day's data, video, and how the body feels.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item reveal r-right">
+        <div class="timeline-content">
+          <div class="timeline-icon"><i class="fas fa-moon"></i></div>
+          <div class="timeline-time">9:30 PM</div>
+          <h3>Lights Out</h3>
+          <p>Sleep is training. Quiet hours begin, phones down, and the next day's session begins to take shape.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PARALLAX BAND 2 -->
+<section class="band b-altitude">
+  <div>
+    <h2>Why Train at 2,176 Metres?</h2>
+    <p>Thin air. More red blood cells. A bigger engine — if you train smart.</p>
+  </div>
+</section>
+
+<!-- ALTITUDE SCIENCE -->
+<section class="altitude-section">
+  <div class="altitude-container">
+    <div class="altitude-image reveal r-left">
+      <img src="https://i.pinimg.com/736x/b4/59/cc/b459cce1736bb17eb3b6b52e6367a671.jpg" alt="High-altitude training in Eldoret">
+      <div class="altitude-badge"><i class="fas fa-mountain"></i> 2,176m Above Sea Level</div>
+    </div>
+    <div class="altitude-content reveal r-right">
+      <h2>The Science of Altitude</h2>
+      <p>At 2,176 metres, oxygen availability drops by roughly 20%. Your body responds by producing more red blood cells and increasing capillary density — changes that translate to a bigger aerobic engine when you return to sea level.</p>
+      <div class="science-grid">
+        <div class="science-card">
+          <div class="science-icon"><i class="fas fa-tint"></i></div>
+          <h3>More Red Blood Cells</h3>
+          <p>Lower oxygen triggers EPO release, boosting your blood's oxygen-carrying capacity.</p>
+        </div>
+        <div class="science-card">
+          <div class="science-icon"><i class="fas fa-lungs"></i></div>
+          <h3>Lung Efficiency</h3>
+          <p>Breathing in thin air strengthens respiratory muscles and improves oxygen uptake.</p>
+        </div>
+        <div class="science-card">
+          <div class="science-icon"><i class="fas fa-heart"></i></div>
+          <h3>Cardiac Output</h3>
+          <p>Your heart pumps harder at altitude — a natural conditioning stimulus.</p>
+        </div>
+        <div class="science-card">
+          <div class="science-icon"><i class="fas fa-bolt"></i></div>
+          <h3>Speed at Sea Level</h3>
+          <p>The adaptation shows up on race day — especially in the final kilometres.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PARALLAX BAND 3 -->
+<section class="band b-coach">
+  <div>
+    <h2>It's Not Just the Altitude — It's the People</h2>
+    <p>Coaches, physios, nutritionists, and mentors — all in one place.</p>
+  </div>
+</section>
+
+<!-- COACH ROLES -->
+<section class="coach-roles-section">
+  <div class="coach-roles-container">
+    <div class="coach-roles-content reveal r-left">
+      <h2>Your Coaching Team</h2>
+      <p>Every athlete at KHPTC works with a coordinated support team — not a single coach. Each role has a specific purpose in your development.</p>
+      <div class="role-card">
+        <div class="role-icon"><i class="fas fa-user-tie"></i></div>
+        <div>
+          <h3>Head Coach</h3>
+          <p>Sets the training block, adjusts weekly load, and reviews performance data.</p>
+        </div>
+      </div>
+      <div class="role-card">
+        <div class="role-icon"><i class="fas fa-dumbbell"></i></div>
+        <div>
+          <h3>Strength &amp; Conditioning Coach</h3>
+          <p>Builds gym sessions that complement — not compete with — your running.</p>
+        </div>
+      </div>
+      <div class="role-card">
+        <div class="role-icon"><i class="fas fa-hand-holding-heart"></i></div>
+        <div>
+          <h3>Physiotherapist</h3>
+          <p>Manages injury prevention, recovery, and hands-on treatment between sessions.</p>
+        </div>
+      </div>
+      <div class="role-card">
+        <div class="role-icon"><i class="fas fa-apple-alt"></i></div>
+        <div>
+          <h3>Nutritionist</h3>
+          <p>Designs meal plans and fueling strategies around training load and body composition.</p>
+        </div>
+      </div>
+      <div class="role-card">
+        <div class="role-icon"><i class="fas fa-brain"></i></div>
+        <div>
+          <h3>Mentor / Sports Psychologist</h3>
+          <p>Helps athletes build focus, resilience, and race-day composure.</p>
+        </div>
+      </div>
+    </div>
+    <div class="coach-roles-image reveal r-right">
+      <img src="https://i.pinimg.com/736x/84/2b/1d/842b1daf68ff85f038692de2ed743fee.jpg" alt="KHPTC coaching team">
+    </div>
+  </div>
+</section>
+
+<!-- CONTRAST STRIP -->
+<section class="contrast-section">
+  <div class="contrast-container">
+    <div class="contrast-header reveal r-up">
+      <h2>What Makes Training Here Different</h2>
+      <p>It's not one thing — it's the combination</p>
+    </div>
+    <div class="contrast-grid">
+      <div class="contrast-item reveal r-up">
+        <span class="contrast-icon"><i class="fas fa-layer-group"></i></span>
+        <h4>Integrated Support</h4>
+        <p>Coaches, physios, nutritionists, and mentors working from the same plan.</p>
+      </div>
+      <div class="contrast-item reveal r-up">
+        <span class="contrast-icon"><i class="fas fa-mountain"></i></span>
+        <h4>Altitude + Red Dirt</h4>
+        <p>2,176m elevation and the legendary Eldoret trails in one location.</p>
+      </div>
+      <div class="contrast-item reveal r-up">
+        <span class="contrast-icon"><i class="fas fa-users"></i></span>
+        <h4>Training Community</h4>
+        <p>National teams, refugee athletes, and international runners side by side.</p>
+      </div>
+      <div class="contrast-item reveal r-up">
+        <span class="contrast-icon"><i class="fas fa-chart-line"></i></span>
+        <h4>Data-Informed</h4>
+        <p>Video analysis, session data, and progress tracking feed every adjustment.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GYM EQUIPMENT -->
+<section class="gym-equip-section">
+  <div class="section-title reveal r-up">
+    <h2>Inside the Gym</h2>
+    <p>Equipment chosen for one purpose — making athletes faster, stronger, and more resilient</p>
+  </div>
+  <div class="gym-equip-grid">
+    <div class="gym-equip-card reveal r-up">
+      <div class="gym-equip-icon"><i class="fas fa-dumbbell"></i></div>
+      <h3>Free Weights &amp; Racks</h3>
+      <p>Olympic bars, squat racks, and dumbbells for building functional strength.</p>
+    </div>
+    <div class="gym-equip-card reveal r-up">
+      <div class="gym-equip-icon"><i class="fas fa-heartbeat"></i></div>
+      <h3>Cardio Machines</h3>
+      <p>Treadmills, rowers, bikes, and ellipticals for controlled endurance work.</p>
+    </div>
+    <div class="gym-equip-card reveal r-up">
+      <div class="gym-equip-icon"><i class="fas fa-running"></i></div>
+      <h3>Functional Zone</h3>
+      <p>Kettlebells, battle ropes, sleds, and plyo boxes for athletic movement.</p>
+    </div>
+    <div class="gym-equip-card reveal r-up">
+      <div class="gym-equip-icon"><i class="fas fa-spa"></i></div>
+      <h3>Mobility &amp; Recovery</h3>
+      <p>Mats, foam rollers, and stretch space for pre- and post-session work.</p>
+    </div>
+  </div>
+</section>
+
+<!-- WEEKLY SCHEDULE -->
+<section class="schedule-section">
+  <div class="section-title reveal r-up">
+    <h2>Sample Weekly Schedule</h2>
+    <p>A typical training week at KHPTC — every session tailored to your goals</p>
+  </div>
+  <div class="schedule-wrapper reveal r-up">
+    <table class="schedule-table">
+      <thead>
+        <tr>
+          <th>Day</th>
+          <th>Morning (6:30 AM)</th>
+          <th>Afternoon (4:00 PM)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td data-label="Day">Monday</td>
+          <td data-label="Morning"><span class="session-tag tag-track">Track</span> Speed &amp; intervals</td>
+          <td data-label="Afternoon"><span class="session-tag tag-gym">Gym</span> Strength &amp; core</td>
+        </tr>
+        <tr>
+          <td data-label="Day">Tuesday</td>
+          <td data-label="Morning"><span class="session-tag tag-track">Track</span> Easy run &amp; drills</td>
+          <td data-label="Afternoon"><span class="session-tag tag-recovery">Recovery</span> Physio &amp; stretch</td>
+        </tr>
+        <tr>
+          <td data-label="Day">Wednesday</td>
+          <td data-label="Morning"><span class="session-tag tag-track">Track</span> Tempo run</td>
+          <td data-label="Afternoon"><span class="session-tag tag-coaching">Coaching</span> Video analysis</td>
+        </tr>
+        <tr>
+          <td data-label="Day">Thursday</td>
+          <td data-label="Morning"><span class="session-tag tag-track">Track</span> Hill repeats</td>
+          <td data-label="Afternoon"><span class="session-tag tag-gym">Gym</span> Mobility &amp; power</td>
+        </tr>
+        <tr>
+          <td data-label="Day">Friday</td>
+          <td data-label="Morning"><span class="session-tag tag-track">Track</span> Long run</td>
+          <td data-label="Afternoon"><span class="session-tag tag-recovery">Recovery</span> Sauna &amp; rest</td>
+        </tr>
+        <tr>
+          <td data-label="Day">Saturday</td>
+          <td data-label="Morning"><span class="session-tag tag-gym">Gym</span> Strength session</td>
+          <td data-label="Afternoon"><span class="session-tag tag-track">Track</span> Strides &amp; drills</td>
+        </tr>
+        <tr>
+          <td data-label="Day">Sunday</td>
+          <td data-label="Morning"><span class="session-tag tag-recovery">Recovery</span> Rest &amp; recreation</td>
+          <td data-label="Afternoon"><span class="session-tag tag-recovery">Recovery</span> Free time</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="reveal r-up">
+    <h2>Ready to Train With Us?</h2>
+    <p>Book your stay at KHPTC and experience world-class training in Kenya's City of Champions.</p>
+    <div class="cta-btns">
+      <button class="btn btn-outline" onclick="document.getElementById('openBooking').click()">Book Your Stay</button>
+      <a href="programs.html" class="btn btn-primary">View Programs</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-container">
+    <div class="footer-col">
+      <a href="index.html" class="logo">
+        <div class="logo-icon"><img src="https://i.pinimg.com/736x/d2/3d/d8/d23dd8ad0a03ce25635349483c6e7130.jpg" alt="KHPTC Logo"></div>
+        <div class="logo-text"><span>KHPTC</span><span>Home of Champions</span></div>
+      </a>
+      <p style="margin: 20px 0;">KipKeino High Performance Training Centre — where champions are made. Elite training in Eldoret, Kenya.</p>
+      <div class="social-links">
+        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest"></i></a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul class="footer-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="training.html">Training</a></li>
+        <li><a href="programs.html">Programs</a></li>
+        <li><a href="experience.html">Experiences</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Legal</h4>
+      <ul class="footer-links">
+        <li><a href="#"><i class="fas fa-chevron-right"></i> Terms and Conditions</a></li>
+        <li><a href="#"><i class="fas fa-chevron-right"></i> Privacy Policy</a></li>
+        <li><a href="#"><i class="fas fa-chevron-right"></i> Cancellation Policy</a></li>
+        <li><a href="#"><i class="fas fa-chevron-right"></i> Careers</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Training Programs</h4>
+      <ul class="footer-links">
+        <li><a href="#"><i class="fas fa-chevron-right"></i> Complete Experience</a></li>
+        <li><a href="#"><i class="fas fa-chevron-right"></i> Elite Runner's</a></li>
+        <li><a href="#"><i class="fas fa-chevron-right"></i> Pro Athlete</a></li>
+        <li><a href="#"><i class="fas fa-chevron-right"></i> Group Camps</a></li>
+        <li><a href="#"><i class="fas fa-chevron-right"></i> Personal Training</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact Us</h4>
+      <ul class="contact-info">
+        <li><i class="fas fa-phone-alt"></i> 0713555717</li>
+        <li><i class="fas fa-envelope"></i> <a href="mailto:kipkeinohptc@gmail.com" style="color: rgba(255,255,255,.72); text-decoration: none;">kipkeinohptc@gmail.com</a></li>
+        <li><i class="fas fa-clock"></i> Mon-Fri: 6AM - 8PM, Sat: 7AM - 6PM</li>
+        <li><i class="fas fa-plane"></i> 17.5 km from Eldoret International Airport (EDL)</li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Training Promise</h4>
+      <div class="logo-icon"><i class="fas fa-running"></i></div>
+      <p style="margin-top: 18px;">Uncompromising commitment to excellence, integrity, and athlete development. We empower champions through world-class training and support.</p>
+    </div>
+  </div>
+  <div class="copyright"><p>&copy; 2026 KHPTC. All rights reserved. | Designed by Quantum Solutions</p></div>
+</footer>
+
+<!-- WHATSAPP FLOAT -->
+<div class="whatsapp-float">
+  <div class="whatsapp-tooltip">Chat with us</div>
+  <a href="https://wa.me/254713555717" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+</div>
+
+<!-- BOOKING MODAL -->
+<div class="modal-overlay" id="bookingModal">
+  <div class="modal-content">
+    <button class="modal-close" id="closeBooking" aria-label="Close"><i class="fas fa-times"></i></button>
+    <h3>Book Your Stay</h3>
+    <p class="modal-sub">Fill in your details and choose how to send your request — via WhatsApp or email. We'll get back to you within 24 hours.</p>
+    <form class="booking-form" id="bookingForm">
+      <div class="form-row">
+        <div class="form-group">
+          <label for="bkName">Full Name *</label>
+          <input type="text" id="bkName" name="name" required placeholder="e.g. John Kamau">
+        </div>
+        <div class="form-group">
+          <label for="bkPhone">Phone / WhatsApp *</label>
+          <input type="tel" id="bkPhone" name="phone" required placeholder="+254 7XX XXX XXX">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="bkEmail">Email Address</label>
+        <input type="email" id="bkEmail" name="email" placeholder="you@example.com">
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="bkCheckin">Check-in Date</label>
+          <input type="date" id="bkCheckin" name="checkin">
+        </div>
+        <div class="form-group">
+          <label for="bkCheckout">Check-out Date</label>
+          <input type="date" id="bkCheckout" name="checkout">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="bkGuests">Number of Guests</label>
+          <select id="bkGuests" name="guests">
+            <option value="1">1 guest</option>
+            <option value="2">2 guests</option>
+            <option value="3-5">3–5 guests</option>
+            <option value="6-10">6–10 guests</option>
+            <option value="10+">10+ guests (team)</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="bkProgram">Interested In</label>
+          <select id="bkProgram" name="program">
+            <option value="Complete Training Experience">Complete Training Experience (14 days)</option>
+            <option value="Elite Runner's Experience">Elite Runner's Experience (7 days)</option>
+            <option value="Pro Athlete Experience">Pro Athlete Experience (21 days)</option>
+            <option value="Group / Team Camp">Group / Team Camp</option>
+            <option value="Personal Training">Personal Training</option>
+            <option value="Just Accommodation">Just Accommodation</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="bkMessage">Additional Message</label>
+        <textarea id="bkMessage" name="message" placeholder="Tell us about your goals, arrival time, or any special requests..."></textarea>
+      </div>
+      <div class="booking-actions">
+        <button type="button" class="btn btn-whatsapp" id="sendWhatsApp"><i class="fab fa-whatsapp" style="margin-right:8px;"></i> Send via WhatsApp</button>
+        <button type="button" class="btn btn-email" id="sendEmail"><i class="fas fa-envelope" style="margin-right:8px;"></i> Send via Email</button>
+      </div>
+      <p class="booking-note">Your details are used only to respond to your booking request. No data is stored on this website.</p>
+    </form>
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const $ = s => document.querySelectorAll(s);
+  const html = document.documentElement;
+
+  /* THEME TOGGLE */
+  const toggle = document.getElementById('themeToggle');
+  let currentTheme = null;
+  try { currentTheme = localStorage.getItem('theme'); } catch(e) {}
+  if (!currentTheme) currentTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  if (currentTheme === 'dark') html.setAttribute('data-theme', 'dark');
+  toggle.addEventListener('click', function() {
+    const isDark = html.getAttribute('data-theme') === 'dark';
+    if (isDark) { html.removeAttribute('data-theme'); try { localStorage.setItem('theme', 'light'); } catch(e) {} }
+    else { html.setAttribute('data-theme', 'dark'); try { localStorage.setItem('theme', 'dark'); } catch(e) {} }
+  });
+
+  /* SCROLL PROGRESS */
+  const bar = document.getElementById('bar');
+  const runnerWrap = document.getElementById('runner-wrap');
+  function updateProgress() {
+    const scrollTop = html.scrollTop || document.body.scrollTop;
+    const scrollHeight = html.scrollHeight - html.clientHeight;
+    const pct = scrollHeight > 0 ? (scrollTop / scrollHeight) * 100 : 0;
+    bar.style.width = pct + '%';
+    runnerWrap.style.left = Math.min(bar.offsetWidth - 17, window.innerWidth - 40) + 'px';
+  }
+  window.addEventListener('scroll', updateProgress, { passive: true });
+  window.addEventListener('resize', updateProgress, { passive: true });
+  updateProgress();
+
+  /* SCROLL REVEAL */
+  const io = new IntersectionObserver(entries => entries.forEach(e => {
+    if (!e.isIntersecting) return;
+    const el = e.target; io.unobserve(el);
+    el.classList.add('in');
+    setTimeout(() => { el.style.transitionDelay = '0s'; el.classList.add('done'); }, 1500);
+  }), { threshold: 0.12 });
+  $('.reveal').forEach(el => io.observe(el));
+
+  /* CARD TILT */
+  $('.timeline-content, .science-card, .role-card, .gym-equip-card, .contrast-item').forEach(c => {
+    c.addEventListener('mousemove', e => {
+      if (!c.classList.contains('done')) return;
+      const r = c.getBoundingClientRect(),
+            x = (e.clientX - r.left) / r.width - .5,
+            y = (e.clientY - r.top) / r.height - .5;
+      c.style.transform = 'perspective(900px) rotateY(' + x * 4 + 'deg) rotateX(' + -y * 4 + 'deg) translateY(-4px)';
     });
-  </script>
+    c.addEventListener('mouseleave', () => c.style.transform = '');
+  });
+
+  /* BOOKING MODAL */
+  const modal = document.getElementById('bookingModal');
+  document.getElementById('openBooking').addEventListener('click', () => { modal.classList.add('open'); document.body.style.overflow = 'hidden'; });
+  document.getElementById('closeBooking').addEventListener('click', () => { modal.classList.remove('open'); document.body.style.overflow = ''; });
+  modal.addEventListener('click', (e) => { if (e.target === modal) { modal.classList.remove('open'); document.body.style.overflow = ''; } });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && modal.classList.contains('open')) { modal.classList.remove('open'); document.body.style.overflow = ''; } });
+
+  function buildMessage() {
+    const name = document.getElementById('bkName').value.trim();
+    const phone = document.getElementById('bkPhone').value.trim();
+    const email = document.getElementById('bkEmail').value.trim();
+    const checkin = document.getElementById('bkCheckin').value;
+    const checkout = document.getElementById('bkCheckout').value;
+    const guests = document.getElementById('bkGuests').value;
+    const program = document.getElementById('bkProgram').value;
+    const message = document.getElementById('bkMessage').value.trim();
+    let text = `*KHPTC Booking Request*\n\n*Name:* ${name || '—'}\n*Phone:* ${phone || '—'}\n`;
+    if (email) text += `*Email:* ${email}\n`;
+    if (checkin) text += `*Check-in:* ${checkin}\n`;
+    if (checkout) text += `*Check-out:* ${checkout}\n`;
+    text += `*Guests:* ${guests}\n*Interested In:* ${program}\n`;
+    if (message) text += `\n*Message:* ${message}\n`;
+    text += `\nSent from KHPTC website.`;
+    return text;
+  }
+  document.getElementById('sendWhatsApp').addEventListener('click', () => {
+    const name = document.getElementById('bkName').value.trim();
+    const phone = document.getElementById('bkPhone').value.trim();
+    if (!name || !phone) { alert('Please enter your name and phone number before sending.'); return; }
+    window.open('https://wa.me/254713555717?text=' + encodeURIComponent(buildMessage()), '_blank');
+  });
+  document.getElementById('sendEmail').addEventListener('click', () => {
+    const name = document.getElementById('bkName').value.trim();
+    const phone = document.getElementById('bkPhone').value.trim();
+    if (!name || !phone) { alert('Please enter your name and phone number before sending.'); return; }
+    const subject = encodeURIComponent('KHPTC Booking Request — ' + name);
+    window.location.href = 'mailto:kipkeinohptc@gmail.com?subject=' + subject + '&body=' + encodeURIComponent(buildMessage());
+  });
+  document.getElementById('bookingForm').addEventListener('submit', (e) => e.preventDefault());
+});
+</script>
 </body>
 </html>
