@@ -4,573 +4,696 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>KHPTC | Contact Us – Reach Out to Champions</title>
-  <!-- Font Awesome 6 (Free) -->
+  <meta name="description" content="Contact KipKeino High Performance Training Centre in Eldoret, Kenya. Call, email, or visit us at Kazi Mingi Farm.">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;700;800&display=swap" rel="stylesheet">
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-
-    :root {
-      --primary: #337418;
-      --secondary: #337418;
-      --accent: #337418;
-      --dark: #337418;
-      --light: #f8f9fa;
-      --text: #337418;
-      --light-text: #f0f0f0;
-      --bg-body: #FFFFFF;
-      --bg-card: #ffffff;
-      --bg-footer: #ffffff;
-      --border-light: #eee;
-      --shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
-      --shadow-hover: 0 25px 60px rgba(0, 0, 0, 0.15);
-      --text-muted: #337418;
-      --footer-text: #337418;
+    *{margin:0;padding:0;box-sizing:border-box}
+    :root{
+      --primary:#054A29;
+      --primary-dark:#03341C;
+      --primary-light:#0a6b3c;
+      --accent-green:#8fd47a;
+      --text-dark:#054A29;
+      --text-muted:#4a6b5a;
+      --bg-body:#ffffff;
+      --bg-header:rgba(255,255,255,.96);
+      --bg-card:#ffffff;
+      --glass:rgba(255,255,255,.72);
+      --glass-hover:rgba(255,255,255,.94);
+      --glass-border:rgba(255,255,255,.8);
+      --border-light:#e0e8e3;
+      --shadow:0 15px 40px rgba(5,74,41,.08);
+      --shadow-hover:0 25px 60px rgba(5,74,41,.16);
+      --g-glow:rgba(5,74,41,.35);
+      --hero-overlay-1:rgba(5,26,15,.72);
+      --hero-overlay-2:rgba(5,26,15,.35);
+      --img-hero:url('https://i.pinimg.com/736x/19/e7/f5/19e7f5c011665682dcf302f98d525bfe.jpg');
     }
-
-    /* ============ DARK MODE - EXACTLY MATCHING INDEX.HTML ============ */
-    [data-theme="dark"] {
-      --primary: #337418;
-      --secondary: #337418;
-      --accent: #337418;
-      --dark: #337418;
-      --text: #337418;
-      --light-text: #f0f0f0;
-      --bg-body: #FFFFFF;
-      --bg-card: #FFFFFF;
-      --bg-footer: #FFFFFF;
-      --border-light: #333;
-      --shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
-      --shadow-hover: 0 25px 60px rgba(0, 0, 0, 0.7);
-      --text-muted: #337418;
-      --footer-text: #337418;
-
-      /* Additional overrides to match index.html exactly */
-      .header-container, header { background: #FFFFFF !important; }
-      .logo-text span:first-child { color: #337418; }
-      .info-card { background: var(--bg-card) !important; }
-      .info-card h3 { color: #337418; }
-      .info-card p { color: #337418; }
-      .info-card a { color: #337418; }
-      .info-card i { color: #337418 !important; }
-      .contact-form { background: var(--bg-card) !important; }
-      .contact-form h3 { color: #337418; }
-      .form-group label { color: #337418; }
-      .form-group input, .form-group select, .form-group textarea {
-        background: #FFFFFF !important;
-        color: #337418 !important;
-        border-color: #333 !important;
-      }
-      .form-group input::placeholder, .form-group textarea::placeholder { color: #337418; }
-      .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
-        border-color: #337418 !important;
-        box-shadow: 0 0 0 3px rgba(51,116,24,0.1) !important;
-      }
-      .faq-item { background: var(--bg-card) !important; }
-      .faq-question { color: #337418; }
-      .faq-answer { color: #337418; }
-      .social-connect h3 { color: #337418; }
-      .footer-col h4 { color: #337418; }
-      .footer-links a { color: var(--footer-text); }
-      .contact-info li { color: var(--footer-text); }
-      .copyright { color: var(--footer-text); }
-      .section-title p { color: var(--text-muted); }
-      .btn-outline { border-color: var(--primary); color: var(--primary); }
-      .btn-outline:hover { background: var(--primary); color: #fff; }
-      .footer-col .logo-text span:first-child { color: #337418; }
-      .footer-col .logo-text span:last-child { color: #337418; }
-      .map-container { box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5); }
+    [data-theme="dark"]{
+      --text-dark:#e8eef4;
+      --text-muted:#9aa9b8;
+      --bg-body:#0a140d;
+      --bg-header:rgba(10,20,13,.96);
+      --bg-card:#112016;
+      --glass:rgba(17,32,22,.65);
+      --glass-hover:rgba(25,45,32,.9);
+      --glass-border:rgba(255,255,255,.1);
+      --border-light:#1e3527;
+      --shadow:0 15px 40px rgba(0,0,0,.5);
+      --shadow-hover:0 25px 60px rgba(0,0,0,.7);
+      --g-glow:rgba(143,212,122,.25);
+      --hero-overlay-1:rgba(0,0,0,.75);
+      --hero-overlay-2:rgba(0,0,0,.4);
     }
+    [data-theme="dark"] body{background:var(--bg-body);color:var(--text-dark)}
+    [data-theme="dark"] header{background:var(--bg-header);box-shadow:0 2px 12px rgba(0,0,0,.4)}
+    [data-theme="dark"] .logo-text span:first-child{color:var(--accent-green)}
+    [data-theme="dark"] .logo-text span:last-child{color:var(--text-muted)}
+    [data-theme="dark"] nav a{color:var(--text-dark)}
+    [data-theme="dark"] nav a:hover{color:var(--accent-green)}
+    [data-theme="dark"] .section-title h2{color:var(--text-dark)}
+    [data-theme="dark"] .section-title p{color:var(--text-muted)}
+    [data-theme="dark"] .info-card{background:var(--glass);border-color:var(--glass-border)}
+    [data-theme="dark"] .info-card h3{color:var(--text-dark)}
+    [data-theme="dark"] .info-card p{color:var(--text-muted)}
+    [data-theme="dark"] .info-card a{color:var(--accent-green)}
+    [data-theme="dark"] .info-card i{color:var(--accent-green)}
+    [data-theme="dark"] .contact-form{background:var(--glass);border-color:var(--glass-border)}
+    [data-theme="dark"] .contact-form h3{color:var(--text-dark)}
+    [data-theme="dark"] .form-group label{color:var(--text-dark)}
+    [data-theme="dark"] .form-group input,
+    [data-theme="dark"] .form-group select,
+    [data-theme="dark"] .form-group textarea{background:rgba(0,0,0,.25);color:var(--text-dark);border-color:#1e3527}
+    [data-theme="dark"] .faq-item{background:var(--glass);border-color:var(--glass-border)}
+    [data-theme="dark"] .faq-question{color:var(--text-dark)}
+    [data-theme="dark"] .faq-answer{color:var(--text-muted)}
+    [data-theme="dark"] .social-connect h3{color:var(--text-dark)}
+    [data-theme="dark"] footer{background:#06100a}
+    [data-theme="dark"] .contact-details,[data-theme="dark"] .whatsapp-tooltip{background:#112016;color:var(--text-dark);border-color:#1e3527}
+    [data-theme="dark"] .modal-content{background:#112016;color:var(--text-dark)}
+    [data-theme="dark"] .booking-form input,
+    [data-theme="dark"] .booking-form select,
+    [data-theme="dark"] .booking-form textarea{background:rgba(0,0,0,.25);color:var(--text-dark);border-color:#1e3527}
+    [data-theme="dark"] .booking-form label{color:var(--text-dark)}
 
-    body {
-      font-family: 'Montserrat', sans-serif;
-      color: var(--text);
-      background: #FFFFFF;
-      line-height: 1.6;
-      transition: background 0.3s, color 0.3s;
-      overflow-x: hidden;
-    }
+    html{scroll-behavior:smooth}
+    body{font-family:'Montserrat',sans-serif;color:var(--text-dark);background:var(--bg-body);line-height:1.7;overflow-x:hidden;-webkit-font-smoothing:antialiased;transition:background .4s,color .4s}
+    h1,h2,h3,h4,h5{font-family:'Playfair Display',serif;font-weight:700;color:var(--text-dark);line-height:1.25;letter-spacing:-.01em}
 
-    h1, h2, h3, h4, h5 {
-      font-family: 'Playfair Display', serif;
-      font-weight: 700;
-      color: var(--dark);
-      line-height: 1.3;
-    }
+    /* BUTTONS */
+    .btn{padding:13px 30px;border-radius:30px;font-weight:600;transition:all .35s cubic-bezier(.2,.7,.2,1);text-decoration:none;display:inline-block;font-size:15px;border:none;cursor:pointer;box-shadow:0 6px 18px rgba(0,0,0,.12);position:relative;overflow:hidden;letter-spacing:.3px}
+    .btn-primary{background:linear-gradient(135deg,var(--primary),var(--primary-dark));color:#fff}
+    .btn-primary:hover{transform:translateY(-3px);box-shadow:0 10px 28px var(--g-glow)}
+    .btn-outline{background:rgba(255,255,255,.08);color:#fff;border:2px solid rgba(255,255,255,.85);backdrop-filter:blur(6px)}
+    .btn-outline:hover{background:#fff;color:var(--primary);transform:translateY(-3px)}
+    .btn:after{content:'';position:absolute;top:0;left:-75%;width:50%;height:100%;background:linear-gradient(120deg,transparent,rgba(255,255,255,.6),transparent);transform:skewX(-20deg)}
+    .btn:hover:after{animation:shine .9s}
+    @keyframes shine{to{left:130%}}
 
-    .btn {
-      padding: 12px 28px;
-      border-radius: 30px;
-      font-weight: 600;
-      transition: all 0.3s ease;
-      text-decoration: none;
-      display: inline-block;
-      font-size: 16px;
-      border: none;
-      cursor: pointer;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    }
-    .btn-primary { background: #337418; color: white; }
-    .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(51,116,24,0.3); background: #2a5f13; }
-
-    .section-title { text-align: center; margin-bottom: 60px; }
-    .section-title h2 { font-size: 3rem; margin-bottom: 15px; position: relative; display: inline-block; color: #337418; }
-    .section-title h2:after { content: ''; position: absolute; width: 80px; height: 5px; background: #337418; bottom: -10px; left: 50%; transform: translateX(-50%); border-radius: 5px; }
-    .section-title p { font-size: 1.2rem; color: #337418; max-width: 700px; margin: 25px auto 0; }
+    /* SECTION TITLE */
+    .section-title{text-align:center;margin-bottom:60px;position:relative;z-index:2}
+    .section-title h2{font-size:clamp(2rem,4vw,3.2rem);margin-bottom:16px;position:relative;display:inline-block;color:var(--text-dark)}
+    .section-title h2:after{content:'';position:absolute;width:90px;height:4px;background:linear-gradient(90deg,var(--primary),var(--primary-dark));bottom:-14px;left:50%;transform:translateX(-50%);border-radius:4px;box-shadow:0 4px 12px var(--g-glow)}
+    .section-title p{font-size:1.15rem;max-width:680px;margin:28px auto 0;color:var(--text-muted);font-weight:400}
 
     /* HEADER */
-    header { background: #FFFFFF; box-shadow: 0 5px 20px rgba(0,0,0,0.08); width: 100%; top: 0; z-index: 1000; padding: 15px 0; transition: all 0.4s ease; }
-    .header-container { max-width: 1400px; margin: 0 auto; padding: 0 40px; display: flex; justify-content: space-between; align-items: center; }
-    .logo { display: flex; align-items: center; text-decoration: none; }
-    .logo-icon { width: 50px; height: 50px; background: #337418; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 12px; box-shadow: 0 4px 12px rgba(51,116,24,0.2); overflow: hidden; }
-    .logo-icon img { width: 100%; height: 100%; object-fit: cover; }
-    .logo-text { display: flex; flex-direction: column; }
-    .logo-text span:first-child { font-family: 'Playfair Display', serif; font-weight: 800; font-size: 28px; color: #337418; letter-spacing: -0.5px; }
-    .logo-text span:last-child { font-size: 12px; color: #337418; letter-spacing: 2px; text-transform: uppercase; margin-top: -5px; }
-    nav ul { display: flex; list-style: none; }
-    nav ul li { margin: 0 15px; }
-    nav ul li a { text-decoration: none; color: #337418; font-weight: 600; font-size: 16px; position: relative; padding: 8px 0; transition: all 0.3s ease; }
-    nav ul li a:after { content: ''; position: absolute; width: 0; height: 3px; bottom: 0; left: 0; background: #337418; border-radius: 3px; transition: width 0.3s ease; }
-    nav ul li a:hover:after { width: 100%; }
-    .header-actions { display: flex; align-items: center; gap: 20px; }
-    .theme-toggle { background: none; border: 2px solid #337418; color: #337418; border-radius: 50%; width: 44px; height: 44px; font-size: 1.2rem; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease; background: transparent; }
-    .theme-toggle:hover { background: #337418; color: white; transform: rotate(20deg); }
-    [data-theme="dark"] .theme-toggle { border-color: #337418; color: #337418; }
-    [data-theme="dark"] .theme-toggle:hover { background: #337418; color: #FFFFFF; }
+    header{background:var(--bg-header);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);box-shadow:0 2px 12px rgba(0,0,0,.07);position:static;width:100%;z-index:1000;padding:6px 0;border-bottom:1px solid var(--border-light);transition:background .4s}
+    [data-theme="dark"] header{border-bottom-color:rgba(255,255,255,.06)}
+    .header-container{max-width:1280px;margin:0 auto;padding:0 24px;display:flex;justify-content:space-between;align-items:center;gap:12px}
+    .logo{display:flex;align-items:center;text-decoration:none;flex-shrink:0;gap:12px}
+    .logo-icon{width:45px;height:45px;flex-shrink:0;background:linear-gradient(135deg,var(--primary),var(--primary-dark));border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px var(--g-glow);overflow:hidden;color:#fff}
+    .logo-icon img{width:100%;height:100%;object-fit:cover}
+    .logo-text{display:flex;flex-direction:column;min-width:0}
+    .logo-text span:first-child{font-family:'Playfair Display',serif;font-weight:900;font-size:25px;letter-spacing:-.5px;color:var(--primary);line-height:1}
+    .logo-text span:last-child{font-size:13px;letter-spacing:.9px;text-transform:uppercase;margin-top:2px;color:var(--text-muted);line-height:1.15;white-space:nowrap}
+    nav ul{display:flex;list-style:none;gap:4px}
+    nav li{margin:0}
+    nav a{text-decoration:none;color:var(--text-dark);font-weight:650;font-size:16px;position:relative;padding:7px 10px;transition:color .3s;border-radius:6px;display:inline-block}
+    nav a:hover{color:var(--primary);background:rgba(5,74,41,.05)}
+    [data-theme="dark"] nav a:hover{background:rgba(143,212,122,.08)}
+    nav a:after{content:'';position:absolute;width:0;height:3px;bottom:4px;left:50%;transform:translateX(-50%);background:var(--primary);border-radius:3px;transition:width .3s ease}
+    [data-theme="dark"] nav a:after{background:var(--accent-green)}
+    nav a:hover:after{width:60%}
+    .header-actions{display:flex;align-items:center;gap:10px;flex-shrink:0}
+    .btn-book{padding:8px 16px;font-size:15px;white-space:nowrap}
+
+    @media(max-width:900px){
+      header{padding:6px 0}
+      .header-container{flex-wrap:wrap;padding:0 12px;gap:8px}
+      .logo{margin-right:auto;gap:10px}
+      .logo-icon{width:50px;height:50px}
+      .logo-text span:first-child{font-size:26px}
+      .logo-text span:last-child{font-size:12px;letter-spacing:.6px;white-space:normal}
+      nav{order:3;width:100%}
+      nav ul{justify-content:center;flex-wrap:wrap;margin-top:4px;gap:2px}
+      nav a{font-size:14px;padding:6px 9px}
+      .header-actions{gap:8px}
+      .btn-book{padding:7px 13px;font-size:13.5px}
+    }
+    @media(max-width:480px){
+      .logo-icon{width:46px;height:46px}
+      .logo-text span:first-child{font-size:24px}
+      .logo-text span:last-child{font-size:11px;letter-spacing:.5px}
+      .header-actions{gap:6px}
+      .btn-book{padding:6px 11px;font-size:12.5px}
+      nav a{font-size:13px;padding:5px 7px}
+    }
+
+    /* THEME TOGGLE */
+    .theme-toggle{position:relative;width:46px;height:26px;border-radius:28px;background:linear-gradient(135deg,#e8eef4,#d0dae4);border:1px solid rgba(0,0,0,.08);cursor:pointer;transition:all .4s cubic-bezier(.2,.7,.2,1);padding:0;box-shadow:inset 0 2px 4px rgba(0,0,0,.06);overflow:hidden}
+    .theme-toggle:before{content:'';position:absolute;top:2px;left:2px;width:18px;height:18px;border-radius:50%;background:linear-gradient(135deg,#ffd86b,#fcb131);box-shadow:0 2px 6px rgba(252,177,49,.5);transition:all .4s cubic-bezier(.34,1.56,.64,1);z-index:2}
+    .theme-toggle:after{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:linear-gradient(135deg,#0a140d,#112016);opacity:0;transition:opacity .4s;z-index:1}
+    .theme-toggle .t-icon{position:absolute;top:50%;transform:translateY(-50%);font-size:9px;z-index:3;transition:all .4s}
+    .theme-toggle .t-sun{left:6px;color:#fff;opacity:1}
+    .theme-toggle .t-moon{right:6px;color:#8fa4b8;opacity:.6}
+    [data-theme="dark"] .theme-toggle:before{left:24px;background:linear-gradient(135deg,#8fa4b8,#c8d6e2);box-shadow:0 2px 6px rgba(200,214,226,.5)}
+    [data-theme="dark"] .theme-toggle:after{opacity:1}
+    [data-theme="dark"] .theme-toggle .t-sun{opacity:.5;color:#8fa4b8}
+    [data-theme="dark"] .theme-toggle .t-moon{opacity:1;color:#fff}
+    .theme-toggle:hover{box-shadow:inset 0 2px 4px rgba(0,0,0,.06),0 0 0 3px var(--g-glow)}
 
     /* HERO */
-    .hero { min-height: 50vh; display: flex; align-items: center; padding: 140px 0 60px; position: relative; overflow: hidden; }
-    .hero::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(rgba(26,42,58,0.85), rgba(26,42,58,0.9)), url('https://i.pinimg.com/736x/02/83/78/02837855bc30a32526be488cdef4d621.jpg') center/cover no-repeat; z-index: -1; }
-    .hero-content { max-width: 1400px; margin: 0 auto; padding: 0 40px; width: 100%; }
-    .hero-text { max-width: 800px; animation: fadeInUp 1s ease; }
-    .hero h1 { font-size: 3.8rem; margin-bottom: 20px; color: white; line-height: 1.2; }
-    .hero h1 span { color: #337418; }
-    .hero p { font-size: 1.3rem; margin-bottom: 30px; color: rgba(255,255,255,0.9); }
+    .hero{min-height:50vh;display:flex;align-items:center;padding:120px 0 80px;position:relative;overflow:hidden;isolation:isolate}
+    .hero::before{content:'';position:absolute;inset:0;background:linear-gradient(115deg,var(--hero-overlay-1) 0%,var(--hero-overlay-2) 65%,rgba(5,26,15,.55) 100%),var(--img-hero) center/cover no-repeat;z-index:-1}
+    .hero-content{max-width:1400px;margin:0 auto;padding:0 40px;width:100%}
+    .hero-text{max-width:820px;animation:up 1s cubic-bezier(.2,.7,.2,1) both}
+    .hero h1{font-size:clamp(2.6rem,5.5vw,4.4rem);margin-bottom:20px;color:#fff;line-height:1.08;letter-spacing:-.02em;text-shadow:0 4px 30px rgba(0,0,0,.3)}
+    .hero h1 span{color:var(--accent-green);text-shadow:0 0 40px rgba(143,212,122,.35)}
+    .hero p{font-size:clamp(1rem,1.6vw,1.25rem);color:rgba(255,255,255,.92);max-width:640px;line-height:1.7}
+    @keyframes up{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:none}}
 
-    /* CONTACT INFO CARDS */
-    .contact-info-section { max-width: 1300px; margin: 70px auto; padding: 0 30px; }
-    .info-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
-    .info-card { background: var(--bg-card); border-radius: 20px; padding: 40px; text-align: center; box-shadow: var(--shadow); transition: all 0.4s; }
-    .info-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-hover); }
-    .info-card i { font-size: 3rem; color: #337418; margin-bottom: 20px; }
-    .info-card h3 { font-size: 1.6rem; margin-bottom: 15px; color: #337418; }
-    .info-card p { color: #337418; margin-bottom: 10px; }
-    .info-card a { color: #337418; text-decoration: none; font-weight: 600; }
-    .info-card a:hover { text-decoration: underline; }
+    /* INFO CARDS */
+    .contact-info-section{max-width:1300px;margin:70px auto;padding:0 30px}
+    .info-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:30px}
+    .info-card{background:var(--bg-card);border-radius:20px;padding:40px;text-align:center;box-shadow:var(--shadow);transition:all .4s;border:1px solid var(--border-light)}
+    .info-card:hover{transform:translateY(-8px);box-shadow:var(--shadow-hover)}
+    .info-card i{font-size:3rem;color:var(--primary);margin-bottom:20px}
+    [data-theme="dark"] .info-card i{color:var(--accent-green)}
+    .info-card h3{font-size:1.6rem;margin-bottom:15px;color:var(--text-dark)}
+    .info-card p{color:var(--text-muted);margin-bottom:10px}
+    .info-card a{color:var(--primary);text-decoration:none;font-weight:600}
+    [data-theme="dark"] .info-card a{color:var(--accent-green)}
+    .info-card a:hover{text-decoration:underline}
 
     /* CONTACT FORM + MAP */
-    .contact-main { max-width: 1300px; margin: 70px auto; padding: 0 30px; display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: start; }
-    .contact-form { background: var(--bg-card); border-radius: 25px; padding: 50px; box-shadow: var(--shadow); }
-    .contact-form h3 { font-size: 2rem; margin-bottom: 30px; text-align: center; color: #337418; }
-    .form-group { margin-bottom: 25px; }
-    .form-group label { display: block; font-weight: 600; margin-bottom: 8px; color: #337418; }
-    .form-group input, .form-group select, .form-group textarea {
-      width: 100%; padding: 14px 20px; border: 2px solid var(--border-light);
-      border-radius: 10px; font-size: 1rem; font-family: 'Montserrat', sans-serif;
-      background: var(--bg-card); color: #337418; transition: all 0.3s;
-    }
-    .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
-      outline: none; border-color: #337418; box-shadow: 0 0 0 3px rgba(51,116,24,0.1);
-    }
-    .form-group textarea { resize: vertical; min-height: 120px; }
-    .submit-btn { width: 100%; padding: 16px; font-size: 1.1rem; font-weight: 700; }
-    .map-container { border-radius: 25px; overflow: hidden; box-shadow: var(--shadow); height: 100%; min-height: 400px; }
-    .map-container iframe { width: 100%; height: 100%; min-height: 400px; border: none; }
+    .contact-main{max-width:1300px;margin:70px auto;padding:0 30px;display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:start}
+    .contact-form{background:var(--bg-card);border-radius:25px;padding:50px;box-shadow:var(--shadow);border:1px solid var(--border-light)}
+    .contact-form h3{font-size:2rem;margin-bottom:30px;text-align:center;color:var(--text-dark)}
+    .form-group{margin-bottom:25px}
+    .form-group label{display:block;font-weight:600;margin-bottom:8px;color:var(--text-dark)}
+    .form-group input,.form-group select,.form-group textarea{width:100%;padding:14px 20px;border:2px solid var(--border-light);border-radius:10px;font-size:1rem;font-family:'Montserrat',sans-serif;background:var(--bg-card);color:var(--text-dark);transition:all .3s}
+    .form-group input:focus,.form-group select:focus,.form-group textarea:focus{outline:none;border-color:var(--primary);box-shadow:0 0 0 3px rgba(5,74,41,.1)}
+    .form-group textarea{resize:vertical;min-height:120px}
+    .submit-btn{width:100%;padding:16px;font-size:1.1rem;font-weight:700}
+    .map-container{border-radius:25px;overflow:hidden;box-shadow:var(--shadow);height:100%;min-height:400px}
+    .map-container iframe{width:100%;height:100%;min-height:400px;border:none}
 
-    /* FAQ SECTION */
-    .faq-section { max-width: 900px; margin: 70px auto; padding: 0 30px; }
-    .faq-item { background: var(--bg-card); border-radius: 15px; margin-bottom: 15px; box-shadow: var(--shadow); overflow: hidden; }
-    .faq-question { padding: 20px 30px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-weight: 600; font-size: 1.1rem; color: #337418; }
-    .faq-question i { transition: transform 0.3s; color: #337418; }
-    .faq-answer { padding: 0 30px; max-height: 0; overflow: hidden; transition: all 0.4s ease; color: #337418; }
-    .faq-item.active .faq-answer { padding: 0 30px 20px; max-height: 200px; }
-    .faq-item.active .faq-question i { transform: rotate(180deg); }
+    /* FAQ */
+    .faq-section{max-width:900px;margin:70px auto;padding:0 30px}
+    .faq-item{background:var(--bg-card);border-radius:15px;margin-bottom:15px;box-shadow:var(--shadow);overflow:hidden;border:1px solid var(--border-light)}
+    .faq-question{padding:20px 30px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-weight:600;font-size:1.1rem;color:var(--text-dark)}
+    .faq-question i{transition:transform .3s;color:var(--primary)}
+    [data-theme="dark"] .faq-question i{color:var(--accent-green)}
+    .faq-answer{padding:0 30px;max-height:0;overflow:hidden;transition:all .4s ease;color:var(--text-muted)}
+    .faq-item.active .faq-answer{padding:0 30px 20px;max-height:300px}
+    .faq-item.active .faq-question i{transform:rotate(180deg)}
 
-    /* SOCIAL LINKS */
-    .social-connect { text-align: center; margin: 70px 0; padding: 0 30px; }
-    .social-connect h3 { font-size: 2rem; margin-bottom: 30px; color: #337418; }
-    .social-buttons { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; }
-    .social-btn { display: flex; align-items: center; gap: 10px; padding: 15px 25px; border-radius: 50px; text-decoration: none; font-weight: 600; transition: all 0.3s; color: white; }
-    .social-btn:hover { transform: translateY(-3px); }
-    .social-btn.facebook { background: #1877f2; }
-    .social-btn.instagram { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
-    .social-btn.twitter { background: #1da1f2; }
-    .social-btn.youtube { background: #ff0000; }
-    .social-btn.whatsapp { background: #25d366; }
+    /* SOCIAL */
+    .social-connect{text-align:center;margin:70px 0;padding:0 30px}
+    .social-connect h3{font-size:2rem;margin-bottom:30px;color:var(--text-dark)}
+    .social-buttons{display:flex;flex-wrap:wrap;justify-content:center;gap:20px}
+    .social-btn{display:flex;align-items:center;gap:10px;padding:15px 25px;border-radius:50px;text-decoration:none;font-weight:600;transition:all .3s;color:#fff}
+    .social-btn:hover{transform:translateY(-3px)}
+    .social-btn.facebook{background:#1877f2}
+    .social-btn.instagram{background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888)}
+    .social-btn.twitter{background:#1da1f2}
+    .social-btn.youtube{background:#ff0000}
+    .social-btn.whatsapp{background:#25d366}
 
     /* FOOTER */
-    footer { background: #FFFFFF; color: #337418; padding: 80px 0 40px; position: relative; border-top: 1px solid #e0e0e0; }
-    .footer-container { max-width: 1400px; margin: 0 auto; padding: 0 40px; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 40px; }
-    .footer-col h4 { color: #337418; font-size: 1.4rem; margin-bottom: 25px; position: relative; padding-bottom: 12px; }
-    .footer-col h4:after { content: ''; position: absolute; width: 50px; height: 3px; background: #337418; bottom: 0; left: 0; }
-    .footer-links { list-style: none; }
-    .footer-links li { margin-bottom: 12px; }
-    .footer-links a { color: #337418; text-decoration: none; transition: all 0.3s; }
-    .footer-links a i { margin-right: 8px; color: #337418; }
-    .footer-links a:hover { color: #337418; padding-left: 5px; }
-    .social-links { display: flex; gap: 12px; margin-top: 15px; }
-    .social-links a { display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 50%; background: rgba(51,116,24,0.1); color: #337418; }
-    .social-links a:hover { background: #337418; color: #FFFFFF; }
-    .contact-info li { display: flex; margin-bottom: 15px; color: #337418; }
-    .contact-info li i { color: #337418; margin-right: 12px; }
-    .copyright { text-align: center; padding-top: 30px; margin-top: 50px; border-top: 1px solid #e0e0e0; color: #337418; font-size: 0.9rem; }
+    footer{background:#0a140d;color:#fff;padding:80px 0 30px;position:relative;transition:background .4s;border-top:3px solid var(--primary)}
+    .footer-container{max-width:1280px;margin:0 auto;padding:0 24px;display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1.5fr;gap:36px}
+    .footer-col h4{font-size:1.1rem;margin-bottom:22px;position:relative;padding-bottom:12px;color:#fff;font-family:'Playfair Display',serif}
+    .footer-col h4:after{content:'';position:absolute;width:40px;height:3px;background:linear-gradient(90deg,var(--accent-green),var(--primary));bottom:0;left:0;border-radius:3px}
+    .footer-col p{color:rgba(255,255,255,.65);font-size:.88rem;line-height:1.7}
+    .footer-links{list-style:none}
+    .footer-links li{margin-bottom:11px}
+    .footer-links a{color:rgba(255,255,255,.65);text-decoration:none;transition:all .3s;font-size:.88rem}
+    .footer-links a i{margin-right:6px;color:var(--accent-green);font-size:.7rem}
+    .footer-links a:hover{color:var(--accent-green);padding-left:5px}
+    .social-links{display:flex;gap:10px;margin-top:16px}
+    .social-links a{display:flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.08);color:#fff;transition:all .35s;font-size:.9rem}
+    .social-links a:hover{background:linear-gradient(135deg,var(--primary),var(--primary-dark));transform:translateY(-4px);box-shadow:0 8px 24px var(--g-glow)}
+    .contact-info{list-style:none}
+    .contact-info li{display:flex;margin-bottom:13px;color:rgba(255,255,255,.65);font-size:.88rem;line-height:1.5}
+    .contact-info li i{margin-right:10px;color:var(--accent-green);margin-top:3px;flex-shrink:0}
+    .copyright{text-align:center;padding-top:28px;margin-top:46px;border-top:1px solid rgba(255,255,255,.1);font-size:.82rem;color:rgba(255,255,255,.5);max-width:1280px;margin-left:auto;margin-right:auto;padding-left:24px;padding-right:24px}
+    footer .logo-text span:first-child{color:#fff}
+    footer .logo-text span:last-child{color:rgba(255,255,255,.55)}
+    footer .logo-icon{background:linear-gradient(135deg,var(--primary),var(--primary-dark))}
 
-    @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
-    .animate { animation: fadeInUp 0.8s ease forwards; opacity: 0; }
+    @media(max-width:1024px){.footer-container{grid-template-columns:repeat(3,1fr);gap:30px}}
+    @media(max-width:768px){.footer-container{grid-template-columns:repeat(2,1fr);gap:28px}}
+    @media(max-width:480px){.footer-container{grid-template-columns:1fr;gap:26px}}
 
-    @media (max-width: 900px) {
-      .header-container { flex-direction: column; padding: 15px 20px; }
-      .logo { margin-bottom: 15px; }
-      nav ul { margin: 15px 0; flex-wrap: wrap; justify-content: center; }
-      .hero h1 { font-size: 2.8rem; }
-      .contact-main { grid-template-columns: 1fr; }
-    }
-    @media (max-width: 600px) {
-      .hero h1 { font-size: 2.4rem; }
-      .section-title h2 { font-size: 2.2rem; }
-      .social-buttons { flex-direction: column; align-items: center; }
-    }
+    /* WHATSAPP */
+    .whatsapp-float{position:fixed;bottom:30px;right:30px;z-index:9999;display:flex;flex-direction:column;align-items:flex-end;gap:10px}
+    .whatsapp-float>a{display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#25D366,#1ea952);color:#fff;width:60px;height:60px;border-radius:50%;text-decoration:none;box-shadow:0 8px 24px rgba(37,211,102,.45);transition:all .35s;font-size:2rem;animation:pulse 2.5s infinite}
+    .whatsapp-float>a:hover{transform:scale(1.1);box-shadow:0 12px 34px rgba(37,211,102,.65)}
+    .whatsapp-tooltip{background:#fff;color:var(--text-dark);padding:9px 18px;border-radius:30px;font-size:.85rem;font-weight:600;box-shadow:0 6px 20px rgba(0,0,0,.12);border:1px solid #eee;white-space:nowrap;pointer-events:none;opacity:0;transform:translateX(10px);transition:all .3s}
+    .whatsapp-float:hover .whatsapp-tooltip{opacity:1;transform:none}
+    .contact-details{background:#fff;border-radius:16px;padding:14px 20px;box-shadow:0 8px 30px rgba(0,0,0,.14);border:1px solid #eee;font-size:.88rem;color:var(--text-dark);display:flex;flex-direction:column;gap:7px;opacity:0;transform:translateY(8px);transition:all .3s;pointer-events:none;min-width:210px}
+    .whatsapp-float:hover .contact-details{opacity:1;transform:none;pointer-events:auto}
+    .contact-details i{margin-right:7px;color:var(--primary)}
+    @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(37,211,102,.5)}70%,100%{box-shadow:0 0 0 20px rgba(37,211,102,0)}}
 
-    /* ===== FLOATING WHATSAPP BUTTON ===== */
-    .whatsapp-float {
-      position: fixed;
-      bottom: 30px;
-      right: 30px;
-      z-index: 9999;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-end;
-      gap: 10px;
+    /* BOOKING MODAL */
+    .modal-overlay{position:fixed;inset:0;background:rgba(5,26,15,.75);backdrop-filter:blur(6px);z-index:5000;display:none;align-items:center;justify-content:center;padding:20px;opacity:0;transition:opacity .3s ease}
+    .modal-overlay.open{display:flex;opacity:1}
+    .modal-content{background:#fff;border-radius:24px;max-width:560px;width:100%;max-height:92vh;overflow-y:auto;padding:40px 36px;position:relative;box-shadow:0 30px 80px rgba(0,0,0,.35);transform:translateY(20px);transition:transform .3s ease}
+    .modal-overlay.open .modal-content{transform:translateY(0)}
+    .modal-close{position:absolute;top:18px;right:18px;width:38px;height:38px;border-radius:50%;background:rgba(5,74,41,.08);border:none;cursor:pointer;color:var(--primary);font-size:1.1rem;display:flex;align-items:center;justify-content:center;transition:all .3s}
+    .modal-close:hover{background:var(--primary);color:#fff;transform:rotate(90deg)}
+    .modal-content h3{font-size:1.8rem;margin-bottom:8px;color:var(--primary);font-family:'Playfair Display',serif}
+    [data-theme="dark"] .modal-content h3{color:var(--accent-green)}
+    .modal-content .modal-sub{color:var(--text-muted);font-size:.95rem;margin-bottom:24px}
+    .booking-form{display:flex;flex-direction:column;gap:16px}
+    .booking-form .form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    .booking-form .form-group{display:flex;flex-direction:column}
+    .booking-form label{font-size:.82rem;font-weight:600;color:var(--text-dark);margin-bottom:6px;letter-spacing:.3px}
+    .booking-form input,.booking-form select,.booking-form textarea{padding:12px 14px;border:1.5px solid var(--border-light);border-radius:10px;font-family:inherit;font-size:.92rem;color:var(--text-dark);background:#fafcfb;outline:none;transition:border-color .3s,box-shadow .3s}
+    .booking-form input:focus,.booking-form select:focus,.booking-form textarea:focus{border-color:var(--primary);box-shadow:0 0 0 3px rgba(5,74,41,.12)}
+    .booking-form textarea{resize:vertical;min-height:70px}
+    .booking-actions{display:flex;flex-direction:column;gap:12px;margin-top:6px}
+    .booking-actions .btn{width:100%;padding:14px;font-size:15px;text-align:center}
+    .btn-whatsapp{background:linear-gradient(135deg,#25D366,#1ea952);color:#fff}
+    .btn-whatsapp:hover{transform:translateY(-3px);box-shadow:0 10px 28px rgba(37,211,102,.4)}
+    .btn-email{background:linear-gradient(135deg,var(--primary),var(--primary-dark));color:#fff}
+    .booking-note{font-size:.78rem;color:var(--text-muted);text-align:center;margin-top:8px;line-height:1.5}
+
+    @media(max-width:900px){
+      .hero h1{font-size:2.8rem}
+      .contact-main{grid-template-columns:1fr}
     }
-    .whatsapp-float a {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: #25D366;
-      color: #FFFFFF;
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      text-decoration: none;
-      box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
-      transition: all 0.3s ease;
-      font-size: 2rem;
+    @media(max-width:600px){
+      .hero h1{font-size:2.4rem}
+      .section-title h2{font-size:2.2rem}
+      .social-buttons{flex-direction:column;align-items:center}
+      .whatsapp-float{bottom:20px;right:20px}
+      .whatsapp-float>a{width:55px;height:55px;font-size:1.8rem}
+      .modal-content{padding:32px 22px}
+      .booking-form .form-row{grid-template-columns:1fr}
     }
-    .whatsapp-float a:hover {
-      transform: scale(1.1);
-      box-shadow: 0 10px 30px rgba(37, 211, 102, 0.6);
-    }
-    .whatsapp-tooltip {
-      background: #FFFFFF;
-      color: #337418;
-      padding: 8px 16px;
-      border-radius: 30px;
-      font-size: 0.85rem;
-      font-weight: 600;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-      border: 1px solid #e0e0e0;
-      white-space: nowrap;
-      pointer-events: none;
-      opacity: 0;
-      transform: translateX(10px);
-      transition: all 0.3s ease;
-    }
-    .whatsapp-float:hover .whatsapp-tooltip {
-      opacity: 1;
-      transform: translateX(0);
-    }
-    @media (max-width: 600px) {
-      .whatsapp-float { bottom: 20px; right: 20px; }
-      .whatsapp-float a { width: 55px; height: 55px; font-size: 1.8rem; }
-    }
+    @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
   </style>
 </head>
 <body>
-  <!-- HEADER -->
-  <header>
-    <div class="header-container">
-      <a href="#" class="logo">
-        <div class="logo-icon"><img src="https://i.pinimg.com/736x/d2/3d/d8/d23dd8ad0a03ce25635349483c6e7130.jpg" alt="KHPTC Logo"></div>
-        <div class="logo-text"><span>KHPTC</span><span>KipKeino High Performance Training Centre</span></div>
-      </a>
-      <nav>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="training.html">Training</a></li>
-          <li><a href="programs.html">Programs</a></li>
-          <li><a href="experience.html">Experiences</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </nav>
-      <div class="header-actions">
-        <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode"><i class="fas fa-moon" id="themeIcon"></i></button>
-        <a href="#" class="btn btn-primary">Join Program</a>
-      </div>
-    </div>
-  </header>
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="hero-content">
-      <div class="hero-text">
-        <h1>Get in <span>Touch</span></h1>
-        <p>Have questions about training at KHPTC? We're here to help you plan your journey to the Home of Champions.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACT INFO CARDS -->
-  <div class="contact-info-section">
-    <div class="info-grid">
-      <div class="info-card animate">
-        <i class="fas fa-phone-alt"></i>
-        <h3>Call Us</h3>
-        <p>Speak directly with our team</p>
-        <a href="tel:+254713555717">+254 713 555717</a>
-      </div>
-      <div class="info-card animate">
-        <i class="fas fa-envelope"></i>
-        <h3>Email Us</h3>
-        <p>We respond within 24 hours</p>
-        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=kipkeinohptc@gmail.com" target="_blank">kipkeinohptc@gmail.com</a>
-      </div>
-      <div class="info-card animate">
-        <i class="fas fa-map-marker-alt"></i>
-        <h3>Visit Us</h3>
-        <p>Kazi Mingi Farm, Eldoret</p>
-        <a href="#">Uasin Gishu County, Kenya</a>
-      </div>
-      <div class="info-card animate">
-        <i class="fas fa-clock"></i>
-        <h3>Office Hours</h3>
-        <p>Monday – Friday: 6AM – 8PM</p>
-        <p>Saturday: 7AM – 6PM</p>
-      </div>
+<!-- HEADER -->
+<header>
+  <div class="header-container">
+    <a href="index.html" class="logo">
+      <div class="logo-icon"><img src="https://i.pinimg.com/736x/d2/3d/d8/d23dd8ad0a03ce25635349483c6e7130.jpg" alt="KHPTC Logo"></div>
+      <div class="logo-text"><span>KHPTC</span><span>KipKeino High Performance Training Centre</span></div>
+    </a>
+    <nav><ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="training.html">Training</a></li>
+      <li><a href="experience.html">Experiences</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul></nav>
+    <div class="header-actions">
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+        <i class="fas fa-sun t-icon t-sun"></i>
+        <i class="fas fa-moon t-icon t-moon"></i>
+      </button>
+      <button class="btn btn-primary btn-book" id="openBooking">Book Your Stay</button>
     </div>
   </div>
+</header>
 
-  <!-- CONTACT FORM + MAP -->
-  <div class="contact-main">
-    <div class="contact-form animate">
-      <h3>Send Us a Message</h3>
-      <form>
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-text">
+      <h1>Get in <span>Touch</span></h1>
+      <p>Have questions about training at KHPTC? We're here to help you plan your journey to the Home of Champions.</p>
+    </div>
+  </div>
+</section>
+
+<!-- INFO CARDS -->
+<div class="contact-info-section">
+  <div class="info-grid">
+    <div class="info-card">
+      <i class="fas fa-phone-alt"></i>
+      <h3>Call Us</h3>
+      <p>Speak directly with our team</p>
+      <a href="tel:+254713555717">+254 713 555717</a>
+    </div>
+    <div class="info-card">
+      <i class="fas fa-envelope"></i>
+      <h3>Email Us</h3>
+      <p>We respond within 24 hours</p>
+      <a href="mailto:kipkeinohptc@gmail.com">kipkeinohptc@gmail.com</a>
+    </div>
+    <div class="info-card">
+      <i class="fas fa-map-marker-alt"></i>
+      <h3>Visit Us</h3>
+      <p>Kazi Mingi Farm, Eldoret</p>
+      <a href="#">Uasin Gishu County, Kenya</a>
+    </div>
+    <div class="info-card">
+      <i class="fas fa-clock"></i>
+      <h3>Office Hours</h3>
+      <p>Monday – Friday: 6AM – 8PM</p>
+      <p>Saturday: 7AM – 6PM</p>
+    </div>
+  </div>
+</div>
+
+<!-- CONTACT FORM + MAP -->
+<div class="contact-main">
+  <div class="contact-form">
+    <h3>Send Us a Message</h3>
+    <form>
+      <div class="form-group">
+        <label for="name">Full Name *</label>
+        <input type="text" id="name" placeholder="Your full name" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Email Address *</label>
+        <input type="email" id="email" placeholder="Your email" required>
+      </div>
+      <div class="form-group">
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" placeholder="Your phone number (optional)">
+      </div>
+      <div class="form-group">
+        <label for="interest">I'm Interested In *</label>
+        <select id="interest" required>
+          <option value="">Select an option</option>
+          <option value="complete-package">Complete Training Package</option>
+          <option value="elite-runner">Elite Runner's Package</option>
+          <option value="pro-athlete">Pro Athlete Package</option>
+          <option value="group-camp">Group Training Camp</option>
+          <option value="refugee-program">Refugee Athlete Program</option>
+          <option value="personal-training">Personal Training</option>
+          <option value="general-inquiry">General Inquiry</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="message">Your Message *</label>
+        <textarea id="message" placeholder="Tell us about your training goals, preferred dates, and any questions..." required></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary submit-btn">Send Message</button>
+    </form>
+  </div>
+  <div class="map-container">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.7!2d35.3!3d0.5!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMMKwMzAnMDAuMCJOIDM1wrAxOCcwMC4wIkU!5e0!3m2!1sen!2ske!4v1700000000000!5m2!1sen!2ske" allowfullscreen="" loading="lazy"></iframe>
+  </div>
+</div>
+
+<!-- FAQ -->
+<div class="faq-section">
+  <div class="section-title">
+    <h2>Frequently Asked Questions</h2>
+    <p>Quick answers to common inquiries</p>
+  </div>
+  <div class="faq-item">
+    <div class="faq-question">Where exactly is KHPTC located? <i class="fas fa-chevron-down"></i></div>
+    <div class="faq-answer">KHPTC is located on Kazi Mingi Farm, just outside Eldoret town in Uasin Gishu County, approximately 350 km west of Nairobi, Kenya.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-question">Do I need to be a professional athlete to train there? <i class="fas fa-chevron-down"></i></div>
+    <div class="faq-answer">No! About 90% of our visitors are leisure runners. We welcome athletes of all levels, from beginners to elite competitors.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-question">What is the best time of year to visit? <i class="fas fa-chevron-down"></i></div>
+    <div class="faq-answer">The centre is open year-round. September to April generally offers the mildest weather, but training is excellent in all seasons.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-question">Can I arrange airport transfers? <i class="fas fa-chevron-down"></i></div>
+    <div class="faq-answer">Yes, we offer transfers from Eldoret International Airport and Nairobi. Just let us know your flight details when booking.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-question">Is the centre suitable for non-runners? <i class="fas fa-chevron-down"></i></div>
+    <div class="faq-answer">Absolutely! Family members and non-running companions are welcome. There are plenty of activities and excursions available.</div>
+  </div>
+</div>
+
+<!-- SOCIAL -->
+<div class="social-connect">
+  <h3>Connect With Us on Social Media</h3>
+  <div class="social-buttons">
+    <a href="#" class="social-btn facebook"><i class="fab fa-facebook-f"></i> Facebook</a>
+    <a href="#" class="social-btn instagram"><i class="fab fa-instagram"></i> Instagram</a>
+    <a href="#" class="social-btn twitter"><i class="fab fa-twitter"></i> Twitter</a>
+    <a href="#" class="social-btn youtube"><i class="fab fa-youtube"></i> YouTube</a>
+    <a href="https://wa.me/254713555717" class="social-btn whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-container">
+    <div class="footer-col">
+      <a href="index.html" class="logo" style="margin-bottom:18px">
+        <div class="logo-icon"><img src="https://i.pinimg.com/736x/d2/3d/d8/d23dd8ad0a03ce25635349483c6e7130.jpg" alt="KHPTC Logo"></div>
+        <div class="logo-text"><span>KHPTC</span><span>Home of Champions</span></div>
+      </a>
+      <p>KipKeino High Performance Training Centre — where champions are made. Elite training, accommodation, and nutrition near Eldoret, Kenya.</p>
+      <div class="social-links">
+        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest"></i></a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul class="footer-links">
+        <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+        <li><a href="training.html"><i class="fas fa-chevron-right"></i> Training</a></li>
+        <li><a href="experience.html"><i class="fas fa-chevron-right"></i> Experiences</a></li>
+        <li><a href="about.html"><i class="fas fa-chevron-right"></i> About</a></li>
+        <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Programs</h4>
+      <ul class="footer-links">
+        <li><a href="training.html"><i class="fas fa-chevron-right"></i> Complete Package</a></li>
+        <li><a href="training.html"><i class="fas fa-chevron-right"></i> Elite Runner's</a></li>
+        <li><a href="training.html"><i class="fas fa-chevron-right"></i> Pro Athlete</a></li>
+        <li><a href="training.html"><i class="fas fa-chevron-right"></i> Group Camps</a></li>
+        <li><a href="training.html"><i class="fas fa-chevron-right"></i> Personal Training</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Legal</h4>
+      <ul class="footer-links">
+        <li><a href="#"><i class="fas fa-chevron-right"></i> Terms &amp; Conditions</a></li>
+        <li><a href="#"><i class="fas fa-chevron-right"></i> Privacy Policy</a></li>
+        <li><a href="#"><i class="fas fa-chevron-right"></i> Cancellation Policy</a></li>
+        <li><a href="#"><i class="fas fa-chevron-right"></i> Careers</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact Us</h4>
+      <ul class="contact-info">
+        <li><i class="fas fa-map-marker-alt"></i> Kazi Mingi Farm, Eldoret, Kenya</li>
+        <li><i class="fas fa-phone-alt"></i> +254 713 555 717</li>
+        <li><i class="fas fa-envelope"></i> kipkeinohptc@gmail.com</li>
+        <li><i class="fas fa-clock"></i> Mon–Sat: 6AM – 8PM</li>
+      </ul>
+    </div>
+  </div>
+  <div class="copyright"><p>&copy; 2026 KHPTC. All rights reserved. | Designed by Quantum Solutions</p></div>
+</footer>
+
+<!-- WHATSAPP FLOAT -->
+<div class="whatsapp-float">
+  <div class="contact-details"><div><i class="fas fa-phone-alt"></i> 0713 555 717</div><div><i class="fas fa-envelope"></i> kipkeinohptc@gmail.com</div></div>
+  <div class="whatsapp-tooltip">Chat with us</div>
+  <a href="https://wa.me/254713555717" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp"><i class="fab fa-whatsapp"></i></a>
+</div>
+
+<!-- BOOKING MODAL -->
+<div class="modal-overlay" id="bookingModal">
+  <div class="modal-content">
+    <button class="modal-close" id="closeBooking" aria-label="Close"><i class="fas fa-times"></i></button>
+    <h3>Book Your Stay</h3>
+    <p class="modal-sub">Fill in your details and choose how to send your request — via WhatsApp or email. We'll get back to you within 24 hours.</p>
+    <form class="booking-form" id="bookingForm">
+      <div class="form-row">
         <div class="form-group">
-          <label for="name">Full Name *</label>
-          <input type="text" id="name" placeholder="Your full name" required>
+          <label for="bkName">Full Name *</label>
+          <input type="text" id="bkName" name="name" required placeholder="">
         </div>
         <div class="form-group">
-          <label for="email">Email Address *</label>
-          <input type="email" id="email" placeholder="Your email" required>
+          <label for="bkPhone">Phone / WhatsApp *</label>
+          <input type="tel" id="bkPhone" name="phone" required placeholder="">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="bkEmail">Email Address</label>
+        <input type="email" id="bkEmail" name="email" placeholder="">
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="bkCheckin">Check-in Date</label>
+          <input type="date" id="bkCheckin" name="checkin">
         </div>
         <div class="form-group">
-          <label for="phone">Phone Number</label>
-          <input type="tel" id="phone" placeholder="Your phone number (optional)">
+          <label for="bkCheckout">Check-out Date</label>
+          <input type="date" id="bkCheckout" name="checkout">
         </div>
+      </div>
+      <div class="form-row">
         <div class="form-group">
-          <label for="interest">I'm Interested In *</label>
-          <select id="interest" required>
-            <option value="">Select an option</option>
-            <option value="complete-package">Complete Training Package</option>
-            <option value="elite-runner">Elite Runner's Package</option>
-            <option value="pro-athlete">Pro Athlete Package</option>
-            <option value="group-camp">Group Training Camp</option>
-            <option value="refugee-program">Refugee Athlete Program</option>
-            <option value="personal-training">Personal Training</option>
-            <option value="general-inquiry">General Inquiry</option>
+          <label for="bkGuests">Number of Guests</label>
+          <select id="bkGuests" name="guests">
+            <option value="1">1 guest</option>
+            <option value="2">2 guests</option>
+            <option value="3-5">3–5 guests</option>
+            <option value="6-10">6–10 guests</option>
+            <option value="10+">10+ guests (team)</option>
           </select>
         </div>
         <div class="form-group">
-          <label for="message">Your Message *</label>
-          <textarea id="message" placeholder="Tell us about your training goals, preferred dates, and any questions..." required></textarea>
-        </div>
-        <button type="submit" class="btn btn-primary submit-btn">Send Message</button>
-      </form>
-    </div>
-    <div class="map-container animate">
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.7!2d35.3!3d0.5!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMMKwMzAnMDAuMCJOIDM1wrAxOCcwMC4wIkU!5e0!3m2!1sen!2ske!4v1700000000000!5m2!1sen!2ske" allowfullscreen="" loading="lazy"></iframe>
-    </div>
-  </div>
-
-  <!-- FAQ SECTION -->
-  <div class="faq-section">
-    <div class="section-title animate">
-      <h2>Frequently Asked Questions</h2>
-      <p>Quick answers to common inquiries</p>
-    </div>
-    <div class="faq-item animate">
-      <div class="faq-question">Where exactly is KHPTC located? <i class="fas fa-chevron-down"></i></div>
-      <div class="faq-answer">KHPTC is located on Kazi Mingi Farm, just outside Eldoret town in Uasin Gishu County, approximately 350 km west of Nairobi, Kenya.</div>
-    </div>
-    <div class="faq-item animate">
-      <div class="faq-question">Do I need to be a professional athlete to train there? <i class="fas fa-chevron-down"></i></div>
-      <div class="faq-answer">No! About 90% of our visitors are leisure runners. We welcome athletes of all levels, from beginners to elite competitors.</div>
-    </div>
-    <div class="faq-item animate">
-      <div class="faq-question">What is the best time of year to visit? <i class="fas fa-chevron-down"></i></div>
-      <div class="faq-answer">The centre is open year-round. September to April generally offers the mildest weather, but training is excellent in all seasons.</div>
-    </div>
-    <div class="faq-item animate">
-      <div class="faq-question">Can I arrange airport transfers? <i class="fas fa-chevron-down"></i></div>
-      <div class="faq-answer">Yes, we offer transfers from Eldoret International Airport and Nairobi. Just let us know your flight details when booking.</div>
-    </div>
-    <div class="faq-item animate">
-      <div class="faq-question">Is the centre suitable for non-runners? <i class="fas fa-chevron-down"></i></div>
-      <div class="faq-answer">Absolutely! Family members and non-running companions are welcome. There are plenty of activities and excursions available.</div>
-    </div>
-  </div>
-
-  <!-- SOCIAL CONNECT -->
-  <div class="social-connect">
-    <h3>Connect With Us on Social Media</h3>
-    <div class="social-buttons">
-      <a href="#" class="social-btn facebook"><i class="fab fa-facebook-f"></i> Facebook</a>
-      <a href="#" class="social-btn instagram"><i class="fab fa-instagram"></i> Instagram</a>
-      <a href="#" class="social-btn twitter"><i class="fab fa-twitter"></i> Twitter</a>
-      <a href="#" class="social-btn youtube"><i class="fab fa-youtube"></i> YouTube</a>
-      <a href="https://wa.me/254713555717" class="social-btn whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
-    </div>
-  </div>
-
-  <!-- FOOTER -->
-  <footer>
-    <div class="footer-container">
-      <div class="footer-col">
-        <a href="#" class="logo">
-          <div class="logo-icon"><img src="https://i.pinimg.com/736x/d2/3d/d8/d23dd8ad0a03ce25635349483c6e7130.jpg" alt="KHPTC Logo"></div>
-          <div class="logo-text"><span>KHPTC</span><span>Home of Champions</span></div>
-        </a>
-        <p style="margin: 20px 0; color: #337418;">KipKeino High Performance Training Centre – where champions are made. Elite training near Eldoret, Kenya.</p>
-        <div class="social-links">
-          <a href="#"><i class="fab fa-facebook-f"></i></a>
-          <a href="#"><i class="fab fa-twitter"></i></a>
-          <a href="#"><i class="fab fa-instagram"></i></a>
-          <a href="#"><i class="fab fa-youtube"></i></a>
-          <a href="#"><i class="fab fa-pinterest"></i></a>
+          <label for="bkProgram">Interested In</label>
+          <select id="bkProgram" name="program">
+            <option value="Complete Training Experience">Complete Training Experience (14 days)</option>
+            <option value="Elite Runner's Experience">Elite Runner's Experience (7 days)</option>
+            <option value="Pro Athlete Experience">Pro Athlete Experience (21 days)</option>
+            <option value="Group / Team Camp">Group / Team Camp</option>
+            <option value="Personal Training">Personal Training</option>
+            <option value="Just Accommodation">Just Accommodation</option>
+          </select>
         </div>
       </div>
-      <div class="footer-col">
-        <h4>Quick Links</h4>
-        <ul class="footer-links">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="training.html">Training</a></li>
-          <li><a href="programs.html">Programs</a></li>
-          <li><a href="experience.html">Experiences</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
+      <div class="form-group">
+        <label for="bkMessage">Additional Message</label>
+        <textarea id="bkMessage" name="message" placeholder="Tell us about your goals, arrival time, or any special requests..."></textarea>
       </div>
-      <div class="footer-col">
-        <h4>Legal</h4>
-        <ul class="footer-links">
-          <li><a href="#"><i class="fas fa-chevron-right"></i> Terms and Conditions</a></li>
-          <li><a href="#"><i class="fas fa-chevron-right"></i> Privacy Policy</a></li>
-          <li><a href="#"><i class="fas fa-chevron-right"></i> Cancellation Policy</a></li>
-          <li><a href="#"><i class="fas fa-chevron-right"></i> Careers</a></li>
-        </ul>
+      <div class="booking-actions">
+        <button type="button" class="btn btn-whatsapp" id="sendWhatsApp">
+          <i class="fab fa-whatsapp" style="margin-right:8px;"></i> Send via WhatsApp
+        </button>
+        <button type="button" class="btn btn-email" id="sendEmail">
+          <i class="fas fa-envelope" style="margin-right:8px;"></i> Send via Email
+        </button>
       </div>
-      <div class="footer-col">
-        <h4>Training Programs</h4>
-        <ul class="footer-links">
-          <li><a href="#"><i class="fas fa-chevron-right"></i> Complete Package</a></li>
-          <li><a href="#"><i class="fas fa-chevron-right"></i> Elite Runner's</a></li>
-          <li><a href="#"><i class="fas fa-chevron-right"></i> Pro Athlete</a></li>
-          <li><a href="#"><i class="fas fa-chevron-right"></i> Group Camps</a></li>
-          <li><a href="#"><i class="fas fa-chevron-right"></i> Personal Training</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Contact Us</h4>
-        <ul class="contact-info">
-          <li><i class="fas fa-phone-alt"></i> +254 713 555717</li>
-          <li><i class="fas fa-envelope"></i> <a href="https://mail.google.com/mail/?view=cm&fs=1&to=kipkeinohptc@gmail.com" target="_blank" style="color:#337418; text-decoration:none;">kipkeinohptc@gmail.com</a></li>
-          <li><i class="fas fa-clock"></i> Mon-Fri: 6AM - 8PM, Sat: 7AM - 6PM</li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Training Promise</h4>
-        <div class="logo-icon"><i class="fas fa-running"></i></div>
-        <ul style="list-style: none; color: #337418;">Uncompromising commitment to excellence, integrity, and athlete development. We empower champions through world-class training and support.</ul>
-      </div>
-    </div>
-    <div class="copyright"><p>&copy; 2026 KHPTC. All rights reserved. | Designed by Quantum Solutions</p></div>
-  </footer>
-
-  <!-- FLOATING WHATSAPP BUTTON -->
-  <div class="whatsapp-float">
-    <div class="whatsapp-tooltip">Chat with us</div>
-    <a href="https://wa.me/254713555717" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
-      <i class="fab fa-whatsapp"></i>
-    </a>
+      <p class="booking-note">Your details are used only to respond to your booking request. No data is stored on this website.</p>
+    </form>
   </div>
+</div>
 
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const toggleBtn = document.getElementById('themeToggle');
-      const themeIcon = document.getElementById('themeIcon');
-      const html = document.documentElement;
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const html = document.documentElement;
 
-      const storedTheme = localStorage.getItem('theme');
-      if (storedTheme === 'dark') {
-        html.setAttribute('data-theme', 'dark');
-        themeIcon.className = 'fas fa-sun';
-      } else if (storedTheme === 'light') {
-        html.removeAttribute('data-theme');
-        themeIcon.className = 'fas fa-moon';
-      } else {
-        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        if (prefersDark) {
-          html.setAttribute('data-theme', 'dark');
-          themeIcon.className = 'fas fa-sun';
-        }
-      }
+  /* THEME TOGGLE */
+  const toggle = document.getElementById('themeToggle');
+  let currentTheme = null;
+  try { currentTheme = localStorage.getItem('theme'); } catch(e) {}
+  if (!currentTheme) {
+    currentTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  }
+  if (currentTheme === 'dark') { html.setAttribute('data-theme', 'dark'); }
+  else { html.removeAttribute('data-theme'); }
 
-      toggleBtn.addEventListener('click', function() {
-        if (html.getAttribute('data-theme') === 'dark') {
-          html.removeAttribute('data-theme');
-          themeIcon.className = 'fas fa-moon';
-          localStorage.setItem('theme', 'light');
-        } else {
-          html.setAttribute('data-theme', 'dark');
-          themeIcon.className = 'fas fa-sun';
-          localStorage.setItem('theme', 'dark');
-        }
-      });
+  toggle.addEventListener('click', function() {
+    const isDark = html.getAttribute('data-theme') === 'dark';
+    if (isDark) {
+      html.removeAttribute('data-theme');
+      try { localStorage.setItem('theme', 'light'); } catch(e) {}
+    } else {
+      html.setAttribute('data-theme', 'dark');
+      try { localStorage.setItem('theme', 'dark'); } catch(e) {}
+    }
+  });
 
-      // FAQ accordion
-      const faqItems = document.querySelectorAll('.faq-item');
-      faqItems.forEach(item => {
-        item.querySelector('.faq-question').addEventListener('click', () => {
-          item.classList.toggle('active');
-        });
-      });
-
-      const animateElements = document.querySelectorAll('.animate');
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.style.animationPlayState = 'running';
-            entry.target.style.opacity = '1';
-          }
-        });
-      }, { threshold: 0.1 });
-
-      animateElements.forEach(element => {
-        element.style.opacity = '0';
-        element.style.animationPlayState = 'paused';
-        observer.observe(element);
-      });
-
-      window.addEventListener('scroll', function() {
-        const header = document.querySelector('header');
-        if (window.scrollY > 50) {
-          header.style.padding = '10px 0';
-        } else {
-          header.style.padding = '15px 0';
-        }
-      });
+  /* FAQ ACCORDION */
+  document.querySelectorAll('.faq-question').forEach(q => {
+    q.addEventListener('click', () => {
+      q.parentElement.classList.toggle('active');
     });
-  </script>
+  });
+
+  /* BOOKING MODAL */
+  const bookingModal = document.getElementById('bookingModal');
+  const openBooking = document.getElementById('openBooking');
+  const closeBooking = document.getElementById('closeBooking');
+
+  if (openBooking && bookingModal) {
+    openBooking.addEventListener('click', function() {
+      bookingModal.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    });
+  }
+  if (closeBooking && bookingModal) {
+    closeBooking.addEventListener('click', function() {
+      bookingModal.classList.remove('open');
+      document.body.style.overflow = '';
+    });
+  }
+  if (bookingModal) {
+    bookingModal.addEventListener('click', function(e) {
+      if (e.target === bookingModal) {
+        bookingModal.classList.remove('open');
+        document.body.style.overflow = '';
+      }
+    });
+  }
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && bookingModal && bookingModal.classList.contains('open')) {
+      bookingModal.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+  });
+
+  function getBookingData() {
+    return {
+      name: (document.getElementById('bkName').value || '').trim(),
+      phone: (document.getElementById('bkPhone').value || '').trim(),
+      email: (document.getElementById('bkEmail').value || '').trim(),
+      checkin: document.getElementById('bkCheckin').value,
+      checkout: document.getElementById('bkCheckout').value,
+      guests: document.getElementById('bkGuests').value,
+      program: document.getElementById('bkProgram').value,
+      message: (document.getElementById('bkMessage').value || '').trim()
+    };
+  }
+  function validateBooking(d) {
+    if (!d.name || !d.phone) {
+      alert('Please fill in your name and phone number.');
+      return false;
+    }
+    return true;
+  }
+
+  const sendWhatsApp = document.getElementById('sendWhatsApp');
+  if (sendWhatsApp) {
+    sendWhatsApp.addEventListener('click', function() {
+      const d = getBookingData();
+      if (!validateBooking(d)) return;
+      let text = '*KHPTC Booking Request*%0A%0A';
+      text += '*Name:* ' + encodeURIComponent(d.name) + '%0A';
+      text += '*Phone:* ' + encodeURIComponent(d.phone) + '%0A';
+      if (d.email) text += '*Email:* ' + encodeURIComponent(d.email) + '%0A';
+      if (d.checkin) text += '*Check-in:* ' + encodeURIComponent(d.checkin) + '%0A';
+      if (d.checkout) text += '*Check-out:* ' + encodeURIComponent(d.checkout) + '%0A';
+      text += '*Guests:* ' + encodeURIComponent(d.guests) + '%0A';
+      text += '*Program:* ' + encodeURIComponent(d.program) + '%0A';
+      if (d.message) text += '*Message:* ' + encodeURIComponent(d.message) + '%0A';
+      window.open('https://wa.me/254713555717?text=' + text, '_blank');
+    });
+  }
+
+  const sendEmail = document.getElementById('sendEmail');
+  if (sendEmail) {
+    sendEmail.addEventListener('click', function() {
+      const d = getBookingData();
+      if (!validateBooking(d)) return;
+      const subject = 'KHPTC Booking Request — ' + d.name;
+      let body = 'KHPTC Booking Request\n\n';
+      body += 'Name: ' + d.name + '\n';
+      body += 'Phone: ' + d.phone + '\n';
+      if (d.email) body += 'Email: ' + d.email + '\n';
+      if (d.checkin) body += 'Check-in: ' + d.checkin + '\n';
+      if (d.checkout) body += 'Check-out: ' + d.checkout + '\n';
+      body += 'Guests: ' + d.guests + '\n';
+      body += 'Program: ' + d.program + '\n';
+      if (d.message) body += 'Message: ' + d.message + '\n';
+      window.location.href = 'mailto:kipkeinohptc@gmail.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+    });
+  }
+});
+</script>
 </body>
 </html>
