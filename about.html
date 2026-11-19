@@ -9,219 +9,539 @@
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 :root{
-  --g:#337418;--shadow:0 15px 40px rgba(0,0,0,.08);--shadow-hover:0 25px 60px rgba(0,0,0,.12);
+  --g:#337418;
+  --g-dark:#245410;
+  --g-light:#e8f0e3;
+  --g-glow:rgba(51,116,24,.35);
+  --text-dark:#1a2a3a;
+  --text-muted:#5a6b7a;
+  --shadow:0 15px 40px rgba(0,0,0,.08);
+  --shadow-hover:0 25px 60px rgba(0,0,0,.12);
+  --glass:rgba(255,255,255,.62);
+  --glass-hover:rgba(255,255,255,.92);
+  --glass-border:rgba(255,255,255,.75);
+  --bg-body:#ffffff;
+  --bg-header:rgba(255,255,255,.92);
+  --bg-card:#ffffff;
+  --bg-stats:rgba(248,249,250,.82);
+  --bg-mission:rgba(255,255,255,.75);
+  --bg-timeline:rgba(255,255,255,.78);
+  --bg-affiliates:rgba(255,255,255,.75);
+  --bg-footer:#0f1923;
   /* ===== REPLACE YOUR IMAGES HERE (one line each) =====
      Until a file exists, the original photos below show automatically. */
   --fb1:url('https://i.pinimg.com/1200x/25/cf/af/25cfafaa43bdf1bf185eb22d889b963c.jpg');
   --fb2:url('https://i.pinimg.com/736x/84/2b/1d/842b1daf68ff85f038692de2ed743fee.jpg');
-  --hero-1:url('images/hero-1.jpg');--hero-2:url('images/hero-2.jpg');--hero-3:url('images/hero-3.jpg');
-  --band-1:url('images/parallax-1.jpg');--band-2:url('images/parallax-2.jpg');
-  --gal-1:url('images/gallery-1.jpg');--gal-2:url('images/gallery-2.jpg');--gal-3:url('images/gallery-3.jpg');
-  --gal-4:url('images/gallery-4.jpg');--gal-5:url('images/gallery-5.jpg');--gal-6:url('images/gallery-6.jpg');
+  --hero-1:url('images/hero-1.jpg');
+  --hero-2:url('images/hero-2.jpg');
+  --hero-3:url('images/hero-3.jpg');
+  --band-1:url('images/parallax-1.jpg');
+  --band-2:url('images/parallax-2.jpg');
+  --gal-1:url('images/gallery-1.jpg');
+  --gal-2:url('images/gallery-2.jpg');
+  /* Section static backgrounds — replace with your own */
+  --sec-stats:url('images/bg-stats.jpg');
+  --sec-mission:url('images/bg-mission.jpg');
+  --sec-timeline:url('images/bg-timeline.jpg');
+  --sec-affiliates:url('images/bg-affiliates.jpg');
+  --sec-cta:url('images/bg-cta.jpg');
 }
-html{scroll-behavior:smooth}
-body{font-family:'Montserrat',sans-serif;color:var(--g);background:#fff;line-height:1.6;overflow-x:hidden}
-h1,h2,h3,h4{font-family:'Playfair Display',serif;font-weight:700;color:var(--g);line-height:1.3}
-#bar{position:fixed;top:0;left:0;height:4px;width:0;background:var(--g);z-index:2000}
-.btn{padding:12px 28px;border-radius:30px;font-weight:600;transition:all .3s;text-decoration:none;display:inline-block;font-size:16px;border:none;cursor:pointer;box-shadow:0 4px 15px rgba(0,0,0,.1)}
-.btn-primary{background:var(--g);color:#fff}.btn-primary:hover{transform:translateY(-3px);box-shadow:0 6px 20px rgba(51,116,24,.3)}
-.btn-light{background:#fff;color:var(--g)}.btn-light:hover{background:#f0f0f0;transform:translateY(-3px)}
-.section-title{text-align:center;margin-bottom:60px}
-.section-title h2{font-size:3rem;margin-bottom:15px;position:relative;display:inline-block}
-.section-title h2:after{content:'';position:absolute;width:80px;height:5px;background:var(--g);bottom:-10px;left:50%;transform:translateX(-50%);border-radius:5px}
-.section-title p{font-size:1.2rem;max-width:700px;margin:25px auto 0}
 
-/* HEADER */
-header{background:#fff;box-shadow:0 5px 20px rgba(0,0,0,.08);position:sticky;top:0;z-index:1000;padding:15px 0;transition:padding .4s}
+/* ============ DARK THEME ============ */
+[data-theme="dark"]{
+  --text-dark:#e8eef4;
+  --text-muted:#9aa9b8;
+  --bg-body:#0d1620;
+  --bg-header:rgba(15,25,35,.94);
+  --bg-card:#16222e;
+  --bg-stats:rgba(15,25,35,.85);
+  --bg-mission:rgba(15,25,35,.82);
+  --bg-timeline:rgba(15,25,35,.84);
+  --bg-affiliates:rgba(15,25,35,.82);
+  --bg-footer:#081018;
+  --glass:rgba(30,44,58,.55);
+  --glass-hover:rgba(40,58,76,.85);
+  --glass-border:rgba(255,255,255,.12);
+  --shadow:0 15px 40px rgba(0,0,0,.35);
+  --shadow-hover:0 25px 60px rgba(0,0,0,.5);
+  --g-light:#1a3320;
+  --g-glow:rgba(51,116,24,.25);
+}
+[data-theme="dark"] body{background:var(--bg-body);color:var(--text-dark)}
+[data-theme="dark"] header{background:var(--bg-header);box-shadow:0 4px 24px rgba(0,0,0,.4)}
+[data-theme="dark"] .logo-text span:first-child{color:var(--g)}
+[data-theme="dark"] .logo-text span:last-child{color:var(--text-muted)}
+[data-theme="dark"] nav a{color:var(--text-dark)}
+[data-theme="dark"] nav a:hover{color:#8fd47a}
+[data-theme="dark"] .theme-toggle{border-color:#8fd47a;color:#8fd47a}
+[data-theme="dark"] .theme-toggle:hover{background:#8fd47a;color:#0d1620}
+[data-theme="dark"] .section-title h2{color:var(--text-dark)}
+[data-theme="dark"] .section-title p{color:var(--text-muted)}
+[data-theme="dark"] .stats-header h2{color:var(--text-dark)}
+[data-theme="dark"] .stats-header p{color:var(--text-muted)}
+[data-theme="dark"] .stat-number{color:#8fd47a}
+[data-theme="dark"] .stat-label{color:var(--text-dark)}
+[data-theme="dark"] .mission-card h3{color:var(--text-dark)}
+[data-theme="dark"] .mission-card p{color:var(--text-muted)}
+[data-theme="dark"] .mission-icon{background:linear-gradient(135deg,#1a3320,#16301c);color:#8fd47a}
+[data-theme="dark"] .mission-card:hover .mission-icon{background:linear-gradient(135deg,var(--g),#2d6a12);color:#fff}
+[data-theme="dark"] .timeline-item h3{color:var(--text-dark)}
+[data-theme="dark"] .timeline-item p{color:var(--text-muted)}
+[data-theme="dark"] .timeline-year{color:#8fd47a}
+[data-theme="dark"] .timeline:before{background:linear-gradient(#8fd47a,#2d6a12)}
+[data-theme="dark"] .affiliation-card h4{color:var(--text-dark)}
+[data-theme="dark"] .affiliation-card p{color:var(--text-muted)}
+[data-theme="dark"] .aff-logo{background:#1e2c3a;border-color:#2a3c4e}
+[data-theme="dark"] .profile-content h2{color:var(--text-dark)}
+[data-theme="dark"] .profile-content h3{color:#8fd47a}
+[data-theme="dark"] .profile-content p{color:var(--text-dark)}
+[data-theme="dark"] .pic{border-color:#2a3c4e}
+[data-theme="dark"] .badge{border-color:#2a3c4e}
+[data-theme="dark"] .stats-section{background:linear-gradient(var(--bg-stats),var(--bg-stats)),var(--sec-stats) center/cover no-repeat fixed}
+[data-theme="dark"] .mission-section{background:linear-gradient(var(--bg-mission),var(--bg-mission)),var(--sec-mission) center/cover no-repeat fixed}
+[data-theme="dark"] .timeline-section{background:linear-gradient(var(--bg-timeline),var(--bg-timeline)),var(--sec-timeline) center/cover no-repeat fixed}
+[data-theme="dark"] .affiliations{background:linear-gradient(var(--bg-affiliates),var(--bg-affiliates)),var(--sec-affiliates) center/cover no-repeat fixed}
+[data-theme="dark"] footer{background:var(--bg-footer)}
+[data-theme="dark"] .contact-details,[data-theme="dark"] .whatsapp-tooltip{background:#16222e;color:var(--text-dark);border-color:#2a3c4e}
+[data-theme="dark"] .gi{filter:brightness(.85)}
+
+html{scroll-behavior:smooth}
+body{font-family:'Montserrat',sans-serif;color:var(--text-dark);background:var(--bg-body);line-height:1.7;overflow-x:hidden;-webkit-font-smoothing:antialiased;transition:background .4s,color .4s}
+h1,h2,h3,h4{font-family:'Playfair Display',serif;font-weight:700;color:var(--g);line-height:1.25;letter-spacing:-.01em}
+
+/* ===== MODERN SCROLL PROGRESS + RUNNER ===== */
+#bar{
+  position:fixed;top:0;left:0;height:5px;width:0;
+  background:linear-gradient(90deg,#8fd47a,var(--g),var(--g-dark));
+  z-index:2000;border-radius:0 4px 4px 0;transition:width .06s linear;
+  box-shadow:0 0 16px var(--g-glow);
+}
+#runner-wrap{
+  position:fixed;top:-14px;left:0;z-index:2001;
+  transition:left .06s linear;pointer-events:none;
+  display:flex;align-items:center;justify-content:center;
+  width:34px;height:34px;
+}
+#runner-wrap .pulse-ring{
+  position:absolute;inset:0;border-radius:50%;
+  background:radial-gradient(circle,rgba(143,212,122,.35),transparent 70%);
+  animation:runnerPulse 1.4s ease-out infinite;
+}
+#runner-wrap .runner-icon{
+  position:relative;width:26px;height:26px;border-radius:50%;
+  background:linear-gradient(135deg,#8fd47a,var(--g));
+  color:#fff;display:flex;align-items:center;justify-content:center;
+  font-size:12px;
+  box-shadow:0 3px 12px rgba(51,116,24,.5),0 0 0 2px rgba(255,255,255,.9);
+  animation:runnerBob 0.55s ease-in-out infinite;
+}
+[data-theme="dark"] #runner-wrap .runner-icon{box-shadow:0 3px 12px rgba(143,212,122,.4),0 0 0 2px rgba(15,25,35,.9)}
+@keyframes runnerBob{
+  0%,100%{transform:translateY(0) rotate(-6deg)}
+  50%{transform:translateY(-3px) rotate(6deg)}
+}
+@keyframes runnerPulse{
+  0%{transform:scale(.8);opacity:.8}
+  100%{transform:scale(2);opacity:0}
+}
+
+/* ===== BUTTONS ===== */
+.btn{padding:13px 30px;border-radius:30px;font-weight:600;transition:all .35s cubic-bezier(.2,.7,.2,1);text-decoration:none;display:inline-block;font-size:15px;border:none;cursor:pointer;box-shadow:0 6px 18px rgba(0,0,0,.12);position:relative;overflow:hidden;letter-spacing:.3px}
+.btn-primary{background:linear-gradient(135deg,var(--g),var(--g-dark));color:#fff}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:0 10px 28px var(--g-glow)}
+.btn-outline{background:rgba(255,255,255,.08);color:#fff;border:2px solid rgba(255,255,255,.85);backdrop-filter:blur(6px)}
+.btn-outline:hover{background:#fff;color:var(--g);transform:translateY(-3px)}
+.btn:after{content:'';position:absolute;top:0;left:-75%;width:50%;height:100%;background:linear-gradient(120deg,transparent,rgba(255,255,255,.6),transparent);transform:skewX(-20deg)}
+.btn:hover:after{animation:shine .9s}
+@keyframes shine{to{left:130%}}
+
+/* ===== SECTION TITLE ===== */
+.section-title{text-align:center;margin-bottom:64px;position:relative;z-index:2}
+.section-title h2{font-size:clamp(2.2rem,4vw,3.2rem);margin-bottom:16px;position:relative;display:inline-block;color:var(--text-dark)}
+.section-title h2:after{content:'';position:absolute;width:90px;height:4px;background:linear-gradient(90deg,var(--g),var(--g-dark));bottom:-14px;left:50%;transform:translateX(-50%);border-radius:4px;box-shadow:0 4px 12px var(--g-glow)}
+.section-title p{font-size:1.15rem;max-width:680px;margin:28px auto 0;color:var(--text-muted);font-weight:400}
+
+/* ===== HEADER ===== */
+header{background:var(--bg-header);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 4px 24px rgba(0,0,0,.06);position:sticky;top:0;z-index:1000;padding:15px 0;transition:padding .4s,background .4s}
 .header-container{max-width:1400px;margin:0 auto;padding:0 40px;display:flex;justify-content:space-between;align-items:center}
 .logo{display:flex;align-items:center;text-decoration:none}
-.logo-icon{width:50px;height:50px;background:var(--g);border-radius:50%;display:flex;align-items:center;justify-content:center;margin-right:12px;box-shadow:0 4px 12px rgba(51,116,24,.2);overflow:hidden;color:#fff}
+.logo-icon{width:52px;height:52px;background:linear-gradient(135deg,var(--g),var(--g-dark));border-radius:50%;display:flex;align-items:center;justify-content:center;margin-right:12px;box-shadow:0 6px 18px var(--g-glow);overflow:hidden;color:#fff}
 .logo-icon img{width:100%;height:100%;object-fit:cover}
-.logo-text{display:flex;flex-direction:column;color:var(--g)}
-.logo-text span:first-child{font-family:'Playfair Display',serif;font-weight:800;font-size:28px;letter-spacing:-.5px}
-.logo-text span:last-child{font-size:12px;letter-spacing:2px;text-transform:uppercase;margin-top:-5px}
-nav ul{display:flex;list-style:none}nav li{margin:0 15px}
-nav a{text-decoration:none;color:var(--g);font-weight:600;position:relative;padding:8px 0}
-nav a:after{content:'';position:absolute;width:0;height:3px;bottom:0;left:0;background:var(--g);border-radius:3px;transition:width .3s}
+.logo-text{display:flex;flex-direction:column;color:var(--text-dark)}
+.logo-text span:first-child{font-family:'Playfair Display',serif;font-weight:800;font-size:28px;letter-spacing:-.5px;color:var(--g);line-height:1}
+.logo-text span:last-child{font-size:11px;letter-spacing:2.2px;text-transform:uppercase;margin-top:2px;color:var(--text-muted)}
+nav ul{display:flex;list-style:none}
+nav li{margin:0 15px}
+nav a{text-decoration:none;color:var(--text-dark);font-weight:600;font-size:15px;position:relative;padding:8px 0;transition:color .3s}
+nav a:hover{color:var(--g)}
+nav a:after{content:'';position:absolute;width:0;height:3px;bottom:0;left:0;background:linear-gradient(90deg,var(--g),var(--g-dark));border-radius:3px;transition:width .35s ease}
 nav a:hover:after{width:100%}
-.header-actions{display:flex;align-items:center;gap:20px}
-.theme-toggle{border:2px solid var(--g);color:var(--g);border-radius:50%;width:44px;height:44px;font-size:1.2rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .3s;background:transparent}
-.theme-toggle:hover{background:var(--g);color:#fff;transform:rotate(20deg)}
+.header-actions{display:flex;align-items:center;gap:18px}
 
-/* HERO (slideshow + fixed background) */
+/* ===== MODERN THEME TOGGLE ===== */
+.theme-toggle{
+  position:relative;width:56px;height:30px;border-radius:30px;
+  background:linear-gradient(135deg,#e8eef4,#d0dae4);
+  border:1px solid rgba(0,0,0,.08);cursor:pointer;
+  transition:all .4s cubic-bezier(.2,.7,.2,1);padding:0;
+  box-shadow:inset 0 2px 4px rgba(0,0,0,.06);
+  overflow:hidden;
+}
+.theme-toggle:before{
+  content:'';position:absolute;top:3px;left:3px;width:22px;height:22px;border-radius:50%;
+  background:linear-gradient(135deg,#ffd86b,#fcb131);
+  box-shadow:0 2px 6px rgba(252,177,49,.5);
+  transition:all .4s cubic-bezier(.34,1.56,.64,1);
+  z-index:2;
+}
+.theme-toggle:after{
+  content:'';position:absolute;top:0;left:0;right:0;bottom:0;
+  background:linear-gradient(135deg,#0d1620,#1a2a3a);
+  opacity:0;transition:opacity .4s;z-index:1;
+}
+.theme-toggle .t-icon{
+  position:absolute;top:50%;transform:translateY(-50%);
+  font-size:11px;z-index:3;transition:all .4s;
+}
+.theme-toggle .t-sun{left:8px;color:#fff;opacity:1}
+.theme-toggle .t-moon{right:8px;color:#8fa4b8;opacity:.6}
+[data-theme="dark"] .theme-toggle:before{
+  left:31px;
+  background:linear-gradient(135deg,#8fa4b8,#c8d6e2);
+  box-shadow:0 2px 6px rgba(200,214,226,.5);
+}
+[data-theme="dark"] .theme-toggle:after{opacity:1}
+[data-theme="dark"] .theme-toggle .t-sun{opacity:.5;color:#8fa4b8}
+[data-theme="dark"] .theme-toggle .t-moon{opacity:1;color:#fff}
+.theme-toggle:hover{box-shadow:inset 0 2px 4px rgba(0,0,0,.06),0 0 0 3px var(--g-glow)}
+
+/* ===== HERO ===== */
 .hero-slide,.band{background-position:center;background-size:cover;background-attachment:fixed}
 .hero{min-height:100vh;display:flex;align-items:center;padding:60px 0 110px;position:relative;overflow:hidden;isolation:isolate}
-.hero-slide{position:absolute;inset:0;z-index:-2;opacity:0;transition:opacity 1.8s ease}
+.hero-slide{position:absolute;inset:0;z-index:-2;opacity:0;transition:opacity 2s ease}
 .hero-slide.on{opacity:1}
-.s1{background-image:var(--hero-1),var(--fb1)}.s2{background-image:var(--hero-2),var(--fb2)}.s3{background-image:var(--hero-3),var(--fb1)}
-.hero::before,.band::before{content:'';position:absolute;inset:0;background:linear-gradient(rgba(26,42,58,.85),rgba(26,42,58,.6));z-index:-1}
+.s1{background-image:var(--hero-1),var(--fb1)}
+.s2{background-image:var(--hero-2),var(--fb2)}
+.s3{background-image:var(--hero-3),var(--fb1)}
+.hero::before{content:'';position:absolute;inset:0;background:linear-gradient(115deg,rgba(15,25,35,.92) 0%,rgba(26,42,58,.82) 45%,rgba(26,42,58,.55) 100%);z-index:-1}
+.band::before{content:'';position:absolute;inset:0;background:linear-gradient(rgba(26,42,58,.82),rgba(26,42,58,.65));z-index:-1}
 .hero-content{max-width:1400px;margin:0 auto;padding:0 40px;width:100%}
-.hero-text{max-width:800px}
-.hero-text>*{animation:up 1s ease both}
-.hero-text>:nth-child(2){animation-delay:.2s}.hero-text>:nth-child(3){animation-delay:.4s}.hero-text>:nth-child(4){animation-delay:.6s}
-.eyebrow{display:inline-block;color:#fff;border:1px solid rgba(255,255,255,.6);padding:6px 18px;border-radius:30px;letter-spacing:3px;text-transform:uppercase;font-size:.8rem;margin-bottom:20px}
-.hero h1{font-size:3.8rem;margin-bottom:20px;color:#fff;line-height:1.2}.hero h1 span{color:var(--g)}
-.hero p{font-size:1.3rem;margin-bottom:30px;color:rgba(255,255,255,.9)}
-.hero-btns{display:flex;gap:15px;flex-wrap:wrap}
-.scroll-cue{position:absolute;bottom:30px;left:50%;margin-left:-13px;width:26px;height:42px;border:2px solid #fff;border-radius:20px}
-.scroll-cue:after{content:'';position:absolute;top:8px;left:50%;width:4px;height:8px;margin-left:-2px;background:#fff;border-radius:2px;animation:wheel 1.6s infinite}
+.hero-text{max-width:820px}
+.hero-text>*{animation:up 1s cubic-bezier(.2,.7,.2,1) both}
+.hero-text>:nth-child(2){animation-delay:.15s}
+.hero-text>:nth-child(3){animation-delay:.3s}
+.hero-text>:nth-child(4){animation-delay:.45s}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;color:#fff;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.35);padding:8px 20px;border-radius:30px;letter-spacing:3px;text-transform:uppercase;font-size:.75rem;font-weight:600;margin-bottom:24px;backdrop-filter:blur(8px)}
+.eyebrow:before{content:'';width:6px;height:6px;border-radius:50%;background:#8fd47a;box-shadow:0 0 10px #8fd47a}
+.hero h1{font-size:clamp(2.6rem,5.5vw,4.2rem);margin-bottom:22px;color:#fff;line-height:1.1;letter-spacing:-.02em}
+.hero h1 span{color:#8fd47a;text-shadow:0 0 40px rgba(143,212,122,.35)}
+.hero p{font-size:clamp(1.05rem,1.6vw,1.3rem);margin-bottom:34px;color:rgba(255,255,255,.88);max-width:640px;line-height:1.7}
+.hero-btns{display:flex;gap:16px;flex-wrap:wrap}
+.scroll-cue{position:absolute;bottom:36px;left:50%;margin-left:-13px;width:26px;height:44px;border:2px solid rgba(255,255,255,.7);border-radius:20px}
+.scroll-cue:after{content:'';position:absolute;top:9px;left:50%;width:4px;height:8px;margin-left:-2px;background:#fff;border-radius:2px;animation:wheel 1.8s infinite}
+@keyframes wheel{0%{opacity:1;transform:translateY(0)}100%{opacity:0;transform:translateY(16px)}}
+@keyframes up{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:none}}
 
-/* PARALLAX BANDS */
-.band{min-height:60vh;display:flex;align-items:center;justify-content:center;text-align:center;position:relative;isolation:isolate;padding:80px 30px}
-.band>div{max-width:850px}.band h2{color:#fff;font-size:3rem;margin-bottom:15px}
-.band p{font-size:1.3rem;color:rgba(255,255,255,.9)}
-.b1{background-image:var(--band-1),var(--fb1)}.b2{background-image:var(--band-2),var(--fb2)}
+/* ===== HERO RINGS SVG ===== */
+.hero-rings{position:absolute;right:6%;top:14%;width:400px;animation:float 7s ease-in-out infinite;pointer-events:none;opacity:.9}
+.hero-rings circle{fill:none;stroke:#fff;stroke-width:4;stroke-dasharray:202;stroke-dashoffset:202;animation:draw 2.4s ease forwards}
+.hero-rings circle:nth-child(even){stroke:#8fd47a;stroke-width:5}
+@keyframes draw{to{stroke-dashoffset:0}}
+@keyframes float{50%{transform:translateY(-10px)}}
 
-/* PROFILE */
-.profile-section{max-width:1200px;margin:90px auto;padding:0 30px;display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
+/* ===== FLOATING CHIPS ===== */
+.chip{position:absolute;background:rgba(255,255,255,.12);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,.28);color:#fff;padding:16px 26px;border-radius:20px;animation:float 5s ease-in-out infinite;box-shadow:0 10px 40px rgba(0,0,0,.25)}
+.chip b{display:block;font-family:'Playfair Display',serif;font-size:1.35rem;margin-bottom:2px}
+.chip small{letter-spacing:2px;text-transform:uppercase;font-size:.7rem;opacity:.85;font-weight:500}
+
+/* ===== REDESIGNED TICKER ===== */
+.ticker{
+  background:linear-gradient(90deg,#1a2a3a,#245410,#337418,#245410,#1a2a3a);
+  background-size:300% 100%;
+  animation:tickerShift 12s ease infinite;
+  color:#fff;overflow:hidden;white-space:nowrap;
+  padding:0;width:100%;position:relative;z-index:2;
+  box-shadow:0 12px 34px rgba(51,116,24,.3);
+  border-top:1px solid rgba(143,212,122,.3);
+  border-bottom:1px solid rgba(143,212,122,.3);
+}
+@keyframes tickerShift{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+.ticker-track{display:inline-flex;align-items:center;animation:slide 42s linear infinite;padding:18px 0}
+.ticker:hover .ticker-track{animation-play-state:paused}
+.ticker-item{
+  display:inline-flex;align-items:center;gap:12px;
+  margin:0 36px;font-family:'Montserrat',sans-serif;
+  font-weight:600;font-size:.98rem;letter-spacing:1.2px;
+  text-transform:uppercase;white-space:nowrap;
+  color:#fff;
+}
+.ticker-item .t-ico{
+  display:inline-flex;align-items:center;justify-content:center;
+  width:34px;height:34px;border-radius:50%;
+  background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);
+  font-size:14px;transition:all .3s;
+}
+.ticker-item:hover .t-ico{background:rgba(255,255,255,.25);transform:scale(1.1)}
+.ticker-item .t-gold{color:#FCB131}
+.ticker-item .t-green{color:#8fd47a}
+.ticker-item .t-blue{color:#5eb3e8}
+.ticker-item .t-red{color:#ee5a6e}
+.ticker-item .t-white{color:#fff}
+.ticker-item b{font-weight:700;color:#8fd47a;margin-left:2px}
+.ticker-sep{width:1px;height:20px;background:rgba(255,255,255,.25);margin:0 6px}
+@keyframes slide{to{transform:translateX(-50%)}}
+
+/* ===== PARALLAX BANDS ===== */
+.band{min-height:65vh;display:flex;align-items:center;justify-content:center;text-align:center;position:relative;isolation:isolate;padding:90px 30px}
+.band>div{max-width:860px;position:relative;z-index:2}
+.band h2{color:#fff;font-size:clamp(2rem,4vw,3.2rem);margin-bottom:16px;text-shadow:0 6px 30px rgba(0,0,0,.4);letter-spacing:-.02em}
+.band h2:after{content:'';display:block;width:70px;height:4px;background:#8fd47a;margin:20px auto 0;border-radius:4px;box-shadow:0 0 20px rgba(143,212,122,.5)}
+.band p{font-size:1.2rem;color:rgba(255,255,255,.92);line-height:1.7}
+.b1{background-image:var(--band-1),var(--fb1)}
+.b2{background-image:var(--band-2),var(--fb2)}
+
+/* ===== PROFILE ===== */
+.profile-section{max-width:1200px;margin:100px auto;padding:0 30px;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;position:relative}
 .profile-image{position:relative}
-.pic{overflow:hidden;border-radius:20px;box-shadow:var(--shadow)}
-.profile-image img{width:100%;height:450px;object-fit:cover;display:block;transition:transform .8s}
+.pic{overflow:hidden;border-radius:24px;box-shadow:0 24px 60px rgba(0,0,0,.14);border:4px solid #fff}
+.profile-image img{width:100%;height:480px;object-fit:cover;display:block;transition:transform .9s cubic-bezier(.2,.7,.2,1)}
 .profile-image:hover img{transform:scale(1.06)}
-.badge{position:absolute;bottom:-20px;right:-20px;background:var(--g);color:#fff;padding:15px 25px;border-radius:15px;text-align:center;box-shadow:0 10px 30px rgba(51,116,24,.4);animation:float 4s ease-in-out infinite}
-.badge strong{display:block;font-size:1.5rem}
-.profile-content h2{font-size:2.5rem;margin-bottom:20px}.profile-content h3{font-size:1.3rem;margin-bottom:20px}
-.profile-content p{margin-bottom:20px;line-height:1.8}
+.badge{position:absolute;bottom:-22px;right:-22px;background:linear-gradient(135deg,var(--g),var(--g-dark));color:#fff;padding:18px 28px;border-radius:18px;text-align:center;box-shadow:0 14px 40px var(--g-glow);animation:float 4s ease-in-out infinite;border:3px solid #fff}
+.badge strong{display:block;font-size:1.6rem;font-family:'Playfair Display',serif;letter-spacing:-.5px}
+.badge span{font-size:.85rem;opacity:.9;letter-spacing:1px}
+.profile-content h2{font-size:clamp(2rem,3.5vw,2.8rem);margin-bottom:10px;color:var(--text-dark)}
+.profile-content h3{font-size:1.2rem;margin-bottom:26px;color:var(--g);font-family:'Montserrat',sans-serif;font-weight:600;letter-spacing:.5px;text-transform:uppercase;font-size:.95rem}
+.profile-content p{margin-bottom:20px;line-height:1.85;color:var(--text-dark);font-size:1.02rem}
+.profile-content p:last-child{margin-bottom:0}
 
-/* STATS */
-.stats-section{background:#fff;padding:70px 20px;margin:0}
-.stats-container{max-width:1200px;margin:0 auto}
-.stats-header{text-align:center;margin-bottom:50px}.stats-header h2{font-size:2.8rem;margin-bottom:15px}.stats-header p{font-size:1.2rem}
-.stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:30px}
-.stat-item{text-align:center;padding:20px}
-.stat-number{font-size:3.5rem;font-weight:800;font-family:'Playfair Display',serif}.stat-label{font-size:1.1rem;margin-top:10px}
+/* ===== STATS (fixed bg + glass cards) ===== */
+.stats-section{
+  position:relative;padding:100px 20px;margin:0;
+  background:
+    linear-gradient(var(--bg-stats),var(--bg-stats)),
+    var(--sec-stats) center/cover no-repeat fixed;
+  isolation:isolate;
+}
+.stats-container{max-width:1200px;margin:0 auto;position:relative;z-index:2}
+.stats-header{text-align:center;margin-bottom:56px}
+.stats-header h2{font-size:clamp(2rem,3.5vw,2.8rem);margin-bottom:14px;color:var(--text-dark)}
+.stats-header p{font-size:1.12rem;color:var(--text-muted)}
+.stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:24px}
+.stat-item{
+  text-align:center;padding:32px 20px;position:relative;
+  background:var(--glass);
+  backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  border-radius:20px;border:1px solid var(--glass-border);
+  box-shadow:0 10px 30px rgba(0,0,0,.06);
+  transition:all .4s cubic-bezier(.2,.7,.2,1);
+}
+.stat-item:hover{transform:translateY(-6px);background:var(--glass-hover);box-shadow:0 18px 44px rgba(0,0,0,.1)}
+.stat-item:before{content:'';display:block;width:0;height:4px;background:linear-gradient(90deg,var(--g),var(--g-dark));margin:0 auto 18px;border-radius:4px;transition:width 1s .4s}
+.stat-item.in:before{width:56px}
+.stat-number{font-size:clamp(2.4rem,4vw,3.4rem);font-weight:800;font-family:'Playfair Display',serif;color:var(--g);line-height:1;letter-spacing:-.03em}
+.stat-label{font-size:1rem;margin-top:12px;color:var(--text-dark);font-weight:500}
 
-/* MISSION */
-.mission-section,.timeline-section,.affiliations,.gallery{max-width:1200px;margin:90px auto;padding:0 30px}
-.timeline-section{max-width:900px}
-.mission-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:30px}
-.mission-card{background:#fff;border-radius:20px;padding:40px;text-align:center;box-shadow:var(--shadow)}
-.mission-icon{font-size:3rem;margin-bottom:20px}.mission-card h3{font-size:1.8rem;margin-bottom:15px}
+/* ===== MISSION (fixed bg + glass cards + COLORFUL ICONS) ===== */
+.mission-section{
+  position:relative;padding:100px 30px;margin:0;
+  background:
+    linear-gradient(var(--bg-mission),var(--bg-mission)),
+    var(--sec-mission) center/cover no-repeat fixed;
+  isolation:isolate;
+}
+.mission-inner{max-width:1200px;margin:0 auto;position:relative;z-index:2}
+.mission-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:28px}
+.mission-card{
+  background:var(--glass);
+  backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+  border-radius:22px;padding:42px 34px;text-align:center;
+  box-shadow:0 12px 36px rgba(0,0,0,.07);position:relative;overflow:hidden;
+  transition:all .4s cubic-bezier(.2,.7,.2,1);border:1px solid var(--glass-border);
+}
+.mission-card:hover{transform:translateY(-10px);box-shadow:0 24px 56px rgba(0,0,0,.13);background:var(--glass-hover)}
+.mission-icon{
+  font-size:2rem;margin-bottom:24px;width:92px;height:92px;border-radius:50%;
+  margin:0 auto 24px;display:flex;align-items:center;justify-content:center;
+  transition:all .55s cubic-bezier(.2,.7,.2,1);position:relative;
+  color:#fff;
+}
+.mission-icon:after{content:'';position:absolute;inset:-6px;border-radius:50%;border:2px dashed rgba(0,0,0,.08);animation:spin 20s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.mission-card:nth-child(1) .mission-icon{background:linear-gradient(135deg,#FFD700,#FFA000);box-shadow:0 10px 30px rgba(255,167,0,.35)}
+.mission-card:nth-child(2) .mission-icon{background:linear-gradient(135deg,#4FC3F7,#0288D1);box-shadow:0 10px 30px rgba(2,136,209,.35)}
+.mission-card:nth-child(3) .mission-icon{background:linear-gradient(135deg,#66BB6A,#2E7D32);box-shadow:0 10px 30px rgba(46,125,50,.35)}
+.mission-card:nth-child(4) .mission-icon{background:linear-gradient(135deg,#AB47BC,#6A1B9A);box-shadow:0 10px 30px rgba(106,27,154,.35)}
+.mission-card:hover .mission-icon{transform:rotate(360deg) scale(1.08)}
+.mission-card h3{font-size:1.6rem;margin-bottom:14px;color:var(--text-dark)}
+.mission-card p{color:var(--text-muted);font-size:.98rem;line-height:1.7}
 
-/* TIMELINE */
-.timeline{position:relative;padding-left:40px}
-.timeline:before{content:'';position:absolute;left:15px;top:0;bottom:0;width:3px;background:var(--g);border-radius:3px}
-.timeline-item{position:relative;margin-bottom:40px}
-.timeline-item:before{content:'';position:absolute;left:-33px;top:8px;width:15px;height:15px;border-radius:50%;background:var(--g);border:3px solid #fff;box-shadow:0 0 0 3px rgba(51,116,24,.2)}
-.timeline-year{font-weight:800;font-size:1.3rem;margin-bottom:8px}.timeline-item h3{font-size:1.5rem;margin-bottom:10px}
+/* ===== TIMELINE (fixed bg + glass cards) ===== */
+.timeline-section{
+  position:relative;padding:100px 30px;margin:0;
+  background:
+    linear-gradient(var(--bg-timeline),var(--bg-timeline)),
+    var(--sec-timeline) center/cover no-repeat fixed;
+  isolation:isolate;
+}
+.timeline-inner{max-width:920px;margin:0 auto;position:relative;z-index:2}
+.timeline{position:relative;padding-left:44px}
+.timeline:before{content:'';position:absolute;left:16px;top:0;bottom:0;width:3px;background:linear-gradient(var(--g),var(--g-dark));border-radius:3px;transform:scaleY(var(--p,1));transform-origin:top;box-shadow:0 0 14px var(--g-glow)}
+.timeline-item{
+  position:relative;margin-bottom:32px;
+  background:var(--glass);
+  backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  border-radius:18px;padding:26px 30px;border:1px solid var(--glass-border);
+  box-shadow:0 8px 26px rgba(0,0,0,.06);
+  transition:all .35s ease;
+}
+.timeline-item:hover{background:var(--glass-hover);box-shadow:0 16px 40px rgba(0,0,0,.1);transform:translateX(6px)}
+.timeline-item:before{content:'';position:absolute;left:-35px;top:30px;width:16px;height:16px;border-radius:50%;background:var(--g);border:3px solid #fff;box-shadow:0 0 0 4px rgba(51,116,24,.2),0 0 20px var(--g-glow);transform:scale(0);transition:transform .6s cubic-bezier(.3,1.6,.5,1)}
+.timeline-item.in:before{transform:scale(1)}
+.timeline-year{font-weight:800;font-size:1.25rem;margin-bottom:8px;color:var(--g);letter-spacing:-.01em;font-family:'Playfair Display',serif}
+.timeline-item h3{font-size:1.4rem;margin-bottom:10px;color:var(--text-dark)}
+.timeline-item p{color:var(--text-muted);font-size:.97rem;line-height:1.7}
 
-/* GALLERY */
-.gal-grid{display:grid;grid-template-columns:repeat(3,1fr);grid-auto-rows:240px;gap:20px}
-.gal-item{border-radius:20px;overflow:hidden;box-shadow:var(--shadow)}
-.gal-item:nth-child(1),.gal-item:nth-child(4){grid-row:span 2}
-.gi{width:100%;height:100%;background-size:cover;background-position:center;transition:transform .8s}
-.gal-item:hover .gi{transform:scale(1.1)}
-.g1{background-image:var(--gal-1),var(--fb2)}.g2{background-image:var(--gal-2),var(--fb1)}.g3{background-image:var(--gal-3),var(--fb2)}
-.g4{background-image:var(--gal-4),var(--fb1)}.g5{background-image:var(--gal-5),var(--fb2)}.g6{background-image:var(--gal-6),var(--fb1)}
+/* ===== GALLERY (only 2 images now) ===== */
+.gallery{max-width:1100px;margin:100px auto;padding:0 30px}
+.gal-grid{display:grid;grid-template-columns:1fr 1fr;grid-auto-rows:380px;gap:26px}
+.gal-item{border-radius:22px;overflow:hidden;box-shadow:0 14px 40px rgba(0,0,0,.1);position:relative;transition:transform .4s ease}
+.gal-item:hover{transform:translateY(-4px)}
+.gi{width:100%;height:100%;background-size:cover;background-position:center;transition:transform .9s cubic-bezier(.2,.7,.2,1)}
+.gal-item:hover .gi{transform:scale(1.08)}
+.gal-item:after{content:attr(aria-label);position:absolute;left:0;right:0;bottom:0;padding:40px 24px 20px;color:#fff;font-weight:700;font-size:1.05rem;background:linear-gradient(transparent,rgba(15,25,35,.9));transform:translateY(100%);transition:transform .4s ease}
+.gal-item:hover:after{transform:none}
+.g1{background-image:var(--gal-1),var(--fb2)}
+.g2{background-image:var(--gal-2),var(--fb1)}
 
-/* AFFILIATIONS */
-.affiliations-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:25px}
-.affiliation-card{background:#fff;border-radius:20px;padding:30px;text-align:center;box-shadow:var(--shadow)}
-.affiliation-card i{font-size:2.5rem;margin-bottom:15px}.affiliation-card h4{font-size:1.3rem;margin-bottom:10px}.affiliation-card p{font-size:.9rem}
-.cta{text-align:center;margin:60px 0 90px;padding:0 20px}
-.cta h2{font-size:2.5rem;margin-bottom:20px}.cta p{margin-bottom:30px;font-size:1.2rem}
+/* ===== AFFILIATIONS (fixed bg + glass cards + RICH BRAND-COLOR ICONS) ===== */
+.affiliations{
+  position:relative;padding:100px 30px;margin:0;
+  background:
+    linear-gradient(var(--bg-affiliates),var(--bg-affiliates)),
+    var(--sec-affiliates) center/cover no-repeat fixed;
+  isolation:isolate;
+}
+.affiliations-inner{max-width:1200px;margin:0 auto;position:relative;z-index:2}
+.affiliations-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:26px}
+.affiliation-card{
+  background:var(--glass);
+  backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+  border-radius:22px;padding:38px 28px;text-align:center;
+  box-shadow:0 12px 36px rgba(0,0,0,.07);position:relative;overflow:hidden;
+  transition:all .4s cubic-bezier(.2,.7,.2,1);border:1px solid var(--glass-border);
+}
+.affiliation-card:hover{transform:translateY(-10px);box-shadow:0 24px 56px rgba(0,0,0,.13);background:var(--glass-hover)}
+.aff-logo{
+  width:120px;height:120px;border-radius:50%;margin:0 auto 24px;
+  display:flex;align-items:center;justify-content:center;
+  background:#fff;box-shadow:0 10px 30px rgba(0,0,0,.12);
+  overflow:hidden;transition:all .5s cubic-bezier(.2,.7,.2,1);border:3px solid #fff;
+  padding:18px;
+}
+.aff-logo svg{width:100%;height:100%;display:block}
+.affiliation-card:hover .aff-logo{transform:scale(1.08) rotate(-3deg);box-shadow:0 16px 44px rgba(0,0,0,.18)}
+.affiliation-card h4{font-size:1.2rem;margin-bottom:10px;color:var(--text-dark);line-height:1.35}
+.affiliation-card p{font-size:.88rem;color:var(--text-muted);line-height:1.55}
 
-/* FOOTER */
-footer{background:#fff;color:var(--g);padding:80px 0 40px;border-top:1px solid #e0e0e0}
-.footer-container{max-width:1400px;margin:0 auto;padding:0 40px;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:40px}
-.footer-col h4{font-size:1.4rem;margin-bottom:25px;position:relative;padding-bottom:12px}
-.footer-col h4:after{content:'';position:absolute;width:50px;height:3px;background:var(--g);bottom:0;left:0}
-.footer-links{list-style:none}.footer-links li{margin-bottom:12px}
-.footer-links a{color:var(--g);text-decoration:none;transition:all .3s}.footer-links a i{margin-right:8px}.footer-links a:hover{padding-left:5px}
-.social-links{display:flex;gap:12px;margin-top:15px}
-.social-links a{display:flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:50%;background:rgba(51,116,24,.1);color:var(--g);transition:all .3s}
-.social-links a:hover{background:var(--g);color:#fff;transform:translateY(-4px)}
-.contact-info{list-style:none}.contact-info li{display:flex;margin-bottom:15px}.contact-info li i{margin-right:12px}
-.copyright{text-align:center;padding-top:30px;margin-top:50px;border-top:1px solid #e0e0e0;font-size:.9rem}
+/* ===== CTA (fixed bg) ===== */
+.cta{
+  position:relative;text-align:center;margin:0;padding:120px 20px;
+  background:
+    linear-gradient(115deg,rgba(15,25,35,.9),rgba(26,42,58,.82)),
+    var(--sec-cta) center/cover no-repeat fixed;
+  isolation:isolate;
+}
+.cta-inner{max-width:820px;margin:0 auto;position:relative;z-index:2}
+.cta h2{font-size:clamp(2rem,4vw,2.9rem);margin-bottom:20px;color:#fff;letter-spacing:-.02em}
+.cta h2:after{content:'';display:block;width:80px;height:4px;background:linear-gradient(90deg,var(--g),#8fd47a);margin:22px auto 0;border-radius:4px;box-shadow:0 0 24px var(--g-glow)}
+.cta p{margin-bottom:34px;font-size:1.15rem;color:rgba(255,255,255,.9);line-height:1.7}
+.cta .btn{animation:ring 2.2s infinite}
+@keyframes ring{0%{box-shadow:0 0 0 0 rgba(51,116,24,.55)}100%{box-shadow:0 0 0 26px rgba(51,116,24,0)}}
 
-/* WHATSAPP */
+/* ===== FOOTER ===== */
+footer{background:var(--bg-footer);color:#fff;padding:90px 0 40px;position:relative;transition:background .4s}
+footer:before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--g),transparent)}
+.footer-container{max-width:1400px;margin:0 auto;padding:0 40px;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:44px}
+.footer-col h4{font-size:1.25rem;margin-bottom:26px;position:relative;padding-bottom:14px;color:#fff;font-family:'Playfair Display',serif}
+.footer-col h4:after{content:'';position:absolute;width:44px;height:3px;background:linear-gradient(90deg,var(--g),#8fd47a);bottom:0;left:0;border-radius:3px}
+.footer-links{list-style:none}
+.footer-links li{margin-bottom:13px}
+.footer-links a{color:rgba(255,255,255,.68);text-decoration:none;transition:all .3s;font-size:.93rem}
+.footer-links a i{margin-right:8px;color:var(--g);font-size:.78rem}
+.footer-links a:hover{color:#fff;padding-left:6px}
+.social-links{display:flex;gap:12px;margin-top:18px}
+.social-links a{display:flex;align-items:center;justify-content:center;width:42px;height:42px;border-radius:50%;background:rgba(255,255,255,.08);color:#fff;transition:all .35s}
+.social-links a:hover{background:linear-gradient(135deg,var(--g),var(--g-dark));color:#fff;transform:translateY(-4px);box-shadow:0 8px 24px var(--g-glow)}
+.contact-info{list-style:none}
+.contact-info li{display:flex;margin-bottom:15px;color:rgba(255,255,255,.68);font-size:.93rem}
+.contact-info li i{margin-right:12px;color:var(--g);margin-top:3px}
+footer .logo-text span:first-child{color:#fff}
+footer .logo-text span:last-child{color:rgba(255,255,255,.55)}
+footer .logo-icon{background:linear-gradient(135deg,var(--g),var(--g-dark))}
+footer p{color:rgba(255,255,255,.68);font-size:.93rem;line-height:1.7}
+.copyright{text-align:center;padding-top:34px;margin-top:56px;border-top:1px solid rgba(255,255,255,.1);font-size:.86rem;color:rgba(255,255,255,.55)}
+
+/* ===== WHATSAPP ===== */
 .whatsapp-float{position:fixed;bottom:30px;right:30px;z-index:9999;display:flex;flex-direction:column;align-items:flex-end;gap:10px}
-.whatsapp-float>a{display:flex;align-items:center;justify-content:center;background:#25D366;color:#fff;width:60px;height:60px;border-radius:50%;text-decoration:none;box-shadow:0 6px 20px rgba(37,211,102,.4);transition:all .3s;font-size:2rem;animation:pulse 2.5s infinite}
-.whatsapp-float>a:hover{transform:scale(1.1);box-shadow:0 10px 30px rgba(37,211,102,.6)}
-.whatsapp-tooltip{background:#fff;color:var(--g);padding:8px 16px;border-radius:30px;font-size:.85rem;font-weight:600;box-shadow:0 4px 15px rgba(0,0,0,.1);border:1px solid #e0e0e0;white-space:nowrap;pointer-events:none;opacity:0;transform:translateX(10px);transition:all .3s}
+.whatsapp-float>a{display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#25D366,#1ea952);color:#fff;width:60px;height:60px;border-radius:50%;text-decoration:none;box-shadow:0 8px 24px rgba(37,211,102,.45);transition:all .35s;font-size:2rem;animation:pulse 2.5s infinite}
+.whatsapp-float>a:hover{transform:scale(1.1);box-shadow:0 12px 34px rgba(37,211,102,.65)}
+.whatsapp-tooltip{background:#fff;color:var(--text-dark);padding:9px 18px;border-radius:30px;font-size:.85rem;font-weight:600;box-shadow:0 6px 20px rgba(0,0,0,.12);border:1px solid #eee;white-space:nowrap;pointer-events:none;opacity:0;transform:translateX(10px);transition:all .3s}
 .whatsapp-float:hover .whatsapp-tooltip{opacity:1;transform:none}
-.contact-details{background:#fff;border-radius:16px;padding:12px 18px;box-shadow:0 6px 25px rgba(0,0,0,.12);border:1px solid #e0e0e0;font-size:.9rem;color:var(--g);display:flex;flex-direction:column;gap:6px;opacity:0;transform:translateY(8px);transition:all .3s;pointer-events:none;min-width:200px}
+.contact-details{background:#fff;border-radius:16px;padding:14px 20px;box-shadow:0 8px 30px rgba(0,0,0,.14);border:1px solid #eee;font-size:.88rem;color:var(--text-dark);display:flex;flex-direction:column;gap:7px;opacity:0;transform:translateY(8px);transition:all .3s;pointer-events:none;min-width:210px}
 .whatsapp-float:hover .contact-details{opacity:1;transform:none;pointer-events:auto}
-.contact-details i{margin-right:6px}
+.contact-details i{margin-right:7px;color:var(--g)}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(37,211,102,.5)}70%,100%{box-shadow:0 0 0 20px rgba(37,211,102,0)}}
 
-/* SLIDE-IN REVEALS */
+/* ===== SCROLL REVEAL ===== */
 .reveal{opacity:0;transition:opacity .9s ease,transform .9s cubic-bezier(.2,.7,.2,1)}
-.r-up{transform:translateY(60px)}.r-left{transform:translateX(-90px)}.r-right{transform:translateX(90px)}.r-zoom{transform:scale(.85)}
+.r-up{transform:translateY(60px)}
+.r-left{transform:translateX(-90px)}
+.r-right{transform:translateX(90px)}
+.r-zoom{transform:scale(.85)}
 .reveal.in{opacity:1;transform:none}
 .reveal.done{transition:transform .35s ease,box-shadow .35s ease}
-.mission-card:hover,.affiliation-card:hover{transform:translateY(-8px);box-shadow:var(--shadow-hover)}
 
-@keyframes up{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:none}}
-@keyframes float{50%{transform:translateY(-8px)}}
-@keyframes wheel{from{opacity:1;transform:translateY(0)}to{opacity:0;transform:translateY(16px)}}
-@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(37,211,102,.5)}70%,100%{box-shadow:0 0 0 18px rgba(37,211,102,0)}}
-
-@media(max-width:900px),(hover:none){.hero-slide,.band{background-attachment:scroll}}
+/* ===== RESPONSIVE ===== */
+@media(max-width:1100px){.hero-rings,.chip{display:none}}
+@media(max-width:900px),(hover:none){
+  .hero-slide,.band,.stats-section,.mission-section,.timeline-section,.affiliations,.cta{background-attachment:scroll}
+}
 @media(max-width:900px){
-  .header-container{flex-direction:column;padding:15px 20px}.logo{margin-bottom:15px}
+  .header-container{flex-direction:column;padding:15px 20px}
+  .logo{margin-bottom:15px}
   nav ul{margin:15px 0;flex-wrap:wrap;justify-content:center}
-  .hero h1{font-size:2.8rem}.band h2{font-size:2.2rem}
-  .profile-section{grid-template-columns:1fr}.profile-image img{height:300px}
-  .gal-grid{grid-template-columns:repeat(2,1fr)}header{position:static}
+  .hero h1{font-size:2.6rem}
+  .band h2{font-size:2rem}
+  .profile-section{grid-template-columns:1fr;gap:40px}
+  .profile-image img{height:340px}
+  .gal-grid{grid-template-columns:1fr;grid-auto-rows:300px}
+  header{position:static}
+  .band{padding:110px 30px}
+  .profile-section{margin:70px auto}
+  .stats-section,.mission-section,.timeline-section,.affiliations,.cta{padding:70px 24px}
+  .ticker-item{font-size:.85rem;margin:0 20px}
 }
 @media(max-width:600px){
-  .hero h1{font-size:2.4rem}.section-title h2,.stats-header h2{font-size:2.2rem}.stat-number{font-size:2.5rem}
-  .gal-grid{grid-auto-rows:180px}.badge{right:0}
-  .whatsapp-float{bottom:20px;right:20px}.whatsapp-float>a{width:55px;height:55px;font-size:1.8rem}
+  .hero h1{font-size:2.2rem}
+  .section-title h2,.stats-header h2{font-size:2rem}
+  .cta h2{font-size:1.8rem}
+  .stat-number{font-size:2.4rem}
+  .badge{right:0;padding:14px 22px}
+  .badge strong{font-size:1.3rem}
+  .whatsapp-float{bottom:20px;right:20px}
+  .whatsapp-float>a{width:55px;height:55px;font-size:1.8rem}
+  .header-actions{gap:12px}
+  .ticker-item{font-size:.78rem;margin:0 16px;gap:8px}
+  .ticker-item .t-ico{width:28px;height:28px;font-size:12px}
 }
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
-
-/* ===== v2: ALIVE ===== */
-#bar i{position:absolute;right:-12px;top:5px;font-size:18px;color:var(--g)}
-.hero-rings{position:absolute;right:7%;top:15%;width:380px;animation:float 7s ease-in-out infinite;pointer-events:none}
-.hero-rings circle{fill:none;stroke:#fff;stroke-width:4;stroke-dasharray:202;stroke-dashoffset:202;animation:draw 2.4s ease forwards}
-.hero-rings circle:nth-child(even){stroke:var(--g);stroke-width:5}
-.chip{position:absolute;background:rgba(255,255,255,.14);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.35);color:#fff;padding:14px 24px;border-radius:18px;animation:float 5s ease-in-out infinite}
-.chip b{display:block;font-family:'Playfair Display',serif;font-size:1.3rem}
-.chip small{letter-spacing:2px;text-transform:uppercase;font-size:.72rem;opacity:.9}
-.scroll-cue{bottom:75px}
-.hero .hero-text>h1{animation:none}
-.hero h1 .w{display:inline-block;overflow:hidden;vertical-align:bottom;color:inherit;padding-bottom:.1em}
-.hero h1 .w span{display:inline-block;color:inherit;transform:translateY(115%);animation:rise .9s cubic-bezier(.2,.8,.2,1) forwards;animation-delay:calc(var(--i)*.12s + .3s)}
-.btn{position:relative;overflow:hidden}
-.btn:after{content:'';position:absolute;top:0;left:-75%;width:50%;height:100%;background:linear-gradient(120deg,transparent,rgba(255,255,255,.55),transparent);transform:skewX(-20deg)}
-.btn:hover:after{animation:shine .8s}
-.cta .btn{animation:ring 2s infinite}
-
-.ticker{background:var(--g);color:#fff;overflow:hidden;white-space:nowrap;padding:16px 0;transform:rotate(-1.2deg);width:104%;margin:-34px 0 80px -2%;position:relative;z-index:2;box-shadow:0 10px 30px rgba(51,116,24,.35)}
-.ticker div{display:inline-block;animation:slide 35s linear infinite;font-family:'Playfair Display',serif;font-weight:700;font-size:1.3rem;letter-spacing:2px;text-transform:uppercase}
-.ticker:hover div{animation-play-state:paused}
-.ticker span{margin:0 30px}.ticker i{margin-right:12px}
-
-.profile-section{position:relative}
-.profile-section:before{content:'KEINO';position:absolute;left:-2%;top:-70px;font:800 16vw 'Playfair Display',serif;color:transparent;-webkit-text-stroke:2px rgba(51,116,24,.15);transform:translateX(var(--wx,0));z-index:-1;pointer-events:none;white-space:nowrap}
-.band{clip-path:polygon(0 6%,100% 0,100% 94%,0 100%);min-height:70vh;padding:150px 30px}
-.stat-item:before{content:'';display:block;width:0;height:4px;background:var(--g);margin:0 auto 15px;border-radius:4px;transition:width 1s .4s}
-.stat-item.in:before{width:60px}
-.mission-card,.affiliation-card{position:relative;overflow:hidden}
-.mission-card:after,.affiliation-card:after,.gal-item:before{content:'';position:absolute;inset:0;background:radial-gradient(circle at var(--mx,50%) var(--my,50%),rgba(51,116,24,.14),transparent 55%);opacity:0;transition:opacity .3s;pointer-events:none}
-.mission-card:hover:after,.affiliation-card:hover:after{opacity:1}
-.mission-icon,.affiliation-card i{width:90px;height:90px;border-radius:50%;margin:0 auto 20px;display:flex;align-items:center;justify-content:center;font-size:2.2rem;background:rgba(51,116,24,.08);transition:all .5s}
-.mission-card:hover .mission-icon,.affiliation-card:hover i{background:var(--g);color:#fff;transform:rotate(360deg) scale(1.1)}
-.timeline:before{transform:scaleY(var(--p,1));transform-origin:top}
-.timeline-item:before{transform:scale(0);transition:transform .6s cubic-bezier(.3,1.6,.5,1)}
-.timeline-item.in:before{transform:scale(1)}
-.gal-item{position:relative}
-.gal-item:after{content:attr(aria-label);position:absolute;left:0;right:0;bottom:0;padding:30px 20px 16px;color:#fff;font-weight:700;background:linear-gradient(transparent,rgba(26,42,58,.85));transform:translateY(100%);transition:transform .4s}
-.gal-item:hover:after{transform:none}
-.cur{position:fixed;width:34px;height:34px;border:2px solid var(--g);box-shadow:0 0 0 1px #fff;border-radius:50%;pointer-events:none;z-index:3000;transform:translate(-50%,-50%);transition:width .25s,height .25s,background .25s}
-.cur.big{width:70px;height:70px;background:rgba(51,116,24,.15)}
-@keyframes draw{to{stroke-dashoffset:0}}
-@keyframes rise{to{transform:none}}
-@keyframes shine{to{left:130%}}
-@keyframes slide{to{transform:translateX(-50%)}}
-@keyframes ring{0%{box-shadow:0 0 0 0 rgba(51,116,24,.5)}100%{box-shadow:0 0 0 22px rgba(51,116,24,0)}}
-@media(max-width:1100px){.hero-rings,.chip{display:none}}
-@media(max-width:900px){.band{padding:110px 30px}.profile-section:before{display:none}}
 </style>
 </head>
 <body>
-<div id="bar"><i class="fas fa-running"></i></div>
+
+<!-- SCROLL PROGRESS BAR + MODERN RUNNER -->
+<div id="bar"></div>
+<div id="runner-wrap"><span class="pulse-ring"></span><span class="runner-icon"><i class="fas fa-running"></i></span></div>
 
 <header>
   <div class="header-container">
@@ -234,20 +554,23 @@ footer{background:#fff;color:var(--g);padding:80px 0 40px;border-top:1px solid #
       <li><a href="experience.html">Experiences</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li>
     </ul></nav>
     <div class="header-actions">
-      <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode"><i class="fas fa-moon" id="themeIcon"></i></button>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+        <i class="fas fa-sun t-icon t-sun"></i>
+        <i class="fas fa-moon t-icon t-moon"></i>
+      </button>
       <a href="#" class="btn btn-primary">Join Program</a>
     </div>
   </div>
 </header>
 
-<!-- HERO: 3 crossfading photos over a fixed background -->
+<!-- HERO -->
 <section class="hero">
   <div class="hero-slide s1 on"></div><div class="hero-slide s2"></div><div class="hero-slide s3"></div>
   <div class="hero-content"><div class="hero-text">
     <span class="eyebrow">Welcome to KHPTC</span>
     <h1>The Legacy of <span>Kipchoge Keino</span></h1>
     <p>Discover the story behind Africa's premier high-performance training centre – where Olympic dreams are nurtured on the red soil of Eldoret.</p>
-    <div class="hero-btns"><a href="#story" class="btn btn-primary">Discover Our Story</a><a href="contact.html" class="btn btn-light">Contact Us Today</a></div>
+    <div class="hero-btns"><a href="#story" class="btn btn-primary">Discover Our Story</a><a href="contact.html" class="btn btn-outline">Contact Us Today</a></div>
   </div></div>
   <svg class="hero-rings" viewBox="0 0 230 120" aria-hidden="true"><circle cx="40" cy="40" r="32" style="animation-delay:.4s"/><circle cx="115" cy="40" r="32" style="animation-delay:.8s"/><circle cx="190" cy="40" r="32" style="animation-delay:1.2s"/><circle cx="77" cy="78" r="32" style="animation-delay:1.6s"/><circle cx="152" cy="78" r="32" style="animation-delay:2s"/></svg>
   <div class="chip" style="right:9%;bottom:30%"><b>2× Olympic Gold</b><small>1968 &amp; 1972</small></div>
@@ -255,13 +578,42 @@ footer{background:#fff;color:var(--g);padding:80px 0 40px;border-top:1px solid #
   <div class="scroll-cue"></div>
 </section>
 
-<!-- TICKER -->
-<div class="ticker"><div>
-  <span><i class="fas fa-medal"></i>2× Olympic Gold</span><span><i class="fas fa-running"></i>Mexico City 1968 · Munich 1972</span>
-  <span><i class="fas fa-trophy"></i>IOC Recognized</span><span><i class="fas fa-flag"></i>IAAF Listed</span>
-  <span><i class="fas fa-leaf"></i>Est. 2002</span><span><i class="fas fa-globe-africa"></i>2,176m Altitude</span><span><i class="fas fa-medal"></i>Eldoret, Kenya</span>
-</div></div>
-<!-- KIPCHOGE KEINO PROFILE -->
+<!-- REDESIGNED TICKER -->
+<div class="ticker">
+  <div class="ticker-track">
+    <span class="ticker-item"><span class="t-ico t-gold"><i class="fas fa-medal"></i></span>2× Olympic Gold</span>
+    <span class="ticker-sep"></span>
+    <span class="ticker-item"><span class="t-ico t-green"><i class="fas fa-running"></i></span>Mexico City 1968 · Munich 1972</span>
+    <span class="ticker-sep"></span>
+    <span class="ticker-item"><span class="t-ico t-gold"><i class="fas fa-trophy"></i></span>IOC Recognized</span>
+    <span class="ticker-sep"></span>
+    <span class="ticker-item"><span class="t-ico t-blue"><i class="fas fa-flag-checkered"></i></span>IAAF Listed</span>
+    <span class="ticker-sep"></span>
+    <span class="ticker-item"><span class="t-ico t-green"><i class="fas fa-leaf"></i></span>Est. <b>2002</b></span>
+    <span class="ticker-sep"></span>
+    <span class="ticker-item"><span class="t-ico t-blue"><i class="fas fa-mountain"></i></span>2,176m Altitude</span>
+    <span class="ticker-sep"></span>
+    <span class="ticker-item"><span class="t-ico t-red"><i class="fas fa-location-dot"></i></span>Eldoret, Kenya</span>
+    <span class="ticker-sep"></span>
+    <!-- duplicated for seamless loop -->
+    <span class="ticker-item"><span class="t-ico t-gold"><i class="fas fa-medal"></i></span>2× Olympic Gold</span>
+    <span class="ticker-sep"></span>
+    <span class="ticker-item"><span class="t-ico t-green"><i class="fas fa-running"></i></span>Mexico City 1968 · Munich 1972</span>
+    <span class="ticker-sep"></span>
+    <span class="ticker-item"><span class="t-ico t-gold"><i class="fas fa-trophy"></i></span>IOC Recognized</span>
+    <span class="ticker-sep"></span>
+    <span class="ticker-item"><span class="t-ico t-blue"><i class="fas fa-flag-checkered"></i></span>IAAF Listed</span>
+    <span class="ticker-sep"></span>
+    <span class="ticker-item"><span class="t-ico t-green"><i class="fas fa-leaf"></i></span>Est. <b>2002</b></span>
+    <span class="ticker-sep"></span>
+    <span class="ticker-item"><span class="t-ico t-blue"><i class="fas fa-mountain"></i></span>2,176m Altitude</span>
+    <span class="ticker-sep"></span>
+    <span class="ticker-item"><span class="t-ico t-red"><i class="fas fa-location-dot"></i></span>Eldoret, Kenya</span>
+    <span class="ticker-sep"></span>
+  </div>
+</div>
+
+<!-- PROFILE -->
 <div class="profile-section" id="story">
   <div class="profile-image">
     <div class="pic"><img src="https://i.pinimg.com/736x/84/2b/1d/842b1daf68ff85f038692de2ed743fee.jpg" alt="Kipchoge Keino - Olympic Legend"></div>
@@ -279,73 +631,155 @@ footer{background:#fff;color:var(--g);padding:80px 0 40px;border-top:1px solid #
 <!-- PARALLAX BAND 1 -->
 <section class="band b1"><div><h2>Where Champions Are Made</h2><p>Elite training near Eldoret, Kenya.</p></div></section>
 
-<!-- STATS -->
-<div class="stats-section"><div class="stats-container">
-  <div class="stats-header"><h2>Our Impact Since 2002</h2><p>Two decades of developing champions and changing lives through sport.</p></div>
-  <div class="stats-grid">
-    <div class="stat-item"><div class="stat-number">200+</div><div class="stat-label">Athletes Trained Annually</div></div>
-    <div class="stat-item"><div class="stat-number">40+</div><div class="stat-label">Countries Represented</div></div>
-    <div class="stat-item"><div class="stat-number">15+</div><div class="stat-label">Olympic &amp; World Medalists</div></div>
-    <div class="stat-item"><div class="stat-number">350</div><div class="stat-label">Acres of Training Grounds</div></div>
-    <div class="stat-item"><div class="stat-number">2,176m</div><div class="stat-label">Altitude (High-Performance)</div></div>
-  </div>
-</div></div>
-
-<!-- MISSION -->
-<div class="mission-section">
-  <div class="section-title"><h2>Our Mission &amp; Values</h2><p>What drives us every day at KHPTC</p></div>
-  <div class="mission-grid">
-    <div class="mission-card"><div class="mission-icon"><i class="fas fa-medal"></i></div><h3>Excellence</h3><p>We strive for the highest standards in everything we do — from training quality to athlete welfare — believing that champions are made through discipline and dedication.</p></div>
-    <div class="mission-card"><div class="mission-icon"><i class="fas fa-hands-helping"></i></div><h3>Inclusivity</h3><p>We welcome athletes of all levels and backgrounds, including refugee scholarship holders and national teams, fostering a diverse and supportive community.</p></div>
-    <div class="mission-card"><div class="mission-icon"><i class="fas fa-leaf"></i></div><h3>Integrity</h3><p>We are committed to clean sport, ethical coaching, and creating a positive legacy for future generations of Kenyan runners.</p></div>
-    <div class="mission-card"><div class="mission-icon"><i class="fas fa-globe-africa"></i></div><h3>Community</h3><p>KHPTC is more than a training centre — it's a family that supports local communities, empowers youth, and celebrates the rich running culture of the Rift Valley.</p></div>
+<!-- STATS (fixed bg) -->
+<div class="stats-section">
+  <div class="stats-container">
+    <div class="stats-header"><h2>Our Impact Since 2002</h2><p>Two decades of developing champions and changing lives through sport.</p></div>
+    <div class="stats-grid">
+      <div class="stat-item"><div class="stat-number">200+</div><div class="stat-label">Athletes Trained Annually</div></div>
+      <div class="stat-item"><div class="stat-number">40+</div><div class="stat-label">Countries Represented</div></div>
+      <div class="stat-item"><div class="stat-number">15+</div><div class="stat-label">Olympic &amp; World Medalists</div></div>
+      <div class="stat-item"><div class="stat-number">350</div><div class="stat-label">Acres of Training Grounds</div></div>
+      <div class="stat-item"><div class="stat-number">2,176m</div><div class="stat-label">Altitude (High-Performance)</div></div>
+    </div>
   </div>
 </div>
 
-<!-- TIMELINE -->
+<!-- MISSION (fixed bg + glass cards + COLORFUL ICONS) -->
+<div class="mission-section">
+  <div class="mission-inner">
+    <div class="section-title"><h2>Our Mission &amp; Values</h2><p>What drives us every day at KHPTC</p></div>
+    <div class="mission-grid">
+      <div class="mission-card">
+        <div class="mission-icon"><i class="fas fa-medal"></i></div>
+        <h3>Excellence</h3>
+        <p>We strive for the highest standards in everything we do — from training quality to athlete welfare — believing that champions are made through discipline and dedication.</p>
+      </div>
+      <div class="mission-card">
+        <div class="mission-icon"><i class="fas fa-hands-helping"></i></div>
+        <h3>Inclusivity</h3>
+        <p>We welcome athletes of all levels and backgrounds, including refugee scholarship holders and national teams, fostering a diverse and supportive community.</p>
+      </div>
+      <div class="mission-card">
+        <div class="mission-icon"><i class="fas fa-leaf"></i></div>
+        <h3>Integrity</h3>
+        <p>We are committed to clean sport, ethical coaching, and creating a positive legacy for future generations of Kenyan runners.</p>
+      </div>
+      <div class="mission-card">
+        <div class="mission-icon"><i class="fas fa-globe-africa"></i></div>
+        <h3>Community</h3>
+        <p>KHPTC is more than a training centre — it's a family that supports local communities, empowers youth, and celebrates the rich running culture of the Rift Valley.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- TIMELINE (fixed bg + glass cards) -->
 <div class="timeline-section">
-  <div class="section-title"><h2>Our Journey</h2><p>Key milestones in the KHPTC story</p></div>
-  <div class="timeline">
-    <div class="timeline-item"><div class="timeline-year">2002</div><h3>The Centre Opens</h3><p>Kipchoge Keino establishes the High Performance Training Centre on Kazi Mingi Farm, just outside Eldoret, to provide elite training facilities for Kenyan athletes.</p></div>
-    <div class="timeline-item"><div class="timeline-year">2008</div><h3>IAAF Recognition</h3><p>The centre is officially listed as a High Performance Training Centre by the International Association of Athletics Federations (IAAF).</p></div>
-    <div class="timeline-item"><div class="timeline-year">2012</div><h3>Olympic Success</h3><p>Athletes trained at KHPTC represent Kenya at the London Olympics, winning multiple medals in middle and long-distance events.</p></div>
-    <div class="timeline-item"><div class="timeline-year">2016</div><h3>IOC Recognition</h3><p>KHPTC receives formal recognition from the International Olympic Committee (IOC) as an elite training facility, expanding its international reach.</p></div>
-    <div class="timeline-item"><div class="timeline-year">2019</div><h3>Refugee Athlete Program</h3><p>The centre partners with World Athletics and UNHCR to host refugee athlete scholarship holders, providing training and education opportunities.</p></div>
-    <div class="timeline-item"><div class="timeline-year">2023</div><h3>Continued Growth</h3><p>KHPTC expands its facilities with upgraded residential hostels, a modern gym, and enhanced links to the Kipchoge Keino Sports Complex in Eldoret.</p></div>
+  <div class="timeline-inner">
+    <div class="section-title"><h2>Our Journey</h2><p>Key milestones in the KHPTC story</p></div>
+    <div class="timeline">
+      <div class="timeline-item"><div class="timeline-year">2002</div><h3>The Centre Opens</h3><p>Kipchoge Keino establishes the High Performance Training Centre on Kazi Mingi Farm, just outside Eldoret, to provide elite training facilities for Kenyan athletes.</p></div>
+      <div class="timeline-item"><div class="timeline-year">2008</div><h3>IAAF Recognition</h3><p>The centre is officially listed as a High Performance Training Centre by the International Association of Athletics Federations (IAAF).</p></div>
+      <div class="timeline-item"><div class="timeline-year">2012</div><h3>Olympic Success</h3><p>Athletes trained at KHPTC represent Kenya at the London Olympics, winning multiple medals in middle and long-distance events.</p></div>
+      <div class="timeline-item"><div class="timeline-year">2016</div><h3>IOC Recognition</h3><p>KHPTC receives formal recognition from the International Olympic Committee (IOC) as an elite training facility, expanding its international reach.</p></div>
+      <div class="timeline-item"><div class="timeline-year">2019</div><h3>Refugee Athlete Program</h3><p>The centre partners with World Athletics and UNHCR to host refugee athlete scholarship holders, providing training and education opportunities.</p></div>
+      <div class="timeline-item"><div class="timeline-year">2023</div><h3>Continued Growth</h3><p>KHPTC expands its facilities with upgraded residential hostels, a modern gym, and enhanced links to the Kipchoge Keino Sports Complex in Eldoret.</p></div>
+    </div>
   </div>
 </div>
 
 <!-- PARALLAX BAND 2 -->
 <section class="band b2"><div><h2>Our Training Promise</h2><p>Uncompromising commitment to excellence, integrity, and athlete development.</p></div></section>
 
-<!-- GALLERY (replace images in the :root variables above) -->
+<!-- GALLERY (only 2 images) -->
 <div class="gallery">
   <div class="section-title"><h2>Life at KHPTC</h2><p>Moments from the red soil of Eldoret</p></div>
   <div class="gal-grid">
     <div class="gal-item" role="img" aria-label="Athletes training"><div class="gi g1"></div></div>
-    <div class="gal-item" role="img" aria-label="Track session"><div class="gi g2"></div></div>
-    <div class="gal-item" role="img" aria-label="Team spirit"><div class="gi g3"></div></div>
-    <div class="gal-item" role="img" aria-label="Facilities"><div class="gi g4"></div></div>
-    <div class="gal-item" role="img" aria-label="Rift Valley scenery"><div class="gi g5"></div></div>
-    <div class="gal-item" role="img" aria-label="Champions"><div class="gi g6"></div></div>
+    <div class="gal-item" role="img" aria-label="Champions"><div class="gi g2"></div></div>
   </div>
 </div>
 
-<!-- AFFILIATIONS -->
+<!-- AFFILIATIONS (fixed bg + glass cards + RICH BRAND-COLOR ICONS) -->
 <div class="affiliations">
-  <div class="section-title"><h2>Our Partners &amp; Affiliations</h2><p>Recognized by the world's leading sports organizations</p></div>
-  <div class="affiliations-grid">
-    <div class="affiliation-card"><i class="fas fa-trophy"></i><h4>International Olympic Committee</h4><p>Recognized High Performance Training Centre</p></div>
-    <div class="affiliation-card"><i class="fas fa-running"></i><h4>World Athletics (IAAF)</h4><p>Listed High Performance Training Centre</p></div>
-    <div class="affiliation-card"><i class="fas fa-flag"></i><h4>Athletics Kenya</h4><p>National federation partnership</p></div>
-    <div class="affiliation-card"><i class="fas fa-globe"></i><h4>UNHCR</h4><p>Refugee athlete scholarship program</p></div>
+  <div class="affiliations-inner">
+    <div class="section-title"><h2>Our Partners &amp; Affiliations</h2><p>Recognized by the world's leading sports organizations</p></div>
+    <div class="affiliations-grid">
+
+      <!-- Olympic Rings — official 5-color palette -->
+      <div class="affiliation-card">
+        <div class="aff-logo">
+          <svg viewBox="0 0 200 100" xmlns="http://www.w3.org/2000/svg" aria-label="Olympic rings">
+            <circle cx="40" cy="40" r="21" fill="none" stroke="#0081C8" stroke-width="7.5"/>
+            <circle cx="80" cy="40" r="21" fill="none" stroke="#000000" stroke-width="7.5"/>
+            <circle cx="120" cy="40" r="21" fill="none" stroke="#EE334E" stroke-width="7.5"/>
+            <circle cx="60" cy="64" r="21" fill="none" stroke="#FCB131" stroke-width="7.5"/>
+            <circle cx="100" cy="64" r="21" fill="none" stroke="#00A651" stroke-width="7.5"/>
+          </svg>
+        </div>
+        <h4>International Olympic Committee</h4>
+        <p>Recognized High Performance Training Centre</p>
+      </div>
+
+      <!-- World Athletics — official green + white runner -->
+      <div class="affiliation-card">
+        <div class="aff-logo">
+          <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" aria-label="World Athletics">
+            <circle cx="60" cy="60" r="55" fill="#0F9D58"/>
+            <path d="M60 20 C82 40 92 66 80 94 C71 81 65 68 60 57 C55 68 49 81 40 94 C28 66 38 40 60 20 Z" fill="#FFFFFF"/>
+            <circle cx="60" cy="40" r="6.5" fill="#0F9D58"/>
+            <path d="M52 46 Q60 42 68 46" stroke="#0F9D58" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <h4>World Athletics (IAAF)</h4>
+        <p>Listed High Performance Training Centre</p>
+      </div>
+
+      <!-- Athletics Kenya — full Kenyan flag shield in vivid color -->
+      <div class="affiliation-card">
+        <div class="aff-logo">
+          <svg viewBox="0 0 120 100" xmlns="http://www.w3.org/2000/svg" aria-label="Athletics Kenya">
+            <rect x="6" y="6" width="108" height="88" rx="10" fill="#000"/>
+            <rect x="6" y="26" width="108" height="19" fill="#BB0000"/>
+            <rect x="6" y="55" width="108" height="19" fill="#006600"/>
+            <rect x="6" y="6" width="108" height="88" rx="10" fill="none" stroke="#fff" stroke-width="2"/>
+            <ellipse cx="60" cy="45" rx="24" ry="15" fill="#fff"/>
+            <path d="M42 45 Q60 30 78 45 Q60 60 42 45 Z" fill="#BB0000" opacity="0.9"/>
+            <circle cx="60" cy="45" r="4" fill="#000"/>
+            <path d="M46 72 L60 62 L74 72 L74 78 L46 78 Z" fill="#fff"/>
+            <path d="M48 74 L60 66 L72 74" stroke="#000" stroke-width="1.5" fill="none"/>
+          </svg>
+        </div>
+        <h4>Athletics Kenya</h4>
+        <p>National federation partnership</p>
+      </div>
+
+      <!-- UNHCR — official blue with white hands/globe motif -->
+      <div class="affiliation-card">
+        <div class="aff-logo">
+          <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" aria-label="UNHCR">
+            <circle cx="60" cy="60" r="55" fill="#0072BC"/>
+            <path d="M30 66 Q30 52 40 48 Q46 46 50 50 L60 58 L70 50 Q74 46 80 48 Q90 52 90 66 L90 84 L83 84 L83 68 Q83 61 78 59 Q73 57 68 61 L60 68 L52 61 Q47 57 42 59 Q37 61 37 68 L37 84 L30 84 Z" fill="#fff"/>
+            <circle cx="60" cy="34" r="11" fill="#fff"/>
+            <path d="M52 50 Q60 46 68 50" stroke="#0072BC" stroke-width="2" fill="none" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <h4>UNHCR</h4>
+        <p>Refugee athlete scholarship program</p>
+      </div>
+
+    </div>
   </div>
 </div>
 
-<!-- CTA -->
+<!-- CTA (fixed bg) -->
 <div class="cta">
-  <h2>Be Part of the Legacy</h2><p>Train where champions are made. Join us at KHPTC.</p>
-  <a href="#" class="btn btn-primary" style="padding:15px 40px;font-size:1.1rem">Contact Us Today</a>
+  <div class="cta-inner">
+    <h2>Be Part of the Legacy</h2>
+    <p>Train where champions are made. Join us at KHPTC.</p>
+    <a href="#" class="btn btn-primary" style="padding:16px 44px;font-size:1.05rem">Contact Us Today</a>
+  </div>
 </div>
 
 <!-- FOOTER -->
@@ -353,8 +787,8 @@ footer{background:#fff;color:var(--g);padding:80px 0 40px;border-top:1px solid #
   <div class="footer-container">
     <div class="footer-col">
       <a href="#" class="logo"><div class="logo-icon"><img src="https://i.pinimg.com/736x/d2/3d/d8/d23dd8ad0a03ce25635349483c6e7130.jpg" alt="KHPTC Logo"></div><div class="logo-text"><span>KHPTC</span><span>Home of Champions</span></div></a>
-      <p style="margin:20px 0">KipKeino High Performance Training Centre – where champions are made. Elite training near Eldoret, Kenya.</p>
-      <div class="social-links"><a href="#"><i class="fab fa-facebook-f"></i></a><a href="#"><i class="fab fa-twitter"></i></a><a href="#"><i class="fab fa-instagram"></i></a><a href="#"><i class="fab fa-youtube"></i></a><a href="#"><i class="fab fa-pinterest"></i></a></div>
+      <p style="margin:22px 0">KipKeino High Performance Training Centre – where champions are made. Elite training near Eldoret, Kenya.</p>
+      <div class="social-links"><a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a><a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a><a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a><a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a><a href="#" aria-label="Pinterest"><i class="fab fa-pinterest"></i></a></div>
     </div>
     <div class="footer-col"><h4>Quick Links</h4><ul class="footer-links">
       <li><a href="index.html">Home</a></li><li><a href="training.html">Training</a></li><li><a href="programs.html">Programs</a></li>
@@ -370,7 +804,7 @@ footer{background:#fff;color:var(--g);padding:80px 0 40px;border-top:1px solid #
       <li><i class="fas fa-phone-alt"></i> +254 712 345 678</li><li><i class="fas fa-envelope"></i> info@khptc.co.ke</li>
       <li><i class="fas fa-clock"></i> Mon-Fri: 6AM - 8PM, Sat: 7AM - 6PM</li></ul></div>
     <div class="footer-col"><h4>Training Promise</h4><div class="logo-icon"><i class="fas fa-running"></i></div>
-      <p style="margin-top:15px">Uncompromising commitment to excellence, integrity, and athlete development. We empower champions through world-class training and support.</p></div>
+      <p style="margin-top:18px">Uncompromising commitment to excellence, integrity, and athlete development. We empower champions through world-class training and support.</p></div>
   </div>
   <div class="copyright"><p>&copy; 2026 KHPTC. All rights reserved. | Designed by Quantum Solutions</p></div>
 </footer>
@@ -383,87 +817,138 @@ footer{background:#fff;color:var(--g);padding:80px 0 40px;border-top:1px solid #
 
 <script>
 document.addEventListener('DOMContentLoaded',function(){
-  const $=s=>document.querySelectorAll(s), html=document.documentElement;
+  const $=s=>document.querySelectorAll(s),q=s=>document.querySelector(s);
+  const html=document.documentElement;
 
-  /* theme toggle (unchanged behaviour) */
-  const icon=document.getElementById('themeIcon');
-  const setT=d=>{d?html.setAttribute('data-theme','dark'):html.removeAttribute('data-theme');icon.className=d?'fas fa-sun':'fas fa-moon'};
-  let st=null;try{st=localStorage.getItem('theme')}catch(e){}
-  setT(st?st==='dark':matchMedia('(prefers-color-scheme: dark)').matches);
-  document.getElementById('themeToggle').onclick=()=>{const d=html.getAttribute('data-theme')!=='dark';setT(d);try{localStorage.setItem('theme',d?'dark':'light')}catch(e){}};
+  /* ===== THEME TOGGLE (fixed) ===== */
+  const toggle=document.getElementById('themeToggle');
+  let currentTheme=null;
+  try{currentTheme=localStorage.getItem('theme')}catch(e){}
+  if(!currentTheme){
+    currentTheme=window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';
+  }
+  if(currentTheme==='dark'){html.setAttribute('data-theme','dark')}
+  else{html.removeAttribute('data-theme')}
 
-  /* hero slideshow */
+  toggle.addEventListener('click',function(){
+    const isDark=html.getAttribute('data-theme')==='dark';
+    if(isDark){
+      html.removeAttribute('data-theme');
+      try{localStorage.setItem('theme','light')}catch(e){}
+    }else{
+      html.setAttribute('data-theme','dark');
+      try{localStorage.setItem('theme','dark')}catch(e){}
+    }
+  });
+
+  /* ===== HERO SLIDESHOW ===== */
   const sl=$('.hero-slide');let i=0;
-  setInterval(()=>{sl[i].classList.remove('on');i=(i+1)%sl.length;sl[i].classList.add('on')},6000);
+  setInterval(()=>{sl[i].classList.remove('on');i=(i+1)%sl.length;sl[i].classList.add('on')},6500);
 
-  /* slide-in directions + stagger */
-  const dirs={'.profile-image':'left','.profile-content':'right','.section-title,.stats-header,.cta,.band>div':'up',
-    '.stat-item,.affiliation-card,.gal-item':'zoom','.mission-card':'up','.timeline-item':'right'};
+  /* ===== SCROLL PROGRESS BAR + MODERN RUNNER ===== */
+  const bar=document.getElementById('bar');
+  const runnerWrap=document.getElementById('runner-wrap');
+  const header=document.querySelector('header');
+
+  function updateProgress(){
+    const scrollTop=html.scrollTop||document.body.scrollTop;
+    const scrollHeight=html.scrollHeight-html.clientHeight;
+    const pct=scrollHeight>0?(scrollTop/scrollHeight)*100:0;
+    bar.style.width=pct+'%';
+    const barWidth=bar.offsetWidth;
+    const maxLeft=window.innerWidth-40;
+    runnerWrap.style.left=Math.min(barWidth-17,maxLeft)+'px';
+    header.style.padding=scrollTop>50?'10px 0':'15px 0';
+  }
+  window.addEventListener('scroll',updateProgress,{passive:true});
+  window.addEventListener('resize',updateProgress,{passive:true});
+  updateProgress();
+
+  /* ===== SCROLL REVEAL ===== */
+  const dirs={
+    '.profile-image':'left',
+    '.profile-content':'right',
+    '.section-title,.stats-header,.cta-inner,.band>div':'up',
+    '.stat-item,.affiliation-card,.gal-item':'zoom',
+    '.mission-card':'up',
+    '.timeline-item':'right'
+  };
   for(const[sel,d]of Object.entries(dirs))$(sel).forEach(el=>{
     el.classList.add('reveal','r-'+d);
     el.style.transitionDelay=[...el.parentNode.children].indexOf(el)%4*.12+'s';
   });
 
-  /* animated counters */
-  const count=n=>{const m=n.textContent.match(/^([\d,]+)(.*)$/);if(!m)return;
-    const t=+m[1].replace(/,/g,''),c=m[1].includes(',');let s;
-    const f=ts=>{s=s||ts;const p=Math.min((ts-s)/1800,1),v=Math.round(t*(1-(1-p)**3));
-      n.textContent=(c?v.toLocaleString('en-US'):v)+m[2];if(p<1)requestAnimationFrame(f)};
-    requestAnimationFrame(f)};
+  /* ===== ANIMATED COUNTERS ===== */
+  const count=n=>{
+    const m=n.textContent.match(/^([\d,]+)(.*)$/);
+    if(!m)return;
+    const t=+m[1].replace(/,/g,''),c=m[1].includes(',');
+    let s;
+    const f=ts=>{
+      s=s||ts;
+      const p=Math.min((ts-s)/1800,1);
+      const v=Math.round(t*(1-(1-p)**3));
+      n.textContent=(c?v.toLocaleString('en-US'):v)+m[2];
+      if(p<1)requestAnimationFrame(f);
+    };
+    requestAnimationFrame(f);
+  };
 
+  /* ===== INTERSECTION OBSERVER ===== */
   const io=new IntersectionObserver(es=>es.forEach(e=>{
-    if(!e.isIntersecting)return;const el=e.target;io.unobserve(el);el.classList.add('in');
+    if(!e.isIntersecting)return;
+    const el=e.target;
+    io.unobserve(el);
+    el.classList.add('in');
     setTimeout(()=>{el.style.transitionDelay='0s';el.classList.add('done')},1500);
     if(el.classList.contains('stat-item'))count(el.querySelector('.stat-number'));
   }),{threshold:.15});
   $('.reveal').forEach(el=>io.observe(el));
 
-  /* scroll progress bar + shrinking header */
-  const bar=document.getElementById('bar'),header=document.querySelector('header');
-  addEventListener('scroll',()=>{
-    bar.style.width=html.scrollTop/(html.scrollHeight-html.clientHeight)*100+'%';
-    header.style.padding=scrollY>50?'10px 0':'15px 0';
-  },{passive:true});
-});
-</script>
-<script>
-document.addEventListener('DOMContentLoaded',function(){
-  const $=s=>document.querySelectorAll(s),q=s=>document.querySelector(s);
+  /* ===== HEADLINE WORD RISE ===== */
+  const wrap=n=>{
+    if(n.nodeType===3){
+      const f=document.createDocumentFragment();
+      n.textContent.split(/(\s+)/).forEach(t=>{
+        if(!t.trim()){f.append(t);return}
+        const o=document.createElement('span');
+        o.className='w';
+        o.innerHTML='<span>'+t+'</span>';
+        f.append(o);
+      });
+      n.replaceWith(f);
+    }else[...n.childNodes].forEach(wrap);
+  };
+  const h=q('.hero h1');
+  if(h){wrap(h);h.querySelectorAll('.w span').forEach((e,i)=>e.style.setProperty('--i',i));}
 
-  /* headline: words rise one by one */
-  const wrap=n=>{if(n.nodeType===3){const f=document.createDocumentFragment();
-    n.textContent.split(/(\s+)/).forEach(t=>{if(!t.trim()){f.append(t);return}
-      const o=document.createElement('span');o.className='w';o.innerHTML='<span>'+t+'</span>';f.append(o)});n.replaceWith(f)}
-    else[...n.childNodes].forEach(wrap)};
-  const h=q('.hero h1');wrap(h);h.querySelectorAll('.w span').forEach((e,i)=>e.style.setProperty('--i',i));
-
-  /* endless ticker */
-  const t=q('.ticker div');t.innerHTML+=t.innerHTML;
-
-  /* 3D tilt + glow on cards */
+  /* ===== SUBTLE 3D TILT ON CARDS ===== */
   $('.mission-card,.affiliation-card,.gal-item').forEach(c=>{
-    c.addEventListener('mousemove',e=>{if(!c.classList.contains('done'))return;
-      const r=c.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;
-      c.style.transform='perspective(700px) rotateY('+x*12+'deg) rotateX('+-y*12+'deg) translateY(-8px)';
-      c.style.setProperty('--mx',x*100+50+'%');c.style.setProperty('--my',y*100+50+'%')});
-    c.addEventListener('mouseleave',()=>c.style.transform='')});
+    c.addEventListener('mousemove',e=>{
+      if(!c.classList.contains('done'))return;
+      const r=c.getBoundingClientRect(),
+            x=(e.clientX-r.left)/r.width-.5,
+            y=(e.clientY-r.top)/r.height-.5;
+      c.style.transform='perspective(800px) rotateY('+x*6+'deg) rotateX('+-y*6+'deg) translateY(-6px)';
+    });
+    c.addEventListener('mouseleave',()=>c.style.transform='');
+  });
 
-  /* custom follow cursor (desktop only) */
-  if(matchMedia('(hover:hover)').matches){
-    const c=document.createElement('div');c.className='cur';document.body.append(c);
-    let x=0,y=0,tx=0,ty=0;addEventListener('mousemove',e=>{tx=e.clientX;ty=e.clientY});
-    (function l(){x+=(tx-x)*.18;y+=(ty-y)*.18;c.style.left=x+'px';c.style.top=y+'px';requestAnimationFrame(l)})();
-    $('a,button,.mission-card,.affiliation-card,.gal-item').forEach(e=>{
-      e.addEventListener('mouseenter',()=>c.classList.add('big'));e.addEventListener('mouseleave',()=>c.classList.remove('big'))})}
-
-  /* scroll-linked: hero drift/fade, drawing timeline line, moving watermark */
-  const ht=q('.hero-text'),tl=q('.timeline'),ps=q('.profile-section');
-  const upd=()=>{const y=scrollY;
-    if(y<innerHeight){ht.style.transform='translateY('+y*.25+'px)';ht.style.opacity=1-y/(innerHeight*.9)}
-    const r=tl.getBoundingClientRect();
-    tl.style.setProperty('--p',Math.max(0,Math.min(1,(innerHeight*.75-r.top)/r.height)));
-    ps.style.setProperty('--wx',ps.getBoundingClientRect().top*.25+'px')};
-  addEventListener('scroll',upd,{passive:true});upd();
+  /* ===== SCROLL-LINKED EFFECTS ===== */
+  const ht=q('.hero-text'),tl=q('.timeline');
+  const upd=()=>{
+    const y=scrollY;
+    if(y<innerHeight&&ht){
+      ht.style.transform='translateY('+y*.25+'px)';
+      ht.style.opacity=1-y/(innerHeight*.9);
+    }
+    if(tl){
+      const r=tl.getBoundingClientRect();
+      tl.style.setProperty('--p',Math.max(0,Math.min(1,(innerHeight*.75-r.top)/r.height)));
+    }
+  };
+  addEventListener('scroll',upd,{passive:true});
+  upd();
 });
 </script>
 </body>
