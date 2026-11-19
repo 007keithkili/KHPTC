@@ -247,8 +247,7 @@
       color: var(--text-muted); font-weight: 400;
     }
 
-    /* ===== ENLARGED HEADER ===== */
-       /* ===== ENLARGED HEADER (REDUCED HEIGHT) ===== */
+    /* ===== ENLARGED HEADER (REDUCED HEIGHT) ===== */
     header {
       background: var(--bg-header);
       backdrop-filter: blur(12px);
@@ -257,7 +256,7 @@
       position: static;
       width: 100%;
       z-index: 1000;
-      padding: 12px 0;
+      padding: 6px 0;
       border-bottom: 1px solid var(--border-light);
       transition: background .4s;
     }
@@ -273,7 +272,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      gap: 16px;
+      gap: 12px;
     }
 
     .logo {
@@ -284,14 +283,14 @@
     }
 
     .logo-icon {
-      width: 52px;
-      height: 52px;
+      width: 38px;
+      height: 38px;
       background: linear-gradient(135deg, var(--primary), var(--primary-dark));
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      margin-right: 10px;
+      margin-right: 8px;
       box-shadow: 0 4px 12px var(--g-glow);
       overflow: hidden;
       color: #fff;
@@ -311,17 +310,17 @@
     .logo-text span:first-child {
       font-family: 'Playfair Display', serif;
       font-weight: 800;
-      font-size: 26px;
+      font-size: 19px;
       letter-spacing: -.5px;
       color: var(--primary);
       line-height: 1;
     }
 
     .logo-text span:last-child {
-      font-size: 11px;
-      letter-spacing: 1.3px;
+      font-size: 9px;
+      letter-spacing: .9px;
       text-transform: uppercase;
-      margin-top: 3px;
+      margin-top: 2px;
       color: var(--text-muted);
     }
 
@@ -339,9 +338,9 @@
       text-decoration: none;
       color: var(--text-dark);
       font-weight: 650;
-      font-size: 16px;
+      font-size: 13.5px;
       position: relative;
-      padding: 9px 12px;
+      padding: 7px 10px;
       transition: color .3s;
       border-radius: 6px;
     }
@@ -386,12 +385,12 @@
     /* ===== RESPONSIVE HEADER ===== */
     @media (max-width: 900px) {
       header {
-        padding: 8px 0;
+        padding: 4px 0;
       }
 
       .header-container {
         flex-wrap: wrap;
-        padding: 0 16px;
+        padding: 0 12px;
         gap: 6px;
       }
 
@@ -400,18 +399,18 @@
       }
 
       .logo-icon {
-        width: 42px;
-        height: 42px;
-        margin-right: 8px;
+        width: 32px;
+        height: 32px;
+        margin-right: 6px;
       }
 
       .logo-text span:first-child {
-        font-size: 21px;
+        font-size: 15px;
       }
 
       .logo-text span:last-child {
-        font-size: 8px;
-        letter-spacing: 1.1px;
+        font-size: 7px;
+        letter-spacing: .8px;
       }
 
       nav {
@@ -423,33 +422,34 @@
         justify-content: center;
         flex-wrap: wrap;
         margin-top: 2px;
+        gap: 2px;
       }
 
       nav a {
-        font-size: 13px;
-        padding: 6px 9px;
+        font-size: 12px;
+        padding: 5px 8px;
       }
 
       .header-actions {
-        gap: 8px;
+        gap: 6px;
       }
 
       .btn-book {
-        padding: 8px 15px;
-        font-size: 13px;
+        padding: 6px 12px;
+        font-size: 12px;
       }
     }
 
     /* ===== MODERN THEME TOGGLE ===== */
     .theme-toggle {
-      position: relative; width: 52px; height: 30px; border-radius: 32px;
+      position: relative; width: 46px; height: 26px; border-radius: 28px;
       background: linear-gradient(135deg, #e8eef4, #d0dae4);
       border: 1px solid rgba(0,0,0,.08); cursor: pointer;
       transition: all .4s cubic-bezier(.2,.7,.2,1); padding: 0;
       box-shadow: inset 0 2px 4px rgba(0,0,0,.06); overflow: hidden;
     }
     .theme-toggle:before {
-      content: ''; position: absolute; top: 2.5px; left: 2.5px; width: 20px; height: 20px;
+      content: ''; position: absolute; top: 2px; left: 2px; width: 18px; height: 18px;
       border-radius: 50%; background: linear-gradient(135deg, #ffd86b, #fcb131);
       box-shadow: 0 2px 6px rgba(252,177,49,.5);
       transition: all .4s cubic-bezier(.34,1.56,.64,1); z-index: 2;
@@ -459,11 +459,11 @@
       background: linear-gradient(135deg, #0a140d, #112016);
       opacity: 0; transition: opacity .4s; z-index: 1;
     }
-    .theme-toggle .t-icon { position: absolute; top: 50%; transform: translateY(-50%); font-size: 10px; z-index: 3; transition: all .4s; }
-    .theme-toggle .t-sun { left: 7px; color: #fff; opacity: 1; }
-    .theme-toggle .t-moon { right: 7px; color: #8fa4b8; opacity: .6; }
+    .theme-toggle .t-icon { position: absolute; top: 50%; transform: translateY(-50%); font-size: 9px; z-index: 3; transition: all .4s; }
+    .theme-toggle .t-sun { left: 6px; color: #fff; opacity: 1; }
+    .theme-toggle .t-moon { right: 6px; color: #8fa4b8; opacity: .6; }
     [data-theme="dark"] .theme-toggle:before {
-      left: 27px; background: linear-gradient(135deg, #8fa4b8, #c8d6e2);
+      left: 24px; background: linear-gradient(135deg, #8fa4b8, #c8d6e2);
       box-shadow: 0 2px 6px rgba(200,214,226,.5);
     }
     [data-theme="dark"] .theme-toggle:after { opacity: 1; }
@@ -472,7 +472,7 @@
     .theme-toggle:hover { box-shadow: inset 0 2px 4px rgba(0,0,0,.06), 0 0 0 3px var(--g-glow); }
 
     /* Book Your Stay button */
-    .btn-book { padding: 9px 20px; font-size: 16px; }
+    .btn-book { padding: 7px 15px; font-size: 13.5px; }
 
     /* ===== HERO ===== */
     .hero-slide { background-position: center; background-size: cover; background-attachment: fixed; }
@@ -1128,8 +1128,8 @@
     @media (max-width: 900px) {
       .header-container {
         flex-wrap: wrap;
-        padding: 0 16px;
-        gap: 8px;
+        padding: 0 12px;
+        gap: 6px;
       }
 
       .logo {
@@ -1137,17 +1137,18 @@
       }
 
       .logo-icon {
-        width: 50px;
-        height: 50px;
+        width: 32px;
+        height: 32px;
+        margin-right: 6px;
       }
 
       .logo-text span:first-child {
-        font-size: 26px;
+        font-size: 15px;
       }
 
       .logo-text span:last-child {
-        font-size: 10px;
-        letter-spacing: 1.2px;
+        font-size: 7px;
+        letter-spacing: .8px;
       }
 
       nav {
@@ -1158,21 +1159,22 @@
       nav ul {
         justify-content: center;
         flex-wrap: wrap;
-        margin-top: 4px;
+        margin-top: 2px;
+        gap: 2px;
       }
 
       nav a {
-        font-size: 15px;
-        padding: 8px 10px;
+        font-size: 12px;
+        padding: 5px 8px;
       }
 
       .header-actions {
-        gap: 8px;
+        gap: 6px;
       }
 
       .btn-book {
-        padding: 9px 17px;
-        font-size: 14px;
+        padding: 6px 12px;
+        font-size: 12px;
       }
 
       .hero { padding: 100px 0 110px; }
