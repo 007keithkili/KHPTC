@@ -170,10 +170,58 @@ footer{background:#fff;color:var(--g);padding:80px 0 40px;border-top:1px solid #
   .whatsapp-float{bottom:20px;right:20px}.whatsapp-float>a{width:55px;height:55px;font-size:1.8rem}
 }
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+
+/* ===== v2: ALIVE ===== */
+#bar i{position:absolute;right:-12px;top:5px;font-size:18px;color:var(--g)}
+.hero-rings{position:absolute;right:7%;top:15%;width:380px;animation:float 7s ease-in-out infinite;pointer-events:none}
+.hero-rings circle{fill:none;stroke:#fff;stroke-width:4;stroke-dasharray:202;stroke-dashoffset:202;animation:draw 2.4s ease forwards}
+.hero-rings circle:nth-child(even){stroke:var(--g);stroke-width:5}
+.chip{position:absolute;background:rgba(255,255,255,.14);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.35);color:#fff;padding:14px 24px;border-radius:18px;animation:float 5s ease-in-out infinite}
+.chip b{display:block;font-family:'Playfair Display',serif;font-size:1.3rem}
+.chip small{letter-spacing:2px;text-transform:uppercase;font-size:.72rem;opacity:.9}
+.scroll-cue{bottom:75px}
+.hero .hero-text>h1{animation:none}
+.hero h1 .w{display:inline-block;overflow:hidden;vertical-align:bottom;color:inherit;padding-bottom:.1em}
+.hero h1 .w span{display:inline-block;color:inherit;transform:translateY(115%);animation:rise .9s cubic-bezier(.2,.8,.2,1) forwards;animation-delay:calc(var(--i)*.12s + .3s)}
+.btn{position:relative;overflow:hidden}
+.btn:after{content:'';position:absolute;top:0;left:-75%;width:50%;height:100%;background:linear-gradient(120deg,transparent,rgba(255,255,255,.55),transparent);transform:skewX(-20deg)}
+.btn:hover:after{animation:shine .8s}
+.cta .btn{animation:ring 2s infinite}
+
+.ticker{background:var(--g);color:#fff;overflow:hidden;white-space:nowrap;padding:16px 0;transform:rotate(-1.2deg);width:104%;margin:-34px 0 80px -2%;position:relative;z-index:2;box-shadow:0 10px 30px rgba(51,116,24,.35)}
+.ticker div{display:inline-block;animation:slide 35s linear infinite;font-family:'Playfair Display',serif;font-weight:700;font-size:1.3rem;letter-spacing:2px;text-transform:uppercase}
+.ticker:hover div{animation-play-state:paused}
+.ticker span{margin:0 30px}.ticker i{margin-right:12px}
+
+.profile-section{position:relative}
+.profile-section:before{content:'KEINO';position:absolute;left:-2%;top:-70px;font:800 16vw 'Playfair Display',serif;color:transparent;-webkit-text-stroke:2px rgba(51,116,24,.15);transform:translateX(var(--wx,0));z-index:-1;pointer-events:none;white-space:nowrap}
+.band{clip-path:polygon(0 6%,100% 0,100% 94%,0 100%);min-height:70vh;padding:150px 30px}
+.stat-item:before{content:'';display:block;width:0;height:4px;background:var(--g);margin:0 auto 15px;border-radius:4px;transition:width 1s .4s}
+.stat-item.in:before{width:60px}
+.mission-card,.affiliation-card{position:relative;overflow:hidden}
+.mission-card:after,.affiliation-card:after,.gal-item:before{content:'';position:absolute;inset:0;background:radial-gradient(circle at var(--mx,50%) var(--my,50%),rgba(51,116,24,.14),transparent 55%);opacity:0;transition:opacity .3s;pointer-events:none}
+.mission-card:hover:after,.affiliation-card:hover:after{opacity:1}
+.mission-icon,.affiliation-card i{width:90px;height:90px;border-radius:50%;margin:0 auto 20px;display:flex;align-items:center;justify-content:center;font-size:2.2rem;background:rgba(51,116,24,.08);transition:all .5s}
+.mission-card:hover .mission-icon,.affiliation-card:hover i{background:var(--g);color:#fff;transform:rotate(360deg) scale(1.1)}
+.timeline:before{transform:scaleY(var(--p,1));transform-origin:top}
+.timeline-item:before{transform:scale(0);transition:transform .6s cubic-bezier(.3,1.6,.5,1)}
+.timeline-item.in:before{transform:scale(1)}
+.gal-item{position:relative}
+.gal-item:after{content:attr(aria-label);position:absolute;left:0;right:0;bottom:0;padding:30px 20px 16px;color:#fff;font-weight:700;background:linear-gradient(transparent,rgba(26,42,58,.85));transform:translateY(100%);transition:transform .4s}
+.gal-item:hover:after{transform:none}
+.cur{position:fixed;width:34px;height:34px;border:2px solid var(--g);box-shadow:0 0 0 1px #fff;border-radius:50%;pointer-events:none;z-index:3000;transform:translate(-50%,-50%);transition:width .25s,height .25s,background .25s}
+.cur.big{width:70px;height:70px;background:rgba(51,116,24,.15)}
+@keyframes draw{to{stroke-dashoffset:0}}
+@keyframes rise{to{transform:none}}
+@keyframes shine{to{left:130%}}
+@keyframes slide{to{transform:translateX(-50%)}}
+@keyframes ring{0%{box-shadow:0 0 0 0 rgba(51,116,24,.5)}100%{box-shadow:0 0 0 22px rgba(51,116,24,0)}}
+@media(max-width:1100px){.hero-rings,.chip{display:none}}
+@media(max-width:900px){.band{padding:110px 30px}.profile-section:before{display:none}}
 </style>
 </head>
 <body>
-<div id="bar"></div>
+<div id="bar"><i class="fas fa-running"></i></div>
 
 <header>
   <div class="header-container">
@@ -201,9 +249,18 @@ footer{background:#fff;color:var(--g);padding:80px 0 40px;border-top:1px solid #
     <p>Discover the story behind Africa's premier high-performance training centre – where Olympic dreams are nurtured on the red soil of Eldoret.</p>
     <div class="hero-btns"><a href="#story" class="btn btn-primary">Discover Our Story</a><a href="contact.html" class="btn btn-light">Contact Us Today</a></div>
   </div></div>
+  <svg class="hero-rings" viewBox="0 0 230 120" aria-hidden="true"><circle cx="40" cy="40" r="32" style="animation-delay:.4s"/><circle cx="115" cy="40" r="32" style="animation-delay:.8s"/><circle cx="190" cy="40" r="32" style="animation-delay:1.2s"/><circle cx="77" cy="78" r="32" style="animation-delay:1.6s"/><circle cx="152" cy="78" r="32" style="animation-delay:2s"/></svg>
+  <div class="chip" style="right:9%;bottom:30%"><b>2× Olympic Gold</b><small>1968 &amp; 1972</small></div>
+  <div class="chip" style="right:26%;bottom:17%;animation-delay:-2.5s"><b>Est. 2002</b><small>Kazi Mingi Farm</small></div>
   <div class="scroll-cue"></div>
 </section>
 
+<!-- TICKER -->
+<div class="ticker"><div>
+  <span><i class="fas fa-medal"></i>2× Olympic Gold</span><span><i class="fas fa-running"></i>Mexico City 1968 · Munich 1972</span>
+  <span><i class="fas fa-trophy"></i>IOC Recognized</span><span><i class="fas fa-flag"></i>IAAF Listed</span>
+  <span><i class="fas fa-leaf"></i>Est. 2002</span><span><i class="fas fa-globe-africa"></i>2,176m Altitude</span><span><i class="fas fa-medal"></i>Eldoret, Kenya</span>
+</div></div>
 <!-- KIPCHOGE KEINO PROFILE -->
 <div class="profile-section" id="story">
   <div class="profile-image">
@@ -367,6 +424,46 @@ document.addEventListener('DOMContentLoaded',function(){
     bar.style.width=html.scrollTop/(html.scrollHeight-html.clientHeight)*100+'%';
     header.style.padding=scrollY>50?'10px 0':'15px 0';
   },{passive:true});
+});
+</script>
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+  const $=s=>document.querySelectorAll(s),q=s=>document.querySelector(s);
+
+  /* headline: words rise one by one */
+  const wrap=n=>{if(n.nodeType===3){const f=document.createDocumentFragment();
+    n.textContent.split(/(\s+)/).forEach(t=>{if(!t.trim()){f.append(t);return}
+      const o=document.createElement('span');o.className='w';o.innerHTML='<span>'+t+'</span>';f.append(o)});n.replaceWith(f)}
+    else[...n.childNodes].forEach(wrap)};
+  const h=q('.hero h1');wrap(h);h.querySelectorAll('.w span').forEach((e,i)=>e.style.setProperty('--i',i));
+
+  /* endless ticker */
+  const t=q('.ticker div');t.innerHTML+=t.innerHTML;
+
+  /* 3D tilt + glow on cards */
+  $('.mission-card,.affiliation-card,.gal-item').forEach(c=>{
+    c.addEventListener('mousemove',e=>{if(!c.classList.contains('done'))return;
+      const r=c.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;
+      c.style.transform='perspective(700px) rotateY('+x*12+'deg) rotateX('+-y*12+'deg) translateY(-8px)';
+      c.style.setProperty('--mx',x*100+50+'%');c.style.setProperty('--my',y*100+50+'%')});
+    c.addEventListener('mouseleave',()=>c.style.transform='')});
+
+  /* custom follow cursor (desktop only) */
+  if(matchMedia('(hover:hover)').matches){
+    const c=document.createElement('div');c.className='cur';document.body.append(c);
+    let x=0,y=0,tx=0,ty=0;addEventListener('mousemove',e=>{tx=e.clientX;ty=e.clientY});
+    (function l(){x+=(tx-x)*.18;y+=(ty-y)*.18;c.style.left=x+'px';c.style.top=y+'px';requestAnimationFrame(l)})();
+    $('a,button,.mission-card,.affiliation-card,.gal-item').forEach(e=>{
+      e.addEventListener('mouseenter',()=>c.classList.add('big'));e.addEventListener('mouseleave',()=>c.classList.remove('big'))})}
+
+  /* scroll-linked: hero drift/fade, drawing timeline line, moving watermark */
+  const ht=q('.hero-text'),tl=q('.timeline'),ps=q('.profile-section');
+  const upd=()=>{const y=scrollY;
+    if(y<innerHeight){ht.style.transform='translateY('+y*.25+'px)';ht.style.opacity=1-y/(innerHeight*.9)}
+    const r=tl.getBoundingClientRect();
+    tl.style.setProperty('--p',Math.max(0,Math.min(1,(innerHeight*.75-r.top)/r.height)));
+    ps.style.setProperty('--wx',ps.getBoundingClientRect().top*.25+'px')};
+  addEventListener('scroll',upd,{passive:true});upd();
 });
 </script>
 </body>
