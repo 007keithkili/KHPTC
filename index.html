@@ -5,8 +5,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>KipKeino High Performance Training Centre | Training Camps, Accommodation & Food in Eldoret, Kenya</title>
-  <meta name="description" content="KipKeino High Performance Training Centre (KHPTC) in Eldoret, Kenya — IOC-recognized training camps for international athletes, visitors, and teams. World-class running tracks, gym, accommodation, food, nutrition, and recovery. Just 17.5 km from Eldoret International Airport.">
-  <meta name="keywords" content="KipKeino, Kip Keino, KHPTC, training camps, athletics training camp Kenya, high altitude training, Eldoret training camp, accommodation Eldoret, athlete accommodation, Kip Keino High Performance Training Centre, Kazi Mingi Farm, IOC recognized training centre, refugee athletes, national teams, marathon training camp, running tracks Eldoret">
+  <meta name="description" content="KipKeino High Performance Training Centre (KHPTC) in Eldoret, Kenya — IOC-recognized training camps for international athletes, visitors, and teams. Gym, accommodation, food, nutrition, and recovery. Just 17.5 km from Eldoret International Airport.">
+  <meta name="keywords" content="KipKeino, Kip Keino, KHPTC, training camps, athletics training camp Kenya, high altitude training, Eldoret training camp, accommodation Eldoret, athlete accommodation, Kip Keino High Performance Training Centre, Kazi Mingi Farm, IOC recognized training centre, refugee athletes, national teams, marathon training camp">
   <meta name="author" content="KipKeino High Performance Training Centre">
   <meta name="robots" content="index, follow, max-image-preview:large">
   <meta name="theme-color" content="#054A29">
@@ -1122,6 +1122,8 @@
     .contact-info { list-style: none; }
     .contact-info li { display: flex; margin-bottom: 15px; color: rgba(255,255,255,.72); font-size: .93rem; }
     .contact-info li i { margin-right: 12px; color: var(--accent-green); margin-top: 3px; }
+    .contact-info a { color: rgba(255,255,255,.72); text-decoration: none; }
+    .contact-info a:hover { color: #fff; }
     .footer-col p { color: rgba(255,255,255,.72); font-size: .93rem; line-height: 1.7; }
     footer .logo-text span:first-child { color: #fff; }
     footer .logo-text span:last-child { color: rgba(255,255,255,.55); }
@@ -1215,6 +1217,60 @@
     @media (prefers-reduced-motion: reduce) {
       * { animation: none !important; transition: none !important; }
       .reveal { opacity: 1; transform: none; }
+    }
+
+    /* ===== NEW: TRAIN HIGH, LIVE LOW + TRAVEL & EXCURSIONS ===== */
+    .experience-extra {
+      position: relative; padding: 100px 0;
+      background: linear-gradient(rgba(255,255,255,.92), rgba(255,255,255,.92)), var(--img-farm) center/cover no-repeat;
+      isolation: isolate;
+    }
+    [data-theme="dark"] .experience-extra {
+      background: linear-gradient(rgba(10,20,13,.9), rgba(10,20,13,.9)), var(--img-farm) center/cover no-repeat;
+    }
+    .extra-grid {
+      max-width: 1200px; margin: 0 auto; padding: 0 40px;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 32px;
+      position: relative; z-index: 2;
+    }
+    .extra-card {
+      background: var(--bg-card); border-radius: 22px; padding: 40px 34px;
+      box-shadow: var(--shadow); border: 1px solid var(--border-light);
+      transition: transform .4s ease, box-shadow .4s ease;
+      position: relative; overflow: hidden;
+    }
+    [data-theme="dark"] .extra-card { background: var(--bg-card); border-color: var(--glass-border); }
+    .extra-card:before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 5px;
+      background: linear-gradient(90deg, var(--primary), var(--accent-green));
+    }
+    .extra-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-hover); }
+    .extra-icon {
+      width: 68px; height: 68px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      display: flex; align-items: center; justify-content: center;
+      color: var(--accent-green); font-size: 1.6rem; margin-bottom: 22px;
+      box-shadow: 0 8px 24px var(--g-glow);
+    }
+    .extra-card h3 { font-size: 1.7rem; margin-bottom: 14px; color: var(--text-dark); }
+    .extra-card p { color: var(--text-muted); font-size: 1rem; line-height: 1.75; margin-bottom: 14px; }
+    .extra-card p:last-child { margin-bottom: 0; }
+    .extra-card .extra-note {
+      font-size: .9rem; font-style: italic; color: var(--text-muted);
+      background: rgba(5,74,41,.06); border-left: 4px solid var(--primary);
+      padding: 12px 16px; border-radius: 8px; margin-top: 16px;
+    }
+    [data-theme="dark"] .extra-card .extra-note { background: rgba(143,212,122,.08); border-left-color: var(--accent-green); }
+    .extra-card .extra-list { list-style: none; margin-top: 14px; }
+    .extra-card .extra-list li {
+      display: flex; align-items: flex-start; gap: 10px;
+      padding: 7px 0; color: var(--text-muted); font-size: .96rem;
+    }
+    .extra-card .extra-list li i { color: var(--primary); margin-top: 5px; font-size: .85rem; }
+    [data-theme="dark"] .extra-card .extra-list li i { color: var(--accent-green); }
+    @media (max-width: 900px) {
+      .extra-grid { grid-template-columns: 1fr; padding: 0 24px; }
+      .experience-extra { padding: 70px 0; }
     }
   </style>
 </head>
@@ -1370,20 +1426,20 @@
       </div>
       <div class="destination-content">
         <h3>Recovery &amp; Rest Zones</h3>
-        <p>Dedicated relaxation areas, physiotherapy rooms, and saunas to ensure optimal recovery between sessions.</p>
+        <p>Dedicated relaxation areas and physiotherapy rooms to support optimal recovery between sessions.</p>
         <div class="destination-meta"><span><i class="fas fa-mug-hot"></i> Refreshments</span><span>Included</span></div>
       </div>
     </div>
-    <!-- Card 6: World-Class Tracks -->
+    <!-- Card 6: Training Trails & Grounds -->
     <div class="destination-card reveal r-up" data-facility="tracks">
       <div class="destination-img">
-        <img src="https://i.pinimg.com/736x/02/83/78/02837855bc30a32526be488cdef4d621.jpg" alt="World-Class Tracks">
-        <div class="destination-tag">Tracks</div>
+        <img src="https://i.pinimg.com/736x/02/83/78/02837855bc30a32526be488cdef4d621.jpg" alt="Training Trails & Grounds">
+        <div class="destination-tag">Trails</div>
       </div>
       <div class="destination-content">
-        <h3>World-Class Tracks</h3>
-        <p>International-standard running tracks and scenic trails in the high-altitude environment of Eldoret.</p>
-        <div class="destination-meta"><span><i class="fas fa-running"></i> Olympic standard</span><span>On-site</span></div>
+        <h3>Training Trails &amp; Grounds</h3>
+        <p>Scenic training trails and grounds across the high-altitude environment of Eldoret. A dedicated running track is currently under development.</p>
+        <div class="destination-meta"><span><i class="fas fa-running"></i> Trails &amp; grounds</span><span>On-site</span></div>
       </div>
     </div>
   </div>
@@ -1426,7 +1482,7 @@
         <ul>
           <li><i class="fas fa-check"></i> All-inclusive training experience</li>
           <li><i class="fas fa-check"></i> Accommodation &amp; meals</li>
-          <li><i class="fas fa-check"></i> Gym access &amp; equipment rental</li>
+          <li><i class="fas fa-check"></i> Gym access</li>
           <li><i class="fas fa-check"></i> Professional coaching</li>
           <li><i class="fas fa-check"></i> Recovery &amp; nutrition plan</li>
           <li><i class="fas fa-check"></i> 24/7 facility access</li>
@@ -1442,7 +1498,7 @@
         <ul>
           <li><i class="fas fa-check"></i> Intensive training for serious athletes</li>
           <li><i class="fas fa-check"></i> Personalized coaching sessions</li>
-          <li><i class="fas fa-check"></i> Specialized running equipment</li>
+          <li><i class="fas fa-check"></i> Access to training trails &amp; grounds</li>
           <li><i class="fas fa-check"></i> Advanced recovery facilities</li>
           <li><i class="fas fa-check"></i> High-altitude training plan</li>
           <li><i class="fas fa-check"></i> Performance analysis</li>
@@ -1458,7 +1514,7 @@
         <ul>
           <li><i class="fas fa-check"></i> Private coaching &amp; mentoring</li>
           <li><i class="fas fa-check"></i> Premium accommodation &amp; meals</li>
-          <li><i class="fas fa-check"></i> Complete training gear</li>
+          <li><i class="fas fa-check"></i> Full gym &amp; training ground access</li>
           <li><i class="fas fa-check"></i> Nutrition planning &amp; supplementation</li>
           <li><i class="fas fa-check"></i> Sports psychology sessions</li>
           <li><i class="fas fa-check"></i> Post-program follow-up</li>
@@ -1476,10 +1532,10 @@
   </div>
   <div class="wildlife-grid">
     <div class="wildlife-card reveal r-up">
-      <div class="wildlife-img"><img src="https://i.pinimg.com/736x/02/83/78/02837855bc30a32526be488cdef4d621.jpg" alt="World-Class Tracks"></div>
+      <div class="wildlife-img"><img src="https://i.pinimg.com/736x/02/83/78/02837855bc30a32526be488cdef4d621.jpg" alt="Training Trails"></div>
       <div class="wildlife-content">
-        <h3>World-Class Tracks</h3>
-        <p>International standard running tracks and scenic trails in the high-altitude environment of Eldoret.</p>
+        <h3>Training Trails &amp; Grounds</h3>
+        <p>Scenic trails and training grounds in the high-altitude environment of Eldoret. A dedicated running track is currently under development.</p>
         <span class="animal-tag">Altitude Advantage</span>
       </div>
     </div>
@@ -1511,7 +1567,7 @@
       <div class="wildlife-img"><img src="https://i.pinimg.com/736x/53/b4/b2/53b4b269cd4dbccaa376cb3c7407eb3b.jpg" alt="Recovery Zones"></div>
       <div class="wildlife-content">
         <h3>Recovery &amp; Rest Zones</h3>
-        <p>Dedicated recovery areas including physiotherapy rooms, saunas, and relaxation lounges for optimal recovery.</p>
+        <p>Dedicated recovery areas including physiotherapy rooms and relaxation lounges for optimal recovery.</p>
         <span class="animal-tag">Rest &amp; Recharge</span>
       </div>
     </div>
@@ -1522,6 +1578,36 @@
         <p>Custom meal plans prepared by nutritionists to fuel your training, enhance recovery, and support overall health.</p>
         <span class="animal-tag">Fuel for Champions</span>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== NEW: TRAIN HIGH, LIVE LOW + TRAVEL & EXCURSIONS ===== -->
+<section class="experience-extra">
+  <div class="section-title reveal r-up">
+    <h2>Experiences Beyond the Centre</h2>
+    <p>Additional training and travel experiences we can arrange for you from our Eldoret base</p>
+  </div>
+  <div class="extra-grid">
+    <!-- Train High, Live Low -->
+    <div class="extra-card reveal r-up">
+      <div class="extra-icon"><i class="fas fa-mountain"></i></div>
+      <h3>Train High, Live Low</h3>
+      <p>Based in Eldoret, KHPTC offers athletes the opportunity to experience the renowned <strong>"Train High, Live Low"</strong> approach — combining the benefits of high-altitude training with comfortable lower-altitude living and recovery.</p>
+      <p>We can organise training visits to established high-altitude destinations such as:</p>
+      <ul class="extra-list">
+        <li><i class="fas fa-location-dot"></i> <span><strong>Iten</strong> — Kenya's legendary "Home of Champions"</span></li>
+        <li><i class="fas fa-location-dot"></i> <span><strong>Kaptagat</strong> — a world-renowned altitude training base</span></li>
+      </ul>
+      <div class="extra-note">Please note: these are additional training experiences arranged from our Eldoret base — not facilities located within KHPTC.</div>
+    </div>
+    <!-- Travel & Excursions -->
+    <div class="extra-card reveal r-up">
+      <div class="extra-icon"><i class="fas fa-route"></i></div>
+      <h3>Travel &amp; Excursions</h3>
+      <p>Travel arrangements can be organised upon request. This includes transport to training routes and tracks — including <strong>Iten</strong> — as well as visits to selected scenic and tourist destinations across Kenya.</p>
+      <p>Whether you need a lift to a training route, a day trip, or a full excursion, our team can help arrange it for you.</p>
+      <div class="extra-note">Contact us to discuss your requirements and we will tailor the arrangements to your schedule.</div>
     </div>
   </div>
 </section>
@@ -1736,8 +1822,11 @@
     <div class="footer-col">
       <h4>Contact Us</h4>
       <ul class="contact-info">
-        <li><i class="fas fa-phone-alt"></i> 0713555717</li>
-        <li><i class="fas fa-envelope"></i> <a href="mailto:kipkeinohptc@gmail.com" style="color: rgba(255,255,255,.72); text-decoration: none;">kipkeinohptc@gmail.com</a></li>
+        <li><i class="fas fa-phone-alt"></i> <a href="tel:+254713555717">0713 555 717</a></li>
+        <li><i class="fab fa-whatsapp" style="color: var(--accent-green);"></i> <a href="https://wa.me/254713555717" target="_blank" rel="noopener">WhatsApp: 0713 555 717</a></li>
+        <li><i class="fas fa-phone-alt"></i> <a href="tel:+254722652288">0722 652 288</a> <span style="margin-left: 4px;">(Alt.)</span></li>
+        <li><i class="fab fa-whatsapp" style="color: var(--accent-green);"></i> <a href="https://wa.me/254722652288" target="_blank" rel="noopener">WhatsApp: 0722 652 288</a></li>
+        <li><i class="fas fa-envelope"></i> <a href="mailto:kipkeinohptc@gmail.com">kipkeinohptc@gmail.com</a></li>
         <li><i class="fas fa-clock"></i> Mon-Fri: 6AM - 8PM, Sat: 7AM - 6PM</li>
         <li><i class="fas fa-plane"></i> 17.5 km from Eldoret International Airport (EDL)</li>
       </ul>
@@ -1751,10 +1840,13 @@
   <div class="copyright"><p>&copy; 2026 KHPTC. All rights reserved. | Designed by Quantum Solutions</p></div>
 </footer>
 
-<!-- FLOATING WHATSAPP BUTTON -->
+<!-- FLOATING WHATSAPP BUTTONS (TWO NUMBERS) -->
 <div class="whatsapp-float">
   <div class="whatsapp-tooltip">Chat with us</div>
-  <a href="https://wa.me/254713555717" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
+  <a href="https://wa.me/254722652288" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp (Alternative)">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+  <a href="https://wa.me/254713555717" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp (Official)">
     <i class="fab fa-whatsapp"></i>
   </a>
 </div>
@@ -1809,6 +1901,8 @@
             <option value="Pro Athlete Experience">Pro Athlete Experience (21 days)</option>
             <option value="Group / Team Camp">Group / Team Camp</option>
             <option value="Personal Training">Personal Training</option>
+            <option value="Train High, Live Low">Train High, Live Low (Iten / Kaptagat)</option>
+            <option value="Travel & Excursions">Travel &amp; Excursions</option>
             <option value="Just Accommodation">Just Accommodation</option>
           </select>
         </div>
@@ -2020,7 +2114,7 @@ document.addEventListener('DOMContentLoaded', function() {
     },
     recovery: {
       title: 'Recovery & Rest Zones',
-      caption: 'Dedicated relaxation areas, physiotherapy rooms, and saunas to ensure optimal recovery between sessions.',
+      caption: 'Dedicated relaxation areas and physiotherapy rooms to ensure optimal recovery between sessions.',
       images: [
         'https://i.pinimg.com/736x/14/bd/15/14bd15d518e19f6157b1916c0c9b187c.jpg',
         'https://i.pinimg.com/736x/41/da/84/41da8481a8d4ae599074fec2e83bd414.jpg',
@@ -2029,8 +2123,8 @@ document.addEventListener('DOMContentLoaded', function() {
       ]
     },
     tracks: {
-      title: 'World-Class Tracks',
-      caption: 'International-standard running tracks and scenic trails in the high-altitude environment of Eldoret.',
+      title: 'Training Trails & Grounds',
+      caption: 'Scenic training trails and grounds in the high-altitude environment of Eldoret. A dedicated running track is currently under development.',
       images: [
         'https://i.pinimg.com/736x/02/83/78/02837855bc30a32526be488cdef4d621.jpg',
         'https://i.pinimg.com/736x/72/5a/1b/725a1bae90f6a0aed1c8e80c28a1d0e0.jpg',
